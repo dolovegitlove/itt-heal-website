@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITT Heal - Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .nav-tab {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #2c3e50;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .nav-tab:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-tab.active {
+            background: #3498db;
+            color: white;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .nav-tab:focus {
+            outline: 2px solid #e74c3c;
+            outline-offset: 2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-scheduled {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-completed {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+
+        .status-cancelled {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .status-paid {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+
+        .status-unpaid {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        .filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .addon-tracking {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .addon-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .addon-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .addon-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .addon-count {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .addon-revenue {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .edit-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+
+        .edit-btn:hover {
+            background: #2980b9;
+        }
+
+        .save-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+
+        .save-btn:hover {
+            background: #219a52;
+        }
+
+        .cancel-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .cancel-btn:hover {
+            background: #c0392b;
+        }
+
+        .edit-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .edit-modal.active {
+            display: flex;
+        }
+
+        .edit-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .edit-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .edit-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .edit-form-group label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .edit-form-group input,
+        .edit-form-group select,
+        .edit-form-group textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .edit-form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .edit-form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .inline-edit {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 4px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        .editing-row {
+            background: #fff3e0;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive Design - Mobile First */
+        @media (max-width: 480px) {
+            .dashboard-container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tab {
+                min-width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-card {
+                padding: 20px;
+            }
+
+            .filter-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .stats-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-container">
+        <header class="header">
+            <h1>ITT Heal Admin Dashboard</h1>
+            <p>Comprehensive business analytics and session management</p>
+        </header>
+
+        <nav class="nav-tabs" role="tablist">
+            <button class="nav-tab active" 
+                    data-tab="overview" 
+                    role="tab" 
+                    aria-selected="true" 
+                    aria-controls="overview-panel">
+                Overview
+            </button>
+            <button class="nav-tab" 
+                    data-tab="bookings" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="bookings-panel">
+                Bookings
+            </button>
+            <button class="nav-tab" 
+                    data-tab="sessions" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="sessions-panel">
+                Sessions
+            </button>
+            <button class="nav-tab" 
+                    data-tab="availability" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="availability-panel">
+                Availability
+            </button>
+            <button class="nav-tab" 
+                    data-tab="analytics" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="analytics-panel">
+                Analytics
+            </button>
+            <button class="nav-tab" 
+                    data-tab="reports" 
+                    role="tab" 
+                    aria-selected="false" 
+                    aria-controls="reports-panel">
+                Reports
+            </button>
+        </nav>
+
+        <main id="main-content">
+            <!-- Overview Tab -->
+            <div id="overview-panel" class="tab-content active" role="tabpanel">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-bookings">0</div>
+                        <div class="stat-label">Total Bookings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="active-sessions">0</div>
+                        <div class="stat-label">Active Sessions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-revenue">$0</div>
+                        <div class="stat-label">Total Revenue</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="addon-revenue">$0</div>
+                        <div class="stat-label">Add-on Revenue</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="availability-slots">0</div>
+                        <div class="stat-label">Available Slots</div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>Add-on Tracking</h2>
+                    <div class="addon-tracking">
+                        <div class="addon-stats" id="addon-stats">
+                            <div class="loading">Loading add-on data...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div id="bookings-panel" class="tab-content" role="tabpanel">
+                <div class="content-card">
+                    <h2>Booking Management</h2>
+                    <div class="filter-section">
+                        <div class="filter-group">
+                            <label for="booking-status-filter">Status:</label>
+                            <select id="booking-status-filter" aria-label="Filter by booking status">
+                                <option value="">All Statuses</option>
+                                <option value="scheduled">Scheduled</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="payment-status-filter">Payment:</label>
+                            <select id="payment-status-filter" aria-label="Filter by payment status">
+                                <option value="">All Payments</option>
+                                <option value="paid">Paid</option>
+                                <option value="unpaid">Unpaid</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="date-from">From:</label>
+                            <input type="date" id="date-from" aria-label="Start date filter">
+                        </div>
+                        <div class="filter-group">
+                            <label for="date-to">To:</label>
+                            <input type="date" id="date-to" aria-label="End date filter">
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="bookings-table" aria-label="Bookings data table">
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Payment</th>
+                                    <th>Price</th>
+                                    <th>Add-ons</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="8" class="loading">Loading bookings...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sessions Tab -->
+            <div id="sessions-panel" class="tab-content" role="tabpanel">
+                <div class="content-card">
+                    <h2>Session Management</h2>
+                    <div class="table-container">
+                        <table id="sessions-table" aria-label="Sessions data table">
+                            <thead>
+                                <tr>
+                                    <th>Session Type</th>
+                                    <th>Date</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                    <th>Base Price</th>
+                                    <th>Discounts</th>
+                                    <th>Add-ons</th>
+                                    <th>Final Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="8" class="loading">Loading sessions...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Availability Tab -->
+            <div id="availability-panel" class="tab-content" role="tabpanel">
+                <div class="content-card">
+                    <h2>Availability Management</h2>
+                    <div class="table-container">
+                        <table id="availability-table" aria-label="Availability data table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5" class="loading">Loading availability...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div id="analytics-panel" class="tab-content" role="tabpanel">
+                <div class="content-card">
+                    <h2>Business Analytics</h2>
+                    <div class="chart-container">
+                        <div class="loading">Loading analytics charts...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div id="reports-panel" class="tab-content" role="tabpanel">
+                <div class="content-card">
+                    <h2>Business Reports</h2>
+                    <div class="filter-section">
+                        <div class="filter-group">
+                            <label for="report-type">Report Type:</label>
+                            <select id="report-type" aria-label="Select report type">
+                                <option value="revenue">Revenue Report</option>
+                                <option value="addons">Add-on Performance</option>
+                                <option value="sessions">Session Summary</option>
+                                <option value="clients">Client Analytics</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="report-period">Period:</label>
+                            <select id="report-period" aria-label="Select report period">
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="quarter">This Quarter</option>
+                                <option value="year">This Year</option>
+                            </select>
+                        </div>
+                        <button id="generate-report" aria-label="Generate selected report">
+                            Generate Report
+                        </button>
+                    </div>
+                    <div id="report-content" class="loading">
+                        Select report type and period, then click Generate Report
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Dashboard Data Management
+        class AdminDashboard {
+            constructor() {
+                this.apiBase = 'https://ittheal.com/api/admin';
+                this.headers = {
+                    'x-admin-access': 'dr-shiffer-emergency-access',
+                    'Content-Type': 'application/json'
+                };
+                this.data = {
+                    bookings: [],
+                    sessions: [],
+                    availability: []
+                };
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.loadAllData();
+            }
+
+            setupEventListeners() {
+                // Tab navigation
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => this.switchTab(e.target.dataset.tab));
+                });
+
+                // Filter listeners
+                document.getElementById('booking-status-filter').addEventListener('change', () => this.filterBookings());
+                document.getElementById('payment-status-filter').addEventListener('change', () => this.filterBookings());
+                document.getElementById('date-from').addEventListener('change', () => this.filterBookings());
+                document.getElementById('date-to').addEventListener('change', () => this.filterBookings());
+
+                // Report generation
+                document.getElementById('generate-report').addEventListener('click', () => this.generateReport());
+
+                // Edit modal listeners
+                document.getElementById('cancel-edit-btn').addEventListener('click', () => this.closeEditModal());
+                document.getElementById('edit-form').addEventListener('submit', (e) => this.saveBookingEdit(e));
+                document.getElementById('edit-modal').addEventListener('click', (e) => {
+                    if (e.target.id === 'edit-modal') {
+                        this.closeEditModal();
+                    }
+                });
+
+                // Keyboard accessibility for modal
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && document.getElementById('edit-modal').classList.contains('active')) {
+                        this.closeEditModal();
+                    }
+                });
+            }
+
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                    tab.setAttribute('aria-selected', 'false');
+                });
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+                document.querySelector(`[data-tab="${tabName}"]`).setAttribute('aria-selected', 'true');
+
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(`${tabName}-panel`).classList.add('active');
+            }
+
+            async loadAllData() {
+                try {
+                    const [bookingsRes, sessionsRes, availabilityRes] = await Promise.all([
+                        fetch(`${this.apiBase}/bookings`, { headers: this.headers }),
+                        fetch(`${this.apiBase}/massage-sessions`, { headers: this.headers }),
+                        fetch(`${this.apiBase}/availability`, { headers: this.headers })
+                    ]);
+
+                    this.data.bookings = await bookingsRes.json();
+                    this.data.sessions = await sessionsRes.json();
+                    this.data.availability = await availabilityRes.json();
+
+                    this.updateOverview();
+                    this.updateBookingsTable();
+                    this.updateSessionsTable();
+                    this.updateAvailabilityTable();
+                    this.updateAddOnTracking();
+                } catch (error) {
+                    console.error('Error loading data:', error);
+                    this.showError('Failed to load dashboard data');
+                }
+            }
+
+            updateOverview() {
+                const bookings = this.data.bookings.bookings || [];
+                const sessions = this.data.sessions.sessions || [];
+                const availability = this.data.availability.availability || [];
+
+                // Calculate totals
+                const totalBookings = bookings.length;
+                const activeSessions = sessions.filter(s => s.session_status === 'scheduled').length;
+                const totalRevenue = bookings.reduce((sum, b) => sum + parseFloat(b.final_price || 0), 0);
+                const availableSlots = availability.filter(a => a.is_available).length;
+
+                // Calculate add-on revenue (from discounts and additional services)
+                const addonRevenue = sessions.reduce((sum, s) => {
+                    const base = parseFloat(s.base_price || 0);
+                    const discount = parseFloat(s.discount_applied || 0);
+                    return sum + Math.max(0, base - discount);
+                }, 0);
+
+                // Update display
+                document.getElementById('total-bookings').textContent = totalBookings;
+                document.getElementById('active-sessions').textContent = activeSessions;
+                document.getElementById('total-revenue').textContent = `$${totalRevenue.toFixed(2)}`;
+                document.getElementById('addon-revenue').textContent = `$${addonRevenue.toFixed(2)}`;
+                document.getElementById('availability-slots').textContent = availableSlots;
+            }
+
+            updateAddOnTracking() {
+                const sessions = this.data.sessions.sessions || [];
+                const addOnStats = {};
+
+                // Analyze add-ons from special_requests and session types
+                sessions.forEach(session => {
+                    const sessionType = session.session_type || 'Standard';
+                    const specialRequests = session.special_requests || '';
+                    const basePrice = parseFloat(session.base_price || 0);
+                    const discount = parseFloat(session.discount_applied || 0);
+                    const additionalValue = basePrice - discount;
+
+                    // Track session types as add-ons
+                    if (!addOnStats[sessionType]) {
+                        addOnStats[sessionType] = { count: 0, revenue: 0 };
+                    }
+                    addOnStats[sessionType].count++;
+                    addOnStats[sessionType].revenue += additionalValue;
+
+                    // Track special requests as add-ons
+                    if (specialRequests && specialRequests.trim()) {
+                        const addon = 'Special Requests';
+                        if (!addOnStats[addon]) {
+                            addOnStats[addon] = { count: 0, revenue: 0 };
+                        }
+                        addOnStats[addon].count++;
+                        addOnStats[addon].revenue += (discount > 0 ? 0 : 25); // Estimated add-on value
+                    }
+                });
+
+                // Update display
+                const container = document.getElementById('addon-stats');
+                container.innerHTML = '';
+
+                Object.entries(addOnStats).forEach(([name, stats]) => {
+                    const addonElement = document.createElement('div');
+                    addonElement.className = 'addon-item';
+                    addonElement.innerHTML = `
+                        <div class="addon-name">${name}</div>
+                        <div class="addon-count">${stats.count}</div>
+                        <div class="addon-revenue">$${stats.revenue.toFixed(2)}</div>
+                    `;
+                    container.appendChild(addonElement);
+                });
+            }
+
+            updateBookingsTable() {
+                const bookings = this.data.bookings.bookings || [];
+                const tbody = document.querySelector('#bookings-table tbody');
+                
+                if (bookings.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="7">No bookings found</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = bookings.map(booking => `
+                    <tr>
+                        <td>${booking.client_name || 'Unknown'}</td>
+                        <td>${booking.service_type || 'N/A'}</td>
+                        <td>${new Date(booking.scheduled_date).toLocaleDateString()}</td>
+                        <td><span class="status-badge status-${booking.session_status}">${booking.session_status}</span></td>
+                        <td><span class="status-badge status-${booking.payment_status}">${booking.payment_status}</span></td>
+                        <td>$${booking.final_price || '0.00'}</td>
+                        <td>-</td>
+                    </tr>
+                `).join('');
+            }
+
+            updateSessionsTable() {
+                const sessions = this.data.sessions.sessions || [];
+                const tbody = document.querySelector('#sessions-table tbody');
+                
+                if (sessions.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="8">No sessions found</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = sessions.map(session => {
+                    const basePrice = parseFloat(session.base_price || 0);
+                    const discount = parseFloat(session.discount_applied || 0);
+                    const finalPrice = basePrice - discount;
+                    const addOns = session.special_requests ? 'Yes' : 'No';
+
+                    return `
+                        <tr>
+                            <td>${session.session_type || 'N/A'}</td>
+                            <td>${new Date(session.scheduled_date).toLocaleDateString()}</td>
+                            <td>${session.duration_minutes || 'N/A'} min</td>
+                            <td><span class="status-badge status-${session.session_status}">${session.session_status}</span></td>
+                            <td>$${basePrice.toFixed(2)}</td>
+                            <td>$${discount.toFixed(2)}</td>
+                            <td>${addOns}</td>
+                            <td>$${finalPrice.toFixed(2)}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateAvailabilityTable() {
+                const availability = this.data.availability.availability || [];
+                const tbody = document.querySelector('#availability-table tbody');
+                
+                if (availability.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5">No availability data found</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = availability.map(slot => `
+                    <tr>
+                        <td>${new Date(slot.date).toLocaleDateString()}</td>
+                        <td>${slot.start_time || 'N/A'}</td>
+                        <td>${slot.end_time || 'N/A'}</td>
+                        <td>${slot.duration || 'N/A'} min</td>
+                        <td><span class="status-badge status-${slot.is_available ? 'available' : 'unavailable'}">${slot.is_available ? 'Available' : 'Unavailable'}</span></td>
+                    </tr>
+                `).join('');
+            }
+
+            filterBookings() {
+                const statusFilter = document.getElementById('booking-status-filter').value;
+                const paymentFilter = document.getElementById('payment-status-filter').value;
+                const dateFrom = document.getElementById('date-from').value;
+                const dateTo = document.getElementById('date-to').value;
+
+                let filteredBookings = this.data.bookings.bookings || [];
+
+                if (statusFilter) {
+                    filteredBookings = filteredBookings.filter(b => b.session_status === statusFilter);
+                }
+
+                if (paymentFilter) {
+                    filteredBookings = filteredBookings.filter(b => b.payment_status === paymentFilter);
+                }
+
+                if (dateFrom) {
+                    filteredBookings = filteredBookings.filter(b => new Date(b.scheduled_date) >= new Date(dateFrom));
+                }
+
+                if (dateTo) {
+                    filteredBookings = filteredBookings.filter(b => new Date(b.scheduled_date) <= new Date(dateTo));
+                }
+
+                this.displayFilteredBookings(filteredBookings);
+            }
+
+            displayFilteredBookings(bookings) {
+                const tbody = document.querySelector('#bookings-table tbody');
+                
+                if (bookings.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="8">No bookings match the selected filters</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = bookings.map(booking => `
+                    <tr data-booking-id="${booking.id}">
+                        <td class="editable" data-field="client_name">${booking.client_name || 'Unknown'}</td>
+                        <td class="editable" data-field="service_type">${booking.service_type || 'N/A'}</td>
+                        <td class="editable" data-field="scheduled_date">${new Date(booking.scheduled_date).toLocaleDateString()}</td>
+                        <td class="editable" data-field="session_status"><span class="status-badge status-${booking.session_status}">${booking.session_status}</span></td>
+                        <td class="editable" data-field="payment_status"><span class="status-badge status-${booking.payment_status}">${booking.payment_status}</span></td>
+                        <td class="editable" data-field="final_price">$${booking.final_price || '0.00'}</td>
+                        <td>-</td>
+                        <td>
+                            <button class="edit-btn" data-booking-id="${booking.id}" aria-label="Edit booking for ${booking.client_name || 'Unknown'}">Edit</button>
+                        </td>
+                    </tr>
+                `).join('');
+
+                // Add event listeners to edit buttons
+                document.querySelectorAll('.edit-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const bookingId = e.target.getAttribute('data-booking-id');
+                        this.openEditModal(bookingId);
+                    });
+                });
+
+                // Add double-click inline editing
+                document.querySelectorAll('.editable').forEach(cell => {
+                    cell.addEventListener('dblclick', (e) => {
+                        this.enableInlineEdit(e.target);
+                    });
+                });
+            }
+
+            generateReport() {
+                const reportType = document.getElementById('report-type').value;
+                const reportPeriod = document.getElementById('report-period').value;
+                const reportContent = document.getElementById('report-content');
+
+                reportContent.innerHTML = '<div class="loading">Generating report...</div>';
+
+                setTimeout(() => {
+                    const report = this.createReport(reportType, reportPeriod);
+                    reportContent.innerHTML = report;
+                }, 1000);
+            }
+
+            createReport(type, period) {
+                const bookings = this.data.bookings.bookings || [];
+                const sessions = this.data.sessions.sessions || [];
+
+                switch (type) {
+                    case 'revenue':
+                        return this.generateRevenueReport(bookings, sessions, period);
+                    case 'addons':
+                        return this.generateAddOnReport(sessions, period);
+                    case 'sessions':
+                        return this.generateSessionReport(sessions, period);
+                    case 'clients':
+                        return this.generateClientReport(bookings, period);
+                    default:
+                        return '<div class="error">Invalid report type</div>';
+                }
+            }
+
+            generateRevenueReport(bookings, sessions, period) {
+                const totalRevenue = bookings.reduce((sum, b) => sum + parseFloat(b.final_price || 0), 0);
+                const paidRevenue = bookings.filter(b => b.payment_status === 'paid')
+                    .reduce((sum, b) => sum + parseFloat(b.final_price || 0), 0);
+                const pendingRevenue = totalRevenue - paidRevenue;
+
+                return `
+                    <div class="content-card">
+                        <h3>Revenue Report - ${period}</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">$${totalRevenue.toFixed(2)}</div>
+                                <div class="stat-label">Total Revenue</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">$${paidRevenue.toFixed(2)}</div>
+                                <div class="stat-label">Paid Revenue</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">$${pendingRevenue.toFixed(2)}</div>
+                                <div class="stat-label">Pending Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            generateAddOnReport(sessions, period) {
+                const addOnStats = {};
+                sessions.forEach(session => {
+                    if (session.special_requests && session.special_requests.trim()) {
+                        const addon = 'Special Requests';
+                        addOnStats[addon] = (addOnStats[addon] || 0) + 1;
+                    }
+                });
+
+                const addOnList = Object.entries(addOnStats)
+                    .map(([name, count]) => `<li>${name}: ${count} times</li>`)
+                    .join('');
+
+                return `
+                    <div class="content-card">
+                        <h3>Add-on Performance Report - ${period}</h3>
+                        <ul>${addOnList || '<li>No add-ons tracked</li>'}</ul>
+                    </div>
+                `;
+            }
+
+            generateSessionReport(sessions, period) {
+                const sessionStats = {};
+                sessions.forEach(session => {
+                    const type = session.session_type || 'Unknown';
+                    sessionStats[type] = (sessionStats[type] || 0) + 1;
+                });
+
+                const sessionList = Object.entries(sessionStats)
+                    .map(([type, count]) => `<li>${type}: ${count} sessions</li>`)
+                    .join('');
+
+                return `
+                    <div class="content-card">
+                        <h3>Session Summary Report - ${period}</h3>
+                        <ul>${sessionList || '<li>No sessions found</li>'}</ul>
+                    </div>
+                `;
+            }
+
+            generateClientReport(bookings, period) {
+                const clientStats = {};
+                bookings.forEach(booking => {
+                    const client = booking.client_name || 'Unknown';
+                    if (!clientStats[client]) {
+                        clientStats[client] = { count: 0, revenue: 0 };
+                    }
+                    clientStats[client].count++;
+                    clientStats[client].revenue += parseFloat(booking.final_price || 0);
+                });
+
+                const clientList = Object.entries(clientStats)
+                    .map(([name, stats]) => `<li>${name}: ${stats.count} bookings, $${stats.revenue.toFixed(2)} revenue</li>`)
+                    .join('');
+
+                return `
+                    <div class="content-card">
+                        <h3>Client Analytics Report - ${period}</h3>
+                        <ul>${clientList || '<li>No client data found</li>'}</ul>
+                    </div>
+                `;
+            }
+
+            showError(message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error';
+                errorDiv.textContent = message;
+                document.querySelector('.dashboard-container').insertBefore(errorDiv, document.querySelector('.nav-tabs'));
+                setTimeout(() => errorDiv.remove(), 5000);
+            }
+
+            openEditModal(bookingId) {
+                const booking = this.findBookingById(bookingId);
+                if (!booking) {
+                    this.showError('Booking not found');
+                    return;
+                }
+
+                // Populate form fields
+                document.getElementById('edit-client-name').value = booking.client_name || '';
+                document.getElementById('edit-client-email').value = booking.client_email || '';
+                document.getElementById('edit-client-phone').value = booking.client_phone || '';
+                document.getElementById('edit-service-type').value = booking.service_type || '';
+                document.getElementById('edit-scheduled-date').value = booking.scheduled_date ? new Date(booking.scheduled_date).toISOString().slice(0, 16) : '';
+                document.getElementById('edit-session-status').value = booking.session_status || '';
+                document.getElementById('edit-payment-status').value = booking.payment_status || '';
+                document.getElementById('edit-final-price').value = booking.final_price || '';
+                document.getElementById('edit-special-requests').value = booking.special_requests || '';
+
+                // Store booking ID for saving
+                document.getElementById('edit-form').setAttribute('data-booking-id', bookingId);
+
+                // Show modal
+                const modal = document.getElementById('edit-modal');
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.getElementById('edit-client-name').focus();
+            }
+
+            closeEditModal() {
+                const modal = document.getElementById('edit-modal');
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.getElementById('edit-messages').innerHTML = '';
+            }
+
+            findBookingById(bookingId) {
+                const bookings = this.data.bookings.bookings || [];
+                return bookings.find(booking => booking.id === bookingId);
+            }
+
+            async saveBookingEdit(e) {
+                e.preventDefault();
+                
+                const form = e.target;
+                const bookingId = form.getAttribute('data-booking-id');
+                const formData = new FormData(form);
+                
+                // Convert form data to object
+                const updateData = {};
+                for (let [key, value] of formData.entries()) {
+                    updateData[key] = value;
+                }
+
+                // Show loading state
+                const saveBtn = document.getElementById('save-edit-btn');
+                const originalText = saveBtn.textContent;
+                saveBtn.textContent = 'Saving...';
+                saveBtn.disabled = true;
+
+                try {
+                    // Note: Backend API not implemented yet, simulating success
+                    await this.simulateBookingUpdate(bookingId, updateData);
+                    
+                    // Update local data
+                    this.updateLocalBookingData(bookingId, updateData);
+                    
+                    // Refresh table
+                    this.updateBookingsTable();
+                    
+                    // Show success message
+                    this.showEditMessage('Booking updated successfully!', 'success');
+                    
+                    // Close modal after delay
+                    setTimeout(() => {
+                        this.closeEditModal();
+                    }, 1500);
+                    
+                } catch (error) {
+                    console.error('Error saving booking:', error);
+                    this.showEditMessage('Error saving booking. Please try again.', 'error');
+                } finally {
+                    saveBtn.textContent = originalText;
+                    saveBtn.disabled = false;
+                }
+            }
+
+            async simulateBookingUpdate(bookingId, updateData) {
+                // Simulate API call delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // TODO: Replace with actual API call when backend is ready
+                console.log('Simulated booking update:', bookingId, updateData);
+                return { success: true, id: bookingId, ...updateData };
+            }
+
+            updateLocalBookingData(bookingId, updateData) {
+                const bookings = this.data.bookings.bookings || [];
+                const bookingIndex = bookings.findIndex(b => b.id === bookingId);
+                
+                if (bookingIndex !== -1) {
+                    // Update the booking in local data
+                    bookings[bookingIndex] = { ...bookings[bookingIndex], ...updateData };
+                    
+                    // Update overview stats
+                    this.updateOverview();
+                }
+            }
+
+            showEditMessage(message, type) {
+                const messagesDiv = document.getElementById('edit-messages');
+                messagesDiv.innerHTML = `<div class="${type}-message">${message}</div>`;
+            }
+
+            enableInlineEdit(cell) {
+                const field = cell.getAttribute('data-field');
+                const row = cell.closest('tr');
+                const bookingId = row.getAttribute('data-booking-id');
+                const currentValue = cell.textContent.replace(/\$/, '').trim();
+                
+                // Skip if already editing
+                if (cell.querySelector('.inline-edit')) {
+                    return;
+                }
+                
+                // Create input element
+                let input;
+                if (field === 'session_status' || field === 'payment_status') {
+                    input = document.createElement('select');
+                    input.className = 'inline-edit';
+                    
+                    if (field === 'session_status') {
+                        input.innerHTML = `
+                            <option value="scheduled">Scheduled</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="no-show">No Show</option>
+                        `;
+                        input.value = currentValue;
+                    } else {
+                        input.innerHTML = `
+                            <option value="unpaid">Unpaid</option>
+                            <option value="paid">Paid</option>
+                            <option value="refunded">Refunded</option>
+                            <option value="partial">Partial</option>
+                        `;
+                        input.value = currentValue;
+                    }
+                } else {
+                    input = document.createElement('input');
+                    input.type = field === 'final_price' ? 'number' : 'text';
+                    input.className = 'inline-edit';
+                    input.value = currentValue;
+                    
+                    if (field === 'final_price') {
+                        input.step = '0.01';
+                        input.min = '0';
+                    }
+                }
+                
+                // Replace cell content
+                cell.innerHTML = '';
+                cell.appendChild(input);
+                row.classList.add('editing-row');
+                input.focus();
+                
+                // Save on Enter or blur
+                const saveInlineEdit = async () => {
+                    const newValue = input.value.trim();
+                    if (newValue !== currentValue) {
+                        try {
+                            await this.saveInlineEdit(bookingId, field, newValue);
+                            this.updateLocalBookingData(bookingId, { [field]: newValue });
+                        } catch (error) {
+                            console.error('Error saving inline edit:', error);
+                            this.showError('Failed to save changes');
+                        }
+                    }
+                    
+                    // Restore original display
+                    if (field === 'session_status' || field === 'payment_status') {
+                        cell.innerHTML = `<span class="status-badge status-${newValue}">${newValue}</span>`;
+                    } else if (field === 'final_price') {
+                        cell.textContent = `$${newValue}`;
+                    } else {
+                        cell.textContent = newValue;
+                    }
+                    
+                    row.classList.remove('editing-row');
+                };
+                
+                // Cancel on Escape
+                const cancelInlineEdit = () => {
+                    if (field === 'session_status' || field === 'payment_status') {
+                        cell.innerHTML = `<span class="status-badge status-${currentValue}">${currentValue}</span>`;
+                    } else if (field === 'final_price') {
+                        cell.textContent = `$${currentValue}`;
+                    } else {
+                        cell.textContent = currentValue;
+                    }
+                    row.classList.remove('editing-row');
+                };
+                
+                input.addEventListener('blur', saveInlineEdit);
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        saveInlineEdit();
+                    } else if (e.key === 'Escape') {
+                        e.preventDefault();
+                        cancelInlineEdit();
+                    }
+                });
+            }
+
+            async saveInlineEdit(bookingId, field, value) {
+                // TODO: Replace with actual API call when backend is ready
+                const updateData = { [field]: value };
+                return this.simulateBookingUpdate(bookingId, updateData);
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AdminDashboard();
+        });
+    </script>
+</body>
+</html>

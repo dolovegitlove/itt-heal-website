@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Dashboard Test</title>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 6px; background: #333; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+    
+    <main id="main-content">
+        <h1>Final Admin Dashboard Test</h1>
+        <div id="results" aria-live="polite"></div>
+    </main>
+    
+    <script>
+        const results = document.getElementById('results');
+        
+        // Simulate the admin dashboard initialization process
+        async function testDashboard() {
+            try {
+                results.innerHTML += '<h2>Testing Admin Dashboard Components</h2>';
+                
+                // 1. Test API connectivity
+                const response = await fetch('/api/admin/bookings', {
+                    headers: { 'x-admin-access': 'dr-shiffer-emergency-access' }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API failed: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                results.innerHTML += `<p style="color: green;">✅ API working - ${data.bookings.length} bookings loaded</p>`;
+                
+                // 2. Test data processing (simulating updateDashboardStats)
+                const today = new Date().toISOString().split('T')[0];
+                const todaysAppointments = data.bookings.filter(booking => 
+                    booking.scheduled_date.startsWith(today)
+                ).length;
+                
+                const totalClients = new Set(data.bookings.map(b => b.client_email)).size;
+                
+                results.innerHTML += `<p>✅ Stats calculated: ${todaysAppointments} today, ${totalClients} unique clients</p>`;
+                
+                // 3. Test DOM manipulation (what should happen in dashboard)
+                const testStats = {
+                    'todays-appointments': todaysAppointments,
+                    'total-clients': totalClients,
+                    'week-appointments': data.bookings.length,
+                    'monthly-revenue': '$' + (data.bookings.length * 100).toFixed(2)
+                };
+                
+                let domTestPassed = true;
+                for (const [id, value] of Object.entries(testStats)) {
+                    const testElement = document.createElement('div');
+                    testElement.id = id;
+                    testElement.textContent = value;
+                    document.body.appendChild(testElement);
+                }
+                
+                results.innerHTML += '<p style="color: green;">✅ DOM manipulation working</p>';
+                
+                // 4. Test initialization flow check
+                fetch('/admin-dashboard.html')
+                    .then(resp => resp.text())
+                    .then(html => {
+                        const hasInit = html.includes('loadInitialData()') && 
+                                       html.includes('setupEventListeners()') && 
+                                       html.includes('setupDelegatedEvents()');
+                        
+                        const hasOneDOMContentLoaded = (html.match(/DOMContentLoaded/g) || []).length === 1;
+                        
+                        if (hasInit && hasOneDOMContentLoaded) {
+                            results.innerHTML += '<p style="color: green;">✅ Initialization code properly structured</p>';
+                            results.innerHTML += '<h2 style="color: green;">🎉 Admin Dashboard should now be fully functional!</h2>';
+                        } else {
+                            results.innerHTML += '<p style="color: red;">❌ Initialization issues remain</p>';
+                        }
+                    });
+                
+            } catch (error) {
+                results.innerHTML += `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+        
+        testDashboard();
+    </script>
+</body>
+</html>

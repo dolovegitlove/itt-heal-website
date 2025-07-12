@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Fix Test</title>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 6px; background: #333; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+    
+    <main id="main-content">
+        <h1>Testing Admin Dashboard Fix</h1>
+        <div id="status" aria-live="polite"></div>
+    </main>
+    
+    <script>
+        const status = document.getElementById('status');
+        
+        // Test if the dashboard loads without errors
+        fetch('https://ittheal.com/admin-dashboard.html')
+            .then(response => response.text())
+            .then(html => {
+                // Check if initialization code is present
+                if (html.includes('loadInitialData()') && 
+                    html.includes('updateDateTime()') &&
+                    html.includes('setupEventListeners()')) {
+                    status.innerHTML = '<h2 style="color: green;">✅ Dashboard initialization code is properly configured</h2>';
+                    
+                    // Test API endpoint
+                    return fetch('https://ittheal.com/api/admin/bookings', {
+                        headers: { 'x-admin-access': 'dr-shiffer-emergency-access' }
+                    });
+                } else {
+                    throw new Error('Missing initialization code');
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                status.innerHTML += '<p style="color: green;">✅ API endpoints are working (' + data.bookings.length + ' bookings loaded)</p>';
+                status.innerHTML += '<p><strong>Dashboard should now be functional!</strong></p>';
+            })
+            .catch(error => {
+                status.innerHTML = '<h2 style="color: red;">❌ Error: ' + error.message + '</h2>';
+            });
+    </script>
+</body>
+</html>

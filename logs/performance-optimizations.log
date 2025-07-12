@@ -1,0 +1,1082 @@
+[2025-06-25 12:54:20] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 12:54:20] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 12:56:31] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 12:56:31] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 12:59:22] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 12:59:22] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:01:33] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:01:33] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:04:24] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:04:24] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:06:35] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:06:35] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:09:26] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:09:26] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:11:37] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:11:37] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:14:28] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:14:28] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 13:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 13:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 13:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 13:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 13:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 13:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 13:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 13:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 13:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 13:15:11] OPTIMIZATION: High CPU processes detected: ittz      151583  1.6  3.4 32863564 207888 pts/0 Sl+  12:53   0:21 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:01 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+root           1  0.0  0.1 167736 11876 ?        Ss   Jun04   1:50 /lib/systemd/systemd --system --deserialize 50
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jun04   0:00 [rcu_gp]
+[2025-06-25 13:15:11] OPTIMIZATION: High CPU processes detected: ittz      151583  1.6  3.4 32863564 207888 pts/0 Sl+  12:53   0:21 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:01 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+root           1  0.0  0.1 167736 11876 ?        Ss   Jun04   1:50 /lib/systemd/systemd --system --deserialize 50
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jun04   0:00 [rcu_gp]
+[2025-06-25 13:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 13:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 13:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 13:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 13:15:11] OPTIMIZATION: High memory processes: root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:01 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  1.6  3.4 32863564 207888 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+ittz      359943  0.0  1.0 1329804 63812 ?       Ssl  Jun18   4:06 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+root      713608  0.0  1.0 1049564 62944 ?       Sl   Jun22   3:53 node /usr/bin/pm2 logs backend --lines 10
+[2025-06-25 13:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 13:15:11] OPTIMIZATION: High memory processes: root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:01 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  1.6  3.4 32863564 207888 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+ittz      359943  0.0  1.0 1329804 63812 ?       Ssl  Jun18   4:06 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+root      713608  0.0  1.0 1049564 62944 ?       Sl   Jun22   3:53 node /usr/bin/pm2 logs backend --lines 10
+[2025-06-25 13:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 13:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 13:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 13:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 13:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 13:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 13:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 13:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 13:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 13:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 13:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 13:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 13:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 13:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 13:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 13:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 13:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 13:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:16:39] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:16:39] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:19:30] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:19:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:21:41] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:21:41] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:24:32] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:24:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:26:43] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:26:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:29:34] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:29:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:31:45] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:31:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:34:36] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:34:36] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:36:47] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:36:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:39:38] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:39:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:41:49] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:41:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:44:40] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:44:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:46:51] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:46:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:49:43] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:49:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:51:53] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:51:53] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:54:45] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:54:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:56:55] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:56:55] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 13:59:47] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 13:59:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:01:57] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:01:57] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:04:49] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:04:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:07:00] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:07:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:09:51] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:09:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:12:02] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:12:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:14:53] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:14:53] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 14:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 14:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 14:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 14:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 14:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 14:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 14:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 14:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 14:15:11] OPTIMIZATION: High CPU processes detected: ittz      151583  0.4  3.4 32866380 211440 pts/0 Sl+  12:53   0:21 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:07 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+www-data  230525  0.1  0.1  57260  9784 ?        S    14:14   0:00 nginx: worker process
+root           1  0.0  0.1 167736 11876 ?        Ss   Jun04   1:50 /lib/systemd/systemd --system --deserialize 50
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+[2025-06-25 14:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 14:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 14:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 14:15:11] OPTIMIZATION: High CPU processes detected: ittz      151583  0.4  3.4 32866380 211440 pts/0 Sl+  12:53   0:21 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:07 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+www-data  230525  0.1  0.1  57260  9784 ?        S    14:14   0:00 nginx: worker process
+root           1  0.0  0.1 167736 11876 ?        Ss   Jun04   1:50 /lib/systemd/systemd --system --deserialize 50
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+[2025-06-25 14:15:11] OPTIMIZATION: High memory processes: root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:07 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.4  3.4 32866380 211440 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+ittz      359943  0.0  1.0 1329804 63812 ?       Ssl  Jun18   4:06 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+root      713608  0.0  1.0 1049564 62944 ?       Sl   Jun22   3:53 node /usr/bin/pm2 logs backend --lines 10
+[2025-06-25 14:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 14:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 14:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 14:15:11] OPTIMIZATION: High memory processes: root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:07 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.4  3.4 32866380 211440 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+ittz      359943  0.0  1.0 1329804 63812 ?       Ssl  Jun18   4:06 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+root      713608  0.0  1.0 1049564 62944 ?       Sl   Jun22   3:53 node /usr/bin/pm2 logs backend --lines 10
+[2025-06-25 14:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 14:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 14:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 14:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 14:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 14:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 14:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 14:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 14:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 14:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 14:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 14:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 14:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 14:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 14:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 14:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 14:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 14:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:17:04] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:17:04] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:19:55] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:19:55] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:22:06] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:22:06] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:24:57] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:24:57] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:27:08] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:27:08] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:29:59] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:29:59] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:32:10] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:32:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:35:01] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:35:01] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:37:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:37:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:40:03] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:40:03] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:42:14] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:42:14] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:45:05] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:45:05] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:47:16] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:47:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:50:07] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:50:07] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:52:18] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:52:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:55:09] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:55:09] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 14:57:20] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 14:57:20] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:00:11] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:00:11] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:00:11] OPTIMIZATION: Running hourly optimization tasks
+[2025-06-25 15:02:22] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:02:22] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:05:13] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:05:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:07:24] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:07:24] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:10:14] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:10:14] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:12:27] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:12:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 15:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 15:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 15:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 15:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 15:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 15:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 15:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 15:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 15:15:11] OPTIMIZATION: High CPU processes detected: root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:12 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.2  3.4 32866692 211916 pts/0 Sl+  12:53   0:21 claude
+ittz      254561  0.2  3.9 32902380 241584 pts/1 Sl+  14:37   0:05 claude
+root           1  0.0  0.1 167736 11876 ?        Ss   Jun04   1:50 /lib/systemd/systemd --system --deserialize 50
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+[2025-06-25 15:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 15:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 15:15:11] OPTIMIZATION: High memory processes: ittz      254561  0.2  3.9 32902380 241584 pts/1 Sl+  14:37   0:05 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:12 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.2  3.4 32866692 211916 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+ittz      359943  0.0  1.0 1329804 63812 ?       Ssl  Jun18   4:07 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+[2025-06-25 15:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 15:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 15:15:11] OPTIMIZATION: High CPU processes detected: root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:12 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.2  3.4 32866692 211916 pts/0 Sl+  12:53   0:21 claude
+ittz      254561  0.2  3.9 32902380 241584 pts/1 Sl+  14:37   0:05 claude
+root           1  0.0  0.1 167736 11876 ?        Ss   Jun04   1:50 /lib/systemd/systemd --system --deserialize 50
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+[2025-06-25 15:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 15:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 15:15:11] OPTIMIZATION: High memory processes: ittz      254561  0.2  3.9 32902380 241584 pts/1 Sl+  14:37   0:05 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:12 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.2  3.4 32866692 211916 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+ittz      359943  0.0  1.0 1329804 63812 ?       Ssl  Jun18   4:07 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+[2025-06-25 15:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 15:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 15:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 15:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 15:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 15:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 15:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 15:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 15:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 15:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 15:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 15:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 15:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 15:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 15:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 15:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 15:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 15:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:17:29] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:17:29] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:20:18] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:20:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:22:31] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:22:31] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:25:21] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:25:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:27:33] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:27:33] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:30:23] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:30:23] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:32:35] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:32:35] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:35:24] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:35:24] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:37:37] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:37:37] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:40:26] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:40:26] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:42:39] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:42:39] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:45:28] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:45:28] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:47:41] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:47:41] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:50:30] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:50:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:52:43] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:52:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:55:31] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:55:31] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 15:57:45] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 15:57:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:00:33] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:00:33] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:00:33] OPTIMIZATION: Running hourly optimization tasks
+[2025-06-25 16:02:47] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:02:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:05:35] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:05:35] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:07:49] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:07:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:10:37] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:10:37] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:12:51] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:12:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 16:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 16:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 16:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 16:15:02] OPTIMIZATION: Optimizing database connections
+[2025-06-25 16:15:02] OPTIMIZATION: Optimizing database connections
+[2025-06-25 16:15:02] OPTIMIZATION: Checking static asset compression
+[2025-06-25 16:15:02] OPTIMIZATION: Checking static asset compression
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 16:15:12] OPTIMIZATION: High CPU processes detected: root      342824  4.1  3.6 32874344 220284 pts/2 Sl+  16:05   0:22 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:18 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.1  3.4 32866892 211852 pts/0 Sl+  12:53   0:21 claude
+root           1  0.0  0.1  19040 11564 ?        Ss   Jun04   1:51 /lib/systemd/systemd --system --deserialize 12
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+[2025-06-25 16:15:12] OPTIMIZATION: High CPU processes detected: root      342824  4.1  3.6 32874344 220284 pts/2 Sl+  16:05   0:22 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:18 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      151583  0.1  3.4 32866892 211852 pts/0 Sl+  12:53   0:21 claude
+root           1  0.0  0.1  19040 11564 ?        Ss   Jun04   1:51 /lib/systemd/systemd --system --deserialize 12
+root           2  0.0  0.0      0     0 ?        S    Jun04   0:00 [kthreadd]
+[2025-06-25 16:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 16:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 16:15:12] OPTIMIZATION: High memory processes: ittz      254561  0.0  3.9 32903004 242208 pts/1 Sl+  14:37   0:05 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:18 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+root      342824  4.1  3.6 32874344 220284 pts/2 Sl+  16:05   0:22 claude
+ittz      151583  0.1  3.4 32866892 211852 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+[2025-06-25 16:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 16:15:12] OPTIMIZATION: High memory processes: ittz      254561  0.0  3.9 32903004 242208 pts/1 Sl+  14:37   0:05 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:18 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+root      342824  4.1  3.6 32874344 220284 pts/2 Sl+  16:05   0:22 claude
+ittz      151583  0.1  3.4 32866892 211852 pts/0 Sl+  12:53   0:21 claude
+ittm      658145  0.0  1.1 1247856 68840 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+[2025-06-25 16:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 16:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 16:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 16:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 16:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 16:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 16:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 16:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 16:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 16:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 16:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 16:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 16:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:15:38] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:15:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:17:54] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:17:54] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:20:40] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:20:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:22:56] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:22:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:25:42] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:25:42] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:27:58] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:27:58] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:30:44] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:30:44] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:33:00] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:33:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:35:45] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:35:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:38:02] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:38:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:40:47] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:40:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:43:04] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:43:04] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:45:49] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:45:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:48:06] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:48:06] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:50:51] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:50:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:53:08] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 16:53:08] OPTIMIZATION: High CPU processes detected: ittz      403180  5.0  0.0   7052  3056 ?        R    16:53   0:00 find . -name *.ts
+ittz      391183  3.4  5.1 32964852 311444 pts/0 Sl+  16:46   0:12 claude
+ittz      395360  0.3  0.9 1016880 59124 ?       Sl   16:49   0:00 node scripts/simple-error-prevention.js
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:21 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+root           1  0.0  0.1  19040 11600 ?        Ss   Jun04   1:51 /lib/systemd/systemd --system --deserialize 12
+[2025-06-25 16:53:08] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 16:53:08] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:53:08] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:55:54] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:55:54] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 16:58:11] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 16:58:11] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:00:56] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:00:56] OPTIMIZATION: High CPU processes detected: ittz      421794  136  5.9 1293692 359344 ?      Rl   17:00   0:02 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      421782 11.5  1.3 1139596 82252 ?       Sl   17:00   0:00 npm exec tsc --noEmit
+ittz      403438  2.5  3.3 32861164 205364 pts/2 Sl+  16:53   0:11 claude
+ittz      391183  1.5  3.8 32886996 232236 pts/0 Sl+  16:46   0:13 claude
+ittz      395360  0.3  0.9 1017564 60560 ?       Sl   16:49   0:02 node scripts/simple-error-prevention.js
+[2025-06-25 17:00:56] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:00:56] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:00:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:00:56] OPTIMIZATION: Running hourly optimization tasks
+[2025-06-25 17:03:14] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:03:14] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:05:58] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:05:58] OPTIMIZATION: High CPU processes detected: ittz      433307 23.0  1.3 1139368 82188 ?       Sl   17:05   0:00 npm exec tsc --noEmit
+ittz      403438  1.5  3.3 32861164 205364 pts/2 Sl+  16:53   0:11 claude
+ittz      391183  1.1  3.8 32886996 232496 pts/0 Sl+  16:46   0:13 claude
+ittz      395360  0.3  0.9 1015908 59556 ?       Sl   16:49   0:03 node scripts/simple-error-prevention.js
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:23 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+[2025-06-25 17:05:58] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:05:58] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:05:58] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:08:16] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:08:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:11:00] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:11:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:13:19] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:13:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 17:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 17:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 17:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 17:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 17:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 17:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 17:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 17:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:15:11] OPTIMIZATION: High CPU processes detected: ittz      453228 87.0  4.1 1188804 252652 ?      Rl   17:15   0:01 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      453186 11.0  1.3 1139288 81888 ?       Sl   17:15   0:00 npm exec tsc --noEmit
+ittz      403438  0.8  3.3 32861164 205364 pts/2 Sl+  16:53   0:11 claude
+ittz      391183  0.7  3.8 32886996 232496 pts/0 Sl+  16:46   0:13 claude
+ittz      395360  0.3  1.0 1017276 60924 ?       Sl   16:49   0:05 node scripts/simple-error-prevention.js
+[2025-06-25 17:15:11] OPTIMIZATION: High CPU processes detected: ittz      453228 89.0  4.1 1188804 252652 ?      Rl   17:15   0:01 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      453186 11.0  1.3 1139288 81888 ?       Sl   17:15   0:00 npm exec tsc --noEmit
+ittz      403438  0.8  3.3 32861164 205364 pts/2 Sl+  16:53   0:11 claude
+ittz      391183  0.7  3.8 32886996 232496 pts/0 Sl+  16:46   0:13 claude
+ittz      395360  0.3  1.0 1017276 60924 ?       Sl   16:49   0:05 node scripts/simple-error-prevention.js
+[2025-06-25 17:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 17:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 17:15:12] OPTIMIZATION: High memory processes: ittz      453228 91.5  4.1 1194972 252732 ?      Rl   17:15   0:01 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      391183  0.7  3.8 32886996 232496 pts/0 Sl+  16:46   0:13 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:24 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      403438  0.8  3.3 32861164 205364 pts/2 Sl+  16:53   0:11 claude
+ittz      453186 11.0  1.3 1139288 81888 ?       Sl   17:15   0:00 npm exec tsc --noEmit
+[2025-06-25 17:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 17:15:12] OPTIMIZATION: High memory processes: ittz      453228 92.5  4.1 1194972 252732 ?      Rl   17:15   0:01 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      391183  0.7  3.8 32886996 232496 pts/0 Sl+  16:46   0:13 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:24 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      403438  0.8  3.3 32861164 205364 pts/2 Sl+  16:53   0:11 claude
+ittz      453186 11.0  1.3 1139288 81888 ?       Sl   17:15   0:00 npm exec tsc --noEmit
+[2025-06-25 17:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 17:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 17:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 17:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 17:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 17:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 17:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 17:15:13] OPTIMIZATION: Cleaning old log files
+[2025-06-25 17:15:13] OPTIMIZATION: Optimizing database performance
+[2025-06-25 17:15:13] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 17:15:13] OPTIMIZATION: Cleaning old log files
+[2025-06-25 17:15:13] OPTIMIZATION: Updating table statistics
+[2025-06-25 17:15:13] OPTIMIZATION: Optimizing database performance
+[2025-06-25 17:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 17:15:13] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 17:15:13] OPTIMIZATION: Updating table statistics
+[2025-06-25 17:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 17:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:16:02] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:16:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:18:21] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:18:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:21:05] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:21:05] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:23:23] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:23:23] OPTIMIZATION: High CPU processes detected: ittz      472165 23.0  1.3 1139812 83616 ?       Sl   17:23   0:00 npm exec tsc --noEmit
+ittz      472177 18.0  1.3 1032012 80784 ?       Rl   17:23   0:00 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      468810  3.4  4.0 32899656 242744 pts/1 Sl+  17:21   0:04 claude
+ittz      460946  2.1  3.3 32863244 203116 pts/0 Sl+  17:18   0:06 claude
+ittz      403438  0.6  3.3 32861480 205724 pts/2 Sl+  16:53   0:11 claude
+[2025-06-25 17:23:23] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:23:23] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:23:23] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:26:07] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:26:07] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:28:26] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:28:26] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:31:10] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:31:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:33:28] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:33:29] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:36:13] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:36:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:38:32] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:38:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:41:16] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:41:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:43:34] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:43:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:46:19] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:46:19] OPTIMIZATION: High CPU processes detected: ittz      523738  101  4.7 1224548 288688 ?      Rl   17:46   0:02 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      523788 59.0  1.9 1072680 119640 ?      Rl   17:46   0:00 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      523776 22.0  1.3 1139124 83688 ?       Sl   17:46   0:00 npm exec tsc --noEmit
+ittz      523707 12.0  1.3 1139844 82660 ?       Sl   17:46   0:00 npm exec tsc --noEmit
+ittz      468810  1.1  3.4 32860684 206184 pts/1 Sl+  17:21   0:17 claude
+[2025-06-25 17:46:19] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:46:19] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:46:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:48:37] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:48:37] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:51:22] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:51:22] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:53:40] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:53:40] OPTIMIZATION: High CPU processes detected: ittz      468810  0.9  4.0 32901320 244124 pts/1 Sl+  17:21   0:18 claude
+ittz      395360  0.3  1.0 1019076 62132 ?       Sl   16:49   0:13 node scripts/simple-error-prevention.js
+ittz      403438  0.3  3.4 32862508 206396 pts/2 Sl+  16:53   0:11 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:28 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      460946  0.2  3.3 32863564 203468 pts/0 Sl+  17:18   0:06 claude
+[2025-06-25 17:53:40] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:53:40] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:53:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:56:25] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 17:56:25] OPTIMIZATION: High CPU processes detected: ittz      546381 96.6  6.5 1334620 398848 ?      Sl   17:56   0:02 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      545108 11.0  3.9 32901724 241852 pts/1 Sl+  17:56   0:01 claude
+ittz      546369  7.3  1.3 1139804 81900 ?       Sl   17:56   0:00 npm exec tsc --noEmit
+ittz      395360  0.3  1.0 1022812 65868 ?       Sl   16:49   0:14 node scripts/simple-error-prevention.js
+ittz      403438  0.3  3.4 32862508 206444 pts/2 Sl+  16:53   0:11 claude
+[2025-06-25 17:56:25] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 17:56:25] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:56:25] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 17:58:42] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 17:58:42] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:01:27] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:01:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:03:45] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:03:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:06:30] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:06:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:08:47] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:08:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:11:32] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:11:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:13:50] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:13:50] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 18:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 18:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-06-25 18:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-06-25 18:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 18:15:01] OPTIMIZATION: Optimizing database connections
+[2025-06-25 18:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 18:15:01] OPTIMIZATION: Checking static asset compression
+[2025-06-25 18:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 18:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 18:15:11] OPTIMIZATION: High CPU processes detected: ittz      593491  9.0  0.0   7056  2928 ?        R    18:15   0:00 find . -name *.ts -o -name *.tsx
+ittz      593282  2.0  0.7 945136 46368 ?        Sl   18:15   0:00 node scripts/auto-fix-all-errors.js
+ittz      545108  1.6  4.1 32907036 253476 pts/1 Sl+  17:56   0:18 claude
+ittz      395360  0.3  1.0 1018460 61660 ?       Sl   16:49   0:17 node scripts/simple-error-prevention.js
+ittz      593105  0.3  0.7 747864 45804 ?        Sl   18:15   0:00 node scripts/validate-typescript-safety.js
+[2025-06-25 18:15:11] OPTIMIZATION: High CPU processes detected: ittz      593491  9.0  0.0   7056  2928 ?        R    18:15   0:00 find . -name *.ts -o -name *.tsx
+ittz      593282  2.0  0.7 945136 46368 ?        Sl   18:15   0:00 node scripts/auto-fix-all-errors.js
+ittz      545108  1.6  4.1 32907036 253476 pts/1 Sl+  17:56   0:18 claude
+ittz      395360  0.3  1.0 1018460 61660 ?       Sl   16:49   0:17 node scripts/simple-error-prevention.js
+ittz      593105  0.3  0.7 747864 45804 ?        Sl   18:15   0:00 node scripts/validate-typescript-safety.js
+[2025-06-25 18:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 18:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 18:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 18:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-06-25 18:15:11] OPTIMIZATION: High memory processes: ittz      545108  1.6  4.1 32907036 253476 pts/1 Sl+  17:56   0:18 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:30 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      403438  0.2  3.4 32862188 206312 pts/2 Sl+  16:53   0:11 claude
+ittz      460946  0.1  3.3 32863564 203484 pts/0 Sl+  17:18   0:06 claude
+ittm      658145  0.0  1.1 1313392 68856 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+[2025-06-25 18:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 18:15:11] OPTIMIZATION: High memory processes: ittz      545108  1.6  4.1 32907036 253476 pts/1 Rl+  17:56   0:18 claude
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:30 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      403438  0.2  3.4 32862188 206312 pts/2 Sl+  16:53   0:11 claude
+ittz      460946  0.1  3.3 32863564 203484 pts/0 Sl+  17:18   0:06 claude
+ittm      658145  0.0  1.1 1313392 68856 ?       Ssl  Jun21   0:03 PM2 v6.0.8: God Daemon (/home/ittm/.pm2)
+[2025-06-25 18:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-06-25 18:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 18:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-06-25 18:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 18:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 18:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-06-25 18:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-06-25 18:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 18:15:12] OPTIMIZATION: Cleaning old log files
+[2025-06-25 18:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 18:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 18:15:12] OPTIMIZATION: Optimizing database performance
+[2025-06-25 18:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-06-25 18:15:12] OPTIMIZATION: Updating table statistics
+[2025-06-25 18:15:13] OPTIMIZATION: Updating table statistics
+[2025-06-25 18:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 18:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-06-25 18:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:16:35] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 18:16:35] OPTIMIZATION: High CPU processes detected: root      597223  110  5.0 1244772 308916 ?      Rl   18:16   0:02 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      597121 99.6  6.3 1321332 386692 ?      Rl   18:16   0:02 node /home/ittz/projects/itt/app/node_modules/.bin/tsc --noEmit
+ittz      597109  8.0  1.3 1139284 82028 ?       Sl   18:16   0:00 npm exec tsc --noEmit
+root      597195  8.0  1.3 1139368 82712 ?       Sl   18:16   0:00 npm exec tsc --noEmit
+ittz      545108  1.6  4.1 32907516 254296 pts/1 Sl+  17:56   0:20 claude
+[2025-06-25 18:16:35] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 18:16:35] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:16:35] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-06-25 18:18:52] OPTIMIZATION: Optimizing CPU usage
+[2025-06-25 18:18:52] OPTIMIZATION: High CPU processes detected: ittz      545108  1.8  4.3 32910532 264720 pts/1 Sl+  17:56   0:25 claude
+ittz      395360  0.3  1.0 1021916 65244 ?       Sl   16:49   0:18 node scripts/simple-error-prevention.js
+root      734840  0.3  3.8 22416624 232244 ?     Sl   Jun22  19:30 node /home/ittm/projects/itt/app/node_modules/.bin/expo start --web --port 8081
+ittz      403438  0.2  3.4 32862188 206312 pts/2 Sl+  16:53   0:11 claude
+ittz      460946  0.1  3.3 32864592 204040 pts/0 Sl+  17:18   0:06 claude
+[2025-06-25 18:18:52] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-06-25 18:18:52] OPTIMIZATION: Optimizing nginx performance
+[2025-06-25 18:18:52] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 06:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 06:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 06:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 06:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 06:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 06:15:12] OPTIMIZATION: High CPU processes detected: ittz      929836  4.6  4.6 32924308 281188 pts/0 Sl+  05:39   1:39 claude
+ittz      929769  0.4  0.1  17512  8300 ?        S    05:39   0:09 sshd: ittz@pts/0
+root      922600  0.1  0.0      0     0 ?        I    05:08   0:05 [kworker/u4:1-writeback]
+root      931471  0.1  0.0      0     0 ?        I    05:43   0:02 [kworker/u4:5-events_power_efficient]
+root           1  0.0  0.1 167824 12052 ?        Ss   Jul08   0:08 /sbin/init
+[2025-07-11 06:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 06:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 06:15:12] OPTIMIZATION: High memory processes: ittz      929836  4.6  4.6 32924308 281188 pts/0 Sl+  05:39   1:39 claude
+ittz        1174  0.0  1.2 1123116 74132 ?       Ssl  Jul08   1:00 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+ittz      929829  0.0  0.7 747108 44252 pts/0    Sl+  05:39   0:00 node /usr/local/bin/claude-safe --dangerously-skip-permissions
+[2025-07-11 06:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 06:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 06:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 06:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 06:15:13] OPTIMIZATION: Cleaning old log files
+[2025-07-11 06:15:13] OPTIMIZATION: Optimizing database performance
+[2025-07-11 06:15:13] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 06:15:13] OPTIMIZATION: Updating table statistics
+[2025-07-11 06:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 06:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 06:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 07:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 07:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 07:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 07:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-11 07:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 07:15:12] OPTIMIZATION: High CPU processes detected: ittz      929836  1.7  4.6 32925332 282320 pts/0 Sl+  05:39   1:39 claude
+ittz      929769  0.1  0.1  17512  8300 ?        S    05:39   0:09 sshd: ittz@pts/0
+root           1  0.0  0.1 167824 12052 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+[2025-07-11 07:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 07:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 07:15:12] OPTIMIZATION: High memory processes: ittz      929836  1.7  4.6 32925332 282320 pts/0 Sl+  05:39   1:39 claude
+root      951470  0.0  1.3 442396 82708 ?        Ssl  06:50   0:00 /usr/libexec/fwupd/fwupd
+ittz        1174  0.0  1.2 1123116 73800 ?       Ssl  Jul08   1:00 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+[2025-07-11 07:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 07:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 07:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 07:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 07:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 07:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 07:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 07:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 07:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 07:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 07:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 08:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 08:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 08:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 08:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 08:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 08:15:11] OPTIMIZATION: High CPU processes detected: ittz      929836  1.0  4.6 32925332 282920 pts/0 Sl+  05:39   1:40 claude
+root           1  0.0  0.1 167952 12056 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_par_gp]
+[2025-07-11 08:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 08:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 08:15:11] OPTIMIZATION: High memory processes: ittz      929836  1.0  4.6 32925332 282920 pts/0 Sl+  05:39   1:40 claude
+root      951470  0.0  1.3 442396 82708 ?        Ssl  06:50   0:00 /usr/libexec/fwupd/fwupd
+ittz        1174  0.0  1.2 1123116 73988 ?       Ssl  Jul08   1:00 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+[2025-07-11 08:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 08:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 08:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 08:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 08:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 08:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 08:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 08:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 08:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 08:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 08:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 09:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 09:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 09:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-11 09:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-11 09:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 09:15:12] OPTIMIZATION: High CPU processes detected: ittz      929836  0.7  4.6 32925332 283364 pts/0 Sl+  05:39   1:40 claude
+root           1  0.0  0.1 167824 12052 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_par_gp]
+[2025-07-11 09:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 09:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 09:15:12] OPTIMIZATION: High memory processes: ittz      929836  0.7  4.6 32925332 283364 pts/0 Sl+  05:39   1:40 claude
+ittz        1174  0.0  1.2 1123116 75008 ?       Ssl  Jul08   1:00 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+ittz      929829  0.0  0.7 747108 44252 pts/0    Sl+  05:39   0:00 node /usr/local/bin/claude-safe --dangerously-skip-permissions
+[2025-07-11 09:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 09:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 09:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 09:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 09:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 09:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 09:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 09:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 09:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 09:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 09:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 10:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 10:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 10:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 10:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 10:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 10:15:11] OPTIMIZATION: High CPU processes detected: ittz      929836  0.6  4.6 32925332 283676 pts/0 Sl+  05:39   1:40 claude
+root           1  0.0  0.1 167824 12052 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_par_gp]
+[2025-07-11 10:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 10:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 10:15:11] OPTIMIZATION: High memory processes: ittz      929836  0.6  4.6 32925332 283676 pts/0 Sl+  05:39   1:40 claude
+ittz        1174  0.0  1.2 1123116 75144 ?       Ssl  Jul08   1:01 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+ittz      929829  0.0  0.7 747108 44252 pts/0    Sl+  05:39   0:00 node /usr/local/bin/claude-safe --dangerously-skip-permissions
+[2025-07-11 10:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 10:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 10:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 10:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 10:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 10:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 10:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 10:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 10:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 10:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 10:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 11:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 11:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 11:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 11:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 11:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 11:15:11] OPTIMIZATION: High CPU processes detected: ittz     1032785  3.5  6.1 33051568 375040 pts/1 Sl+  10:58   0:34 claude
+ittz      929836  0.4  4.6 32925332 283796 pts/0 Sl+  05:39   1:40 claude
+root           1  0.0  0.1 167824 12052 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+[2025-07-11 11:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 11:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 11:15:11] OPTIMIZATION: High memory processes: ittz     1032785  3.5  6.1 33051568 375040 pts/1 Sl+  10:58   0:34 claude
+ittz      929836  0.4  4.6 32925332 283796 pts/0 Sl+  05:39   1:40 claude
+ittz        1174  0.0  1.2 1123116 75204 ?       Ssl  Jul08   1:01 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+[2025-07-11 11:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 11:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 11:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 11:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 11:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 11:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 11:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 11:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 11:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 11:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 11:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 12:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 12:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 12:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 12:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 12:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 12:15:11] OPTIMIZATION: High CPU processes detected: ittz     1032785  1.9 16.1 33624500 981304 pts/1 Sl+  10:58   1:27 claude
+root           1  0.0  0.1 167824 12080 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_par_gp]
+[2025-07-11 12:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 12:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 12:15:11] OPTIMIZATION: High memory processes: ittz     1032785  1.9 16.1 33624500 981304 pts/1 Sl+  10:58   1:27 claude
+ittz        1174  0.0  1.2 1123372 75536 ?       Ssl  Jul08   1:01 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64300 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+root         394  0.0  0.7 107116 44300 ?        S<s  Jul08   0:38 /lib/systemd/systemd-journald
+[2025-07-11 12:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 12:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 12:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 12:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 12:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 12:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 12:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 12:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 12:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 12:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 12:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 13:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 13:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 13:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 13:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 13:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 13:15:11] OPTIMIZATION: High CPU processes detected: ittz     1263133  1.7  3.4 32866992 209428 pts/1 Sl+  13:11   0:03 claude
+root           1  0.0  0.1 167824 12080 ?        Ss   Jul08   0:08 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_par_gp]
+[2025-07-11 13:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 13:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 13:15:11] OPTIMIZATION: High memory processes: ittz     1263133  1.7  3.4 32866992 209428 pts/1 Sl+  13:11   0:03 claude
+ittz        1174  0.0  1.2 1123372 75728 ?       Ssl  Jul08   1:02 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71864 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64420 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+root     1261310  0.0  0.9 1046808 59348 ?       Sl   13:07   0:00 node /usr/bin/pm2 logs backend --lines 10
+[2025-07-11 13:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 13:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 13:15:11] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 13:15:11] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 13:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 13:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 13:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 13:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 13:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 13:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 13:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 14:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 14:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 14:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 14:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 14:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 14:15:11] OPTIMIZATION: High CPU processes detected: ittz     1275896  3.7 11.6 33352128 709456 pts/0 Sl+  13:40   1:16 claude
+root           1  0.0  0.1 167824 12004 ?        Ss   Jul08   0:09 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_par_gp]
+[2025-07-11 14:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 14:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 14:15:11] OPTIMIZATION: High memory processes: ittz     1275896  3.7 11.6 33352128 709456 pts/0 Sl+  13:40   1:16 claude
+ittz        1174  0.0  1.2 1123372 75452 ?       Ssl  Jul08   1:02 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64268 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+root     1261310  0.0  0.9 1046808 59296 ?       Sl   13:07   0:00 node /usr/bin/pm2 logs backend --lines 10
+[2025-07-11 14:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 14:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 14:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 14:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 14:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 14:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 14:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 14:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 14:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 14:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 14:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 15:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 15:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 15:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 15:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 15:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 15:15:12] OPTIMIZATION: High CPU processes detected: ittz     1275896  5.3  7.7 33132148 470284 pts/0 Sl+  13:40   5:02 claude
+ittz     1275879  0.2  0.1  17972  8848 ?        S    13:40   0:14 sshd: ittz@pts/0
+root     1302353  0.1  0.0      0     0 ?        I    14:31   0:03 [kworker/u4:0-flush-253:0]
+root     1308968  0.1  0.0      0     0 ?        I    14:45   0:02 [kworker/u4:1-flush-253:0]
+root           1  0.0  0.1 167824 12004 ?        Ss   Jul08   0:09 /sbin/init
+[2025-07-11 15:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 15:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 15:15:12] OPTIMIZATION: High memory processes: ittz     1275896  5.3  7.7 33132148 470284 pts/0 Sl+  13:40   5:02 claude
+ittz        1174  0.0  1.2 1123372 75468 ?       Ssl  Jul08   1:03 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64268 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+root     1261310  0.0  0.9 1046808 59296 ?       Sl   13:07   0:00 node /usr/bin/pm2 logs backend --lines 10
+[2025-07-11 15:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 15:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 15:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 15:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 15:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 15:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 15:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 15:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 15:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 15:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 15:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 16:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 16:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 16:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 16:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 16:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 16:15:12] OPTIMIZATION: High CPU processes detected: ittz     1275896  3.6  8.2 33137280 502324 pts/0 Sl+  13:40   5:33 claude
+ittz     1275879  0.2  0.1  17972  8848 ?        S    13:40   0:26 sshd: ittz@pts/0
+root     1357293  0.2  0.1  16448  9860 ?        Ss   16:15   0:00 sshd: root [priv]
+root     1308968  0.1  0.0      0     0 ?        I    14:45   0:05 [kworker/u4:1-ext4-rsv-conversion]
+root           1  0.0  0.1 167824 12004 ?        Ss   Jul08   0:09 /sbin/init
+[2025-07-11 16:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 16:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 16:15:12] OPTIMIZATION: High memory processes: ittz     1275896  3.6  8.2 33137280 502324 pts/0 Sl+  13:40   5:33 claude
+ittz        1174  0.0  1.2 1123372 75264 ?       Ssl  Jul08   1:03 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64268 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+root     1261310  0.0  0.9 1046808 59296 ?       Sl   13:07   0:00 node /usr/bin/pm2 logs backend --lines 10
+[2025-07-11 16:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 16:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 16:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 16:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 16:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 16:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 16:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 16:15:13] OPTIMIZATION: Updating table statistics
+[2025-07-11 16:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 16:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 16:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 17:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 17:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 17:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-11 17:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-11 17:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 17:15:12] OPTIMIZATION: High CPU processes detected: ittz     1275896  2.5  8.2 33137280 502324 pts/0 Sl+  13:40   5:34 claude
+ittz     1275879  0.2  0.1  17972  8848 ?        S    13:40   0:26 sshd: ittz@pts/0
+root           1  0.0  0.1 167952 12008 ?        Ss   Jul08   0:09 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+[2025-07-11 17:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 17:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 17:15:12] OPTIMIZATION: High memory processes: ittz     1275896  2.5  8.2 33137280 502324 pts/0 Sl+  13:40   5:34 claude
+ittz        1174  0.0  1.2 1123372 75264 ?       Ssl  Jul08   1:04 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64268 ?       Ssl  Jul08   0:01 PM2 v6.0.8: God Daemon (/root/.pm2)
+root         394  0.0  0.9 127664 59728 ?        S<s  Jul08   0:41 /lib/systemd/systemd-journald
+[2025-07-11 17:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 17:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 17:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 17:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 17:15:13] OPTIMIZATION: Cleaning old log files
+[2025-07-11 17:15:13] OPTIMIZATION: Optimizing database performance
+[2025-07-11 17:15:13] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 17:15:13] OPTIMIZATION: Updating table statistics
+[2025-07-11 17:15:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 17:15:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 17:15:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 18:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 18:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 18:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 18:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 18:15:11] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 18:15:11] OPTIMIZATION: High CPU processes detected: ittz     1275896  2.0  8.2 33137280 502956 pts/0 Sl+  13:40   5:34 claude
+root     1425337  0.2  0.1  16920 10200 ?        Ss   18:15   0:00 sshd: unknown [priv]
+ittz     1275879  0.1  0.1  17972  8848 ?        S    13:40   0:26 sshd: ittz@pts/0
+root           1  0.0  0.1 167824 12004 ?        Ss   Jul08   0:09 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+[2025-07-11 18:15:11] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 18:15:11] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 18:15:11] OPTIMIZATION: High memory processes: ittz     1275896  2.0  8.2 33137280 502956 pts/0 Sl+  13:40   5:34 claude
+ittz        1174  0.0  1.2 1123372 75112 ?       Ssl  Jul08   1:04 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1179988 64268 ?       Ssl  Jul08   0:02 PM2 v6.0.8: God Daemon (/root/.pm2)
+root         394  0.0  1.0 127664 60708 ?        S<s  Jul08   0:42 /lib/systemd/systemd-journald
+[2025-07-11 18:15:11] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 18:15:11] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 18:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 18:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 18:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 18:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 18:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 18:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 18:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 18:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 18:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 19:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 19:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 19:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 19:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 19:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 19:15:12] OPTIMIZATION: High CPU processes detected: ittz     1275896  2.1  9.2 33177076 561136 pts/0 Sl+  13:40   7:20 claude
+ittz     1275879  0.1  0.1  17972  8848 ?        S    13:40   0:32 sshd: ittz@pts/0
+root           1  0.0  0.1 167824 12004 ?        Ss   Jul08   0:09 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Jul08   0:00 [rcu_gp]
+[2025-07-11 19:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 19:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 19:15:12] OPTIMIZATION: High memory processes: ittz     1275896  2.1  9.2 33177076 561136 pts/0 Sl+  13:40   7:20 claude
+ittz        1174  0.0  1.2 1123372 75156 ?       Ssl  Jul08   1:05 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root         394  0.0  1.1 135856 66888 ?        S<s  Jul08   0:42 /lib/systemd/systemd-journald
+root        1150  0.0  1.0 1245524 64268 ?       Ssl  Jul08   0:02 PM2 v6.0.8: God Daemon (/root/.pm2)
+[2025-07-11 19:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 19:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 19:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 19:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 19:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 19:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 19:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 19:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 19:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 19:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 19:15:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-11 20:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-11 20:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-11 20:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-11 20:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-11 20:15:12] OPTIMIZATION: Optimizing CPU usage
+[2025-07-11 20:15:12] OPTIMIZATION: High CPU processes detected: ittz     1275896  2.3  7.9 33097608 479540 pts/0 Sl+  13:40   9:07 claude
+root     1502082  0.2  0.1  16448  9908 ?        Ss   20:15   0:00 sshd: root [priv]
+ittz     1275879  0.1  0.1  18240  8988 ?        S    13:40   0:40 sshd: ittz@pts/0
+root           1  0.0  0.1 167824 12004 ?        Ss   Jul08   0:09 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Jul08   0:00 [kthreadd]
+[2025-07-11 20:15:12] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-11 20:15:12] OPTIMIZATION: Optimizing memory usage
+[2025-07-11 20:15:12] OPTIMIZATION: High memory processes: ittz     1275896  2.3  7.9 33097608 479540 pts/0 Sl+  13:40   9:07 claude
+ittz        1174  0.0  1.2 1123372 75188 ?       Ssl  Jul08   1:06 PM2 v6.0.8: God Daemon (/home/ittz/.pm2)
+root         394  0.0  1.1 144048 71576 ?        S<s  Jul08   0:44 /lib/systemd/systemd-journald
+ittz      937438  0.0  1.1 213516 71408 ?        S    06:01   0:00 Xvfb :99 -screen 0 1920x1080x24
+root        1150  0.0  1.0 1245524 64796 ?       Ssl  Jul08   0:02 PM2 v6.0.8: God Daemon (/root/.pm2)
+[2025-07-11 20:15:12] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-11 20:15:12] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-11 20:15:12] OPTIMIZATION: Optimizing disk usage
+[2025-07-11 20:15:12] OPTIMIZATION: Running VPS cleanup script
+[2025-07-11 20:15:12] OPTIMIZATION: Cleaning old log files
+[2025-07-11 20:15:12] OPTIMIZATION: Optimizing database performance
+[2025-07-11 20:15:12] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-11 20:15:12] OPTIMIZATION: Updating table statistics
+[2025-07-11 20:15:12] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-11 20:15:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-11 20:15:12] OPTIMIZATION: Nginx configuration is valid - reloading

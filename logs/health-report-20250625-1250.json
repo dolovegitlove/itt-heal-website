@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-06-25 12:50:16",
+  "checks": {
+    "website": [2025-06-25 12:50:16] 🌐 Checking website accessibility...
+[2025-06-25 12:50:16] ✅ Website is accessible (HTTP 200)
+true,
+    "api": [2025-06-25 12:50:16] 🔗 Checking API health...
+[2025-06-25 12:50:16] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+false,
+    "backend": [2025-06-25 12:50:16] ⚙️  Checking backend processes...
+[2025-06-25 12:50:16] ALERT [HIGH]: Backend process is not running (status: errored)
+[2025-06-25 12:50:16] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2] [itt-backend](0) ✓
+┌────┬────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name           │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1  │ backend        │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 60   │ errored   │ 0%       │ 0b       │ root     │ disabled │
+│ 0  │ itt-backend    │ default     │ N/A     │ fork    │ 149523   │ 0s     │ 204… │ online    │ 0%       │ 13.6mb   │ root     │ disabled │
+└────┴────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[2025-06-25 12:50:16] ✅ Backend restarted successfully
+true,
+    "database": [2025-06-25 12:50:21] 🗄️  Checking database connectivity...
+[2025-06-25 12:50:21] ALERT [HIGH]: Database connection failed
+false,
+    "disk_space": [2025-06-25 12:50:21] 💾 Checking disk space...
+[2025-06-25 12:50:21] ✅ Disk space OK (33% used)
+true,
+    "ssl": [2025-06-25 12:50:21] 🔒 Checking SSL certificate...
+[2025-06-25 12:50:21] ✅ SSL certificate valid (70 days remaining)
+true,
+    "errors": [2025-06-25 12:50:21] 📋 Checking error logs...
+[2025-06-25 12:50:22] ✅ Error logs look clean (1 recent errors)
+true,
+    "flows": [2025-06-25 12:50:22] 🔬 Testing critical user flows...
+[2025-06-25 12:50:22] ALERT [HIGH]: Booking system not responding correctly
+false,
+    "enums": [2025-06-25 12:50:22] 🎯 Checking enum consistency...
+[2025-06-25 12:50:22] ✅ Enum consistency check passed
+true
+  }
+}

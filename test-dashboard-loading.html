@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Loading Test</title>
+</head>
+<body>
+    <h1>Testing Admin Dashboard Loading</h1>
+    <div id="test-results"></div>
+    
+    <script>
+        console.log('🧪 Starting dashboard loading test...');
+        
+        // Test JavaScript loading
+        const script = document.createElement('script');
+        script.src = 'https://ittheal.com/admin/admin-dashboard.js?v=20250707230500';
+        
+        script.onload = function() {
+            console.log('✅ Admin dashboard script loaded successfully');
+            document.getElementById('test-results').innerHTML += '<p>✅ Script loaded</p>';
+            
+            // Test if AdminDashboard class exists
+            setTimeout(() => {
+                if (typeof AdminDashboard !== 'undefined') {
+                    console.log('✅ AdminDashboard class found');
+                    document.getElementById('test-results').innerHTML += '<p>✅ AdminDashboard class available</p>';
+                    
+                    // Test instantiation
+                    try {
+                        const dashboard = new AdminDashboard();
+                        console.log('✅ AdminDashboard instantiated successfully');
+                        document.getElementById('test-results').innerHTML += '<p>✅ Dashboard instantiated</p>';
+                    } catch (error) {
+                        console.error('❌ Dashboard instantiation failed:', error);
+                        document.getElementById('test-results').innerHTML += '<p>❌ Instantiation failed: ' + error.message + '</p>';
+                    }
+                } else {
+                    console.error('❌ AdminDashboard class not found');
+                    document.getElementById('test-results').innerHTML += '<p>❌ AdminDashboard class not found</p>';
+                }
+            }, 1000);
+        };
+        
+        script.onerror = function() {
+            console.error('❌ Failed to load admin dashboard script');
+            document.getElementById('test-results').innerHTML += '<p>❌ Script failed to load</p>';
+        };
+        
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

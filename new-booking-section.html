@@ -1,0 +1,152 @@
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 6px; background: #10b981; color: white; padding: 8px; text-decoration: none; z-index: 100;">Skip to main content</a>
+
+<!-- Real Functional Booking Form -->
+<main id="main-content">
+<div id="service-selection" class="mb-xl">
+    <!-- Introductory Pricing Banner -->
+    <div style="background: linear-gradient(135deg, #10b981, #047857); color: white; padding: 1rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+        <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">🎉 Limited Time: Introductory Pricing - Save 25%!</div>
+        <div style="font-size: 0.875rem; opacity: 0.9;">*Regular pricing begins August 2025</div>
+    </div>
+
+    <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 1: Choose Your Session</h3>
+    
+    <div class="service-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+        <button class="service-option" data-service="60min" data-price="$135" style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; position: relative; background: none; text-align: left; width: 100%;" aria-label="Select 60-Minute Reset session for $135">
+            <h4 style="color: var(--sage-700); margin-bottom: 0.5rem;">60-Minute Reset</h4>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem;">$135</div>
+            <p style="color: var(--sage-600); font-size: 0.9rem; margin: 0;">Perfect starting point for first-time clients</p>
+        </button>
+        
+        <button class="service-option featured" data-service="90min" data-price="$180" style="border: 2px solid #10b981; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; background: linear-gradient(145deg, #f0f9ff, #e0f2fe); position: relative; text-align: left; width: 100%;" aria-label="Select 90-Minute Integrative session for $180, Most Popular option">
+            <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Most Popular</div>
+            <h4 style="color: var(--sage-700); margin-bottom: 0.5rem; margin-top: 1rem;">90-Minute Integrative</h4>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem;">$180</div>
+            <p style="color: var(--sage-600); font-size: 0.9rem; margin: 0;">Comprehensive therapeutic flagship session</p>
+        </button>
+        
+        <button class="service-option" data-service="120min" data-price="$225" style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; background: none; text-align: left; width: 100%;" aria-label="Select 120-Minute Premium session for $225">
+            <h4 style="color: var(--sage-700); margin-bottom: 0.5rem;">120-Minute Premium</h4>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #f59e0b; margin-bottom: 0.5rem;">$225</div>
+            <p style="color: var(--sage-600); font-size: 0.9rem; margin: 0;">Extended care for complex conditions</p>
+        </button>
+        
+        <button class="service-option" data-service="consultation" data-price="$60" style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; background: none; text-align: left; width: 100%;" aria-label="Select 30-Minute Consultation for $60">
+            <h4 style="color: var(--sage-700); margin-bottom: 0.5rem;">30-Minute Consultation</h4>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #64748b; margin-bottom: 0.5rem;">$60</div>
+            <p style="color: var(--sage-600); font-size: 0.9rem; margin: 0;">Health assessment and treatment planning</p>
+        </button>
+    </div>
+</div>
+
+<!-- Step 2: Date & Time Selection -->
+<div id="datetime-selection" style="display: none;" class="mb-xl">
+    <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 2: Choose Date & Time</h3>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div>
+            <label for="booking-date" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Preferred Date</label>
+            <input type="date" id="booking-date" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required aria-describedby="booking-date-help">
+            <div id="booking-date-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Select your preferred appointment date</div>
+        </div>
+        
+        <div>
+            <label for="booking-time" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Available Times</label>
+            <select id="booking-time" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required disabled aria-describedby="booking-time-help">
+                <option value="">Select date first...</option>
+            </select>
+            <div id="booking-time-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Available appointment times will appear after selecting a date</div>
+        </div>
+    </div>
+    
+    <div id="time-loading" style="display: none; text-align: center; margin-top: 1rem; color: var(--sage-600);" aria-live="polite">
+        Loading available times...
+    </div>
+</div>
+
+<!-- Step 3: Contact Information -->
+<div id="contact-info" style="display: none;" class="mb-xl">
+    <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 3: Your Information</h3>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+        <div>
+            <label for="client-name" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Full Name *</label>
+            <input type="text" id="client-name" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required placeholder="Your full name" aria-describedby="client-name-help">
+            <div id="client-name-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Enter your full name as it appears on your ID</div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <label for="client-email" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Email Address *</label>
+                <input type="email" id="client-email" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required placeholder="your@email.com" aria-describedby="client-email-help">
+                <div id="client-email-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">We'll send your confirmation to this email</div>
+            </div>
+            
+            <div>
+                <label for="client-phone" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Phone Number *</label>
+                <input type="tel" id="client-phone" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required placeholder="(940) 555-0123" aria-describedby="client-phone-help">
+                <div id="client-phone-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">We'll contact you to confirm your appointment</div>
+            </div>
+        </div>
+        
+        <div>
+            <label for="location-type" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Session Location</label>
+            <select id="location-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" aria-describedby="location-type-help">
+                <option value="in_clinic">In Clinic</option>
+                <option value="mobile">Mobile (+$50)</option>
+            </select>
+            <div id="location-type-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Choose clinic visit or mobile service with additional fee</div>
+        </div>
+        
+        <div>
+            <label for="session-notes" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Special Requests or Health Notes</label>
+            <textarea id="session-notes" rows="3" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; resize: vertical;" placeholder="Any health conditions, areas of focus, or special requests..." aria-describedby="session-notes-help"></textarea>
+            <div id="session-notes-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Optional: Share any health conditions or areas of focus</div>
+        </div>
+    </div>
+</div>
+
+<!-- Step 4: Booking Summary & Confirmation -->
+<div id="booking-summary" style="display: none;" class="mb-xl">
+    <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 4: Confirm Your Booking</h3>
+    
+    <div style="background: var(--sage-50); border: 2px solid var(--sage-200); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h4 style="color: var(--sage-700); margin-bottom: 1rem;">Booking Summary</h4>
+        
+        <div id="summary-content" style="color: var(--sage-600); line-height: 1.6;">
+            <!-- Will be populated by JavaScript -->
+        </div>
+        
+        <div style="border-top: 1px solid var(--sage-300); margin-top: 1rem; padding-top: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 600; color: var(--sage-700);">Total Amount:</span>
+                <span id="total-price" style="font-size: 1.25rem; font-weight: 700; color: #10b981;">$0</span>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center;">
+        <button id="confirm-booking-btn" style="background: #10b981; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; min-width: 200px;" aria-describedby="booking-status">
+            Confirm Booking
+        </button>
+        
+        <div id="booking-status" style="margin-top: 1rem; font-weight: 600;" aria-live="polite"></div>
+    </div>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="booking-navigation" style="display: flex; justify-content: space-between; margin-top: 2rem;">
+    <button id="prev-btn" style="background: #64748b; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; display: none;" aria-label="Go to previous booking step">
+        ← Previous
+    </button>
+    
+    <button id="next-btn" style="background: #10b981; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; margin-left: auto; display: none;" aria-label="Go to next booking step">
+        Next →
+    </button>
+</div>
+
+<p class="booking-subtitle body-text text-center mt-xl" style="color: var(--warm-gray-600);">
+    Complete your booking in just 4 simple steps
+</p>
+</main>

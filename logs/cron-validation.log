@@ -1,0 +1,1198 @@
+[2025-06-25 15:18:48] 📋 Starting comprehensive validation...
+[2025-06-25 15:18:48] 🔹 Starting: Enum Consistency Check
+[2025-06-25T20:18:48.934Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-06-25T20:18:48.936Z] [INFO] Validating session types enum...
+[2025-06-25T20:18:48.936Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-06-25T20:18:48.936Z] [INFO] Validating booking status enum...
+[2025-06-25T20:18:48.936Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-06-25T20:18:48.936Z] [INFO] Validating payment status enum...
+[2025-06-25T20:18:48.936Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-06-25T20:18:48.936Z] [INFO] Validating booking platforms enum...
+[2025-06-25T20:18:48.937Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-06-25T20:18:48.937Z] [INFO] Validating location types enum...
+[2025-06-25T20:18:48.937Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-06-25T20:18:48.937Z] [INFO] 📊 Validation completed in 1ms
+[2025-06-25T20:18:48.937Z] [INFO] ✅ Validated 28 enum values
+[2025-06-25T20:18:48.937Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-06-25 15:18:48] ✅ Passed: Enum Consistency Check
+[2025-06-25 15:18:48] 🔹 Starting: Live Booking System Test
+[2025-06-25T20:18:48.973Z] [INFO] 🚀 Starting live booking system tests...
+[2025-06-25T20:18:48.974Z] [INFO] Testing health check endpoint...
+[2025-06-25T20:18:49.026Z] [ERROR] ❌ Health check failed: 502
+[2025-06-25T20:18:49.026Z] [INFO] Testing booking endpoints...
+[2025-06-25T20:18:49.027Z] [ERROR] ❌ Booking endpoint failed: 502
+[2025-06-25T20:18:49.027Z] [INFO] 📊 Test Summary: 0/2 tests passed in 54ms
+[2025-06-25T20:18:49.027Z] [ERROR] 💥 Some tests failed
+[2025-06-25 15:18:49] ❌ Failed: Live Booking System Test
+[2025-06-25 15:18:49] 🔹 Starting: Health Check Endpoint
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 15:18:49] ✅ Passed: Health Check Endpoint
+[2025-06-25 15:18:49] 🔹 Starting: System Health Monitor
+[2025-06-25 15:18:49] 🚀 ITT Heal Health Monitor Started
+[2025-06-25 15:18:49] ⏰ Monitoring interval: 300s
+[2025-06-25 15:18:49] 🌐 Monitoring site: https://ittheal.com
+[2025-06-25 15:18:49] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-06-25 15:18:49] 🔍 Starting health check cycle...
+[2025-06-25 15:18:49] 🌐 Checking website accessibility...
+[2025-06-25 15:18:49] ✅ Website is accessible (HTTP 200)
+[2025-06-25 15:18:49] 🔗 Checking API health...
+[2025-06-25 15:18:49] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 15:18:49] ⚙️  Checking backend processes...
+[2025-06-25 15:18:49] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 15:18:49] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 15:18:49] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 15:18:49] 🗄️  Checking database connectivity...
+[2025-06-25 15:18:49] ALERT [HIGH]: Database connection failed
+[2025-06-25 15:18:49] 💾 Checking disk space...
+[2025-06-25 15:18:49] ✅ Disk space OK (33% used)
+[2025-06-25 15:18:49] 🔒 Checking SSL certificate...
+[2025-06-25 15:18:49] ✅ SSL certificate valid (70 days remaining)
+[2025-06-25 15:18:49] 📋 Checking error logs...
+[2025-06-25 15:18:49] ✅ Error logs look clean (3 recent errors)
+[2025-06-25 15:18:49] 🔬 Testing critical user flows...
+[2025-06-25 15:18:49] ALERT [HIGH]: Booking system not responding correctly
+[2025-06-25 15:18:49] 🎯 Checking enum consistency...
+[2025-06-25 15:18:49] ✅ Enum consistency check passed
+[PM2][ERROR] Process 0 not found
+[2025-06-25 15:18:50] ⚠️  Some health checks failed - attempting auto-healing
+[2025-06-25 15:18:50] 🔧 Performing auto-healing actions...
+[2025-06-25 15:18:50] ⚙️  Checking backend processes...
+[2025-06-25 15:18:50] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 15:18:50] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 15:18:50] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 15:18:50] 💊 Backend healing attempted
+[2025-06-25 15:18:50] 💾 Checking disk space...
+[2025-06-25 15:18:50] ✅ Disk space OK (33% used)
+[2025-06-25 15:18:50] 🔧 Auto-healing completed
+[2025-06-25 15:18:50] 😴 Sleeping for 300 seconds...
+[2025-06-25 16:55:11] 📋 Starting comprehensive validation...
+[2025-06-25 16:55:11] 🔹 Starting: Enum Consistency Check
+[2025-06-25T21:55:11.669Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-06-25T21:55:11.672Z] [INFO] Validating session types enum...
+[2025-06-25T21:55:11.672Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-06-25T21:55:11.672Z] [INFO] Validating booking status enum...
+[2025-06-25T21:55:11.672Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-06-25T21:55:11.672Z] [INFO] Validating payment status enum...
+[2025-06-25T21:55:11.672Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-06-25T21:55:11.672Z] [INFO] Validating booking platforms enum...
+[2025-06-25T21:55:11.672Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-06-25T21:55:11.673Z] [INFO] Validating location types enum...
+[2025-06-25T21:55:11.673Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-06-25T21:55:11.673Z] [INFO] 📊 Validation completed in 2ms
+[2025-06-25T21:55:11.673Z] [INFO] ✅ Validated 28 enum values
+[2025-06-25T21:55:11.673Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-06-25 16:55:11] ✅ Passed: Enum Consistency Check
+[2025-06-25 16:55:11] 🔹 Starting: Live Booking System Test
+[2025-06-25T21:55:11.701Z] [INFO] 🚀 Starting live booking system tests...
+[2025-06-25T21:55:11.702Z] [INFO] Testing health check endpoint...
+[2025-06-25T21:55:11.752Z] [ERROR] ❌ Health check failed: 502
+[2025-06-25T21:55:11.752Z] [INFO] Testing booking endpoints...
+[2025-06-25T21:55:11.754Z] [ERROR] ❌ Booking endpoint failed: 502
+[2025-06-25T21:55:11.755Z] [INFO] 📊 Test Summary: 0/2 tests passed in 54ms
+[2025-06-25T21:55:11.755Z] [ERROR] 💥 Some tests failed
+[2025-06-25 16:55:11] ❌ Failed: Live Booking System Test
+[2025-06-25 16:55:11] 🔹 Starting: Health Check Endpoint
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 16:55:11] ✅ Passed: Health Check Endpoint
+[2025-06-25 16:55:11] 🔹 Starting: System Health Monitor
+[2025-06-25 16:55:11] 🚀 ITT Heal Health Monitor Started
+[2025-06-25 16:55:11] ⏰ Monitoring interval: 300s
+[2025-06-25 16:55:11] 🌐 Monitoring site: https://ittheal.com
+[2025-06-25 16:55:11] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-06-25 16:55:11] 🔍 Starting health check cycle...
+[2025-06-25 16:55:11] 🌐 Checking website accessibility...
+[2025-06-25 16:55:11] ✅ Website is accessible (HTTP 200)
+[2025-06-25 16:55:11] 🔗 Checking API health...
+[2025-06-25 16:55:11] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 16:55:11] ⚙️  Checking backend processes...
+[2025-06-25 16:55:12] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 16:55:12] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 16:55:12] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 16:55:12] 🗄️  Checking database connectivity...
+[2025-06-25 16:55:12] ALERT [HIGH]: Database connection failed
+[2025-06-25 16:55:12] 💾 Checking disk space...
+[2025-06-25 16:55:12] ✅ Disk space OK (34% used)
+[2025-06-25 16:55:12] 🔒 Checking SSL certificate...
+[2025-06-25 16:55:12] ✅ SSL certificate valid (70 days remaining)
+[2025-06-25 16:55:12] 📋 Checking error logs...
+[2025-06-25 16:55:12] ✅ Error logs look clean (3 recent errors)
+[2025-06-25 16:55:12] 🔬 Testing critical user flows...
+[2025-06-25 16:55:12] ALERT [HIGH]: Booking system not responding correctly
+[2025-06-25 16:55:12] 🎯 Checking enum consistency...
+[2025-06-25 16:55:12] ✅ Enum consistency check passed
+[PM2][ERROR] Process 0 not found
+[2025-06-25 16:55:13] ⚠️  Some health checks failed - attempting auto-healing
+[2025-06-25 16:55:13] 🔧 Performing auto-healing actions...
+[2025-06-25 16:55:13] ⚙️  Checking backend processes...
+[2025-06-25 16:55:13] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 16:55:13] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 16:55:13] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 16:55:13] 💊 Backend healing attempted
+[2025-06-25 16:55:13] 💾 Checking disk space...
+[2025-06-25 16:55:13] ✅ Disk space OK (34% used)
+[2025-06-25 16:55:13] 🔧 Auto-healing completed
+[2025-06-25 16:55:13] 😴 Sleeping for 300 seconds...
+[2025-06-25 17:19:07] 📋 Starting comprehensive validation...
+[2025-06-25 17:19:07] 🔹 Starting: Enum Consistency Check
+[2025-06-25T22:19:07.537Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-06-25T22:19:07.539Z] [INFO] Validating session types enum...
+[2025-06-25T22:19:07.539Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-06-25T22:19:07.540Z] [INFO] Validating booking status enum...
+[2025-06-25T22:19:07.540Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-06-25T22:19:07.540Z] [INFO] Validating payment status enum...
+[2025-06-25T22:19:07.540Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-06-25T22:19:07.540Z] [INFO] Validating booking platforms enum...
+[2025-06-25T22:19:07.540Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-06-25T22:19:07.540Z] [INFO] Validating location types enum...
+[2025-06-25T22:19:07.540Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-06-25T22:19:07.541Z] [INFO] 📊 Validation completed in 2ms
+[2025-06-25T22:19:07.541Z] [INFO] ✅ Validated 28 enum values
+[2025-06-25T22:19:07.541Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-06-25 17:19:07] ✅ Passed: Enum Consistency Check
+[2025-06-25 17:19:07] 🔹 Starting: Live Booking System Test
+[2025-06-25T22:19:07.565Z] [INFO] 🚀 Starting live booking system tests...
+[2025-06-25T22:19:07.567Z] [INFO] Testing health check endpoint...
+[2025-06-25T22:19:07.615Z] [ERROR] ❌ Health check failed: 502
+[2025-06-25T22:19:07.616Z] [INFO] Testing booking endpoints...
+[2025-06-25T22:19:07.617Z] [ERROR] ❌ Booking endpoint failed: 502
+[2025-06-25T22:19:07.617Z] [INFO] 📊 Test Summary: 0/2 tests passed in 52ms
+[2025-06-25T22:19:07.617Z] [ERROR] 💥 Some tests failed
+[2025-06-25 17:19:07] ❌ Failed: Live Booking System Test
+[2025-06-25 17:19:07] 🔹 Starting: Health Check Endpoint
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 17:19:07] ✅ Passed: Health Check Endpoint
+[2025-06-25 17:19:07] 🔹 Starting: System Health Monitor
+[2025-06-25 17:19:07] 🚀 ITT Heal Health Monitor Started
+[2025-06-25 17:19:07] ⏰ Monitoring interval: 300s
+[2025-06-25 17:19:07] 🌐 Monitoring site: https://ittheal.com
+[2025-06-25 17:19:07] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-06-25 17:19:07] 🔍 Starting health check cycle...
+[2025-06-25 17:19:07] 🌐 Checking website accessibility...
+[2025-06-25 17:19:07] ✅ Website is accessible (HTTP 200)
+[2025-06-25 17:19:07] 🔗 Checking API health...
+[2025-06-25 17:19:07] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 17:19:07] ⚙️  Checking backend processes...
+[2025-06-25 17:19:07] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 17:19:07] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 17:19:08] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 17:19:08] 🗄️  Checking database connectivity...
+[2025-06-25 17:19:08] ALERT [HIGH]: Database connection failed
+[2025-06-25 17:19:08] 💾 Checking disk space...
+[2025-06-25 17:19:08] ✅ Disk space OK (33% used)
+[2025-06-25 17:19:08] 🔒 Checking SSL certificate...
+[2025-06-25 17:19:08] ✅ SSL certificate valid (70 days remaining)
+[2025-06-25 17:19:08] 📋 Checking error logs...
+[2025-06-25 17:19:08] ✅ Error logs look clean (3 recent errors)
+[2025-06-25 17:19:08] 🔬 Testing critical user flows...
+[2025-06-25 17:19:08] ALERT [HIGH]: Booking system not responding correctly
+[2025-06-25 17:19:08] 🎯 Checking enum consistency...
+[2025-06-25 17:19:08] ✅ Enum consistency check passed
+[PM2][ERROR] Process 0 not found
+[2025-06-25 17:19:09] ⚠️  Some health checks failed - attempting auto-healing
+[2025-06-25 17:19:09] 🔧 Performing auto-healing actions...
+[2025-06-25 17:19:09] ⚙️  Checking backend processes...
+[2025-06-25 17:19:09] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 17:19:09] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 17:19:09] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 17:19:09] 💊 Backend healing attempted
+[2025-06-25 17:19:09] 💾 Checking disk space...
+[2025-06-25 17:19:09] ✅ Disk space OK (33% used)
+[2025-06-25 17:19:09] 🔧 Auto-healing completed
+[2025-06-25 17:19:09] 😴 Sleeping for 300 seconds...
+[2025-06-25 17:58:33] 📋 Starting comprehensive validation...
+[2025-06-25 17:58:33] 🔹 Starting: Enum Consistency Check
+[2025-06-25T22:58:33.618Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-06-25T22:58:33.623Z] [INFO] Validating session types enum...
+[2025-06-25T22:58:33.623Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-06-25T22:58:33.623Z] [INFO] Validating booking status enum...
+[2025-06-25T22:58:33.623Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-06-25T22:58:33.623Z] [INFO] Validating payment status enum...
+[2025-06-25T22:58:33.623Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-06-25T22:58:33.623Z] [INFO] Validating booking platforms enum...
+[2025-06-25T22:58:33.623Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-06-25T22:58:33.624Z] [INFO] Validating location types enum...
+[2025-06-25T22:58:33.624Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-06-25T22:58:33.624Z] [INFO] 📊 Validation completed in 1ms
+[2025-06-25T22:58:33.624Z] [INFO] ✅ Validated 28 enum values
+[2025-06-25T22:58:33.624Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-06-25 17:58:33] ✅ Passed: Enum Consistency Check
+[2025-06-25 17:58:33] 🔹 Starting: Live Booking System Test
+[2025-06-25T22:58:33.658Z] [INFO] 🚀 Starting live booking system tests...
+[2025-06-25T22:58:33.659Z] [INFO] Testing health check endpoint...
+[2025-06-25T22:58:33.704Z] [ERROR] ❌ Health check failed: 502
+[2025-06-25T22:58:33.704Z] [INFO] Testing booking endpoints...
+[2025-06-25T22:58:33.707Z] [ERROR] ❌ Booking endpoint failed: 502
+[2025-06-25T22:58:33.708Z] [INFO] 📊 Test Summary: 0/2 tests passed in 50ms
+[2025-06-25T22:58:33.708Z] [ERROR] 💥 Some tests failed
+[2025-06-25 17:58:33] ❌ Failed: Live Booking System Test
+[2025-06-25 17:58:33] 🔹 Starting: Health Check Endpoint
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 17:58:33] ✅ Passed: Health Check Endpoint
+[2025-06-25 17:58:33] 🔹 Starting: System Health Monitor
+[2025-06-25 17:58:33] 🚀 ITT Heal Health Monitor Started
+[2025-06-25 17:58:33] ⏰ Monitoring interval: 300s
+[2025-06-25 17:58:33] 🌐 Monitoring site: https://ittheal.com
+[2025-06-25 17:58:33] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-06-25 17:58:33] 🔍 Starting health check cycle...
+[2025-06-25 17:58:33] 🌐 Checking website accessibility...
+[2025-06-25 17:58:33] ✅ Website is accessible (HTTP 200)
+[2025-06-25 17:58:33] 🔗 Checking API health...
+[2025-06-25 17:58:33] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 17:58:33] ⚙️  Checking backend processes...
+[2025-06-25 17:58:34] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 17:58:34] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 17:58:34] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 17:58:34] 🗄️  Checking database connectivity...
+[2025-06-25 17:58:34] ALERT [HIGH]: Database connection failed
+[2025-06-25 17:58:34] 💾 Checking disk space...
+[2025-06-25 17:58:34] ✅ Disk space OK (33% used)
+[2025-06-25 17:58:34] 🔒 Checking SSL certificate...
+[2025-06-25 17:58:34] ✅ SSL certificate valid (70 days remaining)
+[2025-06-25 17:58:34] 📋 Checking error logs...
+[2025-06-25 17:58:34] ✅ Error logs look clean (3 recent errors)
+[2025-06-25 17:58:34] 🔬 Testing critical user flows...
+[2025-06-25 17:58:34] ALERT [HIGH]: Booking system not responding correctly
+[2025-06-25 17:58:34] 🎯 Checking enum consistency...
+[2025-06-25 17:58:34] ✅ Enum consistency check passed
+[PM2][ERROR] Process 0 not found
+[2025-06-25 17:58:35] ⚠️  Some health checks failed - attempting auto-healing
+[2025-06-25 17:58:35] 🔧 Performing auto-healing actions...
+[2025-06-25 17:58:35] ⚙️  Checking backend processes...
+[2025-06-25 17:58:35] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 17:58:35] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 17:58:35] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 17:58:35] 💊 Backend healing attempted
+[2025-06-25 17:58:35] 💾 Checking disk space...
+[2025-06-25 17:58:35] ✅ Disk space OK (33% used)
+[2025-06-25 17:58:35] 🔧 Auto-healing completed
+[2025-06-25 17:58:35] 😴 Sleeping for 300 seconds...
+[2025-06-25 18:14:09] 📋 Starting comprehensive validation...
+[2025-06-25 18:14:09] 🔹 Starting: Enum Consistency Check
+[2025-06-25T23:14:09.336Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-06-25T23:14:09.339Z] [INFO] Validating session types enum...
+[2025-06-25T23:14:09.339Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-06-25T23:14:09.339Z] [INFO] Validating booking status enum...
+[2025-06-25T23:14:09.339Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-06-25T23:14:09.340Z] [INFO] Validating payment status enum...
+[2025-06-25T23:14:09.340Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-06-25T23:14:09.340Z] [INFO] Validating booking platforms enum...
+[2025-06-25T23:14:09.340Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-06-25T23:14:09.340Z] [INFO] Validating location types enum...
+[2025-06-25T23:14:09.340Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-06-25T23:14:09.340Z] [INFO] 📊 Validation completed in 1ms
+[2025-06-25T23:14:09.341Z] [INFO] ✅ Validated 28 enum values
+[2025-06-25T23:14:09.341Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-06-25 18:14:09] ✅ Passed: Enum Consistency Check
+[2025-06-25 18:14:09] 🔹 Starting: Live Booking System Test
+[2025-06-25T23:14:09.371Z] [INFO] 🚀 Starting live booking system tests...
+[2025-06-25T23:14:09.372Z] [INFO] Testing health check endpoint...
+[2025-06-25T23:14:09.425Z] [ERROR] ❌ Health check failed: 502
+[2025-06-25T23:14:09.426Z] [INFO] Testing booking endpoints...
+[2025-06-25T23:14:09.427Z] [ERROR] ❌ Booking endpoint failed: 502
+[2025-06-25T23:14:09.427Z] [INFO] 📊 Test Summary: 0/2 tests passed in 56ms
+[2025-06-25T23:14:09.427Z] [ERROR] 💥 Some tests failed
+[2025-06-25 18:14:09] ❌ Failed: Live Booking System Test
+[2025-06-25 18:14:09] 🔹 Starting: Health Check Endpoint
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 18:14:09] ✅ Passed: Health Check Endpoint
+[2025-06-25 18:14:09] 🔹 Starting: System Health Monitor
+[2025-06-25 18:14:09] 🚀 ITT Heal Health Monitor Started
+[2025-06-25 18:14:09] ⏰ Monitoring interval: 300s
+[2025-06-25 18:14:09] 🌐 Monitoring site: https://ittheal.com
+[2025-06-25 18:14:09] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-06-25 18:14:09] 🔍 Starting health check cycle...
+[2025-06-25 18:14:09] 🌐 Checking website accessibility...
+[2025-06-25 18:14:09] ✅ Website is accessible (HTTP 200)
+[2025-06-25 18:14:09] 🔗 Checking API health...
+[2025-06-25 18:14:09] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-06-25 18:14:09] ⚙️  Checking backend processes...
+[2025-06-25 18:14:09] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 18:14:09] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 18:14:09] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 18:14:09] 🗄️  Checking database connectivity...
+[2025-06-25 18:14:09] ALERT [HIGH]: Database connection failed
+[2025-06-25 18:14:09] 💾 Checking disk space...
+[2025-06-25 18:14:09] ✅ Disk space OK (33% used)
+[2025-06-25 18:14:09] 🔒 Checking SSL certificate...
+[2025-06-25 18:14:10] ✅ SSL certificate valid (70 days remaining)
+[2025-06-25 18:14:10] 📋 Checking error logs...
+[2025-06-25 18:14:10] ✅ Error logs look clean (3 recent errors)
+[2025-06-25 18:14:10] 🔬 Testing critical user flows...
+[2025-06-25 18:14:10] ALERT [HIGH]: Booking system not responding correctly
+[2025-06-25 18:14:10] 🎯 Checking enum consistency...
+[2025-06-25 18:14:10] ✅ Enum consistency check passed
+[PM2][ERROR] Process 0 not found
+[2025-06-25 18:14:11] ⚠️  Some health checks failed - attempting auto-healing
+[2025-06-25 18:14:11] 🔧 Performing auto-healing actions...
+[2025-06-25 18:14:11] ⚙️  Checking backend processes...
+[2025-06-25 18:14:11] ALERT [HIGH]: Backend process is not running (status: stopped)
+[2025-06-25 18:14:11] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 0 ])
+[PM2][ERROR] Process 0 not found
+[2025-06-25 18:14:11] ALERT [CRITICAL]: Failed to restart backend process
+[2025-06-25 18:14:11] 💊 Backend healing attempted
+[2025-06-25 18:14:11] 💾 Checking disk space...
+[2025-06-25 18:14:11] ✅ Disk space OK (33% used)
+[2025-06-25 18:14:11] 🔧 Auto-healing completed
+[2025-06-25 18:14:11] 😴 Sleeping for 300 seconds...
+[2025-07-11 05:41:00] 📋 Starting comprehensive validation...
+[2025-07-11 05:41:00] 🔹 Starting: Enum Consistency Check
+[2025-07-11T10:41:00.371Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-07-11T10:41:00.376Z] [INFO] Validating session types enum...
+[2025-07-11T10:41:00.376Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-07-11T10:41:00.376Z] [INFO] Validating booking status enum...
+[2025-07-11T10:41:00.376Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-07-11T10:41:00.376Z] [INFO] Validating payment status enum...
+[2025-07-11T10:41:00.376Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-07-11T10:41:00.376Z] [INFO] Validating booking platforms enum...
+[2025-07-11T10:41:00.377Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-07-11T10:41:00.377Z] [INFO] Validating location types enum...
+[2025-07-11T10:41:00.377Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-07-11T10:41:00.377Z] [INFO] 📊 Validation completed in 1ms
+[2025-07-11T10:41:00.377Z] [INFO] ✅ Validated 28 enum values
+[2025-07-11T10:41:00.377Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-07-11 05:41:00] ✅ Passed: Enum Consistency Check
+[2025-07-11 05:41:00] 🔹 Starting: Live Booking System Test
+[2025-07-11T10:41:00.414Z] [INFO] 🚀 Starting live booking system tests...
+[2025-07-11T10:41:00.415Z] [INFO] Testing health check endpoint...
+[2025-07-11T10:41:00.470Z] [SUCCESS] ✅ Health check passed
+[2025-07-11T10:41:00.470Z] [INFO] Testing booking endpoints...
+[2025-07-11T10:41:00.473Z] [SUCCESS] ✅ Booking endpoint accessible
+[2025-07-11T10:41:00.473Z] [INFO] 📊 Test Summary: 2/2 tests passed in 59ms
+[2025-07-11T10:41:00.473Z] [SUCCESS] 🎉 All tests passed!
+[2025-07-11 05:41:00] ✅ Passed: Live Booking System Test
+[2025-07-11 05:41:00] 🔹 Starting: Health Check Endpoint
+{"status":"OK","timestamp":"2025-07-11T10:41:00.531Z","service":"ITT Heal Shared API","version":"1.0.0","database":"connected","clients":["site","app"]}[2025-07-11 05:41:00] ✅ Passed: Health Check Endpoint
+[2025-07-11 05:41:00] 🔹 Starting: System Health Monitor
+[2025-07-11 05:41:00] 🚀 ITT Heal Health Monitor Started
+[2025-07-11 05:41:00] ⏰ Monitoring interval: 300s
+[2025-07-11 05:41:00] 🌐 Monitoring site: https://ittheal.com
+[2025-07-11 05:41:00] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-07-11 05:41:00] 🔍 Starting health check cycle...
+[2025-07-11 05:41:00] 🌐 Checking website accessibility...
+[2025-07-11 05:41:00] ✅ Website is accessible (HTTP 200)
+[2025-07-11 05:41:00] 🔗 Checking API health...
+[2025-07-11 05:41:00] ✅ API is healthy
+[2025-07-11 05:41:00] ⚙️  Checking backend processes...
+[2025-07-11 05:41:00] ✅ Backend process is running
+[2025-07-11 05:41:00] 🗄️  Checking database connectivity...
+[2025-07-11 05:41:00] ✅ Database is connected
+[2025-07-11 05:41:00] 💾 Checking disk space...
+[2025-07-11 05:41:00] ✅ Disk space OK (68% used)
+[2025-07-11 05:41:00] 🔒 Checking SSL certificate...
+[2025-07-11 05:41:00] ✅ SSL certificate valid (54 days remaining)
+[2025-07-11 05:41:00] 📋 Checking error logs...
+[2025-07-11 05:41:01] ✅ Error logs look clean (2 recent errors)
+[2025-07-11 05:41:01] 🔬 Testing critical user flows...
+[2025-07-11 05:41:01] ✅ Booking system accessible
+[2025-07-11 05:41:01] 🎯 Checking enum consistency...
+[2025-07-11 05:41:01] ✅ Enum consistency check passed
+[2025-07-11 05:41:01] 🎉 All health checks passed
+[2025-07-11 05:41:01] 😴 Sleeping for 300 seconds...
+[2025-07-11 05:44:51] 📋 Starting comprehensive validation...
+[2025-07-11 05:44:51] 🔹 Starting: Enum Consistency Check
+[2025-07-11T10:44:51.312Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-07-11T10:44:51.318Z] [INFO] Validating session types enum...
+[2025-07-11T10:44:51.318Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-07-11T10:44:51.318Z] [INFO] Validating booking status enum...
+[2025-07-11T10:44:51.318Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-07-11T10:44:51.318Z] [INFO] Validating payment status enum...
+[2025-07-11T10:44:51.318Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-07-11T10:44:51.318Z] [INFO] Validating booking platforms enum...
+[2025-07-11T10:44:51.318Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-07-11T10:44:51.319Z] [INFO] Validating location types enum...
+[2025-07-11T10:44:51.319Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-07-11T10:44:51.319Z] [INFO] 📊 Validation completed in 1ms
+[2025-07-11T10:44:51.319Z] [INFO] ✅ Validated 28 enum values
+[2025-07-11T10:44:51.319Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-07-11 05:44:51] ✅ Passed: Enum Consistency Check
+[2025-07-11 05:44:51] 🔹 Starting: Live Booking System Test
+[2025-07-11T10:44:51.354Z] [INFO] 🚀 Starting live booking system tests...
+[2025-07-11T10:44:51.356Z] [INFO] Testing health check endpoint...
+[2025-07-11T10:44:51.405Z] [SUCCESS] ✅ Health check passed
+[2025-07-11T10:44:51.405Z] [INFO] Testing booking endpoints...
+[2025-07-11T10:44:51.408Z] [SUCCESS] ✅ Booking endpoint accessible
+[2025-07-11T10:44:51.408Z] [INFO] 📊 Test Summary: 2/2 tests passed in 54ms
+[2025-07-11T10:44:51.408Z] [SUCCESS] 🎉 All tests passed!
+[2025-07-11 05:44:51] ✅ Passed: Live Booking System Test
+[2025-07-11 05:44:51] 🔹 Starting: Health Check Endpoint
+{"status":"OK","timestamp":"2025-07-11T10:44:51.462Z","service":"ITT Heal Shared API","version":"1.0.0","database":"connected","clients":["site","app"]}[2025-07-11 05:44:51] ✅ Passed: Health Check Endpoint
+[2025-07-11 05:44:51] 🔹 Starting: System Health Monitor
+[2025-07-11 05:44:51] 🚀 ITT Heal Health Monitor Started
+[2025-07-11 05:44:51] ⏰ Monitoring interval: 300s
+[2025-07-11 05:44:51] 🌐 Monitoring site: https://ittheal.com
+[2025-07-11 05:44:51] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-07-11 05:44:51] 🔍 Starting health check cycle...
+[2025-07-11 05:44:51] 🌐 Checking website accessibility...
+[2025-07-11 05:44:51] ✅ Website is accessible (HTTP 200)
+[2025-07-11 05:44:51] 🔗 Checking API health...
+[2025-07-11 05:44:51] ✅ API is healthy
+[2025-07-11 05:44:51] ⚙️  Checking backend processes...
+[2025-07-11 05:44:51] ✅ Backend process is running
+[2025-07-11 05:44:51] 🗄️  Checking database connectivity...
+[2025-07-11 05:44:51] ✅ Database is connected
+[2025-07-11 05:44:51] 💾 Checking disk space...
+[2025-07-11 05:44:51] ✅ Disk space OK (68% used)
+[2025-07-11 05:44:51] 🔒 Checking SSL certificate...
+[2025-07-11 05:44:51] ✅ SSL certificate valid (54 days remaining)
+[2025-07-11 05:44:51] 📋 Checking error logs...
+[2025-07-11 05:44:51] ✅ Error logs look clean (2 recent errors)
+[2025-07-11 05:44:51] 🔬 Testing critical user flows...
+[2025-07-11 05:44:52] ✅ Booking system accessible
+[2025-07-11 05:44:52] 🎯 Checking enum consistency...
+[2025-07-11 05:44:52] ✅ Enum consistency check passed
+[2025-07-11 05:44:52] 🎉 All health checks passed
+[2025-07-11 05:44:52] 😴 Sleeping for 300 seconds...
+[2025-07-11 14:25:16] 📋 Starting comprehensive validation...
+[2025-07-11 14:25:16] 🔹 Starting: CSS Classes Validation
+[1m
+🎨 CSS Validation for Tailwind + Luxury Spa CSS[0m
+[36m==================================================[0m
+[32m✅ Loaded luxury-spa.css[0m
+[36m
+📁 Found 17 HTML files to validate[0m
+[33m
+🔍 Checking: index.html[0m
+[31m❌ Error validating /home/ittz/projects/itt/site/admin/index.html: element.className.split is not a function[0m
+[33m
+🔍 Checking: test-dashboard.html[0m
+[33m
+🔍 Checking: admin-complete.html[0m
+[33m
+🔍 Checking: admin-dashboard.html[0m
+[33m
+🔍 Checking: client-paperwork.html[0m
+[31m❌ Error validating /home/ittz/projects/itt/site/client-paperwork.html: element.className.split is not a function[0m
+[33m
+🔍 Checking: coming-soon.html[0m
+[33m
+🔍 Checking: index.html[0m
+[33m
+🔍 Checking: index.nginx-debian.html[0m
+[33m
+🔍 Checking: new-booking-section.html[0m
+[33m
+🔍 Checking: header.html[0m
+[31m❌ Error validating /home/ittz/projects/itt/site/sections/header.html: element.className.split is not a function[0m
+[33m
+🔍 Checking: test-browser-booking.html[0m
+[33m
+🔍 Checking: test-dashboard-final.html[0m
+[33m
+🔍 Checking: test-dashboard-fix.html[0m
+[33m
+🔍 Checking: test-dashboard-load.html[0m
+[33m
+🔍 Checking: test-dashboard-loading.html[0m
+[33m
+🔍 Checking: test-dashboard.html[0m
+[33m
+🔍 Checking: test-wcag-detection.html[0m
+[1m
+📊 Validation Results[0m
+[36m==================================================[0m
+[31m
+❌ Found 83 CSS issues:[0m
+[33m
+1. MISSING-CLASS[0m
+[0m   File: index.html[0m
+[0m   Class "mobile-nav-toggle" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: mobile-nav-toggle[0m
+[33m
+2. MISSING-CLASS[0m
+[0m   File: index.html[0m
+[0m   Class "nav-menu" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-menu[0m
+[33m
+3. MISSING-CLASS[0m
+[0m   File: index.html[0m
+[0m   Class "nav-section" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-section[0m
+[33m
+4. MISSING-CLASS[0m
+[0m   File: index.html[0m
+[0m   Class "nav-section-title" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-section-title[0m
+[33m
+5. MISSING-CLASS[0m
+[0m   File: index.html[0m
+[0m   Class "nav-item" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-item[0m
+[33m
+6. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "header-content" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: header-content[0m
+[33m
+7. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "header-info" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: header-info[0m
+[33m
+8. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tabs" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tabs[0m
+[33m
+9. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tabs-container" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tabs-container[0m
+[33m
+10. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+11. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+12. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+13. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+14. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+15. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+16. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+17. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "btn-success" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: btn-success[0m
+[33m
+18. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-row" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-row[0m
+[33m
+19. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+20. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+21. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+22. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+23. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "modal-content" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: modal-content[0m
+[33m
+24. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "modal-header" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: modal-header[0m
+[33m
+25. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-row" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-row[0m
+[33m
+26. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+27. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+28. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-row" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-row[0m
+[33m
+29. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+30. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+31. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-row" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-row[0m
+[33m
+32. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+33. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+34. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+35. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+36. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+37. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-row" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-row[0m
+[33m
+38. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+39. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "form-group" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: form-group[0m
+[33m
+40. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "modal-content" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: modal-content[0m
+[33m
+41. MISSING-CLASS[0m
+[0m   File: admin-complete.html[0m
+[0m   Class "modal-header" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: modal-header[0m
+[33m
+42. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+43. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+44. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+45. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+46. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+47. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+48. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+49. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+50. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+51. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+52. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+53. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+54. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+55. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+56. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+57. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+58. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+59. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+60. INVISIBLE-BUTTON[0m
+[0m   File: admin-complete.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+61. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tabs" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tabs[0m
+[33m
+62. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+63. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+64. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+65. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+66. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+67. MISSING-CLASS[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Class "nav-tab" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: nav-tab[0m
+[33m
+68. INVISIBLE-BUTTON[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+69. INVISIBLE-BUTTON[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+70. INVISIBLE-BUTTON[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+71. INVISIBLE-BUTTON[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+72. INVISIBLE-BUTTON[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+73. INVISIBLE-BUTTON[0m
+[0m   File: admin-dashboard.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+74. INVISIBLE-BUTTON[0m
+[0m   File: new-booking-section.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+75. INVISIBLE-BUTTON[0m
+[0m   File: new-booking-section.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+76. INVISIBLE-BUTTON[0m
+[0m   File: new-booking-section.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+77. INVISIBLE-BUTTON[0m
+[0m   File: test-browser-booking.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+78. INVISIBLE-BUTTON[0m
+[0m   File: test-browser-booking.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+79. INVISIBLE-BUTTON[0m
+[0m   File: test-browser-booking.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+80. INVISIBLE-BUTTON[0m
+[0m   File: test-browser-booking.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+81. MISSING-CLASS[0m
+[0m   File: test-dashboard-load.html[0m
+[0m   Class "card-header" not found in luxury-spa.css or Tailwind[0m
+[0m   Class: card-header[0m
+[33m
+82. INVISIBLE-BUTTON[0m
+[0m   File: test-wcag-detection.html[0m
+[0m   Button may be invisible (no background color)[0m
+[33m
+83. INVISIBLE-BUTTON[0m
+[0m   File: test-wcag-detection.html[0m
+[0m   Button may be invisible (no background color)[0m
+[1m
+🔧 Applying CSS Fixes[0m
+[36m==================================================[0m
+[33m
+📝 Adding 49 missing classes to luxury-spa.css:[0m
+[32m   + .mobile-nav-toggle[0m
+[32m   + .nav-menu[0m
+[32m   + .nav-section[0m
+[32m   + .nav-section-title[0m
+[32m   + .nav-item[0m
+[32m   + .header-content[0m
+[32m   + .header-info[0m
+[32m   + .nav-tabs[0m
+[32m   + .nav-tabs-container[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .btn-success[0m
+[32m   + .form-row[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .modal-content[0m
+[32m   + .modal-header[0m
+[32m   + .form-row[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-row[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-row[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .form-row[0m
+[32m   + .form-group[0m
+[32m   + .form-group[0m
+[32m   + .modal-content[0m
+[32m   + .modal-header[0m
+[32m   + .nav-tabs[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .nav-tab[0m
+[32m   + .card-header[0m
+[32m
+✅ CSS file updated successfully![0m
+[2025-07-11 14:25:17] ❌ Failed: CSS Classes Validation
+[2025-07-11 14:25:17] 🔹 Starting: Button Consistency Check
+[1m
+🔲 Button Consistency Validation for ITT Heal[0m
+[36m==================================================[0m
+[32m✅ Loaded CSS: ./dist/luxury-spa.css[0m
+[36m📄 Found 6 HTML files to validate[0m
+[33m
+🔍 Validating: admin-complete.html[0m
+[33m
+🔍 Validating: admin-dashboard.html[0m
+[33m
+🔍 Validating: client-paperwork.html[0m
+[33m
+🔍 Validating: coming-soon.html[0m
+[33m
+🔍 Validating: index.html[0m
+[33m
+🔍 Validating: new-booking-section.html[0m
+[1m
+📊 Button Validation Results[0m
+[36m==============================[0m
+[31m
+❌ WCAG-TOUCH-TARGET (55 issues):[0m
+[33m   📄 admin-complete.html - button-0: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-1: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-2: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-3: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-4: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-5: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-6: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-7: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-8: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-9: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-10: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-11: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-12: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-13: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-14: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-15: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-16: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-17: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-18: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-19: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-20: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-complete.html - button-21: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - button-0: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - button-1: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - button-2: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - button-3: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - button-4: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - button-5: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 admin-dashboard.html - generate-report: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - reload-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - clear-health-history-signature: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - button-2: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - clear-intake-signature: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - prev-step-intake: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - button-5: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - clear-agreements-signature: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - prev-step-agreements: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - submit-agreements-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - print-paperwork-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - email-paperwork-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 client-paperwork.html - review-paperwork-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - hamburger-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - close-menu-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - button-2: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - button-3: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - confirm-booking-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - prev-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 index.html - next-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - button-0: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - button-1: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - button-2: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - button-3: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - confirm-booking-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - prev-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[33m   📄 new-booking-section.html - next-btn: Button does not meet WCAG 44px minimum touch target size[0m
+[31m
+❌ INLINE-STYLES (10 issues):[0m
+[33m   📄 index.html - confirm-booking-btn: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 index.html - prev-btn: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 index.html - next-btn: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - button-0: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - button-1: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - button-2: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - button-3: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - confirm-booking-btn: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - prev-btn: Button uses inline styles instead of proper CSS classes[0m
+[33m   📄 new-booking-section.html - next-btn: Button uses inline styles instead of proper CSS classes[0m
+[36m
+🔧 Found 10 automatic fixes available[0m
+[1m
+🔧 Applying automatic fixes...[0m
+[33m⚠️  Manual fix needed in index.html: Replace inline styles with btn-luxury btn-primary[0m
+[33m⚠️  Manual fix needed in index.html: Replace inline styles with btn-luxury btn-primary[0m
+[33m⚠️  Manual fix needed in index.html: Replace inline styles with btn-luxury btn-primary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-secondary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-secondary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-secondary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-secondary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-primary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-primary[0m
+[33m⚠️  Manual fix needed in new-booking-section.html: Replace inline styles with btn-luxury btn-primary[0m
+[2025-07-11 14:25:17] ❌ Failed: Button Consistency Check
+[2025-07-11 14:25:17] 🔹 Starting: Enum Consistency Check
+[2025-07-11T19:25:17.851Z] [INFO] 🔍 Starting enhanced enum consistency validation...
+[2025-07-11T19:25:17.856Z] [INFO] Validating session types enum...
+[2025-07-11T19:25:17.856Z] [INFO] ✅ Session types validation passed (6 values)
+[2025-07-11T19:25:17.856Z] [INFO] Validating booking status enum...
+[2025-07-11T19:25:17.856Z] [INFO] ✅ Booking status validation passed (6 values)
+[2025-07-11T19:25:17.856Z] [INFO] Validating payment status enum...
+[2025-07-11T19:25:17.857Z] [INFO] ✅ Payment status validation passed (6 values)
+[2025-07-11T19:25:17.857Z] [INFO] Validating booking platforms enum...
+[2025-07-11T19:25:17.857Z] [INFO] ✅ Booking platforms validation passed (5 values)
+[2025-07-11T19:25:17.857Z] [INFO] Validating location types enum...
+[2025-07-11T19:25:17.857Z] [INFO] ✅ Location types validation passed (5 values)
+[2025-07-11T19:25:17.857Z] [INFO] 📊 Validation completed in 1ms
+[2025-07-11T19:25:17.857Z] [INFO] ✅ Validated 28 enum values
+[2025-07-11T19:25:17.857Z] [SUCCESS] 🎉 All enum validations passed!
+[2025-07-11 14:25:17] ✅ Passed: Enum Consistency Check
+[2025-07-11 14:25:17] 🔹 Starting: Live Booking System Test
+[2025-07-11T19:25:17.892Z] [INFO] 🚀 Starting live booking system tests...
+[2025-07-11T19:25:17.893Z] [INFO] Testing health check endpoint...
+[2025-07-11T19:25:17.943Z] [ERROR] ❌ Health check failed: 502
+[2025-07-11T19:25:17.943Z] [INFO] Testing booking endpoints...
+[2025-07-11T19:25:17.944Z] [ERROR] ❌ Booking endpoint failed: 502
+[2025-07-11T19:25:17.944Z] [INFO] 📊 Test Summary: 0/2 tests passed in 52ms
+[2025-07-11T19:25:17.944Z] [ERROR] 💥 Some tests failed
+[2025-07-11 14:25:17] ❌ Failed: Live Booking System Test
+[2025-07-11 14:25:17] 🔹 Starting: Health Check Endpoint
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-07-11 14:25:17] ✅ Passed: Health Check Endpoint
+[2025-07-11 14:25:17] 🔹 Starting: System Health Monitor
+[2025-07-11 14:25:18] 🚀 ITT Heal Health Monitor Started
+[2025-07-11 14:25:18] ⏰ Monitoring interval: 300s
+[2025-07-11 14:25:18] 🌐 Monitoring site: https://ittheal.com
+[2025-07-11 14:25:18] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-07-11 14:25:18] 🔍 Starting health check cycle...
+[2025-07-11 14:25:18] 🌐 Checking website accessibility...
+[2025-07-11 14:25:18] ✅ Website is accessible (HTTP 200)
+[2025-07-11 14:25:18] 🔗 Checking API health...
+[2025-07-11 14:25:18] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+[2025-07-11 14:25:18] ⚙️  Checking backend processes...
+[2025-07-11 14:25:18] ✅ Backend process is running
+[2025-07-11 14:25:18] 🗄️  Checking database connectivity...
+[2025-07-11 14:25:18] ALERT [HIGH]: Database connection failed
+[2025-07-11 14:25:18] 💾 Checking disk space...
+[2025-07-11 14:25:18] ✅ Disk space OK (67% used)
+[2025-07-11 14:25:18] 🔒 Checking SSL certificate...
+[2025-07-11 14:25:18] ✅ SSL certificate valid (54 days remaining)
+[2025-07-11 14:25:18] 📋 Checking error logs...
+[2025-07-11 14:25:18] ✅ Error logs look clean (2 recent errors)
+[2025-07-11 14:25:18] 🔬 Testing critical user flows...
+[2025-07-11 14:25:18] ALERT [HIGH]: Booking system not responding correctly
+[2025-07-11 14:25:18] 🎯 Checking enum consistency...
+[2025-07-11 14:25:18] ✅ Enum consistency check passed
+[2025-07-11 14:25:19] ⚠️  Some health checks failed - attempting auto-healing
+[2025-07-11 14:25:19] 🔧 Performing auto-healing actions...
+[2025-07-11 14:25:19] ⚙️  Checking backend processes...
+[2025-07-11 14:25:19] ✅ Backend process is running
+[2025-07-11 14:25:19] 💾 Checking disk space...
+[2025-07-11 14:25:19] ✅ Disk space OK (67% used)
+[2025-07-11 14:25:19] 🔧 Auto-healing completed
+[2025-07-11 14:25:19] 😴 Sleeping for 300 seconds...
