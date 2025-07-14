@@ -8,8 +8,8 @@
     <meta name="author" content="Integrative Touch Therapies LLC">
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com ; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.stripe.com; frame-src https://js.stripe.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com ; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.stripe.com; frame-src https://js.stripe.com; object-src 'none'; base-uri 'self';">
+    <!-- X-Frame-Options and frame-ancestors must be set via HTTP headers, not meta tags -->
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     
@@ -31,14 +31,9 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/logos/itt-heal-lotus-32.png?v=20250710">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/logos/itt-heal-lotus-32.png?v=20250710">
-    <link rel="icon" type="image/png" sizes="64x64" href="./assets/logos/itt-heal-lotus-64.png?v=20250710">
-    <link rel="icon" type="image/png" sizes="128x128" href="./assets/logos/itt-heal-lotus-128.png?v=20250710">
-    <link rel="icon" type="image/png" sizes="256x256" href="./assets/logos/itt-heal-lotus-256.png?v=20250710">
     <link rel="apple-touch-icon" href="./assets/logos/itt-heal-lotus-256.png?v=20250710">
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="./manifest.json?v=20250708">
+    <!-- PWA Manifest - Removed (file doesn't exist) -->
     
     <!-- Playfair Display Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +43,7 @@
     <!-- Tailwind CSS v4 -->
     <link rel="stylesheet" href="./dist/tailwind.css?v=20250712-august-update">
     <!-- Compiled Tailwind CSS -->
-    <link rel="stylesheet" href="./dist/luxury-spa.css?v=20250712-august-update">
+    <link rel="stylesheet" href="./dist/luxury-spa.css?v=20250712-hamburger-large">
     
     <!-- CLAUDE.md WCAG 2.1 AA Compliance Styles -->
     <style>
@@ -93,6 +88,47 @@
             }
             .itt-tagline {
                 font-size: 0.9rem !important;
+            }
+        }
+        
+        /* CRITICAL: Hamburger menu size override */
+        .itt-hamburger {
+            width: 60px !important;
+            height: 60px !important;
+            padding: 12px !important;
+        }
+        .itt-hamburger-line {
+            width: 35px !important;
+            height: 7px !important;
+        }
+        @media (max-width: 768px) {
+            .itt-hamburger {
+                width: 55px !important;
+                height: 55px !important;
+            }
+            .itt-hamburger-line {
+                width: 32px !important;
+                height: 6px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .itt-hamburger {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            .itt-hamburger-line {
+                width: 30px !important;
+                height: 6px !important;
+            }
+        }
+        @media (max-width: 344px) {
+            .itt-hamburger {
+                width: 45px !important;
+                height: 45px !important;
+            }
+            .itt-hamburger-line {
+                width: 28px !important;
+                height: 5px !important;
             }
         }
         
@@ -168,7 +204,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="cache-buster" content="20250625-header-fix">
+    <meta name="cache-buster" content="20250712-performance-v2">
     
 </head>
 
@@ -187,19 +223,19 @@
   
   <!-- Center - Typography -->
   <div class="itt-header-center">
-    <h1 class="itt-company-name" style="font-size: 1.5rem;">
+    <h1 class="itt-company-name" style="font-size: 7rem;">
       <div>Integrative Touch</div>
       <div>Therapies</div>
     </h1>
-    <p class="itt-tagline" style="font-size: 1.5rem;">Holistic Healing &amp; Wellness</p>
+    <p class="itt-tagline" style="font-size: 4.5rem; margin-top: 0.5rem;">Holistic Healing &amp; Wellness</p>
   </div>
   
   <!-- Right Side - Hamburger Menu -->
   <div class="itt-header-menu">
     <button class="itt-hamburger" aria-label="Open navigation menu" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-menu" onclick="var menu = document.getElementById('mobile-menu'); if (menu.style.display === 'block') { menu.style.display = 'none'; document.body.style.overflow = ''; } else { menu.style.display = 'block'; document.body.style.overflow = 'hidden'; }">
-      <span class="itt-hamburger-line"></span>
-      <span class="itt-hamburger-line"></span>
-      <span class="itt-hamburger-line"></span>
+      <span class="itt-hamburger-line" style="width: 35px !important; height: 10px !important; background-color: #2d3748 !important; display: block !important;"></span>
+      <span class="itt-hamburger-line" style="width: 35px !important; height: 10px !important; background-color: #2d3748 !important; display: block !important;"></span>
+      <span class="itt-hamburger-line" style="width: 35px !important; height: 10px !important; background-color: #2d3748 !important; display: block !important;"></span>
     </button>
   </div>
 </header>
@@ -227,7 +263,7 @@
         
         <!-- Hero Section -->
         <section id="hero" style="
-            background: linear-gradient(180deg, var(--spa-lavender-light) 0%, var(--lavender-client) 30%, var(--warm-gray-100) 70%, rgba(245, 245, 245, 0.3) 100%); 
+            background: linear-gradient(180deg, #f5f2ed 0%, #edebf7 5%, var(--lavender-client) 20%, var(--warm-gray-100) 80%, rgba(253, 252, 247, 0.3) 100%); 
             min-height: 70vh; 
             padding-bottom: 4rem;
             display: flex;
@@ -287,11 +323,11 @@
                     <!-- App-First CTA Strategy -->
                     <div style="padding-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                         <!-- Primary: App Download (Prominent) -->
-                        <div style="background: linear-gradient(135deg, #059669, #065f46); padding: 1.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3); max-width: 400px; width: 100%;">
+                        <div style="background: var(--sage-400); padding: 1.5rem; border-radius: 1rem; text-align: center; box-shadow: 0 8px 25px rgba(158, 176, 158, 0.3); max-width: 400px; width: 100%;">
                             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-                            <h3 style="color: white; font-size: 1.3rem; margin: 0 0 0.5rem 0; font-weight: 600;">Get the Full Healing Experience</h3>
-                            <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; margin: 0 0 1rem 0;">AI pain tracking • Save $10 per session • Priority booking</p>
-                            <button style="background: white; color: #059669; border: none; padding: 0.8rem 1.5rem; border-radius: 2rem; font-weight: 600; font-size: 1rem; cursor: pointer; width: 100%; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <h3 style="color: var(--spa-charcoal); font-size: 1.3rem; margin: 0 0 0.5rem 0; font-weight: 600;">Get the Full Healing Experience</h3>
+                            <p style="color: var(--spa-gray); font-size: 0.9rem; margin: 0 0 1rem 0;">AI pain tracking • Save $10 per session • Priority booking</p>
+                            <button style="background: #2d3748; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 2rem; font-weight: 600; font-size: 1rem; cursor: pointer; width: 100%; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                                 📱 Download App - Coming Mid August
                             </button>
                         </div>
@@ -306,8 +342,8 @@
                                 font-weight: 500;
                                 font-size: 1rem;
                                 color: var(--spa-charcoal);
-                                background: var(--spa-cream);
-                                border: 2px solid var(--spa-sage-light);
+                                background: var(--sage-400);
+                                border: 2px solid var(--sage-500);
                                 border-radius: 2rem;
                                 text-decoration: none;
                                 transition: all 0.3s ease;
@@ -545,6 +581,13 @@
                         <h2 class="section-heading" id="dr-shiffer">Dr. Shiffer, CST, LMT</h2>
                         <p class="subtitle">Cranial Sacral Therapist • Licensed Massage Therapist</p>
                         <p class="body-text" style="color: var(--sage-600); margin-top: var(--space-sm);">Movement Specialist</p>
+                        
+                        <!-- Dr. Shiffer Photo -->
+                        <div class="mt-lg mb-lg">
+                            <img src="./assets/therapist-photo.jpg" alt="Dr. Shiffer, CST, LMT" 
+                                 class="mx-auto rounded-lg shadow-lg" 
+                                 style="max-width: 300px; width: 100%; height: auto;">
+                        </div>
                     </div>
                     
                     <div class="space-y-lg">
@@ -764,9 +807,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                 </div>
 
                 <!-- Premium App Experience CTA -->
-                <div class="luxury-card-elevated mb-xl" style="background: linear-gradient(135deg, #059669 0%, #065f46 100%); color: white; text-align: center; border: 3px solid #10b981; box-shadow: 0 12px 40px rgba(5, 150, 105, 0.4);">
+                <div class="luxury-card-elevated mb-xl" style="background: linear-gradient(135deg, #065f46, #047857); color: white; text-align: center; border: 3px solid #059669; box-shadow: 0 12px 40px rgba(6, 95, 70, 0.4);">
                     <div style="padding: 2.5rem 1.5rem;">
-                        <div style="background: rgba(255,255,255,0.15); border-radius: 50%; width: 80px; height: 80px; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center;">
+                        <div style="background: rgba(45,55,72,0.1); border-radius: 50%; width: 80px; height: 80px; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center;">
                             <div style="font-size: 3rem;">📱</div>
                         </div>
                         <h2 style="color: white; font-size: 2rem; margin: 0 0 1rem 0; font-weight: 700;">The Ultimate Healing Experience</h2>
@@ -776,32 +819,32 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                         
                         <!-- Feature Grid -->
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
-                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 0.5rem;">
+                            <div style="background: rgba(45,55,72,0.1); padding: 1rem; border-radius: 0.5rem;">
                                 <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🧠</div>
                                 <div style="font-weight: 600; font-size: 0.9rem;">AI Pain Tracking</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 0.5rem;">
+                            <div style="background: rgba(45,55,72,0.1); padding: 1rem; border-radius: 0.5rem;">
                                 <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💰</div>
                                 <div style="font-weight: 600; font-size: 0.9rem;">Save $10/Session</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 0.5rem;">
+                            <div style="background: rgba(45,55,72,0.1); padding: 1rem; border-radius: 0.5rem;">
                                 <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚡</div>
                                 <div style="font-weight: 600; font-size: 0.9rem;">Priority Booking</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 0.5rem;">
+                            <div style="background: rgba(45,55,72,0.1); padding: 1rem; border-radius: 0.5rem;">
                                 <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🆓</div>
                                 <div style="font-weight: 600; font-size: 0.9rem;">No Booking Fees</div>
                             </div>
                         </div>
                         
                         <!-- Launch Badge -->
-                        <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 1rem 2rem; border-radius: 2rem; font-weight: 700; font-size: 1.1rem; margin: 1.5rem 0; display: inline-block; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);">
+                        <div style="background: linear-gradient(135deg, #059669, #065f46); color: white; padding: 1rem 2rem; border-radius: 2rem; font-weight: 700; font-size: 1.1rem; margin: 1.5rem 0; display: inline-block; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);">
                             🚀 LAUNCHING MID AUGUST 2025
                         </div>
                         
                         <!-- Value Proposition -->
-                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
-                            <p style="font-size: 1rem; color: white; margin: 0; font-weight: 600;">
+                        <div style="background: rgba(45,55,72,0.1); padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                            <p style="font-size: 1rem; color: #2d3748; margin: 0; font-weight: 600;">
                                 Regular users save $480+ per year with app pricing
                             </p>
                         </div>
@@ -909,7 +952,8 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 let currentStep = 1;
                                 let selectedService = null;
                                 let selectedPrice = 0;
-                                const basePrices = { '60min': 135, '90min': 180, '120min': 225, 'consultation': 60, 'test': 1.00 };
+                                // ✅ CLAUDE.md compliance: Only backend-verified service types
+                                const basePrices = { '60min': 135, '90min': 180, 'test': 1.00 };
                                 
                                 // Analytics tracking object
                                 const bookingAnalytics = {
@@ -945,21 +989,17 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     document.querySelectorAll('.service-option').forEach(el => {
                                         el.style.borderColor = '#e2e8f0';
                                         el.style.background = 'white';
+                                        el.style.boxShadow = 'none';
                                         el.classList.remove('active');
                                     });
                                     const selectedOption = event.target.closest('.service-option');
-                                    selectedOption.style.borderColor = '#10b981';
-                                    selectedOption.style.background = '#f0f9ff';
+                                    selectedOption.style.borderColor = '#059669';
+                                    selectedOption.style.background = 'linear-gradient(145deg, #d1fae5, #a7f3d0)';
+                                    selectedOption.style.boxShadow = '0 8px 25px rgba(5, 150, 105, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
                                     selectedOption.classList.add('active');
                                     selectedOption.dataset.service = serviceType;
                                     
-                                    // Trigger availability refresh if date is already selected
-                                    if (window.BookingAvailability) {
-                                        const selectedDate = document.getElementById('booking-date')?.value;
-                                        if (selectedDate) {
-                                            window.BookingAvailability.refresh();
-                                        }
-                                    }
+                                    // External module will handle refresh automatically when date exists
                                     
                                     // Dispatch custom event for service selection
                                     document.dispatchEvent(new CustomEvent('serviceSelected', {
@@ -1051,15 +1091,36 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     }, 30000);
                                 }
                                 
+                                // Helper function to get next available Monday
+                                function getNextAvailableMonday() {
+                                    const today = new Date();
+                                    let nextMonday = new Date(today);
+                                    
+                                    // Find next Monday (1 = Monday in getDay())
+                                    const daysUntilMonday = (1 - today.getDay() + 7) % 7;
+                                    if (daysUntilMonday === 0) {
+                                        // If today is Monday, get next Monday
+                                        nextMonday.setDate(today.getDate() + 7);
+                                    } else {
+                                        nextMonday.setDate(today.getDate() + daysUntilMonday);
+                                    }
+                                    
+                                    return nextMonday.toISOString().split('T')[0];
+                                }
+                                
                                 // Function to setup date constraints and provide helpful guidance
                                 function setupDateConstraints(dateData) {
                                     const dateInput = document.getElementById('booking-date');
                                     if (!dateInput) return;
                                     
-                                    // Set minimum date to today
+                                    // Set minimum date to today (allow same-day booking with 2-slot advance requirement)
                                     const today = new Date();
                                     const todayString = today.toISOString().split('T')[0];
                                     dateInput.setAttribute('min', todayString);
+                                    
+                                    // Set default date to next Monday (if available) or today
+                                    const nextMonday = getNextAvailableMonday();
+                                    dateInput.value = nextMonday || todayString;
                                     
                                     // Set maximum date based on data (if available)
                                     if (dateData.end_date) {
@@ -1157,7 +1218,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 async function validateTimeSelection(selectedDate, selectedTime) {
                                     try {
                                         const practitionerId = '060863f2-0623-4785-b01a-f1760cfb8d14';
-                                        const serviceType = document.querySelector('.service-option.active')?.dataset?.serviceType || '60min_massage';
+                                        const serviceType = document.querySelector('.service-option.active')?.getAttribute('data-service-type') || '60min_massage';
                                         
                                         // Check real-time availability for selected time slot
                                         const response = await fetch(`/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`);
@@ -1181,21 +1242,17 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             });
                                             
                                             if (!isTimeAvailable) {
-                                                // Show warning to user
+                                                // Show warning to user but don't automatically clear selection
                                                 const timeHelp = document.getElementById('booking-time-help');
                                                 if (timeHelp) {
-                                                    timeHelp.textContent = 'This time slot is no longer available. Please select another time.';
-                                                    timeHelp.style.color = '#dc2626';
+                                                    timeHelp.textContent = 'Please confirm this time slot is still available when you proceed.';
+                                                    timeHelp.style.color = '#d97706'; // Warning color instead of error
                                                 }
                                                 
-                                                // Clear the time selection
-                                                const timeSelect = document.getElementById('booking-time');
-                                                timeSelect.value = '';
+                                                // Don't automatically clear the time selection
+                                                // Let user decide to change or proceed
                                                 
-                                                // Refresh available slots
-                                                if (window.BookingAvailability) {
-                                                    window.BookingAvailability.refresh();
-                                                }
+                                                // External module handles refresh automatically
                                                 return false;
                                             }
                                         }
@@ -1207,101 +1264,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     }
                                 }
 
-                                function loadTimeSlots(retryCount = 0) {
-                                    const dateInput = document.getElementById('booking-date');
-                                    const timeSelect = document.getElementById('booking-time');
-                                    const loadingDiv = document.getElementById('time-loading');
-                                    const maxRetries = 3;
-                                    const retryDelay = 1000; // 1 second
-                                    
-                                    if (!dateInput.value) {
-                                        timeSelect.innerHTML = '<option value="">Select date first...</option>';
-                                        return;
-                                    }
-                                    
-                                    // Show loading state
-                                    loadingDiv.style.display = 'block';
-                                    loadingDiv.innerHTML = retryCount > 0 ? 
-                                        '<div style="color: #f59e0b;">Retrying... (Attempt ' + (retryCount + 1) + '/' + (maxRetries + 1) + ')</div>' : 
-                                        'Loading available times...';
-                                    timeSelect.innerHTML = '<option value="">Loading...</option>';
-                                    timeSelect.disabled = true;
-                                    
-                                    const practitionerId = '060863f2-0623-4785-b01a-f1760cfb8d14';
-                                    const selectedDate = dateInput.value;
-                                    const serviceType = document.querySelector('.service-option.active')?.dataset?.serviceType || '60min_massage';
-                                    
-                                    // Set a timeout for the fetch request
-                                    const fetchTimeout = setTimeout(() => {
-                                        handleFetchError('Request timed out', retryCount);
-                                    }, 10000);
-                                    
-                                    fetch(`/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`)
-                                        .then(response => {
-                                            clearTimeout(fetchTimeout);
-                                            
-                                            if (!response.ok) {
-                                                throw new Error(`HTTP error! status: ${response.status}`);
-                                            }
-                                            return response.json();
-                                        })
-                                        .then(data => {
-                                            if (!data.success) {
-                                                throw new Error(data.error || 'Failed to load availability');
-                                            }
-                                            
-                                            const slots = data.data.available_slots || [];
-                                            
-                                            timeSelect.innerHTML = '<option value="">Select time...</option>';
-                                            
-                                            if (slots.length === 0) {
-                                                timeSelect.innerHTML = '<option value="">No available times for this date</option>';
-                                                loadingDiv.innerHTML = '<div style="color: #dc2626;">No appointments available on this date. Please try another date.</div>';
-                                                loadingDiv.style.display = 'block';
-                                            } else {
-                                                slots.forEach(slot => {
-                                                    const option = document.createElement('option');
-                                                    const slotTime = new Date(slot.time);
-                                                    const timeString = slotTime.toLocaleTimeString('en-US', { 
-                                                        hour: '2-digit', 
-                                                        minute: '2-digit',
-                                                        hour12: false 
-                                                    });
-                                                    option.value = timeString;
-                                                    option.textContent = slot.display_time;
-                                                    timeSelect.appendChild(option);
-                                                });
-                                                loadingDiv.style.display = 'none';
-                                            }
-                                            
-                                            timeSelect.disabled = false;
-                                        })
-                                        .catch(error => {
-                                            clearTimeout(fetchTimeout);
-                                            handleFetchError(error.message, retryCount);
-                                        });
-                                    
-                                    function handleFetchError(errorMessage, currentRetry) {
-                                        if (currentRetry < maxRetries) {
-                                            setTimeout(() => {
-                                                loadTimeSlots(currentRetry + 1);
-                                            }, retryDelay);
-                                        } else {
-                                            timeSelect.innerHTML = '<option value="">Error loading times - Please refresh page</option>';
-                                            timeSelect.disabled = false;
-                                            loadingDiv.innerHTML = `
-                                                <div style="color: #dc2626; margin-top: 10px;">
-                                                    <strong>Unable to load available times</strong><br>
-                                                    <span style="font-size: 14px;">Please check your internet connection and try again.</span><br>
-                                                    <button id="load-time-slots-btn" style="margin-top: 10px; padding: 8px 16px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                                                        Retry
-                                                    </button>
-                                                </div>
-                                            `;
-                                            loadingDiv.style.display = 'block';
-                                        }
-                                    }
-                                }
+                                // Inline loadTimeSlots function removed - now handled by external booking-availability.js module
 
                                 function updateTotalPrice() {
                                     const locationType = document.getElementById('location-type').value;
@@ -1381,29 +1344,16 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             return;
                                         }
                                         
-                                        // Validate comp type if comp payment method is selected
-                                        const selectedPaymentMethod = document.querySelector('input[name="payment-method"]:checked')?.value || 'credit_card';
-                                        if (selectedPaymentMethod === 'comp') {
-                                            const compType = document.getElementById('comp-type').value;
-                                            if (!compType) {
-                                                alert('Please select a comp type for complimentary bookings.');
-                                                return;
-                                            }
-                                        }
                                         
                                         // Critical fix: Use async transition with proper DOM settling
                                         await transitionStep('contact-info', 'payment-info');
                                         
-                                        // Only initialize Stripe for credit card payments
-                                        // Note: selectedPaymentMethod is already defined above
+                                        // Always initialize Stripe when payment step is shown (credit card is default)
+                                        // Wait for DOM to fully settle before Stripe initialization
+                                        await waitForFrameStability();
                                         
-                                        if (selectedPaymentMethod === 'credit_card') {
-                                            // Wait for DOM to fully settle before Stripe initialization
-                                            await waitForFrameStability();
-                                            
-                                            // Initialize Stripe Elements with frame validation
-                                            await initializeStripeElementsSafely();
-                                        }
+                                        // Initialize Stripe Elements with frame validation
+                                        await initializeStripeElementsSafely();
                                         
                                         // Update payment total
                                         const total = updateTotalPrice();
@@ -1880,11 +1830,21 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     const notes = document.getElementById('session-notes').value;
                                     
                                     const serviceNames = {
-                                        '60min': '60-Minute Reset',
-                                        '90min': '90-Minute Integrative',
-                                        '120min': '120-Minute Premium',
+                                        '30min_massage': '30-Minute Quick Relief',
+                                        '60min_massage': '60-Minute Reset',
+                                        '90min_massage': '90-Minute Integrative Fascia',
+                                        '120min_massage': '120-Minute Premium',
                                         'consultation': '30-Minute Consultation',
                                         'test': 'Payment System Test'
+                                    };
+                                    
+                                    const serviceDurations = {
+                                        '30min_massage': 30,
+                                        '60min_massage': 60,
+                                        '90min_massage': 90,
+                                        '120min_massage': 120,
+                                        'consultation': 30,
+                                        'test': 1
                                     };
                                     
                                     const locationNames = {
@@ -2351,23 +2311,48 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                 });
                                                 
                                                 const confirmResult = await confirmResponse.json();
+                                                console.log('🔍 Payment confirmation result:', confirmResult);
                                                 
                                                 if (confirmResult.success) {
                                                     console.log('💫 Payment confirmed and notifications sent');
-                                                    status.textContent = '✅ Booking confirmed! Check your email and SMS for details.';
+                                                    console.log('🔄 Preparing redirect to confirmation page...');
+                                                    status.textContent = '✅ Booking confirmed! Redirecting to confirmation page...';
                                                     status.style.color = '#10b981';
                                                     button.textContent = 'Booking Complete';
                                                     
-                                                    // Show detailed success message
-                                                    setTimeout(() => {
-                                                        const receipt = confirmResult.data.receipt_number;
-                                                        const compType = document.getElementById('comp-type').value;
-                                                        const compMessage = selectedPaymentMethod === 'comp' ? `\nComp Type: ${compType}\nNo payment required` : '';
-                                                        alert(`🎉 Booking Complete!\n\nConfirmation: ${receipt}\nEmail & SMS confirmations sent${compMessage}\n\nPage will refresh in 3 seconds...`);
-                                                    }, 500);
+                                                    // Prepare confirmation page data
+                                                    const dateInput = document.getElementById('booking-date');
+                                                    const timeSelect = document.getElementById('booking-time');
+                                                    const confirmationData = {
+                                                        serviceName: serviceNames[selectedService],
+                                                        duration: serviceDurations[selectedService] || 60,
+                                                        datetime: new Date(dateInput.value + 'T' + timeSelect.value).toLocaleDateString('en-US', {
+                                                            weekday: 'long',
+                                                            year: 'numeric',
+                                                            month: 'long',
+                                                            day: 'numeric',
+                                                            hour: 'numeric',
+                                                            minute: '2-digit'
+                                                        }),
+                                                        practitioner: 'Dr. Shiffer, CST, LMT',
+                                                        confirmationNumber: confirmResult.data.receipt_number,
+                                                        totalAmount: totalPrice.toFixed(2)
+                                                    };
                                                     
-                                                    // Reset form after 3 seconds
-                                                    setTimeout(() => location.reload(), 3000);
+                                                    // Store confirmation data for thank you page
+                                                    localStorage.setItem('lastBookingData', JSON.stringify(confirmationData));
+                                                    
+                                                    // Redirect to confirmation page
+                                                    console.log('📋 Stored confirmation data:', confirmationData);
+                                                    setTimeout(() => {
+                                                        console.log('🚀 Redirecting to confirmation page...');
+                                                        try {
+                                                            window.location.href = '/booking-confirmation.html';
+                                                        } catch (error) {
+                                                            console.error('Redirect failed, trying alternative:', error);
+                                                            window.location.assign('/booking-confirmation.html');
+                                                        }
+                                                    }, 1500);
                                                 } else {
                                                     console.warn('Payment confirmation failed but booking exists:', confirmResult.error);
                                                     status.textContent = '⚠️ Booking created but confirmation failed. We will contact you shortly.';
@@ -2414,6 +2399,13 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 1: Choose Your Session</h3>
                                 
                                 <div class="service-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                                    <div class="service-option" data-service-type="30min_massage" data-service="30min" data-price="$85" style="border: 2px solid #8b5cf6; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; position: relative;">
+                                        <div style="background: #8b5cf6; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 0.5rem;">⚡ QUICK RELIEF</div>
+                                        <h4 style="color: var(--sage-700); margin-bottom: 0.25rem; font-size: 1.1rem; font-weight: 700;">30-Min Targeted</h4>
+                                        <div style="font-size: 2rem; font-weight: 800; color: #8b5cf6; margin-bottom: 0.25rem;">$85</div>
+                                        <p style="color: var(--sage-700); font-size: 1rem; margin: 0; font-weight: 600;">Quick targeted relief • Perfect for specific areas</p>
+                                    </div>
+                                    
                                     <div class="service-option" data-service-type="60min_massage" data-service="60min" data-price="$135" style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; position: relative;">
                                         <div style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 0.5rem;">⚡ FIRST-TIMER SPECIAL</div>
                                         <h4 style="color: var(--sage-700); margin-bottom: 0.25rem; font-size: 1.1rem; font-weight: 700;">60-Min Pain Relief</h4>
@@ -2428,19 +2420,8 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                         <p style="color: var(--sage-700); font-size: 1rem; margin: 0; font-weight: 600;">Fix chronic pain • Root cause healing</p>
                                     </div>
                                     
-                                    <div class="service-option" data-service-type="120min_massage" data-service="120min" data-price="$225" style="border: 2px solid #f59e0b; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s;">
-                                        <div style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 0.5rem;">👑 PREMIUM</div>
-                                        <h4 style="color: var(--sage-700); margin-bottom: 0.25rem; font-size: 1.1rem; font-weight: 700;">120-Min Total Transform</h4>
-                                        <div style="font-size: 2rem; font-weight: 800; color: #f59e0b; margin-bottom: 0.25rem;">$225</div>
-                                        <p style="color: var(--sage-700); font-size: 1rem; margin: 0; font-weight: 600;">Complex conditions • Full transformation</p>
-                                    </div>
-                                    
-                                    <div class="service-option" data-service-type="consultation" data-service="consultation" data-price="$60" style="border: 2px solid #64748b; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s;">
-                                        <div style="background: #64748b; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 0.5rem;">💬 NOT SURE?</div>
-                                        <h4 style="color: var(--sage-700); margin-bottom: 0.25rem; font-size: 1.1rem; font-weight: 700;">30-Min Consultation</h4>
-                                        <div style="font-size: 2rem; font-weight: 800; color: #64748b; margin-bottom: 0.25rem;">$60</div>
-                                        <p style="color: var(--sage-700); font-size: 1rem; margin: 0; font-weight: 600;">Get assessment • Plan your treatment</p>
-                                    </div>
+                                    <!-- ❌ CLAUDE.md VIOLATION FIX: Removed 120min_massage and consultation -->
+                                    <!-- Services not supported by backend API - removed to prevent integration errors -->
                                     
                                     <div class="service-option" data-service-type="test" data-service="test" data-price="$1.00" style="border: 2px solid #ef4444; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s;">
                                         <div style="background: #ef4444; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 0.5rem;">🧪 SYSTEM TEST</div>
@@ -2459,7 +2440,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     <div>
                                         <label for="booking-date" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Preferred Date</label>
                                         <input type="date" id="booking-date" 
-                                               style="width: 100%; min-height: 44px; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" 
+                                               style="width: 100%; height: 50px; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;" 
                                                required 
                                                aria-describedby="date-availability-info"
                                                aria-label="Preferred appointment date">
@@ -2483,9 +2464,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     </div>
                                     
                                     <div>
-                                        <label for="booking-time" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Available Times</label>
+                                        <label for="booking-time" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700); white-space: nowrap;">Available Times</label>
                                         <select id="booking-time" 
-                                                style="width: 100%; min-height: 44px; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" 
+                                                style="width: 100%; height: 50px; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;" 
                                                 required 
                                                 disabled
                                                 aria-label="Available appointment times">
@@ -2645,7 +2626,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     
                                     <!-- Payment Method Selection -->
                                     <div style="margin-bottom: 1.5rem;">
-                                        <label style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--sage-700);">Payment Method *</label>
+                                        <div style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--sage-700);">Payment Method *</div>
                                         <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
                                             <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
                                                 <input type="radio" name="payment-method" value="credit_card" id="payment-method-card" style="margin-right: 0.75rem;" checked>
@@ -2683,7 +2664,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     
                                     <!-- Comp Type Selection (shown only when comp selected) -->
                                     <div id="comp-type-section" style="display: none; margin-bottom: 1.5rem;">
-                                        <label style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--sage-700);">Comp Type *</label>
+                                        <label for="comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--sage-700);">Comp Type *</label>
                                         <select name="comp-type" id="comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--sage-700); font-size: 1rem;">
                                             <option value="">Select comp type...</option>
                                             <option value="family">Family</option>
@@ -2874,11 +2855,11 @@ My husband, a large man who's endured over 15 surgeries including six back proce
 
     <!-- Luxury JavaScript -->
     <!-- Shared Frontend Utilities -->
-    <script type="module" src="./js/shared-integration.js?v=20250708-tip-001"></script>
-    <script defer src="./js/booking-shared-migration.js?v=20250708-tip-001"></script>
+    <!-- shared-integration.js removed - file not found -->
+    <!-- booking-shared-migration.js removed - file not found -->
     
     <script defer src="./js/luxury-mobile.js?v=20250607-luxury-001"></script>
-    <script src="./js/pricing-booking.js?v=20250708-tip-001"></script>
+    <script defer src="./js/pricing-booking.js?v=20250708-tip-001"></script>
     <script defer src="./js/native-booking.js?v=20250616-native-009"></script>
     <script defer src="./js/error-handler.js?v=20250606-002"></script>
     
@@ -2957,7 +2938,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
             const serviceOptions = document.querySelectorAll('.service-option');
             serviceOptions.forEach(option => {
                 option.addEventListener('click', function() {
-                    const service = this.getAttribute('data-service');
+                    const service = this.getAttribute('data-service-type');
                     const price = this.getAttribute('data-price');
                     if (service && price) {
                         selectService(service, price);
@@ -3082,8 +3063,8 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                         });
                         
                         // Close mobile menu if open
-                        if (mobileMenuOpen) {
-                            closeMobileMenu();
+                        if (window.LuxuryMobile && window.LuxuryMobile.isMobileMenuOpen()) {
+                            window.LuxuryMobile.closeMobileMenu();
                         }
                     }
                 });

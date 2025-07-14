@@ -8,10 +8,10 @@
    =================================== */
 :root {
   /* Primary Brand Colors */
-  --spa-cream: #fdfcf7;
-  --spa-sage-light: #f0f4f0;
+  --spa-cream: #f5f4ef;
+  --spa-sage-light: #e8ece8;
   --spa-sage-dark: #6b7b6b;
-  --spa-lavender-light: #f5f3ff;
+  --spa-lavender-light: #edebf7;
   --spa-ocean-light: #e0f2fe;
   --spa-charcoal: #2d3748;
   --spa-gray: #4a5568;
@@ -614,14 +614,16 @@ header h1 {
 
 .hours-item {
   display: flex;
-  justify-content: between;
+  gap: 1rem;
   align-items: center;
   padding: var(--space-sm) 0;
+  font-size: 1.1rem;
 }
 
 .hours-day {
   font-weight: 600;
   color: var(--sage-700);
+  min-width: 110px;
 }
 
 .hours-time {
@@ -975,10 +977,10 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
-  padding: 30px 40px;
+  gap: 0.5rem;
+  padding: 15px 20px;
   height: 160px !important;
-  background: linear-gradient(135deg, var(--spa-cream) 0%, var(--spa-sage-light) 50%, var(--spa-lavender-light) 100%);
+  background: linear-gradient(135deg, #fdfcf7 0%, #f8f5f0 50%, #f5f2ed 100%);
   box-shadow: none;
 }
 
@@ -1025,22 +1027,22 @@ footer a:hover {
 }
 
 .itt-hamburger {
-  width: 50px;
-  height: 50px;
+  width: 120px !important;
+  height: 120px !important;
   border: none;
   background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   cursor: pointer;
-  padding: 10px;
+  padding: 25px !important;
 }
 
 .itt-hamburger-line {
-  width: 35px;
-  height: 2px;
+  width: 70px !important;
+  height: 5px !important;
   background-color: var(--spa-charcoal);
   transition: all 0.3s ease;
 }
@@ -1099,7 +1101,7 @@ footer a:hover {
   padding: 1rem 0;
   text-decoration: none;
   color: var(--spa-charcoal);
-  font-size: 2rem;
+  font-size: 0.875rem;
   font-weight: 500;
   border-bottom: 1px solid var(--spa-sage-light);
   transition: color 0.3s ease;
@@ -1123,7 +1125,7 @@ footer a:hover {
 @media (max-width: 768px) {
   .itt-header {
     height: 160px !important;
-    padding: 25px 30px;
+    padding: 10px 15px;
   }
   
   .itt-logo-leaf {
@@ -1140,13 +1142,13 @@ footer a:hover {
   }
   
   .itt-hamburger {
-    width: 44px;
-    height: 44px;
+    width: 95px;
+    height: 95px;
   }
   
   .itt-hamburger-line {
-    width: 30px;
-    height: 2px;
+    width: 65px;
+    height: 5px;
   }
   
   .mobile-menu-content {
@@ -1155,14 +1157,14 @@ footer a:hover {
   }
   
   .mobile-menu-link {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .itt-header {
     height: 160px !important;
-    padding: 20px 24px;
+    padding: 8px 12px;
   }
   
   .itt-logo-leaf {
@@ -1179,13 +1181,13 @@ footer a:hover {
   }
   
   .itt-hamburger {
-    width: 40px;
-    height: 40px;
+    width: 90px;
+    height: 90px;
   }
   
   .itt-hamburger-line {
-    width: 28px;
-    height: 2px;
+    width: 60px;
+    height: 5px;
   }
 }
 
@@ -1193,7 +1195,7 @@ footer a:hover {
 @media (max-width: 344px) {
   .itt-header {
     height: 160px !important;
-    padding: 15px 20px;
+    padding: 6px 10px;
   }
   
   .itt-company-name {
@@ -1210,13 +1212,13 @@ footer a:hover {
   }
   
   .itt-hamburger {
-    width: 36px;
-    height: 36px;
+    width: 85px;
+    height: 85px;
   }
   
   .itt-hamburger-line {
-    width: 6px;
-    height: 1px;
+    width: 58px;
+    height: 4px;
   }
 }
 
@@ -1501,6 +1503,21 @@ footer a:hover {
 }
 
 .card-header {
+  /* Card styling */
+  background-color: white;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* ===================================
+   AUTO-GENERATED CLASSES
+   Added by CSS validation script
+   =================================== */
+
+.card-shadow {
   /* Card styling */
   background-color: white;
   padding: var(--space-lg);
