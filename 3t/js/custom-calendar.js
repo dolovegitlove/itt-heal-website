@@ -176,13 +176,13 @@
                     }
                     
                     
-                    /* Universal Responsive Calendar - All Screen Sizes */
+                    /* Compact Calendar - Fits all narrow screens including Galaxy Z Fold */
                     .calendar-viewport-wrapper {
                         width: 100% !important;
                         max-width: 100vw !important;
                         overflow: hidden !important;
                         box-sizing: border-box !important;
-                        padding: 0.5rem !important;
+                        padding: 0.25rem !important;
                         margin: 0 !important;
                         display: flex !important;
                         justify-content: center !important;
@@ -190,89 +190,141 @@
                     
                     #custom-calendar-container {
                         width: 100% !important;
-                        max-width: min(90vw, 450px) !important;
+                        max-width: min(95vw, 320px) !important;
                         box-sizing: border-box !important;
                         overflow: hidden !important;
                         margin: 0 auto !important;
-                        padding: clamp(0.5rem, 2vw, 1rem) !important;
+                        padding: 0.5rem !important;
+                        border-width: 1px !important;
                     }
                     
                     #calendar-header {
-                        margin-bottom: clamp(0.5rem, 1.5vw, 1rem) !important;
+                        margin-bottom: 0.5rem !important;
                         display: flex !important;
                         align-items: center !important;
                         justify-content: space-between !important;
+                        gap: 0.25rem !important;
                     }
                     
                     #calendar-header button {
-                        padding: clamp(0.375rem, 1vw, 0.75rem) !important;
-                        min-width: 44px !important;
-                        min-height: 44px !important;
-                        font-size: clamp(0.875rem, 2vw, 1.125rem) !important;
+                        padding: 0.25rem 0.5rem !important;
+                        min-width: 36px !important;
+                        min-height: 36px !important;
+                        font-size: 0.75rem !important;
                         flex-shrink: 0 !important;
+                        border-width: 1px !important;
                     }
                     
                     #current-month-year {
-                        font-size: clamp(0.875rem, 2.5vw, 1.25rem) !important;
+                        font-size: 0.875rem !important;
                         text-align: center !important;
                         flex: 1 !important;
                         white-space: nowrap !important;
                         overflow: hidden !important;
                         text-overflow: ellipsis !important;
-                        padding: 0 0.5rem !important;
+                        padding: 0 0.25rem !important;
+                        min-width: 0 !important;
                     }
                     
                     #calendar-grid {
-                        gap: clamp(0.125rem, 0.3vw, 0.25rem) !important;
+                        gap: 0.125rem !important;
                         width: 100% !important;
                         display: grid !important;
                         grid-template-columns: repeat(7, 1fr) !important;
+                        max-width: 100% !important;
                     }
                     
                     .calendar-date {
-                        padding: clamp(0.125rem, 0.5vw, 0.5rem) !important;
+                        padding: 0.125rem !important;
                         width: 100% !important;
-                        min-height: clamp(32px, 8vw, 48px) !important;
-                        font-size: clamp(0.75rem, 2vw, 1rem) !important;
+                        height: 32px !important;
+                        max-height: 32px !important;
+                        font-size: 0.75rem !important;
                         margin: 0 !important;
-                        border-radius: clamp(3px, 1vw, 8px) !important;
+                        border-radius: 4px !important;
                         box-sizing: border-box !important;
                         display: flex !important;
                         align-items: center !important;
                         justify-content: center !important;
-                        aspect-ratio: 1 !important;
+                        border-width: 1px !important;
+                        flex-shrink: 0 !important;
                     }
                     
                     .calendar-date[role="columnheader"] {
-                        font-size: clamp(0.625rem, 1.5vw, 0.875rem) !important;
-                        min-height: clamp(24px, 6vw, 32px) !important;
-                        aspect-ratio: auto !important;
+                        font-size: 0.625rem !important;
+                        height: 24px !important;
+                        max-height: 24px !important;
+                        font-weight: 600 !important;
+                        padding: 0.125rem !important;
                     }
                     
-                    /* Ensure touch targets meet accessibility requirements */
+                    /* Touch targets for interactive dates only */
                     .calendar-date:not([disabled]):not([role="columnheader"]) {
-                        min-height: 44px !important;
-                        min-width: 44px !important;
+                        min-height: 36px !important;
+                        height: 36px !important;
+                        cursor: pointer !important;
+                    }
+                    
+                    .calendar-date:not([disabled]):not([role="columnheader"]):hover {
+                        transform: scale(1.05) !important;
+                        z-index: 2 !important;
+                        position: relative !important;
                     }
                     
                     #selected-date-display {
-                        padding: clamp(0.375rem, 1vw, 0.75rem) !important;
-                        font-size: clamp(0.75rem, 2vw, 1rem) !important;
-                        margin: clamp(0.5rem, 1.5vw, 1rem) 0 !important;
+                        padding: 0.375rem !important;
+                        font-size: 0.75rem !important;
+                        margin: 0.5rem 0 !important;
+                        border-width: 1px !important;
                     }
                     
                     .calendar-legend {
-                        font-size: clamp(0.625rem, 1.5vw, 0.875rem) !important;
-                        margin-top: clamp(0.5rem, 1vw, 1rem) !important;
+                        font-size: 0.625rem !important;
+                        margin-top: 0.5rem !important;
                         display: flex !important;
-                        gap: clamp(0.5rem, 2vw, 1rem) !important;
+                        gap: 0.5rem !important;
                         flex-wrap: wrap !important;
                         justify-content: center !important;
                     }
                     
                     .calendar-legend span {
-                        width: clamp(12px, 3vw, 16px) !important;
-                        height: clamp(12px, 3vw, 16px) !important;
+                        width: 10px !important;
+                        height: 10px !important;
+                        border-width: 1px !important;
+                    }
+                    
+                    /* Extra compact for very narrow screens */
+                    @media (max-width: 350px) {
+                        #custom-calendar-container {
+                            max-width: 98vw !important;
+                            padding: 0.25rem !important;
+                        }
+                        
+                        .calendar-date {
+                            height: 28px !important;
+                            font-size: 0.625rem !important;
+                        }
+                        
+                        .calendar-date:not([disabled]):not([role="columnheader"]) {
+                            height: 32px !important;
+                            min-height: 32px !important;
+                        }
+                        
+                        .calendar-date[role="columnheader"] {
+                            height: 20px !important;
+                            font-size: 0.5rem !important;
+                        }
+                        
+                        #calendar-header button {
+                            min-width: 32px !important;
+                            min-height: 32px !important;
+                            font-size: 0.625rem !important;
+                            padding: 0.125rem 0.25rem !important;
+                        }
+                        
+                        #current-month-year {
+                            font-size: 0.75rem !important;
+                        }
                     }
                     
                     /* High contrast mode support */
