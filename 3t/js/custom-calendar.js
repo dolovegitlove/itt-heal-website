@@ -111,9 +111,9 @@
                          role="status" 
                          aria-live="polite" 
                          aria-atomic="true"
-                         style="margin-top: 1rem; padding: 0.75rem; background: #f0fdf4; border: 2px solid #10b981; border-radius: 6px; text-align: center; display: none;">
-                        <span style="color: #059669; font-weight: 600;">Selected: </span>
-                        <span id="selected-date-text" style="color: #059669;"></span>
+                         style="margin-top: 1rem; padding: 0.75rem; background: #eff6ff; border: 2px solid #3b82f6; border-radius: 6px; text-align: center; display: none;">
+                        <span style="color: #1d4ed8; font-weight: 600;">Selected: </span>
+                        <span id="selected-date-text" style="color: #1d4ed8;"></span>
                     </div>
                     
                     <!-- Live region for announcements -->
@@ -129,11 +129,11 @@
                          class="calendar-legend"
                          style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.875rem; color: #374151;">
                         <div>
-                            <span style="display: inline-block; width: 16px; height: 16px; background: #f3f4f6; border: 2px solid #9ca3af; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
+                            <span style="display: inline-block; width: 16px; height: 16px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
                             <span style="margin-left: 0.5rem;">Closed</span>
                         </div>
                         <div>
-                            <span style="display: inline-block; width: 16px; height: 16px; background: #10b981; border: 2px solid #059669; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
+                            <span style="display: inline-block; width: 16px; height: 16px; background: #3b82f6; border: 2px solid #2563eb; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
                             <span style="margin-left: 0.5rem;">Selected</span>
                         </div>
                     </div>
@@ -363,36 +363,34 @@
                         }
                     }
                     
-                    /* Dark mode support */
-                    @media (prefers-color-scheme: dark) {
-                        #custom-calendar-container {
-                            background: #1f2937 !important;
-                            border-color: #4b5563 !important;
-                            color: #f9fafb !important;
-                        }
-                        
-                        #calendar-header button {
-                            background: #374151 !important;
-                            color: #f9fafb !important;
-                            border-color: #6b7280 !important;
-                        }
-                        
-                        .calendar-date:not([disabled]) {
-                            background: #374151 !important;
-                            color: #f9fafb !important;
-                            border-color: #6b7280 !important;
-                        }
-                        
-                        .calendar-date[disabled] {
-                            background: #111827 !important;
-                            color: #6b7280 !important;
-                            border-color: #374151 !important;
-                        }
-                        
-                        #selected-date-display {
-                            background: #065f46 !important;
-                            border-color: #059669 !important;
-                        }
+                    /* Force light mode - override any dark mode preferences */
+                    #custom-calendar-container {
+                        background: #ffffff !important;
+                        border-color: #e2e8f0 !important;
+                        color: #1f2937 !important;
+                    }
+                    
+                    #calendar-header button {
+                        background: #f8fafc !important;
+                        color: #374151 !important;
+                        border-color: #d1d5db !important;
+                    }
+                    
+                    #calendar-header button:hover {
+                        background: #f1f5f9 !important;
+                        border-color: #9ca3af !important;
+                    }
+                    
+                    .calendar-date:not([disabled]):not([role="columnheader"]) {
+                        background: #ffffff !important;
+                        color: #1f2937 !important;
+                        border-color: #d1d5db !important;
+                    }
+                    
+                    .calendar-date[role="columnheader"] {
+                        background: transparent !important;
+                        color: #6b7280 !important;
+                        border: none !important;
                     }
                 </style>
             `;
@@ -524,11 +522,11 @@
                 `;
 
                 if (isPastDate || !isBusinessDay || isClosedDate) {
-                    // Closed/unavailable styling - Better contrast
+                    // Closed/unavailable styling - Light mode
                     cellStyle += `
-                        background: #f3f4f6;
-                        color: #4b5563;
-                        border-color: #9ca3af;
+                        background: #f8fafc;
+                        color: #64748b;
+                        border-color: #cbd5e1;
                         cursor: not-allowed;
                     `;
                     dateCell.disabled = true;
@@ -540,36 +538,36 @@
                         dateCell.innerHTML = `${day}<span style="position: absolute; top: 2px; right: 2px; font-size: 0.6rem;" aria-hidden="true">🚫</span>`;
                     }
                 } else if (isSelected) {
-                    // Selected styling - High contrast
+                    // Selected styling - Light mode with blue accent
                     cellStyle += `
-                        background: #059669;
+                        background: #3b82f6;
                         color: white;
-                        border-color: #047857;
+                        border-color: #2563eb;
                         font-weight: 700;
                     `;
                     dateCell.tabIndex = 0;
                 } else {
-                    // Available styling - Better contrast
+                    // Available styling - Light mode
                     cellStyle += `
-                        background: white;
+                        background: #ffffff;
                         color: #1f2937;
-                        border-color: #6b7280;
+                        border-color: #d1d5db;
                     `;
                     dateCell.tabIndex = 0;
                     
-                    // Enhanced hover effect for available dates
+                    // Enhanced hover effect for available dates - Light mode
                     dateCell.addEventListener('mouseenter', () => {
                         if (!dateCell.disabled) {
-                            dateCell.style.background = '#f0fdf4';
-                            dateCell.style.borderColor = '#10b981';
-                            dateCell.style.color = '#047857';
+                            dateCell.style.background = '#eff6ff';
+                            dateCell.style.borderColor = '#3b82f6';
+                            dateCell.style.color = '#1d4ed8';
                         }
                     });
                     
                     dateCell.addEventListener('mouseleave', () => {
                         if (!dateCell.disabled && !isSelected) {
-                            dateCell.style.background = 'white';
-                            dateCell.style.borderColor = '#6b7280';
+                            dateCell.style.background = '#ffffff';
+                            dateCell.style.borderColor = '#d1d5db';
                             dateCell.style.color = '#1f2937';
                         }
                     });
