@@ -53,13 +53,14 @@
             const dateInputContainer = document.querySelector('#booking-date')?.parentElement;
             if (!dateInputContainer) return;
 
-            // Create WCAG-compliant calendar container
+            // Create WCAG-compliant calendar container with viewport constraint wrapper
             const calendarHTML = `
+                <div class="calendar-viewport-wrapper" style="width: 100%; max-width: 100vw; overflow: hidden; box-sizing: border-box; padding: 0;">
                 <div id="custom-calendar-container" 
                      role="application" 
                      aria-label="Date picker calendar"
                      tabindex="0"
-                     style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); focus-outline: 2px solid #2563eb; outline-offset: 2px; max-width: 100%; width: 100%; box-sizing: border-box; overflow: hidden;">
+                     style="background: white; border: 2px solid #e2e8f0; border-radius: 12px; padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); focus-outline: 2px solid #2563eb; outline-offset: 2px; max-width: 100%; width: 100%; box-sizing: border-box; overflow: hidden; margin: 0 auto;">
                     
                     <!-- Calendar Instructions for Screen Readers -->
                     <div id="calendar-instructions" class="sr-only" aria-live="polite">
@@ -137,6 +138,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 
                 <!-- Keep hidden input for form submission -->
                 <input type="hidden" id="booking-date" name="booking-date" required>
@@ -173,155 +175,104 @@
                         }
                     }
                     
-                    /* Desktop and larger screens */
-                    @media (min-width: 769px) {
-                        #custom-calendar-container {
-                            max-width: 500px !important;
-                            margin: 0 auto !important;
-                        }
-                        
-                        .calendar-date {
-                            min-width: 48px !important;
-                            min-height: 48px !important;
-                        }
+                    
+                    /* Universal Responsive Calendar - All Screen Sizes */
+                    .calendar-viewport-wrapper {
+                        width: 100% !important;
+                        max-width: 100vw !important;
+                        overflow: hidden !important;
+                        box-sizing: border-box !important;
+                        padding: 0.5rem !important;
+                        margin: 0 !important;
+                        display: flex !important;
+                        justify-content: center !important;
                     }
                     
-                    /* Mobile Responsive Design */
-                    @media (max-width: 768px) {
-                        #custom-calendar-container {
-                            padding: 0.75rem !important;
-                            margin: 0 !important;
-                            border-radius: 8px !important;
-                            max-width: 100% !important;
-                            width: 100% !important;
-                            box-sizing: border-box !important;
-                        }
-                        
-                        #calendar-header {
-                            margin-bottom: 0.75rem !important;
-                        }
-                        
-                        #calendar-header button {
-                            padding: 0.5rem 0.75rem !important;
-                            min-width: 44px !important;
-                            min-height: 44px !important;
-                            font-size: 1rem !important;
-                            flex-shrink: 0 !important;
-                        }
-                        
-                        #current-month-year {
-                            font-size: 1rem !important;
-                            text-align: center !important;
-                            flex: 1 !important;
-                            white-space: nowrap !important;
-                            overflow: hidden !important;
-                            text-overflow: ellipsis !important;
-                        }
-                        
-                        #calendar-grid {
-                            gap: 0.125rem !important;
-                            width: 100% !important;
-                            max-width: 100% !important;
-                        }
-                        
-                        .calendar-date {
-                            padding: 0.25rem !important;
-                            min-width: calc((100% - 6 * 0.125rem) / 7) !important;
-                            min-height: 36px !important;
-                            max-width: calc((100% - 6 * 0.125rem) / 7) !important;
-                            font-size: 0.875rem !important;
-                            margin: 0 !important;
-                            border-radius: 4px !important;
-                            box-sizing: border-box !important;
-                        }
-                        
-                        .calendar-date[role="columnheader"] {
-                            font-size: 0.75rem !important;
-                            padding: 0.25rem !important;
-                            min-height: 28px !important;
-                        }
-                        
-                        #selected-date-display {
-                            padding: 0.5rem !important;
-                            font-size: 0.875rem !important;
-                            margin-left: 0 !important;
-                            margin-right: 0 !important;
-                        }
-                        
-                        /* Ensure touch targets meet minimum while fitting */
-                        .calendar-date:not([disabled]):not([role="columnheader"]) {
-                            min-height: 40px !important;
-                        }
-                        
-                        .calendar-legend {
-                            font-size: 0.75rem !important;
-                        }
+                    #custom-calendar-container {
+                        width: 100% !important;
+                        max-width: min(90vw, 450px) !important;
+                        box-sizing: border-box !important;
+                        overflow: hidden !important;
+                        margin: 0 auto !important;
+                        padding: clamp(0.5rem, 2vw, 1rem) !important;
                     }
                     
-                    @media (max-width: 480px) {
-                        #custom-calendar-container {
-                            padding: 0.5rem !important;
-                            margin: 0 !important;
-                            max-width: 100% !important;
-                            width: 100% !important;
-                        }
-                        
-                        #calendar-header {
-                            margin-bottom: 0.5rem !important;
-                        }
-                        
-                        #calendar-header button {
-                            padding: 0.375rem 0.5rem !important;
-                            min-width: 40px !important;
-                            min-height: 40px !important;
-                            font-size: 0.875rem !important;
-                        }
-                        
-                        #current-month-year {
-                            font-size: 0.875rem !important;
-                            padding: 0 0.25rem !important;
-                        }
-                        
-                        .calendar-date {
-                            padding: 0.125rem !important;
-                            min-width: calc((100% - 6 * 0.125rem) / 7) !important;
-                            min-height: 32px !important;
-                            max-width: calc((100% - 6 * 0.125rem) / 7) !important;
-                            font-size: 0.75rem !important;
-                            margin: 0 !important;
-                            border-width: 1px !important;
-                        }
-                        
-                        .calendar-date[role="columnheader"] {
-                            font-size: 0.625rem !important;
-                            padding: 0.125rem !important;
-                            min-height: 24px !important;
-                        }
-                        
-                        /* Ensure touch targets are still accessible for interactive elements */
-                        .calendar-date:not([disabled]):not([role="columnheader"]) {
-                            min-height: 36px !important;
-                        }
-                        
-                        #selected-date-display {
-                            padding: 0.375rem !important;
-                            font-size: 0.75rem !important;
-                            margin: 0.5rem 0 !important;
-                        }
-                        
-                        /* Stack legend vertically on very small screens */
-                        .calendar-legend {
-                            flex-direction: column !important;
-                            gap: 0.5rem !important;
-                            align-items: flex-start !important;
-                            font-size: 0.625rem !important;
-                            margin-top: 0.5rem !important;
-                        }
-                        
-                        .calendar-legend span {
-                            width: 12px !important;
-                            height: 12px !important;
-                        }
+                    #calendar-header {
+                        margin-bottom: clamp(0.5rem, 1.5vw, 1rem) !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: space-between !important;
+                    }
+                    
+                    #calendar-header button {
+                        padding: clamp(0.375rem, 1vw, 0.75rem) !important;
+                        min-width: 44px !important;
+                        min-height: 44px !important;
+                        font-size: clamp(0.875rem, 2vw, 1.125rem) !important;
+                        flex-shrink: 0 !important;
+                    }
+                    
+                    #current-month-year {
+                        font-size: clamp(0.875rem, 2.5vw, 1.25rem) !important;
+                        text-align: center !important;
+                        flex: 1 !important;
+                        white-space: nowrap !important;
+                        overflow: hidden !important;
+                        text-overflow: ellipsis !important;
+                        padding: 0 0.5rem !important;
+                    }
+                    
+                    #calendar-grid {
+                        gap: clamp(0.125rem, 0.3vw, 0.25rem) !important;
+                        width: 100% !important;
+                        display: grid !important;
+                        grid-template-columns: repeat(7, 1fr) !important;
+                    }
+                    
+                    .calendar-date {
+                        padding: clamp(0.125rem, 0.5vw, 0.5rem) !important;
+                        width: 100% !important;
+                        min-height: clamp(32px, 8vw, 48px) !important;
+                        font-size: clamp(0.75rem, 2vw, 1rem) !important;
+                        margin: 0 !important;
+                        border-radius: clamp(3px, 1vw, 8px) !important;
+                        box-sizing: border-box !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        aspect-ratio: 1 !important;
+                    }
+                    
+                    .calendar-date[role="columnheader"] {
+                        font-size: clamp(0.625rem, 1.5vw, 0.875rem) !important;
+                        min-height: clamp(24px, 6vw, 32px) !important;
+                        aspect-ratio: auto !important;
+                    }
+                    
+                    /* Ensure touch targets meet accessibility requirements */
+                    .calendar-date:not([disabled]):not([role="columnheader"]) {
+                        min-height: 44px !important;
+                        min-width: 44px !important;
+                    }
+                    
+                    #selected-date-display {
+                        padding: clamp(0.375rem, 1vw, 0.75rem) !important;
+                        font-size: clamp(0.75rem, 2vw, 1rem) !important;
+                        margin: clamp(0.5rem, 1.5vw, 1rem) 0 !important;
+                    }
+                    
+                    .calendar-legend {
+                        font-size: clamp(0.625rem, 1.5vw, 0.875rem) !important;
+                        margin-top: clamp(0.5rem, 1vw, 1rem) !important;
+                        display: flex !important;
+                        gap: clamp(0.5rem, 2vw, 1rem) !important;
+                        flex-wrap: wrap !important;
+                        justify-content: center !important;
+                    }
+                    
+                    .calendar-legend span {
+                        width: clamp(12px, 3vw, 16px) !important;
+                        height: clamp(12px, 3vw, 16px) !important;
                     }
                     
                     /* High contrast mode support */
