@@ -258,6 +258,41 @@
         #booking-date:focus-visible, #booking-time:focus-visible {
             box-shadow: 0 0 0 3px #ffd700;
         }
+        
+        /* Responsive Date & Time Grid Layout */
+        #datetime-selection .datetime-grid {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Use 2-column layout on larger screens only */
+        @media (min-width: 600px) {
+            #datetime-selection .datetime-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+        
+        /* Expand datetime section on narrow screens to use more viewport width */
+        @media (max-width: 599px) {
+            #datetime-selection {
+                width: calc(100vw - 32px) !important;
+                max-width: calc(100vw - 32px) !important;
+                margin-left: calc(-50vw + 50% + 16px) !important;
+                padding: 0 16px !important;
+                box-sizing: border-box !important;
+            }
+        }
+        
+        /* Ensure time select doesn't overflow on mobile */
+        #booking-time {
+            max-width: 100% !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
     </style>
     
     <!-- Custom theme configuration for reference -->
@@ -3063,7 +3098,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                             <div id="datetime-selection" style="display: none;" class="mb-xl">
                                 <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 2: Choose Date & Time</h3>
                                 
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="datetime-grid">
                                     <div>
                                         <label for="booking-date" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Preferred Date</label>
                                         <input type="date" id="booking-date" 
