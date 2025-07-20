@@ -111,9 +111,9 @@
                          role="status" 
                          aria-live="polite" 
                          aria-atomic="true"
-                         style="margin-top: 1rem; padding: 0.75rem; background: #eff6ff; border: 2px solid #3b82f6; border-radius: 6px; text-align: center; display: none;">
-                        <span style="color: #1d4ed8; font-weight: 600;">Selected: </span>
-                        <span id="selected-date-text" style="color: #1d4ed8;"></span>
+                         style="margin-top: 1rem; padding: 0.75rem; background: #e8f5e8; border: 2px solid #5a8a5a; border-radius: 6px; text-align: center; display: none;">
+                        <span style="color: #2d5a2d; font-weight: 600;">Selected: </span>
+                        <span id="selected-date-text" style="color: #2d5a2d;"></span>
                     </div>
                     
                     <!-- Live region for announcements -->
@@ -129,11 +129,11 @@
                          class="calendar-legend"
                          style="margin-top: 1rem; display: flex; gap: 1rem; font-size: 0.875rem; color: #374151;">
                         <div>
-                            <span style="display: inline-block; width: 16px; height: 16px; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
+                            <span style="display: inline-block; width: 16px; height: 16px; background: #e8ece8; border: 2px solid #c8d0c8; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
                             <span style="margin-left: 0.5rem;">Closed</span>
                         </div>
                         <div>
-                            <span style="display: inline-block; width: 16px; height: 16px; background: #3b82f6; border: 2px solid #2563eb; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
+                            <span style="display: inline-block; width: 16px; height: 16px; background: #5a8a5a; border: 2px solid #4a7a4a; border-radius: 4px; vertical-align: middle;" aria-hidden="true"></span>
                             <span style="margin-left: 0.5rem;">Selected</span>
                         </div>
                     </div>
@@ -363,33 +363,33 @@
                         }
                     }
                     
-                    /* Force light mode - override any dark mode preferences */
+                    /* Force light mode with sage background - override any dark mode preferences */
                     #custom-calendar-container {
-                        background: #ffffff !important;
-                        border-color: #e2e8f0 !important;
-                        color: #1f2937 !important;
+                        background: #f0f4f0 !important;
+                        border-color: #d4dcd4 !important;
+                        color: #2d3a2d !important;
                     }
                     
                     #calendar-header button {
-                        background: #f8fafc !important;
-                        color: #374151 !important;
-                        border-color: #d1d5db !important;
+                        background: #e8ece8 !important;
+                        color: #2d3a2d !important;
+                        border-color: #c8d0c8 !important;
                     }
                     
                     #calendar-header button:hover {
-                        background: #f1f5f9 !important;
-                        border-color: #9ca3af !important;
+                        background: #dce4dc !important;
+                        border-color: #b8c4b8 !important;
                     }
                     
                     .calendar-date:not([disabled]):not([role="columnheader"]) {
                         background: #ffffff !important;
-                        color: #1f2937 !important;
-                        border-color: #d1d5db !important;
+                        color: #2d3a2d !important;
+                        border-color: #c8d0c8 !important;
                     }
                     
                     .calendar-date[role="columnheader"] {
                         background: transparent !important;
-                        color: #6b7280 !important;
+                        color: #5a6a5a !important;
                         border: none !important;
                     }
                 </style>
@@ -522,11 +522,11 @@
                 `;
 
                 if (isPastDate || !isBusinessDay || isClosedDate) {
-                    // Closed/unavailable styling - Light mode
+                    // Closed/unavailable styling - Light sage
                     cellStyle += `
-                        background: #f8fafc;
-                        color: #64748b;
-                        border-color: #cbd5e1;
+                        background: #e8ece8;
+                        color: #6b7b6b;
+                        border-color: #c8d0c8;
                         cursor: not-allowed;
                     `;
                     dateCell.disabled = true;
@@ -538,37 +538,37 @@
                         dateCell.innerHTML = `${day}<span style="position: absolute; top: 2px; right: 2px; font-size: 0.6rem;" aria-hidden="true">🚫</span>`;
                     }
                 } else if (isSelected) {
-                    // Selected styling - Light mode with blue accent
+                    // Selected styling - Sage green accent
                     cellStyle += `
-                        background: #3b82f6;
+                        background: #5a8a5a;
                         color: white;
-                        border-color: #2563eb;
+                        border-color: #4a7a4a;
                         font-weight: 700;
                     `;
                     dateCell.tabIndex = 0;
                 } else {
-                    // Available styling - Light mode
+                    // Available styling - Light sage theme
                     cellStyle += `
                         background: #ffffff;
-                        color: #1f2937;
-                        border-color: #d1d5db;
+                        color: #2d3a2d;
+                        border-color: #c8d0c8;
                     `;
                     dateCell.tabIndex = 0;
                     
-                    // Enhanced hover effect for available dates - Light mode
+                    // Enhanced hover effect for available dates - Sage theme
                     dateCell.addEventListener('mouseenter', () => {
                         if (!dateCell.disabled) {
-                            dateCell.style.background = '#eff6ff';
-                            dateCell.style.borderColor = '#3b82f6';
-                            dateCell.style.color = '#1d4ed8';
+                            dateCell.style.background = '#e8f5e8';
+                            dateCell.style.borderColor = '#5a8a5a';
+                            dateCell.style.color = '#2d5a2d';
                         }
                     });
                     
                     dateCell.addEventListener('mouseleave', () => {
                         if (!dateCell.disabled && !isSelected) {
                             dateCell.style.background = '#ffffff';
-                            dateCell.style.borderColor = '#d1d5db';
-                            dateCell.style.color = '#1f2937';
+                            dateCell.style.borderColor = '#c8d0c8';
+                            dateCell.style.color = '#2d3a2d';
                         }
                     });
                 }
