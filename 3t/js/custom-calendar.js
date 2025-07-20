@@ -55,7 +55,7 @@
 
             // Create WCAG-compliant calendar container with viewport constraint wrapper
             const calendarHTML = `
-                <div class="calendar-viewport-wrapper" style="width: 100%; max-width: 100vw; overflow: hidden; box-sizing: border-box; padding: 0;">
+                <div class="calendar-viewport-wrapper" style="width: 100%; max-width: 100%; overflow: hidden; box-sizing: border-box; padding: 0; margin: 0; display: flex; justify-content: center; align-items: center;">
                 <div id="custom-calendar-container" 
                      role="application" 
                      aria-label="Date picker calendar"
@@ -179,18 +179,19 @@
                     /* Compact Calendar - Fits all narrow screens including Galaxy Z Fold */
                     .calendar-viewport-wrapper {
                         width: 100% !important;
-                        max-width: 100vw !important;
+                        max-width: 100% !important;
                         overflow: hidden !important;
                         box-sizing: border-box !important;
-                        padding: 0.25rem !important;
+                        padding: 0 !important;
                         margin: 0 !important;
                         display: flex !important;
                         justify-content: center !important;
+                        align-items: center !important;
                     }
                     
                     #custom-calendar-container {
                         width: 100% !important;
-                        max-width: min(95vw, 320px) !important;
+                        max-width: min(95vw, 260px) !important;
                         box-sizing: border-box !important;
                         overflow: hidden !important;
                         margin: 0 auto !important;
