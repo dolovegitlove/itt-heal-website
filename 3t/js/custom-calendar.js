@@ -191,11 +191,11 @@
                     
                     #custom-calendar-container {
                         width: 100% !important;
-                        max-width: min(95vw, 260px) !important;
+                        max-width: min(98vw, 340px) !important;
                         box-sizing: border-box !important;
                         overflow: hidden !important;
                         margin: 0 auto !important;
-                        padding: 0.5rem !important;
+                        padding: 0.25rem !important;
                         border-width: 1px !important;
                     }
                     
@@ -228,7 +228,7 @@
                     }
                     
                     #calendar-grid {
-                        gap: 0.125rem !important;
+                        gap: 0.25rem !important;
                         width: 100% !important;
                         display: grid !important;
                         grid-template-columns: repeat(7, 1fr) !important;
@@ -236,13 +236,13 @@
                     }
                     
                     .calendar-date {
-                        padding: 0.125rem !important;
+                        padding: 0.25rem !important;
                         width: 100% !important;
-                        height: 32px !important;
-                        max-height: 32px !important;
-                        font-size: 0.75rem !important;
+                        height: 36px !important;
+                        max-height: 36px !important;
+                        font-size: 0.875rem !important;
                         margin: 0 !important;
-                        border-radius: 4px !important;
+                        border-radius: 6px !important;
                         box-sizing: border-box !important;
                         display: flex !important;
                         align-items: center !important;
@@ -261,8 +261,8 @@
                     
                     /* Touch targets for interactive dates only */
                     .calendar-date:not([disabled]):not([role="columnheader"]) {
-                        min-height: 36px !important;
-                        height: 36px !important;
+                        min-height: 40px !important;
+                        height: 40px !important;
                         cursor: pointer !important;
                     }
                     
@@ -298,17 +298,17 @@
                     @media (max-width: 350px) {
                         #custom-calendar-container {
                             max-width: 98vw !important;
-                            padding: 0.25rem !important;
+                            padding: 0.125rem !important;
                         }
                         
                         .calendar-date {
-                            height: 28px !important;
-                            font-size: 0.625rem !important;
+                            height: 32px !important;
+                            font-size: 0.75rem !important;
                         }
                         
                         .calendar-date:not([disabled]):not([role="columnheader"]) {
-                            height: 32px !important;
-                            min-height: 32px !important;
+                            height: 36px !important;
+                            min-height: 36px !important;
                         }
                         
                         .calendar-date[role="columnheader"] {
