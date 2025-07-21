@@ -21,6 +21,7 @@
     // Error storage
     let errorLog = [];
     let performanceMetrics = {};
+    let originalConsoleError = console.error;
     
     /**
      * Initialize error handling system
@@ -118,7 +119,6 @@
         });
         
         // Monitor JavaScript errors by function
-        const originalConsoleError = console.error;
         console.error = function(...args) {
             const errorData = {
                 type: 'console_error',
@@ -149,9 +149,13 @@
             errorLog = errorLog.slice(-ERROR_CONFIG.maxErrors);
         }
         
-        // Console logging
-        if (ERROR_CONFIG.enableConsoleLogging) {
-            console.error('🚨 Error logged:', errorData);
+        // Console logging (use original console.error to avoid infinite loop)
+        if (ERROR_CONFIG.enableConsoleLogging && originalConsoleError) {
+            try {
+                originalConsoleError.call(console, '🚨 Error logged:', errorData);
+            } catch (e) {
+                // Fallback if original console.error fails
+            }
         }
         
         // Local storage

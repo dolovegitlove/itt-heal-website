@@ -154,11 +154,13 @@
         if (mobileMenu && menuContent) {
             if (mobileMenuOpen) {
                 mobileMenu.style.display = 'block';
+                mobileMenu.setAttribute('aria-hidden', 'false');
                 // Trigger reflow before adding transform
                 mobileMenu.offsetHeight;
                 menuContent.style.transform = 'translateX(0)';
                 document.body.style.overflow = 'hidden';
             } else {
+                mobileMenu.setAttribute('aria-hidden', 'true');
                 menuContent.style.transform = 'translateX(100%)';
                 document.body.style.overflow = '';
                 setTimeout(() => {
@@ -312,6 +314,7 @@
     window.LuxuryMobile = {
         toggleMobileMenu,
         closeMobileMenu,
+        isMobileMenuOpen: () => mobileMenuOpen,
         init
     };
     

@@ -1,3 +1,5 @@
+// Note: This is a frontend file, enum values should be defined locally or imported from shared frontend constants
+
 /**
  * Pricing Display and Booking Interactions
  * Version: 20250625-pricing-001
@@ -11,6 +13,19 @@
     // Pricing configuration
     const PRICING_CONFIG = {
         sessions: {
+            '30min': {
+                duration: 30,
+                appPrice: 85,
+                webPrice: 95,
+                title: '30-Minute Quick Relief',
+                description: 'Targeted therapeutic session',
+                features: [
+                    'Focused assessment',
+                    'Targeted therapy',
+                    'Quick relief protocol'
+                ],
+                quickOption: true
+            },
             '60min': {
                 duration: 60,
                 appPrice: 135,

@@ -44,6 +44,32 @@
             flex-direction: column;
         }
 
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-toggle .menu-icon {
+            width: 24px;
+            height: 24px;
+        }
+
         .admin-header {
             background: linear-gradient(135deg, var(--admin-primary) 0%, var(--admin-secondary) 100%);
             color: white;
@@ -63,26 +89,6 @@
             gap: 1rem;
         }
 
-        .menu-toggle {
-            display: none;
-            position: absolute;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-            z-index: 999;
-        }
-
-        .menu-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
 
         .admin-header .subtitle {
             font-style: italic;
@@ -96,12 +102,14 @@
             display: grid;
             grid-template-columns: 280px 1fr;
             gap: 0;
+            position: relative;
         }
 
         .admin-sidebar {
             background: var(--admin-card);
             border-right: 1px solid var(--admin-border);
             padding: 2rem 0;
+            transition: transform 0.3s ease;
         }
 
         .admin-nav {
@@ -588,73 +596,8 @@
             flex-shrink: 0;
         }
 
-        /* Mobile Overlay */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 101;
-        }
-
-        .sidebar-overlay.active {
-            display: block;
-        }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .admin-main {
-                grid-template-columns: 1fr;
-            }
-            
-            .admin-sidebar {
-                position: fixed;
-                left: -280px;
-                top: 0;
-                bottom: 0;
-                width: 280px;
-                z-index: 100;
-                transition: left 0.3s ease;
-                border-right: none;
-                box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            .admin-sidebar.open {
-                left: 0;
-            }
-
-            .bookings-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .admin-content {
-                padding: 1rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .data-table {
-                font-size: 0.875rem;
-            }
-            
-            .data-table th,
-            .data-table td {
-                padding: 0.75rem 0.5rem;
-            }
-        }
 
         /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
@@ -670,6 +613,549 @@
         .admin-nav-link:focus {
             outline: 2px solid var(--admin-secondary);
             outline-offset: 2px;
+        }
+
+        /* Mobile and Tablet Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .admin-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .dashboard-title {
+                display: none;
+            }
+
+            .admin-header .subtitle {
+                font-size: 0.875rem;
+            }
+
+            .admin-main {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 280px;
+                height: 100vh;
+                z-index: 1000;
+                transform: translateX(-100%);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .admin-sidebar.active {
+                transform: translateX(0);
+            }
+
+            .admin-content {
+                padding: 1.5rem;
+            }
+
+            .bookings-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .data-table {
+                font-size: 0.875rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .stat-card h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .admin-header {
+                padding: 1rem;
+            }
+
+            .admin-sidebar {
+                width: 100%;
+            }
+
+            .admin-content {
+                padding: 1rem;
+            }
+
+            .bookings-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .booking-card {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Skip Navigation Links */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--admin-primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 9999;
+            font-weight: 600;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Calendar Styles */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .calendar-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .calendar-title {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--admin-text);
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .btn-nav {
+            background: var(--admin-background);
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-nav:hover {
+            background: var(--admin-secondary);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .calendar-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bulk-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-bulk {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            background: white;
+            color: var(--admin-text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .btn-bulk:hover {
+            background: var(--admin-background);
+            border-color: var(--admin-secondary);
+        }
+
+        .btn-bulk.block {
+            border-color: #ef4444;
+            color: #dc2626;
+        }
+
+        .btn-bulk.block:hover {
+            background: #fef2f2;
+            border-color: #dc2626;
+        }
+
+        .calendar-legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--admin-background);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-color.available {
+            background: #10b981;
+        }
+
+        .legend-color.blocked {
+            background: #ef4444;
+        }
+
+        .legend-color.booked {
+            background: #c084fc;
+        }
+
+        .legend-color.mixed {
+            background: linear-gradient(45deg, #10b981 50%, #ef4444 50%);
+        }
+
+        .calendar-container {
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background: var(--admin-background);
+        }
+
+        .weekday {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--admin-text);
+            border-right: 1px solid var(--admin-border);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .weekday:last-child {
+            border-right: none;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .calendar-day {
+            min-height: 120px;
+            border-right: 1px solid var(--admin-border);
+            border-bottom: 1px solid var(--admin-border);
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            background: white;
+        }
+
+        .calendar-day:nth-child(7n) {
+            border-right: none;
+        }
+
+        .calendar-day:hover {
+            background: #f8fafc;
+        }
+
+        .calendar-day.selected {
+            background: #e0e7ff;
+            border-color: var(--admin-secondary);
+        }
+
+        .calendar-day.other-month {
+            background: #f9fafb;
+            color: #9ca3af;
+        }
+
+        .calendar-day.today {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+
+        .calendar-day.fully-blocked {
+            background: #fee2e2;
+            border-color: #dc2626;
+        }
+
+        .day-number {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: inherit;
+        }
+
+        .day-slots {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .slot-indicator {
+            height: 4px;
+            border-radius: 2px;
+            margin-bottom: 1px;
+        }
+
+        .slot-indicator.available {
+            background: #10b981;
+        }
+
+        .slot-indicator.blocked {
+            background: #ef4444;
+        }
+
+        .slot-indicator.booked {
+            background: #c084fc;
+        }
+
+        .slot-count {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        .day-details {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--admin-background);
+            border-radius: 8px;
+            border: 1px solid var(--admin-border);
+        }
+
+        .day-details-title {
+            margin: 0 0 1rem 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--admin-text);
+        }
+
+        .day-details-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .time-slot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .time-slot:hover {
+            border-color: var(--admin-secondary);
+            transform: translateY(-1px);
+        }
+
+        .time-slot.available {
+            border-left: 4px solid #10b981;
+        }
+
+        .time-slot.blocked {
+            border-left: 4px solid #ef4444;
+            background: #fef2f2;
+        }
+
+        .time-slot.booked {
+            border-left: 4px solid #c084fc;
+            background: #faf5ff;
+        }
+
+        .slot-time {
+            font-weight: 600;
+            color: var(--admin-text);
+        }
+
+        .slot-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-available {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-blocked {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-booked {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .slot-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Responsive Calendar */
+        @media (max-width: 768px) {
+            .calendar-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .calendar-navigation {
+                justify-content: center;
+            }
+
+            .calendar-actions {
+                justify-content: center;
+            }
+
+            .bulk-actions {
+                justify-content: center;
+            }
+
+            .calendar-legend {
+                justify-content: center;
+            }
+
+            .calendar-day {
+                min-height: 80px;
+                padding: 0.5rem;
+            }
+
+            .day-number {
+                font-size: 0.875rem;
+            }
+
+            .weekday {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar-day {
+                min-height: 60px;
+                padding: 0.25rem;
+            }
+
+            .day-number {
+                font-size: 0.75rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .slot-indicator {
+                height: 3px;
+            }
+
+            .weekday {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.625rem;
+            }
+
+            .calendar-title {
+                font-size: 1.25rem;
+                min-width: auto;
+            }
+
+            .bulk-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-bulk {
+                width: 100%;
+            }
         }
 
         /* High contrast mode support */
@@ -738,24 +1224,33 @@
 <body>
     <div class="admin-container">
         <!-- Header -->
+        <!-- Skip Navigation Links -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#sidebar" class="skip-link">Skip to navigation</a>
+        
         <header class="admin-header">
-            <div>
-                <h1>
-                    <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 10.5V9L21 8.5V10.5H15ZM11 7H9L3 8V9L9 8.5L11 7ZM3 10.5V9L9 9.5V10.5H3ZM12 7.5C11.2 7.5 10.5 8.2 10.5 9S11.2 10.5 12 10.5 13.5 9.8 13.5 9 12.8 7.5 12 7.5ZM12 11C10.9 11 10 11.9 10 13V22H14V13C14 11.9 13.1 11 12 11Z"/>
+            <div class="header-content">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <svg class="menu-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
                     </svg>
-                    ITT Heal Administrative Dashboard
-                </h1>
-                <div class="subtitle">Dr. Schiffer Practice Management System</div>
+                </button>
+                <div>
+                    <h1>
+                        <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 10.5V9L21 8.5V10.5H15ZM11 7H9L3 8V9L9 8.5L11 7ZM3 10.5V9L9 9.5V10.5H3ZM12 7.5C11.2 7.5 10.5 8.2 10.5 9S11.2 10.5 12 10.5 13.5 9.8 13.5 9 12.8 7.5 12 7.5ZM12 11C10.9 11 10 11.9 10 13V22H14V13C14 11.9 13.1 11 12 11Z"/>
+                        </svg>
+                        <span class="dashboard-title">ITT Heal Administrative Dashboard</span>
+                    </h1>
+                    <div class="subtitle">Dr. Schiffer Practice Management System</div>
+                </div>
             </div>
-            <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation menu">
-                ☰
-            </button>
         </header>
 
-        <!-- Mobile Sidebar Overlay -->
-        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+        
         <!-- Main Content -->
         <main class="admin-main">
             <!-- Sidebar Navigation -->
@@ -805,7 +1300,7 @@
             </nav>
 
             <!-- Content Area -->
-            <div class="admin-content">
+            <div class="admin-content" id="main-content">
                 <!-- Dashboard Section -->
                 <section id="dashboard" class="admin-section active">
                     <h2 class="section-title">
@@ -869,22 +1364,86 @@
                 <section id="availability" class="admin-section">
                     <h2 class="section-title">
                         <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                            <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M19,6V5H5V6H19Z" />
                         </svg>
                         Schedule Management
                     </h2>
 
                     <div class="admin-card">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                            <h3 style="margin: 0; font-family: 'Playfair Display', serif;">Availability Slots</h3>
-                            <button class="btn btn-primary" onclick="openCreateAvailabilityModal()">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                                </svg>
-                                Add Time Slot
-                            </button>
+                        <!-- Calendar Header -->
+                        <div class="calendar-header">
+                            <div class="calendar-navigation">
+                                <button class="btn-nav" id="prevMonth" aria-label="Previous month">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                                    </svg>
+                                </button>
+                                <h3 class="calendar-title" id="calendarTitle">Loading...</h3>
+                                <button class="btn-nav" id="nextMonth" aria-label="Next month">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="calendar-actions">
+                                <div class="bulk-actions">
+                                    <button class="btn-bulk block" onclick="blockCurrentDay()">Block Day</button>
+                                    <button class="btn-bulk block" onclick="blockCurrentWeek()">Block Week</button>
+                                    <button class="btn-bulk block" onclick="blockCurrentMonth()">Block Month</button>
+                                </div>
+                                <button class="btn btn-secondary" id="todayBtn">Today</button>
+                                <button class="btn btn-primary" onclick="openCreateAvailabilityModal()">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                                    </svg>
+                                    Add Time Slot
+                                </button>
+                            </div>
                         </div>
-                        <div id="availabilityTable" class="loading">Loading availability...</div>
+                        
+                        <!-- Calendar Legend -->
+                        <div class="calendar-legend">
+                            <div class="legend-item">
+                                <div class="legend-color available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color blocked"></div>
+                                <span>Blocked</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color booked"></div>
+                                <span>Booked</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color mixed"></div>
+                                <span>Mixed</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Calendar Grid -->
+                        <div class="calendar-container">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">Sun</div>
+                                <div class="weekday">Mon</div>
+                                <div class="weekday">Tue</div>
+                                <div class="weekday">Wed</div>
+                                <div class="weekday">Thu</div>
+                                <div class="weekday">Fri</div>
+                                <div class="weekday">Sat</div>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid">
+                                <!-- Calendar days will be dynamically generated -->
+                            </div>
+                        </div>
+                        
+                        <!-- Selected Day Details -->
+                        <div class="day-details" id="dayDetails" style="display: none;">
+                            <h4 class="day-details-title" id="dayDetailsTitle">Schedule for Selected Day</h4>
+                            <div class="day-details-content" id="dayDetailsContent">
+                                <!-- Day details will be populated by JavaScript -->
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -964,7 +1523,7 @@
                 <!-- Add-ons -->
                 <div class="form-group">
                     <label class="form-label">Add-ons</label>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                    <div id="addons-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
                         <label class="checkbox-label">
                             <input type="checkbox" id="reflexologyAddon" name="addons[]" value="reflexology" data-price="25">
                             <span>Reflexology (+$25)</span>
@@ -985,18 +1544,18 @@
                     <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                         <span>Service Price:</span>
                         <span id="servicePriceDisplay">$0.00</span>
-                        <input type="hidden" id="servicePrice" name="service_price" value="0">
+                        <input type="hidden" id="servicePrice" name="service_price" value="0" aria-label="Service price value">
                     </div>
                     <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                         <span>Add-ons Total:</span>
                         <span id="addonsTotal">$0.00</span>
-                        <input type="hidden" id="addonsTotalInput" name="addons_total" value="0">
+                        <input type="hidden" id="addonsTotalInput" name="addons_total" value="0" aria-label="Add-ons total value">
                     </div>
                     <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #ddd;">
                         <strong>Total Price:</strong>
                         <strong id="totalPriceDisplay">$0.00</strong>
-                        <input type="hidden" id="totalPrice" name="total_price" value="0">
-                        <input type="hidden" id="businessValue" name="business_value" value="0">
+                        <input type="hidden" id="totalPrice" name="total_price" value="0" aria-label="Total price value">
+                        <input type="hidden" id="businessValue" name="business_value" value="0" aria-label="Business value calculation">
                     </div>
                 </div>
                 
@@ -1113,7 +1672,7 @@
                 <button class="modal-close" onclick="closeModal('editBookingModal')" aria-label="Close modal">&times;</button>
             </div>
             <form id="editBookingForm">
-                <input type="hidden" id="editBookingId" name="booking_id">
+                <input type="hidden" id="editBookingId" name="booking_id" aria-label="Booking ID for editing">
                 
                 <!-- Client Information -->
                 <div class="form-row">
@@ -1160,18 +1719,18 @@
                     <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                         <span>Service Price:</span>
                         <span id="editServicePriceDisplay">$0.00</span>
-                        <input type="hidden" id="editServicePrice" name="service_price" value="0">
+                        <input type="hidden" id="editServicePrice" name="service_price" value="0" aria-label="Edit service price value">
                     </div>
                     <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                         <span>Add-ons Total:</span>
                         <span id="editAddonsTotal">$0.00</span>
-                        <input type="hidden" id="editAddonsTotalInput" name="addons_total" value="0">
+                        <input type="hidden" id="editAddonsTotalInput" name="addons_total" value="0" aria-label="Edit add-ons total value">
                     </div>
                     <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #ddd;">
                         <strong>Total Price:</strong>
                         <strong id="editTotalPriceDisplay">$0.00</strong>
-                        <input type="hidden" id="editTotalPrice" name="total_price" value="0">
-                        <input type="hidden" id="editBusinessValue" name="business_value" value="0">
+                        <input type="hidden" id="editTotalPrice" name="total_price" value="0" aria-label="Edit total price value">
+                        <input type="hidden" id="editBusinessValue" name="business_value" value="0" aria-label="Edit business value calculation">
                     </div>
                 </div>
                 
@@ -1272,6 +1831,28 @@
         function initializeNavigation() {
             const navLinks = document.querySelectorAll('.admin-nav-link');
             const sections = document.querySelectorAll('.admin-section');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            
+            // Mobile menu toggle functionality
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    mobileMenuOverlay.classList.toggle('active');
+                    const isExpanded = sidebar.classList.contains('active');
+                    this.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+            
+            // Close mobile menu when clicking overlay
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', function() {
+                    sidebar.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                });
+            }
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1288,7 +1869,27 @@
                     
                     // Load section data
                     loadSectionData(sectionId);
+                    
+                    // Close mobile menu after navigation
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
                 });
+            });
+            
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 768) {
+                        sidebar.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }, 250);
             });
         }
 
@@ -1318,7 +1919,7 @@
                     break;
                 case 'availability':
                     await loadAvailability();
-                    renderAvailabilityTable();
+                    initializeCalendar();
                     break;
                 case 'clients':
                     renderClientsTable();
@@ -1701,47 +2302,316 @@
             return container;
         }
 
-        function renderAvailabilityTable() {
-            const container = document.getElementById('availabilityTable');
+        // Calendar functionality
+        let currentCalendarDate = new Date();
+        let selectedDate = null;
+        
+        function initializeCalendar() {
+            // Set up calendar navigation
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+                renderCalendar();
+            });
             
-            if (currentData.availability.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">No availability slots found.</p>';
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+                renderCalendar();
+            });
+            
+            document.getElementById('todayBtn').addEventListener('click', () => {
+                currentCalendarDate = new Date();
+                renderCalendar();
+            });
+            
+            renderCalendar();
+        }
+        
+        function renderCalendar() {
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
+            
+            // Update calendar title
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('calendarTitle').textContent = `${monthNames[month]} ${year}`;
+            
+            // Generate calendar grid
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay()); // Start from Sunday
+            
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+            
+            // Generate 6 weeks of calendar
+            for (let week = 0; week < 6; week++) {
+                for (let day = 0; day < 7; day++) {
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + (week * 7) + day);
+                    
+                    const dayElement = createCalendarDay(currentDate, year, month);
+                    calendarGrid.appendChild(dayElement);
+                }
+            }
+        }
+        
+        function createCalendarDay(date, currentYear, currentMonth) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            
+            const isCurrentMonth = date.getMonth() === currentMonth;
+            const isToday = date.toDateString() === new Date().toDateString();
+            const dateString = date.toISOString().split('T')[0];
+            
+            if (!isCurrentMonth) {
+                dayElement.classList.add('other-month');
+            }
+            if (isToday) {
+                dayElement.classList.add('today');
+            }
+            
+            // Get availability data for this date
+            const daySlots = currentData.availability.filter(slot => slot.date === dateString);
+            const availableSlots = daySlots.filter(slot => slot.is_available);
+            const blockedSlots = daySlots.filter(slot => !slot.is_available);
+            
+            // Get booking data for this date (from bookings if available)
+            const bookedSlots = currentData.bookings ? 
+                currentData.bookings.filter(booking => {
+                    const bookingDate = new Date(booking.scheduled_date).toISOString().split('T')[0];
+                    return bookingDate === dateString;
+                }) : [];
+            
+            dayElement.innerHTML = `
+                <div class="day-number">${date.getDate()}</div>
+                <div class="day-slots">
+                    ${availableSlots.slice(0, 3).map(() => '<div class="slot-indicator available"></div>').join('')}
+                    ${blockedSlots.slice(0, 3).map(() => '<div class="slot-indicator blocked"></div>').join('')}
+                    ${bookedSlots.slice(0, 3).map(() => '<div class="slot-indicator booked"></div>').join('')}
+                </div>
+                <div class="slot-count">
+                    ${daySlots.length > 0 ? `${availableSlots.length}/${daySlots.length} available` : ''}
+                    ${bookedSlots.length > 0 ? ` • ${bookedSlots.length} booked` : ''}
+                </div>
+            `;
+            
+            if (blockedSlots.length > 0 && availableSlots.length === 0) {
+                dayElement.classList.add('fully-blocked');
+            }
+            
+            dayElement.addEventListener('click', () => {
+                selectedDate = dateString;
+                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+                dayElement.classList.add('selected');
+                showDayDetails(dateString, daySlots, bookedSlots);
+            });
+            
+            return dayElement;
+        }
+        
+        function showDayDetails(dateString, slots, bookings) {
+            const dayDetails = document.getElementById('dayDetails');
+            const dayDetailsTitle = document.getElementById('dayDetailsTitle');
+            const dayDetailsContent = document.getElementById('dayDetailsContent');
+            
+            const date = new Date(dateString);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dayDetailsTitle.textContent = `Schedule for ${date.toLocaleDateString('en-US', options)}`;
+            
+            if (slots.length === 0 && bookings.length === 0) {
+                dayDetailsContent.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">No schedule set for this day.</p>';
+            } else {
+                const allItems = [...slots.map(slot => ({ ...slot, type: 'availability' })), 
+                                 ...bookings.map(booking => ({ ...booking, type: 'booking' }))];
+                
+                allItems.sort((a, b) => {
+                    const timeA = a.type === 'availability' ? a.start_time : new Date(a.scheduled_date).toTimeString().slice(0, 5);
+                    const timeB = b.type === 'availability' ? b.start_time : new Date(b.scheduled_date).toTimeString().slice(0, 5);
+                    return timeA.localeCompare(timeB);
+                });
+                
+                dayDetailsContent.innerHTML = allItems.map(item => {
+                    if (item.type === 'availability') {
+                        return `
+                            <div class="time-slot ${item.is_available ? 'available' : 'blocked'}">
+                                <div class="slot-time">${item.start_time} - ${item.end_time}</div>
+                                <div class="slot-status">
+                                    <span class="status-badge ${item.is_available ? 'status-available' : 'status-blocked'}">
+                                        ${item.is_available ? 'Available' : 'Blocked'}
+                                    </span>
+                                    <div class="slot-actions">
+                                        <button class="btn btn-secondary btn-sm" onclick="editAvailability('${item.id}')">Edit</button>
+                                        <button class="btn btn-secondary btn-sm" onclick="deleteAvailability('${item.id}')">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        const bookingTime = new Date(item.scheduled_date);
+                        const timeString = bookingTime.toTimeString().slice(0, 5);
+                        return `
+                            <div class="time-slot booked">
+                                <div class="slot-time">${timeString} - ${item.service_type}</div>
+                                <div class="slot-status">
+                                    <span class="status-badge status-booked">Booked: ${item.client_name}</span>
+                                    <div class="slot-actions">
+                                        <button class="btn btn-secondary btn-sm" onclick="editBooking('${item.id}')">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+            }
+            
+            dayDetails.style.display = 'block';
+        }
+        
+        // Bulk blocking functions
+        async function blockCurrentDay() {
+            if (!selectedDate) {
+                showAlert('Please select a day first', 'warning');
                 return;
             }
             
-            const table = document.createElement('table');
-            table.className = 'data-table';
+            if (!confirm(`Block the entire day on ${selectedDate}?`)) return;
             
-            table.innerHTML = `
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Time Slot</th>
-                        <th>Duration</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${currentData.availability.map(slot => `
-                        <tr>
-                            <td>${formatDate(slot.date)}</td>
-                            <td>${slot.start_time} - ${slot.end_time}</td>
-                            <td>${slot.duration || 60} min</td>
-                            <td><span class="status-badge ${slot.is_available ? 'status-scheduled' : 'status-cancelled'}">${slot.is_available ? 'Available' : 'Blocked'}</span></td>
-                            <td>
-                                <div class="actions">
-                                    <button class="btn btn-secondary btn-sm" onclick="editAvailability('${slot.id}')">Edit</button>
-                                    <button class="btn btn-secondary btn-sm" onclick="deleteAvailability('${slot.id}')">Delete</button>
-                                </div>
-                            </td>
-                        </tr>
-                    `).join('')}
-                </tbody>
-            `;
+            try {
+                // Create a blocking slot for the entire day
+                const response = await fetch(`${API_BASE}/availability`, {
+                    method: 'POST',
+                    headers: {
+                        ...API_HEADERS,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        date: selectedDate,
+                        start_time: '00:00:00',
+                        end_time: '23:59:00',
+                        is_available: false,
+                        reason: 'Day blocked via admin calendar',
+                        description: 'Entire day blocked by administrator'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert('Day blocked successfully!', 'success');
+                    await loadAvailability();
+                    renderCalendar();
+                } else {
+                    throw new Error(result.message || 'Failed to block day');
+                }
+            } catch (error) {
+                console.error('Error blocking day:', error);
+                showAlert('Error blocking day: ' + error.message, 'error');
+            }
+        }
+        
+        async function blockCurrentWeek() {
+            if (!selectedDate) {
+                showAlert('Please select a day first', 'warning');
+                return;
+            }
             
-            container.innerHTML = '';
-            container.appendChild(table);
+            const date = new Date(selectedDate);
+            const startOfWeek = new Date(date);
+            startOfWeek.setDate(date.getDate() - date.getDay());
+            
+            const weekDays = [];
+            for (let i = 0; i < 7; i++) {
+                const currentDay = new Date(startOfWeek);
+                currentDay.setDate(startOfWeek.getDate() + i);
+                weekDays.push(currentDay.toISOString().split('T')[0]);
+            }
+            
+            const startDate = weekDays[0];
+            const endDate = weekDays[6];
+            
+            if (!confirm(`Block the entire week from ${startDate} to ${endDate}?`)) return;
+            
+            try {
+                const promises = weekDays.map(dayDate => 
+                    fetch(`${API_BASE}/availability`, {
+                        method: 'POST',
+                        headers: {
+                            ...API_HEADERS,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            date: dayDate,
+                            start_time: '00:00:00',
+                            end_time: '23:59:00',
+                            is_available: false,
+                            reason: 'Week blocked via admin calendar',
+                            description: `Week blocked by administrator (${startDate} to ${endDate})`
+                        })
+                    })
+                );
+                
+                await Promise.all(promises);
+                showAlert('Week blocked successfully!', 'success');
+                await loadAvailability();
+                renderCalendar();
+            } catch (error) {
+                console.error('Error blocking week:', error);
+                showAlert('Error blocking week: ' + error.message, 'error');
+            }
+        }
+        
+        async function blockCurrentMonth() {
+            if (!selectedDate) {
+                showAlert('Please select a day first', 'warning');
+                return;
+            }
+            
+            const date = new Date(selectedDate);
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            
+            const startOfMonth = new Date(year, month, 1);
+            const endOfMonth = new Date(year, month + 1, 0);
+            
+            const monthDays = [];
+            for (let day = 1; day <= endOfMonth.getDate(); day++) {
+                const currentDay = new Date(year, month, day);
+                monthDays.push(currentDay.toISOString().split('T')[0]);
+            }
+            
+            const startDate = monthDays[0];
+            const lastDate = monthDays[monthDays.length - 1];
+            
+            if (!confirm(`Block the entire month from ${startDate} to ${lastDate}? This will create ${monthDays.length} blocking entries.`)) return;
+            
+            try {
+                const promises = monthDays.map(dayDate => 
+                    fetch(`${API_BASE}/availability`, {
+                        method: 'POST',
+                        headers: {
+                            ...API_HEADERS,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            date: dayDate,
+                            start_time: '00:00:00',
+                            end_time: '23:59:00',
+                            is_available: false,
+                            reason: 'Month blocked via admin calendar',
+                            description: `Month blocked by administrator (${startDate} to ${lastDate})`
+                        })
+                    })
+                );
+                
+                await Promise.all(promises);
+                showAlert('Month blocked successfully!', 'success');
+                await loadAvailability();
+                renderCalendar();
+            } catch (error) {
+                console.error('Error blocking month:', error);
+                showAlert('Error blocking month: ' + error.message, 'error');
+            }
         }
 
         function renderClientsTable() {
@@ -1877,8 +2747,8 @@
         }
 
         // Comprehensive pricing calculation system using shared config
-        function setupBookingPricing() {
-            function calculatePricing() {
+        // Global calculatePricing function accessible by payment manager
+        function calculatePricing() {
                 // Get form data
                 const serviceTypeSelect = document.getElementById('serviceType');
                 const pricingSelectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked')).map(cb => cb.value);
@@ -1945,10 +2815,10 @@
                         finalPriceNote.textContent = 'Total Price + Tip Amount';
                     }
                 }
-            }
-            
-            // Calculate pricing for edit form (similar to create form)
-            function calculateEditPricing() {
+        }
+        
+        // Global calculateEditPricing function accessible by payment manager
+        function calculateEditPricing() {
                 // Get form data from edit form
                 const serviceTypeSelect = document.getElementById('editServiceType');
                 const editSelectedAddons = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked')).map(cb => cb.value);
@@ -2046,8 +2916,9 @@
                         finalPriceNote.textContent = 'Total Price + Tip Amount';
                     }
                 }
-            }
-            
+        }
+        
+        function setupBookingPricing() {
             // Populate service type dropdown with shared config
             function populateServiceTypes() {
                 const serviceTypeSelect = document.getElementById('serviceType');
@@ -2367,7 +3238,7 @@
                         this.reset();
                         await loadAvailability();
                         if (document.getElementById('availability').classList.contains('active')) {
-                            renderAvailabilityTable();
+                            renderCalendar();
                         }
                     } else {
                         throw new Error(result.message || 'Failed to create availability slot');
@@ -2426,9 +3297,15 @@
                     if (bookingData.special_requests) {
                         bookingData.special_requests = bookingData.special_requests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
                     }
+                    // If special_requests is now empty, set it to empty string explicitly
+                    if (!bookingData.special_requests || bookingData.special_requests.trim() === '') {
+                        bookingData.special_requests = '';
+                    }
                     // Force backend to clear add-ons by setting explicit flags
                     bookingData.clear_addons = true;
                     bookingData.force_addons_update = true;
+                    
+                    console.log('No add-ons selected - cleared special_requests:', bookingData.special_requests);
                 }
                 
                 // Add duration field that backend expects
@@ -2466,9 +3343,15 @@
                 // Remove addon checkboxes from data (they're now in special_requests and addons array)
                 delete bookingData['addons[]'];
                 
+                // Ensure special_requests is always included in the request, even if empty
+                if (bookingData.special_requests === undefined) {
+                    bookingData.special_requests = '';
+                }
+                
                 console.log('Edit booking data being submitted:', bookingData);
                 console.log('Booking ID:', bookingId);
                 console.log('Request URL:', `${API_BASE}/bookings/${bookingId}`);
+                console.log('Special requests in submission:', JSON.stringify(bookingData.special_requests));
                 
                 try {
                     const response = await fetch(`${API_BASE}/bookings/${bookingId}`, {
@@ -2563,6 +3446,14 @@
                         // Force reload fresh data from server
                         console.log('Forcing complete data refresh from server...');
                         await loadBookings();
+                        
+                        // Immediately refresh the bookings table if it's visible
+                        if (document.getElementById('bookings').classList.contains('active')) {
+                            renderBookingsTable();
+                        }
+                        
+                        // Also update dashboard stats
+                        updateDashboardStats();
                         
                         // Apply corrections AFTER reload if needed
                         if (correctionData) {
@@ -2670,26 +3561,32 @@
                         const addonsMatch = booking.special_requests.match(/Add-ons:\s*([^\n]*)/i);
                         if (addonsMatch) {
                             const addonsText = addonsMatch[1].trim();
-                            console.log('Extracting add-ons for edit form:', addonsText);
                             
-                            // Parse each addon from the text format
-                            const addonParts = addonsText.split(',').map(part => part.trim());
-                            addonsToRestore = addonParts.map(addonText => {
-                                // Extract addon name from text like "Reflexology (+$25)"
-                                const nameMatch = addonText.match(/^([^(]+)/);
-                                if (nameMatch) {
-                                    const addonName = nameMatch[1].trim();
-                                    
-                                    // Find matching addon config by name
-                                    const addonConfig = Object.values(window.ITTHealConfig?.ADDON_CONFIG || {})
-                                        .find(addon => addon.name.toLowerCase() === addonName.toLowerCase());
-                                    
-                                    if (addonConfig) {
-                                        return addonConfig.id;
+                            // Only process if there's actual addon content after "Add-ons:"
+                            if (addonsText && addonsText.length > 0) {
+                                console.log('Extracting add-ons for edit form:', addonsText);
+                                
+                                // Parse each addon from the text format
+                                const addonParts = addonsText.split(',').map(part => part.trim()).filter(part => part.length > 0);
+                                addonsToRestore = addonParts.map(addonText => {
+                                    // Extract addon name from text like "Reflexology (+$25)"
+                                    const nameMatch = addonText.match(/^([^(]+)/);
+                                    if (nameMatch) {
+                                        const addonName = nameMatch[1].trim();
+                                        
+                                        // Find matching addon config by name
+                                        const addonConfig = Object.values(window.ITTHealConfig?.ADDON_CONFIG || {})
+                                            .find(addon => addon.name.toLowerCase() === addonName.toLowerCase());
+                                        
+                                        if (addonConfig) {
+                                            return addonConfig.id;
+                                        }
                                     }
-                                }
-                                return null;
-                            }).filter(id => id !== null);
+                                    return null;
+                                }).filter(id => id !== null);
+                            } else {
+                                console.log('Add-ons line found but empty - no add-ons to restore');
+                            }
                         }
                     }
                     
@@ -2709,16 +3606,37 @@
                         document.getElementById('editServiceType').value = bookingServiceType;
                         console.log('Set service type in edit form:', bookingServiceType);
                         
-                        // Restore add-ons AFTER checkboxes are created
-                        addonsToRestore.forEach(addonId => {
-                            const checkbox = document.querySelector(`#editAddonsContainer input[value="${addonId}"]`);
-                            if (checkbox) {
-                                checkbox.checked = true;
-                                console.log('Restored addon in edit form:', addonId);
-                            } else {
-                                console.warn('Could not find checkbox for addon:', addonId);
-                            }
+                        // Clear all addon checkboxes first
+                        const allAddonCheckboxes = document.querySelectorAll('#editAddonsContainer input[type="checkbox"]');
+                        allAddonCheckboxes.forEach(checkbox => {
+                            checkbox.checked = false;
                         });
+                        console.log('Cleared all addon checkboxes');
+                        
+                        // Only restore add-ons if they exist in special_requests AND are not empty
+                        if (addonsToRestore.length > 0) {
+                            console.log('Restoring add-ons:', addonsToRestore);
+                            addonsToRestore.forEach(addonId => {
+                                const checkbox = document.querySelector(`#editAddonsContainer input[value="${addonId}"]`);
+                                if (checkbox) {
+                                    checkbox.checked = true;
+                                    console.log('Restored addon in edit form:', addonId);
+                                } else {
+                                    console.warn('Could not find checkbox for addon:', addonId);
+                                }
+                            });
+                        } else {
+                            console.log('No add-ons to restore - special_requests is empty or contains no add-ons');
+                        }
+                        
+                        // Additional safety check: if special_requests is empty, ensure no add-ons are checked
+                        if (!booking.special_requests || booking.special_requests.trim() === '' || !booking.special_requests.includes('Add-ons:')) {
+                            console.log('Special requests is empty or contains no add-ons - ensuring all add-ons are unchecked');
+                            const allEditAddons = document.querySelectorAll('#editAddonsContainer input[type="checkbox"]');
+                            allEditAddons.forEach(checkbox => {
+                                checkbox.checked = false;
+                            });
+                        }
                         
                         // Calculate pricing for edit form
                         calculateEditPricing();
@@ -2765,7 +3683,61 @@
         }
 
         async function editAvailability(slotId) {
-            showAlert('Edit availability functionality coming soon!', 'info');
+            try {
+                // Prompt for date input
+                const date = prompt('Enter date to manage availability (YYYY-MM-DD):');
+                if (!date) return;
+                
+                // Validate date format
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+                    showAlert('Invalid date format. Please use YYYY-MM-DD format.', 'error');
+                    return;
+                }
+                
+                // Check if override already exists
+                const checkResponse = await fetch(`${API_BASE}/api/bookings/availability?start_date=${date}&end_date=${date}`, {
+                    headers: {
+                        'x-admin-access': 'dr-shiffer-emergency-access',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const checkData = await checkResponse.json();
+                const existingOverride = checkData.availability?.find(a => a.date === date);
+                
+                // Get override details
+                const isAvailable = confirm(`Set availability for ${date}:\nClick OK for AVAILABLE, Cancel for CLOSED`);
+                const reason = prompt('Enter reason for this override (optional):', existingOverride?.reason || '');
+                
+                // Create or update override
+                const response = await fetch(`${API_BASE}/api/bookings/availability`, {
+                    method: 'POST',
+                    headers: {
+                        'x-admin-access': 'dr-shiffer-emergency-access',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        date: date,
+                        is_available: isAvailable,
+                        reason: reason || (isAvailable ? 'Admin override - Available' : 'Admin override - Closed'),
+                        start_time: isAvailable ? '10:00:00' : '00:00:00',
+                        end_time: isAvailable ? '18:00:00' : '23:59:59'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert(`Availability override ${existingOverride ? 'updated' : 'created'} for ${date}`, 'success');
+                    loadSessions(); // Refresh the display
+                } else {
+                    showAlert(`Failed to manage availability: ${result.error}`, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Edit availability error:', error);
+                showAlert('Error managing availability. Please check console for details.', 'error');
+            }
         }
 
         async function deleteAvailability(slotId) {
@@ -2785,7 +3757,7 @@
                     showAlert('Availability slot deleted successfully!', 'success');
                     await loadAvailability();
                     if (document.getElementById('availability').classList.contains('active')) {
-                        renderAvailabilityTable();
+                        renderCalendar();
                     }
                 } else {
                     throw new Error(result.message || 'Failed to delete availability slot');
@@ -2797,11 +3769,57 @@
         }
 
         function viewClientHistory(clientEmail) {
-            showAlert('Client history view coming soon!', 'info');
+            // Show client booking history
+            try {
+                const clientBookings = sessions.filter(s => s.client_email === clientEmail);
+                const historyHtml = clientBookings.map(booking => 
+                    `<div style="border: 1px solid #ddd; padding: 10px; margin: 5px; border-radius: 5px;">
+                        <strong>Date:</strong> ${new Date(booking.scheduled_date).toLocaleDateString()}<br>
+                        <strong>Service:</strong> ${booking.session_type} (${booking.duration_minutes} min)<br>
+                        <strong>Status:</strong> ${booking.session_status}<br>
+                        <strong>Payment:</strong> ${booking.payment_status}
+                    </div>`
+                ).join('');
+                
+                if (clientBookings.length > 0) {
+                    showAlert(`<div style="max-height: 300px; overflow-y: auto;">${historyHtml}</div>`, 'info');
+                } else {
+                    showAlert('No booking history found for this client.', 'info');
+                }
+            } catch (error) {
+                showAlert('Error loading client history: ' + error.message, 'error');
+            }
         }
 
-        function viewPaymentDetails(paymentId) {
-            showAlert('Payment details view coming soon!', 'info');
+        function viewPaymentDetails(sessionId) {
+            // Show payment details for session
+            try {
+                const session = sessions.find(s => s.id === sessionId);
+                if (!session) {
+                    showAlert('Session not found.', 'error');
+                    return;
+                }
+                
+                const paymentDetails = `
+                    <div style="text-align: left; line-height: 1.6;">
+                        <h4>Payment Details</h4>
+                        <strong>Session ID:</strong> ${session.id}<br>
+                        <strong>Client:</strong> ${session.client_name || 'N/A'}<br>
+                        <strong>Email:</strong> ${session.client_email || 'N/A'}<br>
+                        <strong>Service:</strong> ${session.session_type}<br>
+                        <strong>Duration:</strong> ${session.duration_minutes} minutes<br>
+                        <strong>Date:</strong> ${new Date(session.scheduled_date).toLocaleDateString()}<br>
+                        <strong>Payment Status:</strong> ${session.payment_status}<br>
+                        <strong>Session Status:</strong> ${session.session_status}<br>
+                        <strong>Payment Intent:</strong> ${session.payment_intent_id || 'N/A'}<br>
+                        <strong>Stripe Session:</strong> ${session.stripe_session_id || 'N/A'}
+                    </div>
+                `;
+                
+                showAlert(paymentDetails, 'info');
+            } catch (error) {
+                showAlert('Error loading payment details: ' + error.message, 'error');
+            }
         }
 
         // Utility Functions
@@ -2857,38 +3875,6 @@
             }, 5000);
         }
 
-        // Sidebar toggle functions
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebarOverlay');
-            
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('active');
-        }
-
-        function closeSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebarOverlay');
-            
-            sidebar.classList.remove('open');
-            overlay.classList.remove('active');
-        }
-
-        // Attach to global scope for inline onclick handlers
-        window.toggleSidebar = toggleSidebar;
-        window.closeSidebar = closeSidebar;
-
-        // Close sidebar when clicking nav links on mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.admin-nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        closeSidebar();
-                    }
-                });
-            });
-        });
 
         // Close modals when clicking outside
         window.addEventListener('click', function(e) {
@@ -2905,10 +3891,6 @@
                     activeModal.classList.remove('active');
                 }
                 
-                // Also close sidebar on escape
-                if (window.innerWidth <= 768) {
-                    closeSidebar();
-                }
             }
         });
 

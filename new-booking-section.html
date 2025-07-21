@@ -44,25 +44,49 @@
 <div id="datetime-selection" style="display: none;" class="mb-xl">
     <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 2: Choose Date & Time</h3>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-        <div>
-            <label for="booking-date" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Preferred Date</label>
-            <input type="date" id="booking-date" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required aria-describedby="booking-date-help">
-            <div id="booking-date-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Select your preferred appointment date</div>
+    <!-- Calendar View Container -->
+    <div id="calendar-container" style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+        <!-- Calendar Header -->
+        <div id="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid #e2e8f0;">
+            <button id="prev-month" style="background: none; border: 2px solid #e2e8f0; border-radius: 8px; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;" aria-label="Previous month">
+                ←
+            </button>
+            <h4 id="current-month" style="color: var(--sage-700); font-size: 1.25rem; font-weight: 600; margin: 0;"></h4>
+            <button id="next-month" style="background: none; border: 2px solid #e2e8f0; border-radius: 8px; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;" aria-label="Next month">
+                →
+            </button>
         </div>
-        
-        <div>
-            <label for="booking-time" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--sage-700);">Available Times</label>
-            <select id="booking-time" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem;" required disabled aria-describedby="booking-time-help">
-                <option value="">Select date first...</option>
-            </select>
-            <div id="booking-time-help" style="font-size: 0.875rem; color: var(--sage-600); margin-top: 0.25rem;">Available appointment times will appear after selecting a date</div>
+
+        <!-- Calendar Grid -->
+        <div id="calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #e2e8f0; border-radius: 8px; overflow: hidden;">
+            <!-- Day headers -->
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Sun</div>
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Mon</div>
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Tue</div>
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Wed</div>
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Thu</div>
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Fri</div>
+            <div style="background: var(--sage-100); padding: 0.75rem; text-align: center; font-weight: 600; color: var(--sage-700); font-size: 0.875rem;">Sat</div>
+            
+            <!-- Calendar dates will be inserted here by JavaScript -->
         </div>
     </div>
-    
-    <div id="time-loading" style="display: none; text-align: center; margin-top: 1rem; color: var(--sage-600);" aria-live="polite">
-        Loading available times...
+
+    <!-- Time Slots Section -->
+    <div id="time-slots-section" style="display: none;">
+        <h4 style="color: var(--sage-700); margin-bottom: 1rem; text-align: center;">Available Times for <span id="selected-date-display"></span></h4>
+        <div id="time-slots-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.75rem; margin-bottom: 1rem;">
+            <!-- Time slots will be populated by JavaScript -->
+        </div>
+        <div id="time-loading" style="display: none; text-align: center; padding: 2rem; color: var(--sage-600);" aria-live="polite">
+            <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #e2e8f0; border-top: 2px solid #10b981; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.5rem;"></div>
+            Loading available times...
+        </div>
     </div>
+
+    <!-- Hidden inputs for form submission -->
+    <input type="hidden" id="booking-date" name="booking-date">
+    <input type="hidden" id="booking-time" name="booking-time">
 </div>
 
 <!-- Step 3: Contact Information -->

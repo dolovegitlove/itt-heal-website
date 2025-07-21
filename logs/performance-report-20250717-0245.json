@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-07-17 02:45:01",
+  "system": {
+    "cpu_usage": 26,
+    "memory_usage": 9,
+    "disk_usage": 82,
+    "load_average": "1.96"
+  },
+  "website": {
+    "main_page_response": 40,
+    "api_response": 39,
+    "booking_response": 38
+  },
+  "database": {
+    "active_connections": 
+  },
+  "services": {
+    "nginx": active,
+    "postgresql": active,
+    "backend": "errored"
+  }
+}

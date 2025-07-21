@@ -1,3 +1,5 @@
+// Note: This is a frontend file, enum values should be defined locally or imported from shared frontend constants
+
 /**
  * Native Booking System Functionality
  * Version: 20250625-native-001
@@ -10,20 +12,41 @@
     
     // Stripe configuration
     let stripe = null;
+    // Session types for frontend use
+    const SESSION_TYPES = {
+        '60min': '60min',
+        '90min': '90min',
+        '120min': '120min',
+        consultation: 'consultation',
+        follow_up: 'follow_up'
+    };
+    
     const STRIPE_CONFIG = {
         publishableKey: 'pk_test_51OBxkCKQ9k1QV9wX8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8', // Replace with actual key
         products: {
-            '60min_massage': {
+            '30min_massage': {
+                name: '30-Minute Quick Relief Session',
+                price: 8500, // $85.00 in cents
+                description: 'Targeted therapeutic massage session',
+                duration: 30
+            },
+            [SESSION_TYPES['60min']]: {
                 name: '60-Minute Therapeutic Session',
                 price: 13500, // $135.00 in cents
                 description: 'Standard therapeutic massage session',
                 duration: 60
             },
-            '90min_massage': {
+            [SESSION_TYPES['90min']]: {
                 name: '90-Minute Integrative Fascia Session',
                 price: 18000, // $180.00 in cents
                 description: 'Extended therapeutic session with fascial work',
                 duration: 90
+            },
+            [SESSION_TYPES['120min']]: {
+                name: '120-Minute Premium Session',
+                price: 22000, // $220.00 in cents
+                description: 'Premium therapeutic session with comprehensive work',
+                duration: 120
             },
             'test_product': {
                 name: 'Test Product',

@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-07-18 23:07:57",
+  "checks": {
+    "website": [2025-07-18 23:07:57] 🌐 Checking website accessibility...
+[2025-07-18 23:07:57] ✅ Website is accessible (HTTP 200)
+true,
+    "api": [2025-07-18 23:07:57] 🔗 Checking API health...
+[2025-07-18 23:07:57] ALERT [CRITICAL]: API health check failed: Too many requests, please try again later.
+false,
+    "backend": [2025-07-18 23:07:57] ⚙️  Checking backend processes...
+[2025-07-18 23:07:58] ✅ Backend process is running
+true,
+    "database": [2025-07-18 23:07:58] 🗄️  Checking database connectivity...
+[2025-07-18 23:07:58] ALERT [HIGH]: Database connection failed
+false,
+    "disk_space": [2025-07-18 23:07:58] 💾 Checking disk space...
+[2025-07-18 23:07:58] ✅ Disk space OK (64% used)
+true,
+    "ssl": [2025-07-18 23:07:58] 🔒 Checking SSL certificate...
+[2025-07-18 23:07:58] ✅ SSL certificate valid (46 days remaining)
+true,
+    "errors": [2025-07-18 23:07:58] 📋 Checking error logs...
+[2025-07-18 23:07:58] ✅ Error logs look clean (2 recent errors)
+true,
+    "flows": [2025-07-18 23:07:58] 🔬 Testing critical user flows...
+[2025-07-18 23:07:58] ALERT [HIGH]: Booking system not responding correctly
+false,
+    "enums": [2025-07-18 23:07:58] 🎯 Checking enum consistency...
+[2025-07-18 23:07:58] ALERT [MEDIUM]: Enum consistency issues detected
+false
+  }
+}

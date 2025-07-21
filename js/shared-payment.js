@@ -1,3 +1,33 @@
+// Frontend constants aligned with backend enums
+const PAYMENT_TYPES = {
+  card: 'card',
+  cash: 'cash',
+  bank_transfer: 'bank_transfer',
+  insurance: 'insurance',
+  other: 'other',
+  comp: 'comp'
+};
+
+const PAYMENT_STATUS = {
+  unpaid: 'unpaid',
+  paid: 'paid',
+  partial: 'partial',
+  refunded: 'refunded',
+  complimentary: 'complimentary'
+};
+
+const SERVICE_TYPES = {
+  '30min': '30min',
+  '60min': '60min',
+  '90min': '90min',
+  '120min': '120min',
+  consultation: 'consultation',
+  follow_up: 'follow_up',
+  subscription: 'subscription',
+  package: 'package',
+  other: 'other'
+};
+
 /**
  * ITT Heal - Shared Payment Component
  * Single source of truth for payment functionality across user booking and admin interfaces
@@ -53,24 +83,24 @@ class ITTPaymentManager {
                         </div>
                     </label>
                     
-                    <label class="payment-method-option" data-method="cash">
-                        <input type="radio" name="${prefix}payment_method" value="cash">
+                    <label class="payment-method-option" data-method=PAYMENT_TYPES['cash']>
+                        <input type="radio" name="${prefix}payment_method" value=PAYMENT_TYPES['cash']>
                         <div class="payment-method-content">
                             <div class="payment-method-title">💵 Cash</div>
                             <div class="payment-method-desc">Pay${this.isAdminMode ? ' at appointment' : ' in cash at your appointment'}</div>
                         </div>
                     </label>
                     
-                    <label class="payment-method-option" data-method="other">
-                        <input type="radio" name="${prefix}payment_method" value="other">
+                    <label class="payment-method-option" data-method=SERVICE_TYPES['other']_TYPES['other']>
+                        <input type="radio" name="${prefix}payment_method" value=SERVICE_TYPES['other']_TYPES['other']>
                         <div class="payment-method-content">
                             <div class="payment-method-title">📱 Other</div>
                             <div class="payment-method-desc">${this.isAdminMode ? 'Venmo, CashApp, etc.' : 'Venmo, CashApp - arranged with practitioner'}</div>
                         </div>
                     </label>
                     
-                    <label class="payment-method-option" data-method="comp">
-                        <input type="radio" name="${prefix}payment_method" value="comp">
+                    <label class="payment-method-option" data-method=PAYMENT_TYPES['comp']>
+                        <input type="radio" name="${prefix}payment_method" value=PAYMENT_TYPES['comp']>
                         <div class="payment-method-content">
                             <div class="payment-method-title">🎁 Comp</div>
                             <div class="payment-method-desc">Complimentary${this.isAdminMode ? '' : ' appointment'}</div>
@@ -93,7 +123,7 @@ class ITTPaymentManager {
                     <option value="staff">Staff Comp</option>
                     <option value="marketing">Marketing/Promotional</option>
                     <option value="charity">Charity/Community Service</option>
-                    <option value="other">Other</option>
+                    <option value=SERVICE_TYPES['other']_TYPES['other']>Other</option>
                 </select>
             </div>
             
@@ -243,7 +273,7 @@ class ITTPaymentManager {
         if (!this.stripe) return;
         
         const elements = this.stripe.elements();
-        this.cardElement = elements.create('card', {
+        this.cardElement = elements.create(PAYMENT_TYPES['card'], {
             style: {
                 base: {
                     fontSize: '16px',
@@ -337,7 +367,7 @@ class ITTPaymentManager {
             if (creditCardSection) creditCardSection.style.display = 'block';
             if (alternativeSection) alternativeSection.style.display = 'none';
             if (compTypeSection) compTypeSection.style.display = 'none';
-        } else if (method === 'comp') {
+        } else if (method === PAYMENT_TYPES['comp']) {
             if (creditCardSection) creditCardSection.style.display = 'none';
             if (alternativeSection) alternativeSection.style.display = 'block';
             if (compTypeSection) compTypeSection.style.display = 'block';
@@ -353,11 +383,11 @@ class ITTPaymentManager {
             if (compTypeSection) compTypeSection.style.display = 'none';
             
             if (instructionsP) {
-                if (method === 'cash') {
+                if (method === PAYMENT_TYPES['cash']) {
                     instructionsP.textContent = this.isAdminMode
                         ? 'Cash payment to be collected at appointment.'
                         : 'Your booking will be confirmed. Please bring exact cash payment to your appointment. Receipt will be provided for Dr. reconciliation.';
-                } else if (method === 'other') {
+                } else if (method === SERVICE_TYPES['other']_TYPES['other']) {
                     instructionsP.textContent = this.isAdminMode
                         ? 'Alternative payment method (Venmo, CashApp, etc.)'
                         : 'Your booking will be confirmed. Venmo/CashApp payment details will be provided via SMS/email. Receipt will be provided for Dr. reconciliation.';
@@ -429,7 +459,7 @@ class ITTPaymentManager {
     validatePayment() {
         const method = this.getSelectedPaymentMethod();
         
-        if (method === 'comp') {
+        if (method === PAYMENT_TYPES['comp']) {
             const compType = this.getCompType();
             if (!compType) {
                 throw new Error('Please select a comp type');
@@ -441,7 +471,7 @@ class ITTPaymentManager {
     
     // Method to auto-select payment method based on payment status and tip
     updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount) {
-        const isComplimentary = paymentStatus === 'complimentary';
+        const isComplimentary = paymentStatus === BOOKING_TYPES['complimentary']'complimentary'];
         const hasTip = parseFloat(tipAmount) > 0;
         const currentMethod = this.getSelectedPaymentMethod();
         
@@ -449,14 +479,14 @@ class ITTPaymentManager {
             if (hasTip) {
                 // Complimentary with tip - need actual payment method for tip processing
                 // Keep current selection if it's not comp, otherwise default to credit card
-                if (currentMethod === 'comp') {
+                if (currentMethod === PAYMENT_TYPES['comp']) {
                     this.selectPaymentMethod('credit_card');
                     this.showPaymentMethodNote('Payment method changed to Credit Card for tip processing');
                 }
             } else {
                 // Pure complimentary - no payment needed
-                if (currentMethod !== 'comp') {
-                    this.selectPaymentMethod('comp');
+                if (currentMethod !== PAYMENT_TYPES['comp']) {
+                    this.selectPaymentMethod(PAYMENT_TYPES['comp']);
                     this.showPaymentMethodNote('Payment method set to Complimentary');
                 }
             }

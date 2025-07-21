@@ -1,984 +1,795 @@
-/bin/sh: 1: /home/ittm/projects/itt/site/scripts/performance-monitor.sh: not found
-/bin/sh: 1: /home/ittm/projects/itt/site/scripts/performance-monitor.sh: not found
-/bin/sh: 1: /home/ittm/projects/itt/site/scripts/performance-monitor.sh: not found
 📊 Generating performance report...
-[2025-06-25 12:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1250.json
+[2025-07-20 00:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0005.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1255.json: Permission denied
-[2025-06-25 12:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1255.json
-✅ Report generated
-[2025-06-25 12:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1255.json
+[2025-07-20 00:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0010.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:00:03] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1300.json
-✅ Report generated
-[2025-06-25 13:00:03] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1300.json
+[2025-07-20 00:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0015.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1305.json
-✅ Report generated
-[2025-06-25 13:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1305.json
+[2025-07-20 00:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0020.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1310.json
-✅ Report generated
-[2025-06-25 13:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1310.json
+[2025-07-20 00:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0025.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1315.json
-✅ Report generated
-[2025-06-25 13:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1315.json
+[2025-07-20 00:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0030.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1320.json
-✅ Report generated
-[2025-06-25 13:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1320.json
+[2025-07-20 00:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0035.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1325.json
-✅ Report generated
-[2025-06-25 13:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1325.json
+[2025-07-20 00:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0040.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1330.json: Permission denied
-[2025-06-25 13:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1330.json
-✅ Report generated
-[2025-06-25 13:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1330.json
+[2025-07-20 00:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0045.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1335.json: Permission denied
-[2025-06-25 13:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1335.json
-✅ Report generated
-[2025-06-25 13:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1335.json
+[2025-07-20 00:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0050.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1340.json: Permission denied
-[2025-06-25 13:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1340.json
-✅ Report generated
-[2025-06-25 13:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1340.json
+[2025-07-20 00:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0055.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1345.json
-✅ Report generated
-[2025-06-25 13:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1345.json
+[2025-07-20 01:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0100.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 13:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1350.json
-✅ Report generated
-[2025-06-25 13:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1350.json
+[2025-07-20 01:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0105.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1355.json: Permission denied
-[2025-06-25 13:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1355.json
-✅ Report generated
-[2025-06-25 13:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1355.json
+[2025-07-20 01:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0110.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 14:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1400.json
-✅ Report generated
-[2025-06-25 14:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1400.json
+[2025-07-20 01:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0115.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 14:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1405.json
-✅ Report generated
-[2025-06-25 14:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1405.json
+[2025-07-20 01:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0120.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 14:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1410.json
+[2025-07-20 01:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0125.json
 ✅ Report generated
-[2025-06-25 14:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1410.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1415.json: Permission denied
-[2025-06-25 14:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1415.json
+[2025-07-20 01:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0130.json
 ✅ Report generated
-[2025-06-25 14:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1415.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 14:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1420.json
+[2025-07-20 01:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0135.json
 ✅ Report generated
-[2025-06-25 14:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1420.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1425.json: Permission denied
-[2025-06-25 14:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1425.json
+[2025-07-20 01:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0140.json
 ✅ Report generated
-[2025-06-25 14:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1425.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1430.json: Permission denied
-[2025-06-25 14:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1430.json
+[2025-07-20 01:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0145.json
 ✅ Report generated
-[2025-06-25 14:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1430.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 14:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1435.json
+[2025-07-20 01:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0150.json
 ✅ Report generated
-[2025-06-25 14:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1435.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 14:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1440.json
+[2025-07-20 01:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0155.json
 ✅ Report generated
-[2025-06-25 14:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1440.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1445.json: Permission denied
-[2025-06-25 14:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1445.json
+[2025-07-20 02:00:03] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0200.json
 ✅ Report generated
-[2025-06-25 14:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1445.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1450.json: Permission denied
-[2025-06-25 14:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1450.json
+[2025-07-20 02:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0205.json
 ✅ Report generated
-[2025-06-25 14:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1450.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 14:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1455.json
+[2025-07-20 02:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0210.json
 ✅ Report generated
-[2025-06-25 14:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1455.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1500.json: Permission denied
-[2025-06-25 15:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1500.json
+[2025-07-20 02:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0215.json
 ✅ Report generated
-[2025-06-25 15:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1500.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1505.json: Permission denied
-[2025-06-25 15:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1505.json
+[2025-07-20 02:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0220.json
 ✅ Report generated
-[2025-06-25 15:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1505.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 15:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1510.json
+[2025-07-20 02:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0225.json
 ✅ Report generated
-[2025-06-25 15:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1510.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 15:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1515.json
+[2025-07-20 02:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0230.json
 ✅ Report generated
-[2025-06-25 15:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1515.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 15:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1520.json
+[2025-07-20 02:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0235.json
 ✅ Report generated
-[2025-06-25 15:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1520.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 15:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1525.json
+[2025-07-20 02:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0240.json
 ✅ Report generated
-[2025-06-25 15:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1525.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1530.json: Permission denied
-[2025-06-25 15:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1530.json
+[2025-07-20 02:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0245.json
 ✅ Report generated
-[2025-06-25 15:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1530.json
-✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 15:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1535.json
-✅ Report generated
-[2025-06-25 15:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1535.json
+[2025-07-20 02:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0250.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1540.json: Permission denied
-[2025-06-25 15:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1540.json
-✅ Report generated
-[2025-06-25 15:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1540.json
+[2025-07-20 02:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0255.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1545.json: Permission denied
-[2025-06-25 15:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1545.json
-✅ Report generated
-[2025-06-25 15:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1545.json
+[2025-07-20 03:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0300.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1550.json: Permission denied
-[2025-06-25 15:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1550.json
-✅ Report generated
-[2025-06-25 15:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1550.json
+[2025-07-20 03:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0305.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1555.json: Permission denied
-[2025-06-25 15:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1555.json
-✅ Report generated
-[2025-06-25 15:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1555.json
+[2025-07-20 03:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0310.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 16:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1600.json
-✅ Report generated
-[2025-06-25 16:00:03] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1600.json
+[2025-07-20 03:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0315.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1605.json: Permission denied
-[2025-06-25 16:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1605.json
-✅ Report generated
-[2025-06-25 16:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1605.json
+[2025-07-20 03:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0320.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1610.json: Permission denied
-[2025-06-25 16:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1610.json
-✅ Report generated
-[2025-06-25 16:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1610.json
+[2025-07-20 03:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0325.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 16:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1615.json
-✅ Report generated
-[2025-06-25 16:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1615.json
+[2025-07-20 03:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0330.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1620.json: Permission denied
-[2025-06-25 16:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1620.json
-✅ Report generated
-[2025-06-25 16:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1620.json
+[2025-07-20 03:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0335.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1625.json: Permission denied
-[2025-06-25 16:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1625.json
-✅ Report generated
-[2025-06-25 16:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1625.json
+[2025-07-20 03:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0340.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1630.json: Permission denied
-[2025-06-25 16:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1630.json
-✅ Report generated
-[2025-06-25 16:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1630.json
+[2025-07-20 03:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0345.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 16:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1635.json
-[2025-06-25 16:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1635.json
-✅ Report generated
+[2025-07-20 03:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0350.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1640.json: Permission denied
-[2025-06-25 16:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1640.json
-✅ Report generated
-[2025-06-25 16:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1640.json
+[2025-07-20 03:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0355.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1645.json: Permission denied
-[2025-06-25 16:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1645.json
-✅ Report generated
-[2025-06-25 16:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1645.json
+[2025-07-20 04:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0400.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-[2025-06-25 16:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1650.json
-✅ Report generated
-[2025-06-25 16:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1650.json
+[2025-07-20 04:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0405.json
 ✅ Report generated
 📊 Generating performance report...
-📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1655.json: Permission denied
-[2025-06-25 16:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1655.json
+[2025-07-20 04:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0410.json
 ✅ Report generated
-[2025-06-25 16:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1655.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1700.json: Permission denied
-[2025-06-25 17:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1700.json
+[2025-07-20 04:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0415.json
 ✅ Report generated
-[2025-06-25 17:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1700.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1705.json: Permission denied
-[2025-06-25 17:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1705.json
+[2025-07-20 04:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0420.json
 ✅ Report generated
-[2025-06-25 17:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1705.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-[2025-06-25 17:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1710.json
+[2025-07-20 04:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0425.json
 ✅ Report generated
-[2025-06-25 17:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1710.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1715.json: Permission denied
-[2025-06-25 17:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1715.json
+[2025-07-20 04:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0430.json
 ✅ Report generated
-[2025-06-25 17:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1715.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1720.json: Permission denied
-[2025-06-25 17:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1720.json
+[2025-07-20 04:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0435.json
 ✅ Report generated
-[2025-06-25 17:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1720.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1725.json: Permission denied
-[2025-06-25 17:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1725.json
+[2025-07-20 04:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0440.json
 ✅ Report generated
-[2025-06-25 17:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1725.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1730.json: Permission denied
-[2025-06-25 17:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1730.json
+[2025-07-20 04:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0445.json
 ✅ Report generated
-[2025-06-25 17:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1730.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1735.json: Permission denied
-[2025-06-25 17:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1735.json
+[2025-07-20 04:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0450.json
 ✅ Report generated
-[2025-06-25 17:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1735.json
-✅ Report generated
-📊 Generating performance report...
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1740.json: Permission denied
-[2025-06-25 17:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1740.json
+[2025-07-20 04:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0455.json
 ✅ Report generated
-[2025-06-25 17:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1740.json
+📊 Generating performance report...
+[2025-07-20 05:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0500.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 05:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0505.json
+✅ Report generated
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1745.json: Permission denied
-[2025-06-25 17:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1745.json
+[2025-07-20 05:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0510.json
 ✅ Report generated
-[2025-06-25 17:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1745.json
+📊 Generating performance report...
+[2025-07-20 05:15:03] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0515.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 05:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0520.json
+✅ Report generated
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1750.json: Permission denied
-[2025-06-25 17:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1750.json
+[2025-07-20 05:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0525.json
 ✅ Report generated
-[2025-06-25 17:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1750.json
+📊 Generating performance report...
+[2025-07-20 05:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0530.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 05:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0535.json
+✅ Report generated
 📊 Generating performance report...
-[2025-06-25 17:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1755.json
+[2025-07-20 05:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0540.json
 ✅ Report generated
-[2025-06-25 17:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1755.json
+📊 Generating performance report...
+[2025-07-20 05:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0545.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 05:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0550.json
+✅ Report generated
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1800.json: Permission denied
-[2025-06-25 18:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1800.json
+[2025-07-20 05:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0555.json
 ✅ Report generated
-[2025-06-25 18:00:03] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1800.json
+📊 Generating performance report...
+[2025-07-20 06:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0600.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 06:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0605.json
+✅ Report generated
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1805.json: Permission denied
-[2025-06-25 18:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1805.json
+[2025-07-20 06:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0610.json
 ✅ Report generated
-[2025-06-25 18:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1805.json
+📊 Generating performance report...
+[2025-07-20 06:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0615.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 06:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0620.json
+✅ Report generated
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1810.json: Permission denied
-[2025-06-25 18:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1810.json
+[2025-07-20 06:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0625.json
 ✅ Report generated
-[2025-06-25 18:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1810.json
+📊 Generating performance report...
+[2025-07-20 06:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0630.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 06:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0635.json
+✅ Report generated
 📊 Generating performance report...
-/home/ittz/projects/itt/site/scripts/performance-monitor.sh: line 334: /home/ittz/projects/itt/site/logs/performance-report-20250625-1815.json: Permission denied
-[2025-06-25 18:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1815.json
+[2025-07-20 06:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0640.json
 ✅ Report generated
-[2025-06-25 18:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1815.json
+📊 Generating performance report...
+[2025-07-20 06:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0645.json
 ✅ Report generated
 📊 Generating performance report...
+[2025-07-20 06:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0650.json
+✅ Report generated
 📊 Generating performance report...
-[2025-06-25 18:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1820.json
+[2025-07-20 06:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0655.json
 ✅ Report generated
-[2025-06-25 18:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250625-1820.json
+📊 Generating performance report...
+[2025-07-20 07:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0700.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0525.json
+[2025-07-20 07:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0705.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0530.json
+[2025-07-20 07:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0710.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0535.json
+[2025-07-20 07:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0715.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0540.json
+[2025-07-20 07:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0720.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0545.json
+[2025-07-20 07:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0725.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0550.json
+[2025-07-20 07:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0730.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 05:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0555.json
+[2025-07-20 07:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0735.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0600.json
+[2025-07-20 07:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0740.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0605.json
+[2025-07-20 07:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0745.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0610.json
+[2025-07-20 07:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0750.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0615.json
+[2025-07-20 07:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0755.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0620.json
+[2025-07-20 08:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0800.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0625.json
+[2025-07-20 08:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0805.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0630.json
+[2025-07-20 08:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0810.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0635.json
+[2025-07-20 08:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0815.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0640.json
+[2025-07-20 08:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0820.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0645.json
+[2025-07-20 08:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0825.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0650.json
+[2025-07-20 08:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0830.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 06:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0655.json
+[2025-07-20 08:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0835.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0700.json
+[2025-07-20 08:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0840.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0705.json
+[2025-07-20 08:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0845.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0710.json
+[2025-07-20 08:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0850.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0715.json
+[2025-07-20 08:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0855.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0720.json
+[2025-07-20 09:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0900.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0725.json
+[2025-07-20 09:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0905.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0730.json
+[2025-07-20 09:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0910.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0735.json
+[2025-07-20 09:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0915.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0740.json
+[2025-07-20 09:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0920.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0745.json
+[2025-07-20 09:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0925.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0750.json
+[2025-07-20 09:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0930.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 07:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0755.json
+[2025-07-20 09:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0935.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0800.json
+[2025-07-20 09:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0940.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0805.json
+[2025-07-20 09:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0945.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0810.json
+[2025-07-20 09:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0950.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0815.json
+[2025-07-20 09:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-0955.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0820.json
+[2025-07-20 10:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1000.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0825.json
+[2025-07-20 10:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1005.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0830.json
+[2025-07-20 10:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1010.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0835.json
+[2025-07-20 10:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1015.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0840.json
+[2025-07-20 10:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1020.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0845.json
+[2025-07-20 10:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1025.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0850.json
+[2025-07-20 10:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1030.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 08:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0855.json
+[2025-07-20 10:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1035.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0900.json
+[2025-07-20 10:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1040.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0905.json
+[2025-07-20 10:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1045.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0910.json
+[2025-07-20 10:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1050.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0915.json
+[2025-07-20 10:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1055.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0920.json
+[2025-07-20 11:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1100.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0925.json
+[2025-07-20 11:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1105.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0930.json
+[2025-07-20 11:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1110.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0935.json
+[2025-07-20 11:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1115.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0940.json
+[2025-07-20 11:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1120.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0945.json
+[2025-07-20 11:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1125.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0950.json
+[2025-07-20 11:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1130.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 09:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-0955.json
+[2025-07-20 11:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1135.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1000.json
+[2025-07-20 11:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1140.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1005.json
+[2025-07-20 11:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1145.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1010.json
+[2025-07-20 11:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1150.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1015.json
+[2025-07-20 11:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1155.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1020.json
+[2025-07-20 12:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1200.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1025.json
+[2025-07-20 12:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1205.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1030.json
+[2025-07-20 12:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1210.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1035.json
+[2025-07-20 12:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1215.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1040.json
+[2025-07-20 12:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1220.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1045.json
+[2025-07-20 12:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1225.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1050.json
+[2025-07-20 12:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1230.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 10:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1055.json
+[2025-07-20 12:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1235.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1100.json
+[2025-07-20 12:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1240.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1105.json
+[2025-07-20 12:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1245.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1110.json
+[2025-07-20 12:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1250.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1115.json
+[2025-07-20 12:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1255.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1120.json
+[2025-07-20 13:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1300.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1125.json
+[2025-07-20 13:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1305.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1130.json
+[2025-07-20 13:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1310.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1135.json
+[2025-07-20 13:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1315.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1140.json
+[2025-07-20 13:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1320.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1145.json
+[2025-07-20 13:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1325.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1150.json
+[2025-07-20 13:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1330.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 11:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1155.json
+[2025-07-20 13:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1335.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1200.json
+[2025-07-20 13:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1340.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1205.json
+[2025-07-20 13:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1345.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1210.json
+[2025-07-20 13:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1350.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1215.json
+[2025-07-20 13:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1355.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1220.json
+[2025-07-20 14:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1400.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1225.json
+[2025-07-20 14:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1405.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1230.json
+[2025-07-20 14:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1410.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1235.json
+[2025-07-20 14:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1415.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1240.json
+[2025-07-20 14:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1420.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1245.json
+[2025-07-20 14:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1425.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1250.json
+[2025-07-20 14:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1430.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 12:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1255.json
+[2025-07-20 14:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1435.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1300.json
+[2025-07-20 14:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1440.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1305.json
+[2025-07-20 14:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1445.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1310.json
+[2025-07-20 14:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1450.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1315.json
+[2025-07-20 14:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1455.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1320.json
+[2025-07-20 15:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1500.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1325.json
+[2025-07-20 15:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1505.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1330.json
+[2025-07-20 15:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1510.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1335.json
+[2025-07-20 15:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1515.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1340.json
+[2025-07-20 15:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1520.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1345.json
+[2025-07-20 15:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1525.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1350.json
+[2025-07-20 15:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1530.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 13:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1355.json
+[2025-07-20 15:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1535.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1400.json
+[2025-07-20 15:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1540.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1405.json
+[2025-07-20 15:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1545.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1410.json
+[2025-07-20 15:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1550.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1415.json
+[2025-07-20 15:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1555.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1420.json
+[2025-07-20 16:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1600.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1425.json
+[2025-07-20 16:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1605.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1430.json
+[2025-07-20 16:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1610.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1435.json
+[2025-07-20 16:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1615.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1440.json
+[2025-07-20 16:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1620.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1445.json
+[2025-07-20 16:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1625.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1450.json
+[2025-07-20 16:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1630.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 14:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1455.json
+[2025-07-20 16:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1635.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1500.json
+[2025-07-20 16:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1640.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1505.json
+[2025-07-20 16:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1645.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1510.json
+[2025-07-20 16:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1650.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1515.json
+[2025-07-20 16:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1655.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1520.json
+[2025-07-20 17:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1700.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1525.json
+[2025-07-20 17:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1705.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1530.json
+[2025-07-20 17:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1710.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1535.json
+[2025-07-20 17:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1715.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1540.json
+[2025-07-20 17:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1720.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1545.json
+[2025-07-20 17:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1725.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1550.json
+[2025-07-20 17:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1730.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 15:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1555.json
+[2025-07-20 17:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1735.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1600.json
+[2025-07-20 17:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1740.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1605.json
+[2025-07-20 17:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1745.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1610.json
+[2025-07-20 17:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1750.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1615.json
+[2025-07-20 17:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1755.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1620.json
+[2025-07-20 18:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1800.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1625.json
+[2025-07-20 18:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1805.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1630.json
+[2025-07-20 18:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1810.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1635.json
+[2025-07-20 18:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1815.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1640.json
+[2025-07-20 18:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1820.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1645.json
+[2025-07-20 18:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1825.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1650.json
+[2025-07-20 18:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1830.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 16:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1655.json
+[2025-07-20 18:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1835.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1700.json
+[2025-07-20 18:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1840.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1705.json
+[2025-07-20 18:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1845.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1710.json
+[2025-07-20 18:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1850.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1715.json
+[2025-07-20 18:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1855.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:20:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1720.json
+[2025-07-20 19:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1900.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1725.json
+[2025-07-20 19:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1905.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1730.json
+[2025-07-20 19:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1910.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1735.json
+[2025-07-20 19:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1915.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1740.json
+[2025-07-20 19:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1920.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1745.json
+[2025-07-20 19:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1925.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1750.json
+[2025-07-20 19:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1930.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 17:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1755.json
+[2025-07-20 19:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1935.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1800.json
+[2025-07-20 19:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1940.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1805.json
+[2025-07-20 19:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1945.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1810.json
+[2025-07-20 19:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1950.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1815.json
+[2025-07-20 19:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-1955.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1820.json
+[2025-07-20 20:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2000.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:25:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1825.json
+[2025-07-20 20:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2005.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:30:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1830.json
+[2025-07-20 20:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2010.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1835.json
+[2025-07-20 20:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2015.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1840.json
+[2025-07-20 20:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2020.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1845.json
+[2025-07-20 20:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2025.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1850.json
+[2025-07-20 20:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2030.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 18:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1855.json
+[2025-07-20 20:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2035.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1900.json
+[2025-07-20 20:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2040.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:05:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1905.json
+[2025-07-20 20:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2045.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:10:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1910.json
+[2025-07-20 20:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2050.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:15:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1915.json
+[2025-07-20 20:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2055.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1920.json
+[2025-07-20 21:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2100.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1925.json
+[2025-07-20 21:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2105.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1930.json
+[2025-07-20 21:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2110.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:35:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1935.json
+[2025-07-20 21:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2115.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:40:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1940.json
+[2025-07-20 21:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2120.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:45:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1945.json
+[2025-07-20 21:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2125.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:50:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1950.json
+[2025-07-20 21:30:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2130.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 19:55:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-1955.json
+[2025-07-20 21:35:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2135.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 20:00:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-2000.json
+[2025-07-20 21:40:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2140.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 20:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-2005.json
+[2025-07-20 21:45:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2145.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 20:10:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-2010.json
+[2025-07-20 21:50:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2150.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 20:15:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-2015.json
+[2025-07-20 21:55:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2155.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 20:20:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-2020.json
+[2025-07-20 22:00:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2200.json
 ✅ Report generated
 📊 Generating performance report...
-[2025-07-11 20:25:01] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250711-2025.json
+[2025-07-20 22:05:02] 📊 Performance report generated: /home/ittz/projects/itt/site/logs/performance-report-20250720-2205.json
 ✅ Report generated

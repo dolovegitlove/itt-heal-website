@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-07-20T04:33:30.962Z",
+  "summary": {
+    "totalErrors": 0,
+    "totalWarnings": 1,
+    "categoriesChecked": [
+      "API_ENDPOINTS",
+      "DATA_ATTRIBUTES",
+      "REQUEST_RESPONSE_FIELDS",
+      "ENUM_VALUES",
+      "HTTP_METHODS"
+    ],
+    "validationPassed": true
+  },
+  "results": {
+    "apiEndpoints": [
+      "https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}"
+    ],
+    "dataAttributes": [
+      {
+        "attribute": "data-hover",
+        "value": "true",
+        "fullMatch": "data-hover=\"true\""
+      },
+      {
+        "attribute": "data-update",
+        "value": "price",
+        "fullMatch": "data-update=\"price\""
+      }
+    ],
+    "requestFields": [],
+    "responseFields": [
+      "success",
+      "sessionId",
+      "error",
+      "ok",
+      "status",
+      "json",
+      "data"
+    ],
+    "enumValues": [
+      [
+        "service_types",
+        []
+      ],
+      [
+        "payment_methods",
+        [
+          "credit_card",
+          "complimentary",
+          "cash"
+        ]
+      ],
+      [
+        "booking_statuses",
+        [
+          "pending",
+          "confirmed",
+          "completed",
+          "cancelled"
+        ]
+      ]
+    ],
+    "httpMethods": []
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "category": "DATA_ATTRIBUTES",
+      "message": "Unused data attributes found: data-hover, data-update",
+      "details": {},
+      "timestamp": "2025-07-20T04:33:30.960Z"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-07-17 04:21:57",
+  "checks": {
+    "website": [2025-07-17 04:21:57] 🌐 Checking website accessibility...
+[2025-07-17 04:21:57] ✅ Website is accessible (HTTP 200)
+true,
+    "api": [2025-07-17 04:21:57] 🔗 Checking API health...
+[2025-07-17 04:21:57] ALERT [CRITICAL]: API health check failed: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+false,
+    "backend": [2025-07-17 04:21:57] ⚙️  Checking backend processes...
+[2025-07-17 04:21:57] ALERT [HIGH]: Backend process is not running (status: errored)
+[2025-07-17 04:21:57] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [itt-backend](ids: [ 3 ])
+[PM2] [itt-backend](3) ✓
+┌────┬─────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name                │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼─────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 3  │ itt-backend         │ default     │ 1.0.0   │ fork    │ 1401130  │ 0s     │ 185… │ online    │ 0%       │ 6.8mb    │ ittz     │ disabled │
+│ 1  │ itt-backend-ittz    │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 31   │ errored   │ 0%       │ 0b       │ ittz     │ disabled │
+└────┴─────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[2025-07-17 04:21:57] ✅ Backend restarted successfully
+true,
+    "database": [2025-07-17 04:22:02] 🗄️  Checking database connectivity...
+[2025-07-17 04:22:02] ALERT [HIGH]: Database connection failed
+false,
+    "disk_space": [2025-07-17 04:22:02] 💾 Checking disk space...
+[2025-07-17 04:22:02] ✅ Disk space OK (82% used)
+true,
+    "ssl": [2025-07-17 04:22:02] 🔒 Checking SSL certificate...
+[2025-07-17 04:22:02] ✅ SSL certificate valid (48 days remaining)
+true,
+    "errors": [2025-07-17 04:22:02] 📋 Checking error logs...
+[2025-07-17 04:22:02] ✅ Error logs look clean (1 recent errors)
+true,
+    "flows": [2025-07-17 04:22:02] 🔬 Testing critical user flows...
+[2025-07-17 04:22:02] ALERT [HIGH]: Booking system not responding correctly
+false,
+    "enums": [2025-07-17 04:22:02] 🎯 Checking enum consistency...
+[2025-07-17 04:22:02] ALERT [MEDIUM]: Enum consistency issues detected
+false
+  }
+}
