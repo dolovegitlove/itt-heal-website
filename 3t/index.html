@@ -2125,76 +2125,116 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     // Create and show thank you content
                                     const bookingModal = document.getElementById('booking');
                                     const thankYouHTML = `
-                                        <div style="width: 100%; max-width: 800px; margin: 0 auto;">
-                                            <div id="thank-you-content" role="region" aria-labelledby="thank-you-heading" aria-live="assertive" aria-atomic="true" style="text-align: center; padding: 3rem 2.5rem; position: relative; z-index: 2;">
-                                                <div style="margin-bottom: 2rem;">
-                                                    <div style="font-size: 4rem; margin-bottom: 1rem;" aria-hidden="true">🎉</div>
-                                                    <h2 id="thank-you-heading" style="color: #059669; font-size: 2rem; font-weight: 600; margin-bottom: 1rem;">
+                                        <div style="width: 100%; max-width: 1000px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                                            <div id="thank-you-content" role="region" aria-labelledby="thank-you-heading" aria-live="assertive" aria-atomic="true" style="padding: 2.5rem 3rem;">
+                                                
+                                                <!-- Header Section -->
+                                                <div style="text-align: center; margin-bottom: 2.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 2rem;">
+                                                    <div style="font-size: 3rem; margin-bottom: 0.5rem;" aria-hidden="true">🎉</div>
+                                                    <h2 id="thank-you-heading" style="color: #059669; font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">
                                                         Thank You!
                                                     </h2>
-                                                    <p style="font-size: 1.25rem; color: #374151; margin-bottom: 2rem;">
-                                                        Your healing session has been confirmed.
+                                                    <p style="font-size: 1.2rem; color: #6b7280; margin: 0;">
+                                                        Your healing session has been confirmed and we're excited to see you.
                                                     </p>
                                                 </div>
                                                 
-                                                <section style="background: #f0fdf4; border: 2px solid #059669; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-align: left;" role="region" aria-labelledby="confirmation-heading">
-                                                    <h3 id="confirmation-heading" style="color: #047857; font-weight: 600; margin-bottom: 1.5rem; text-align: center; font-size: 1.25rem;">
-                                                        Booking Confirmation
-                                                    </h3>
-                                                    <dl style="margin: 0; font-size: 1.1rem;">
-                                                        <div style="margin-bottom: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid #e6fffa;">
-                                                            <dt style="display: inline-block; font-weight: 600; width: 140px;">Service:</dt>
-                                                            <dd style="display: inline; margin-left: 0.5rem;">${confirmationData.service}</dd>
+                                                <!-- Main Content Grid -->
+                                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+                                                    
+                                                    <!-- Left Column: Booking Details -->
+                                                    <section style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border: 1px solid #d1fae5; border-radius: 12px; padding: 2rem;" role="region" aria-labelledby="confirmation-heading">
+                                                        <h3 id="confirmation-heading" style="color: #047857; font-weight: 600; margin: 0 0 1.5rem 0; font-size: 1.3rem; display: flex; align-items: center;">
+                                                            <span style="background: #059669; color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.75rem; font-size: 0.9rem;">✓</span>
+                                                            Appointment Details
+                                                        </h3>
+                                                        <div style="space-y: 1rem;">
+                                                            <div style="margin-bottom: 1rem;">
+                                                                <div style="font-weight: 600; color: #374151; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Service</div>
+                                                                <div style="color: #047857; font-size: 1.15rem; font-weight: 600;">${confirmationData.service}</div>
+                                                            </div>
+                                                            <div style="margin-bottom: 1rem;">
+                                                                <div style="font-weight: 600; color: #374151; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Date & Time</div>
+                                                                <div style="color: #1f2937; font-size: 1.15rem;">${confirmationData.datetime}</div>
+                                                            </div>
+                                                            <div style="margin-bottom: 1rem;">
+                                                                <div style="font-weight: 600; color: #374151; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Practitioner</div>
+                                                                <div style="color: #1f2937; font-size: 1.15rem;">${confirmationData.practitioner}</div>
+                                                            </div>
+                                                            <div style="margin-bottom: 1rem;">
+                                                                <div style="font-weight: 600; color: #374151; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Confirmation Number</div>
+                                                                <div style="color: #1f2937; font-size: 1.15rem; font-family: monospace; background: #f9fafb; padding: 0.5rem; border-radius: 6px; border: 1px solid #e5e7eb;">${confirmationData.confirmationNumber}</div>
+                                                            </div>
+                                                            <div style="border-top: 2px solid #d1fae5; padding-top: 1rem; margin-top: 1.5rem;">
+                                                                <div style="font-weight: 600; color: #374151; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Total Amount</div>
+                                                                <div style="color: #047857; font-size: 1.5rem; font-weight: 700;">$${confirmationData.totalAmount}</div>
+                                                            </div>
                                                         </div>
-                                                        <div style="margin-bottom: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid #e6fffa;">
-                                                            <dt style="display: inline-block; font-weight: 600; width: 140px;">Date & Time:</dt>
-                                                            <dd style="display: inline; margin-left: 0.5rem;">${confirmationData.datetime}</dd>
+                                                    </section>
+                                                    
+                                                    <!-- Right Column: Next Steps -->
+                                                    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 2rem;" role="region" aria-labelledby="details-heading">
+                                                        <h4 id="details-heading" style="color: #0369a1; font-weight: 600; margin: 0 0 1.5rem 0; font-size: 1.3rem; display: flex; align-items: center;">
+                                                            <span style="background: #0284c7; color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.75rem; font-size: 1rem;">📧</span>
+                                                            What Happens Next
+                                                        </h4>
+                                                        <div style="color: #1e293b; font-size: 1rem; line-height: 1.7;">
+                                                            <div style="margin-bottom: 1.25rem; padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #0284c7;">
+                                                                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">📧 Email Confirmation</div>
+                                                                <div style="font-size: 0.95rem; color: #4b5563;">A detailed confirmation email has been sent to your email address with all session information.</div>
+                                                            </div>
+                                                            <div style="margin-bottom: 1.25rem; padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #0284c7;">
+                                                                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">📱 SMS Reminder</div>
+                                                                <div style="font-size: 0.95rem; color: #4b5563;">You'll receive a text reminder 24 hours before your appointment.</div>
+                                                            </div>
+                                                            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #0284c7;">
+                                                                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">🏢 Arrival Information</div>
+                                                                <div style="font-size: 0.95rem; color: #4b5563;">Please arrive 10 minutes early and bring comfortable clothing.</div>
+                                                            </div>
                                                         </div>
-                                                        <div style="margin-bottom: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid #e6fffa;">
-                                                            <dt style="display: inline-block; font-weight: 600; width: 140px;">Practitioner:</dt>
-                                                            <dd style="display: inline; margin-left: 0.5rem;">${confirmationData.practitioner}</dd>
-                                                        </div>
-                                                        <div style="margin-bottom: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid #e6fffa;">
-                                                            <dt style="display: inline-block; font-weight: 600; width: 140px;">Confirmation #:</dt>
-                                                            <dd style="display: inline; margin-left: 0.5rem;">${confirmationData.confirmationNumber}</dd>
-                                                        </div>
-                                                        <div style="padding: 0.5rem 0;">
-                                                            <dt style="display: inline-block; font-weight: 600; width: 140px;">Total Amount:</dt>
-                                                            <dd style="display: inline; margin-left: 0.5rem; font-size: 1.2rem; color: #047857; font-weight: 600;">$${confirmationData.totalAmount}</dd>
-                                                        </div>
-                                                    </dl>
-                                                </section>
+                                                    </section>
+                                                </div>
                                                 
-                                                <section style="background: #f0f9ff; border: 2px solid #0284c7; border-radius: 12px; padding: 2rem; margin-bottom: 2rem;" role="region" aria-labelledby="details-heading">
-                                                    <h4 id="details-heading" style="color: #075985; font-weight: 600; margin-bottom: 1rem; font-size: 1.15rem;">
-                                                        <span aria-hidden="true">📧 </span>Confirmation Details
-                                                    </h4>
-                                                    <p style="color: #1e293b; font-size: 1rem; line-height: 1.6;">
-                                                        A confirmation email with session details has been sent to your email address.
-                                                        You will also receive an SMS reminder 24 hours before your appointment.
-                                                    </p>
-                                                </section>
-                                                
-                                                <div style="margin-top: 2.5rem;" role="group" aria-label="Next actions">
+                                                <!-- Bottom Action Buttons -->
+                                                <div style="text-align: center; padding-top: 2rem; border-top: 2px solid #f0f0f0;" role="group" aria-label="Next actions">
                                                     <button onclick="location.reload()" 
-                                                            style="background: #059669; color: white; padding: 14px 32px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 1rem; margin-bottom: 1rem; text-decoration: underline 2px transparent; transition: text-decoration-color 0.2s; font-size: 1.05rem;"
-                                                            onmouseover="this.style.textDecorationColor='white'"
-                                                            onmouseout="this.style.textDecorationColor='transparent'"
+                                                            style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 16px 48px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; margin-right: 1rem; margin-bottom: 1rem; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); transition: all 0.3s;"
+                                                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(5, 150, 105, 0.4)'"
+                                                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(5, 150, 105, 0.3)'"
                                                             onfocus="this.style.outline='3px solid #047857'; this.style.outlineOffset='2px'"
                                                             onblur="this.style.outline='none'"
                                                             aria-label="Book another healing session">
-                                                        Book Another Session
+                                                        ✨ Book Another Session
                                                     </button>
                                                     <button onclick="window.location.href='/'" 
-                                                            style="background: #6b7280; color: white; padding: 14px 32px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-bottom: 1rem; text-decoration: underline 2px transparent; transition: text-decoration-color 0.2s; font-size: 1.05rem;"
-                                                            onmouseover="this.style.textDecorationColor='white'"
-                                                            onmouseout="this.style.textDecorationColor='transparent'"
+                                                            style="background: linear-gradient(135deg, #6b7280, #4b5563); color: white; padding: 16px 48px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; margin-bottom: 1rem; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3); transition: all 0.3s;"
+                                                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(107, 114, 128, 0.4)'"
+                                                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(107, 114, 128, 0.3)'"
                                                             onfocus="this.style.outline='3px solid #4b5563'; this.style.outlineOffset='2px'"
                                                             onblur="this.style.outline='none'"
                                                             aria-label="Return to home page">
-                                                        Return to Home
+                                                        🏠 Return to Home
                                                     </button>
                                                 </div>
+                                                
+                                                <!-- Responsive Mobile Layout -->
+                                                <style>
+                                                    @media (max-width: 768px) {
+                                                        .thank-you-grid { 
+                                                            display: block !important; 
+                                                        }
+                                                        .thank-you-grid > section {
+                                                            margin-bottom: 1.5rem !important;
+                                                        }
+                                                        #thank-you-content {
+                                                            padding: 2rem 1.5rem !important;
+                                                        }
+                                                    }
+                                                </style>
+                                                <script>
+                                                    // Add responsive class
+                                                    document.querySelector('[style*="display: grid"]').className = 'thank-you-grid';
+                                                </script>
                                             </div>
                                         </div>
                                     `;
