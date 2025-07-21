@@ -983,3 +983,14 @@ postgres 3656671  7.7  2.7 258784 168048 ?       Ss   17:15   0:01 postgres: 14/
 [2025-07-21 17:39:10] OPTIMIZATION: Nginx configuration is valid - reloading
 [2025-07-21 17:44:12] OPTIMIZATION: Optimizing nginx performance
 [2025-07-21 17:44:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:49:14] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 17:49:14] OPTIMIZATION: High CPU processes detected: ittz     2807222  4.6 14.4 33814828 877112 pts/0 Sl+  14:49   8:24 claude
+postgres 3658562  0.6  2.9 269772 180368 ?       Ss   17:15   0:13 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54390) idle
+ittz     3655772  0.5  4.2 11975360 258636 ?     Ssl  17:15   0:10 node /home/ittz/projects/itt/shared/backend/server.js
+www-data 3829313  0.4  0.1  57248  9728 ?        S    17:44   0:01 nginx: worker process
+ittz     2806315  0.3  0.1  18688  9284 ?        S    14:49   0:34 sshd: ittz@pts/0
+[2025-07-21 17:49:14] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 17:49:15] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:49:15] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:54:18] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:54:18] OPTIMIZATION: Nginx configuration is valid - reloading
