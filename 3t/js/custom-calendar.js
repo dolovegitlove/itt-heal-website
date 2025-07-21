@@ -405,6 +405,56 @@
             if (headerElement) {
                 headerElement.textContent = `${monthNames[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
             }
+            
+            // Update navigation button states
+            this.updateNavigationButtons();
+        },
+        
+        updateNavigationButtons() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const maxBookingDate = new Date(today);
+            maxBookingDate.setDate(maxBookingDate.getDate() + 90);
+            
+            const prevButton = document.getElementById('prev-month');
+            const nextButton = document.getElementById('next-month');
+            
+            if (prevButton) {
+                // Disable previous button if we're at current month
+                const firstOfCurrentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                const firstOfDisplayMonth = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), 1);
+                
+                if (firstOfDisplayMonth <= firstOfCurrentMonth) {
+                    prevButton.disabled = true;
+                    prevButton.style.opacity = '0.5';
+                    prevButton.style.cursor = 'not-allowed';
+                    prevButton.setAttribute('aria-disabled', 'true');
+                } else {
+                    prevButton.disabled = false;
+                    prevButton.style.opacity = '1';
+                    prevButton.style.cursor = 'pointer';
+                    prevButton.setAttribute('aria-disabled', 'false');
+                }
+            }
+            
+            if (nextButton) {
+                // Disable next button if next month would be beyond booking window
+                const nextMonth = new Date(this.currentDate);
+                nextMonth.setMonth(nextMonth.getMonth() + 1);
+                const firstOfNextMonth = new Date(nextMonth.getFullYear(), nextMonth.getMonth(), 1);
+                
+                if (firstOfNextMonth > maxBookingDate) {
+                    nextButton.disabled = true;
+                    nextButton.style.opacity = '0.5';
+                    nextButton.style.cursor = 'not-allowed';
+                    nextButton.setAttribute('aria-disabled', 'true');
+                } else {
+                    nextButton.disabled = false;
+                    nextButton.style.opacity = '1';
+                    nextButton.style.cursor = 'pointer';
+                    nextButton.setAttribute('aria-disabled', 'false');
+                }
+            }
         },
 
         renderDates() {
@@ -421,6 +471,10 @@
             const lastDay = new Date(year, month + 1, 0);
             const today = new Date();
             today.setHours(0, 0, 0, 0);
+            
+            // Calculate 91-day maximum date (90 days from today + today = 91 days)
+            const maxBookingDate = new Date(today);
+            maxBookingDate.setDate(maxBookingDate.getDate() + 90);
 
             // Track row/column for ARIA
             let currentRow = 1; // Start after headers
@@ -443,6 +497,11 @@
                 const dayOfWeek = date.getDay();
                 const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 
+                // Skip rendering dates beyond 91-day limit
+                if (date > maxBookingDate) {
+                    continue;
+                }
+                
                 const dateCell = document.createElement('button');
                 dateCell.className = 'calendar-date';
                 dateCell.type = 'button';
@@ -451,6 +510,7 @@
                 // Check if date is available using API data only
                 const isPastDate = date < today;
                 const isClosedDate = this.closedDates.includes(dateString);
+                const isBeyondBookingLimit = date > maxBookingDate;
                 // Business day logic removed - determined by API closed dates response
                 const isSelected = this.selectedDate && 
                     date.toDateString() === this.selectedDate.toDateString();
@@ -471,6 +531,9 @@
 
                 if (isPastDate) {
                     ariaLabel += ', past date, unavailable';
+                    dateCell.setAttribute('aria-disabled', 'true');
+                } else if (isBeyondBookingLimit) {
+                    ariaLabel += ', beyond booking window, unavailable';
                     dateCell.setAttribute('aria-disabled', 'true');
                 } else if (isClosedDate) {
                     ariaLabel += ', closed day, unavailable';
@@ -506,7 +569,7 @@
                     font-size: 1rem;
                 `;
 
-                if (isPastDate || isClosedDate) {
+                if (isPastDate || isClosedDate || isBeyondBookingLimit) {
                     // Closed/unavailable styling - Lavender & cream
                     cellStyle += `
                         background: #f8f4fc;
@@ -557,7 +620,7 @@
                 dateCell.style.cssText = cellStyle;
                 
                 // Event handlers for available dates
-                if (!isPastDate && !isClosedDate) {
+                if (!isPastDate && !isClosedDate && !isBeyondBookingLimit) {
                     // Click handler
                     dateCell.addEventListener('click', () => this.selectDate(date));
                     
@@ -662,7 +725,35 @@
         },
 
         changeMonth(direction) {
-            this.currentDate.setMonth(this.currentDate.getMonth() + direction);
+            const newDate = new Date(this.currentDate);
+            newDate.setMonth(newDate.getMonth() + direction);
+            
+            // Calculate 91-day maximum date
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const maxBookingDate = new Date(today);
+            maxBookingDate.setDate(maxBookingDate.getDate() + 90);
+            
+            // Don't allow navigation to months that are entirely beyond the booking window
+            if (direction > 0) {
+                const firstOfNewMonth = new Date(newDate.getFullYear(), newDate.getMonth(), 1);
+                if (firstOfNewMonth > maxBookingDate) {
+                    console.log('📅 Cannot navigate beyond 91-day booking window');
+                    return; // Prevent navigation beyond booking window
+                }
+            }
+            
+            // Don't allow navigation to past months
+            if (direction < 0) {
+                const firstOfNewMonth = new Date(newDate.getFullYear(), newDate.getMonth(), 1);
+                const firstOfCurrentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                if (firstOfNewMonth < firstOfCurrentMonth) {
+                    console.log('📅 Cannot navigate to past months');
+                    return; // Prevent navigation to past months
+                }
+            }
+            
+            this.currentDate = newDate;
             this.render();
             
             // Announce month change to screen readers

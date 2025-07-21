@@ -259,6 +259,29 @@
             border: 0;
         }
         
+        /* Date picker enhanced styling for 90-day limit */
+        #booking-date::-webkit-calendar-picker-indicator {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="%23059669"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>');
+            cursor: pointer;
+        }
+        
+        /* Visual feedback for constrained date picker */
+        #booking-date {
+            background-color: #f8fafc;
+            transition: all 0.2s ease;
+        }
+        
+        #booking-date:focus {
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+        
+        /* Disabled state styling for out-of-range dates */
+        #booking-date:invalid {
+            border-color: #dc2626;
+            background-color: #fef2f2;
+        }
+        
         /* Enhanced keyboard navigation */
         #booking-date:focus-visible, #booking-time:focus-visible {
             box-shadow: 0 0 0 3px #ffd700;
@@ -1370,10 +1393,78 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                         return true;
                                     }
                                     
+                                    // Check if date is beyond 90-day limit
+                                    const selectedDateObj = new Date(selectedDate);
+                                    const today = new Date();
+                                    const maxDate = new Date();
+                                    maxDate.setDate(maxDate.getDate() + 90);
+                                    
+                                    if (selectedDateObj > maxDate) {
+                                        // Show visual warning for dates beyond 90-day limit
+                                        if (dateInfo && closedWarning) {
+                                            dateInfo.style.display = 'block';
+                                            closedWarning.innerHTML = '<strong>⚠️ Date Too Far:</strong> Bookings are only available within the next 90 days. Please select an earlier date.';
+                                            closedWarning.style.display = 'block';
+                                            availableHint.style.display = 'block';
+                                            
+                                            // Add red border to indicate error
+                                            dateInput.classList.remove('date-valid');
+                                            dateInput.classList.add('date-invalid');
+                                            dateInput.style.borderColor = '#dc2626';
+                                            dateInput.style.backgroundColor = '#fef2f2';
+                                        }
+                                        
+                                        // Clear the invalid date after showing feedback
+                                        setTimeout(() => {
+                                            dateInput.value = '';
+                                            dateInput.style.borderColor = '#e2e8f0';
+                                            dateInput.style.backgroundColor = '';
+                                            dateInput.classList.remove('date-invalid');
+                                            if (closedWarning) {
+                                                closedWarning.innerHTML = '<strong>⚠️ Closed Date:</strong> This date is not available. Please select an available date.';
+                                                closedWarning.style.display = 'none';
+                                            }
+                                        }, 4000);
+                                        
+                                        return false;
+                                    }
+                                    
+                                    // Check if date is in the past
+                                    if (selectedDateObj < today) {
+                                        // Show visual warning for past dates
+                                        if (dateInfo && closedWarning) {
+                                            dateInfo.style.display = 'block';
+                                            closedWarning.innerHTML = '<strong>⚠️ Past Date:</strong> Please select a future date for your appointment.';
+                                            closedWarning.style.display = 'block';
+                                            availableHint.style.display = 'block';
+                                            
+                                            // Add red border to indicate error
+                                            dateInput.classList.remove('date-valid');
+                                            dateInput.classList.add('date-invalid');
+                                            dateInput.style.borderColor = '#dc2626';
+                                            dateInput.style.backgroundColor = '#fef2f2';
+                                        }
+                                        
+                                        // Clear the invalid date after showing feedback
+                                        setTimeout(() => {
+                                            dateInput.value = '';
+                                            dateInput.style.borderColor = '#e2e8f0';
+                                            dateInput.style.backgroundColor = '';
+                                            dateInput.classList.remove('date-invalid');
+                                            if (closedWarning) {
+                                                closedWarning.innerHTML = '<strong>⚠️ Closed Date:</strong> This date is not available. Please select an available date.';
+                                                closedWarning.style.display = 'none';
+                                            }
+                                        }, 3000);
+                                        
+                                        return false;
+                                    }
+                                    
                                     if (isDateClosed(selectedDate)) {
                                         // Show visual warning for closed dates
                                         if (dateInfo && closedWarning) {
                                             dateInfo.style.display = 'block';
+                                            closedWarning.innerHTML = '<strong>⚠️ Closed Date:</strong> This date is not available. Please select an available date.';
                                             closedWarning.style.display = 'block';
                                             availableHint.style.display = 'block';
                                             
@@ -1566,6 +1657,32 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                 isTimeSelected 
                                             });
                                             alert('Please select both date and time.');
+                                            return;
+                                        }
+                                        
+                                        // CRITICAL: Check 90-day booking limit
+                                        const selectedDateObj = new Date(date);
+                                        const today = new Date();
+                                        const maxDate = new Date();
+                                        maxDate.setDate(maxDate.getDate() + 90);
+                                        
+                                        if (selectedDateObj > maxDate) {
+                                            console.log('❌ 90-day limit validation failed:', { 
+                                                date, 
+                                                selectedDate: selectedDateObj,
+                                                maxDate: maxDate
+                                            });
+                                            alert('Bookings are only available within the next 90 days. Please select an earlier date.');
+                                            return;
+                                        }
+                                        
+                                        if (selectedDateObj < today) {
+                                            console.log('❌ Past date validation failed:', { 
+                                                date, 
+                                                selectedDate: selectedDateObj,
+                                                today: today
+                                            });
+                                            alert('Please select a future date for your appointment.');
                                             return;
                                         }
                                         
@@ -2125,9 +2242,6 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     // Create and show thank you content
                                     const bookingModal = document.getElementById('booking');
                                     const thankYouHTML = `
-                                        <div style="width: 100%; max-width: 1000px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                                            <div id="thank-you-content" role="region" aria-labelledby="thank-you-heading" aria-live="assertive" aria-atomic="true" style="padding: 2.5rem 3rem;">
-                                                
                                                 <!-- Header Section -->
                                                 <div style="text-align: center; margin-bottom: 2.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 2rem;">
                                                     <div style="font-size: 3rem; margin-bottom: 0.5rem;" aria-hidden="true">🎉</div>
@@ -2195,16 +2309,6 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                     </button>
                                                 </div>
                                                 
-                                                <!-- Responsive Mobile Layout -->
-                                                <style>
-                                                    @media (max-width: 768px) {
-                                                        #thank-you-content {
-                                                            padding: 2rem 1.5rem !important;
-                                                        }
-                                                    }
-                                                </style>
-                                            </div>
-                                        </div>
                                     `;
                                     
                                         // Find the booking container and replace its content
@@ -2215,6 +2319,18 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                         if (bookingContainer) {
                                             console.log('📝 Replacing container content with thank you HTML...');
                                             bookingContainer.innerHTML = thankYouHTML;
+                                            
+                                            // Apply styling directly to the booking container
+                                            Object.assign(bookingContainer.style, {
+                                                width: '100%',
+                                                maxWidth: '1000px',
+                                                margin: '0 auto',
+                                                background: 'white',
+                                                borderRadius: '16px',
+                                                boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                                                padding: window.innerWidth <= 768 ? '2rem 1.5rem' : '2.5rem 3rem'
+                                            });
+                                            
                                             console.log('✅ Thank you content displayed in modal');
                                             
                                             // Scroll to top of the booking section to ensure visibility
@@ -3007,7 +3123,15 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                     console.log('📋 Showing thank you despite confirmation warning...');
                                                     setTimeout(() => {
                                                         try {
-                                                            showThankYouInModal(confirmationData);
+                                                            const storedData = localStorage.getItem('lastBookingData');
+                                                            const fallbackData = storedData ? JSON.parse(storedData) : {
+                                                                service: serviceNames[selectedService] || 'Your Selected Service',
+                                                                datetime: `${document.getElementById('booking-date').value} at ${document.getElementById('booking-time').value}`,
+                                                                practitioner: 'Dr. Shiffer, CST, LMT',
+                                                                confirmationNumber: 'Pending',
+                                                                totalAmount: totalPrice.toFixed(2)
+                                                            };
+                                                            showThankYouInModal(fallbackData);
                                                             console.log('✅ Thank you shown despite confirmation issue');
                                                         } catch (error) {
                                                             console.error('❌ Error showing thank you:', error);
@@ -3020,7 +3144,15 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                 console.log('📋 Showing thank you despite confirmation error...');
                                                 setTimeout(() => {
                                                     try {
-                                                        showThankYouInModal(confirmationData);
+                                                        const storedData = localStorage.getItem('lastBookingData');
+                                                        const fallbackData = storedData ? JSON.parse(storedData) : {
+                                                            service: serviceNames[selectedService] || 'Your Selected Service',
+                                                            datetime: `${document.getElementById('booking-date').value} at ${document.getElementById('booking-time').value}`,
+                                                            practitioner: 'Dr. Shiffer, CST, LMT',
+                                                            confirmationNumber: 'Pending',
+                                                            totalAmount: totalPrice.toFixed(2)
+                                                        };
+                                                        showThankYouInModal(fallbackData);
                                                         console.log('✅ Thank you shown despite confirmation error');
                                                     } catch (error) {
                                                         console.error('❌ Error showing thank you:', error);
@@ -3183,7 +3315,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                style="width: 100%; height: 50px; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;" 
                                                required 
                                                aria-describedby="date-availability-info"
-                                               aria-label="Preferred appointment date">
+                                               aria-label="Preferred appointment date"
+                                               min=""
+                                               max="">
                                         <div id="date-availability-info" 
                                              style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--sage-600); display: none;"
                                              role="status"
@@ -3199,6 +3333,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                  style="color: var(--sage-600);"
                                                  role="note">
                                                 📅 Available days: Monday (10 AM - 6 PM), Wednesday (12 PM - 8 PM), Friday (10 AM - 6 PM), Saturday (11 AM - 7 PM)
+                                                <br>🗓️ <strong>Booking window:</strong> Today through next 90 days only
                                             </div>
                                         </div>
                                     </div>
@@ -3637,7 +3772,38 @@ My husband, a large man who's endured over 15 surgeries including six back proce
     </script>
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            // Booking functions check disabled temporarily
+            // Set date constraints immediately on page load
+            const bookingDateInput = document.getElementById('booking-date');
+            if (bookingDateInput) {
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+                const maxDate = new Date();
+                maxDate.setDate(maxDate.getDate() + 90);
+                const maxDateStr = maxDate.toISOString().split('T')[0];
+                
+                bookingDateInput.min = todayStr;
+                bookingDateInput.max = maxDateStr;
+                
+                // Update the availability hint with the actual date range
+                const availableHint = document.getElementById('available-days-hint');
+                if (availableHint) {
+                    const maxDateFormatted = maxDate.toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric', 
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    
+                    const currentHint = availableHint.innerHTML;
+                    const updatedHint = currentHint.replace(
+                        'Today through next 90 days only',
+                        `Today through ${maxDateFormatted} only`
+                    );
+                    availableHint.innerHTML = updatedHint;
+                }
+                
+                console.log('📅 Date picker constraints set:', { min: todayStr, max: maxDateStr });
+            }
         });
     </script>
     
