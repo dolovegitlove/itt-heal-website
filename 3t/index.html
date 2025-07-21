@@ -2220,10 +2220,10 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                 <!-- Responsive Mobile Layout -->
                                                 <style>
                                                     @media (max-width: 768px) {
-                                                        .thank-you-grid { 
+                                                        [style*="display: grid"] { 
                                                             display: block !important; 
                                                         }
-                                                        .thank-you-grid > section {
+                                                        [style*="display: grid"] > section {
                                                             margin-bottom: 1.5rem !important;
                                                         }
                                                         #thank-you-content {
@@ -2231,10 +2231,6 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                         }
                                                     }
                                                 </style>
-                                                <script>
-                                                    // Add responsive class
-                                                    document.querySelector('[style*="display: grid"]').className = 'thank-you-grid';
-                                                </script>
                                             </div>
                                         </div>
                                     `;
