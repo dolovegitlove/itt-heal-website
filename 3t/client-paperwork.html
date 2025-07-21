@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Paperwork - ITT Heal</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <style>
+        .signature-canvas {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        .progress-step {
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+        .progress-step.completed {
+            background: #10b981;
+            color: white;
+        }
+        .progress-step.active {
+            background: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <div class="bg-white shadow-sm border-b">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">Client Paperwork</h1>
+                    <p class="text-gray-600 mt-1">Complete all required forms before your appointment</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-gray-500">Session ID</div>
+                    <div class="font-mono text-lg" id="sessionId">Loading...</div>
+                </div>
+            </div>
+            
+            <!-- Deadline Alert -->
+            <div id="deadlineAlert" class="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                        <strong>Important:</strong> All paperwork must be completed at least 24 hours before your appointment.
+                        <div class="text-sm mt-1">
+                            Deadline: <span id="deadlineTime" class="font-medium">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="bg-white border-b">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex items-center space-x-4">
+                <div class="progress-step active rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium">1</div>
+                <div class="flex-1 h-2 bg-gray-200 rounded">
+                    <div id="progressBar" class="h-2 bg-blue-600 rounded transition-all duration-300" style="width: 25%"></div>
+                </div>
+                <div class="progress-step rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium">2</div>
+                <div class="flex-1 h-2 bg-gray-200 rounded">
+                    <div class="h-2 bg-gray-200 rounded"></div>
+                </div>
+                <div class="progress-step rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium">3</div>
+                <div class="flex-1 h-2 bg-gray-200 rounded">
+                    <div class="h-2 bg-gray-200 rounded"></div>
+                </div>
+                <div class="progress-step rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium">4</div>
+            </div>
+            <div class="flex justify-between mt-2 text-sm text-gray-600">
+                <span>Health History</span>
+                <span>Intake Form</span>
+                <span>Agreements</span>
+                <span>Complete</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p class="mt-4 text-gray-600">Loading your paperwork...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+            <svg class="w-12 h-12 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 18.5c-.77.833.192 2.5 1.732 2.5z"></path>
+            </svg>
+            <h3 class="text-lg font-medium text-red-900 mb-2">Unable to Load Paperwork</h3>
+            <p class="text-red-700 mb-4" id="errorMessage">Please try again or contact support.</p>
+            <button id="reload-btn" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">
+                Try Again
+            </button>
+        </div>
+
+        <!-- Health History Form -->
+        <div id="healthHistorySection" class="form-section bg-white rounded-lg shadow-sm border p-6">
+            <h2 class="text-xl font-semibold mb-6">Health History Form</h2>
+            <form id="healthHistoryForm">
+                <!-- Personal Information -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Personal Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" name="full_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
+                            <input type="date" name="date_of_birth" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Emergency Contact Name *</label>
+                            <input type="text" name="emergency_contact_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Emergency Contact Phone *</label>
+                            <input type="tel" name="emergency_contact_phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical History -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Medical History</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Current Medications</label>
+                            <textarea name="current_medications" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="List all medications, supplements, and over-the-counter drugs"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Do you currently have or have you ever had any of the following?</label>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="High/Low Blood Pressure" class="rounded">
+                                    <span class="text-sm">High/Low Blood Pressure</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Heart Condition" class="rounded">
+                                    <span class="text-sm">Heart Condition</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Diabetes" class="rounded">
+                                    <span class="text-sm">Diabetes</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Cancer" class="rounded">
+                                    <span class="text-sm">Cancer</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Arthritis" class="rounded">
+                                    <span class="text-sm">Arthritis</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Osteoporosis" class="rounded">
+                                    <span class="text-sm">Osteoporosis</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Pregnancy" class="rounded">
+                                    <span class="text-sm">Pregnancy</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Recent Surgery" class="rounded">
+                                    <span class="text-sm">Recent Surgery</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="medical_conditions" value="Chronic Pain" class="rounded">
+                                    <span class="text-sm">Chronic Pain</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Allergies (especially to oils, lotions, or latex)</label>
+                            <textarea name="allergies" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Please list any known allergies"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consent Statements -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Consent and Acknowledgment</h3>
+                    <div class="space-y-4">
+                        <label class="flex items-start space-x-3">
+                            <input type="checkbox" name="information_accuracy" required class="mt-1 rounded">
+                            <span class="text-sm text-gray-700">I certify that the above information is accurate and complete to the best of my knowledge. *</span>
+                        </label>
+                        <label class="flex items-start space-x-3">
+                            <input type="checkbox" name="health_changes" required class="mt-1 rounded">
+                            <span class="text-sm text-gray-700">I agree to inform my massage therapist of any changes in my health status. *</span>
+                        </label>
+                        <label class="flex items-start space-x-3">
+                            <input type="checkbox" name="communicate_discomfort" required class="mt-1 rounded">
+                            <span class="text-sm text-gray-700">I understand that I should communicate any discomfort during the massage session. *</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Electronic Signature -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Electronic Signature</h3>
+                    <p class="text-sm text-gray-600 mb-4">Please sign below to confirm the accuracy of the information provided.</p>
+                    <div class="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
+                        <canvas id="healthHistorySignature" class="signature-canvas w-full" width="600" height="200"></canvas>
+                        <div class="flex justify-between mt-2">
+                            <button type="button" id="clear-health-history-signature" class="text-sm text-gray-500 hover:text-gray-700">Clear Signature</button>
+                            <span class="text-sm text-gray-500">Sign above</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end space-x-4">
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                        Save & Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Intake Questionnaire Section -->
+        <div id="intakeQuestionnaireSection" class="form-section bg-white rounded-lg shadow-sm border p-6">
+            <h2 class="text-xl font-semibold mb-6">Client Intake Questionnaire</h2>
+            <form id="intakeQuestionnaireForm">
+                <!-- Session Goals -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Session Goals</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">What is your primary goal for today's session? *</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="primary_goal" value="Relaxation and stress relief" required class="text-blue-600">
+                                    <span class="text-sm">Relaxation and stress relief</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="primary_goal" value="Pain relief" required class="text-blue-600">
+                                    <span class="text-sm">Pain relief</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="primary_goal" value="Injury recovery" required class="text-blue-600">
+                                    <span class="text-sm">Injury recovery</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="primary_goal" value="Athletic performance" required class="text-blue-600">
+                                    <span class="text-sm">Athletic performance</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="primary_goal" value="General wellness" required class="text-blue-600">
+                                    <span class="text-sm">General wellness</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="primary_goal" value="Other" required class="text-blue-600">
+                                    <span class="text-sm">Other</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">What do you hope to achieve from this massage session?</label>
+                            <textarea name="expectations" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Describe your expectations and desired outcomes"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comfort Preferences -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Comfort Preferences</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Room Temperature Preference</label>
+                            <select name="room_temperature" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select preference</option>
+                                <option value="Cooler">Cooler</option>
+                                <option value="Comfortable">Comfortable</option>
+                                <option value="Warmer">Warmer</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Music Preference</label>
+                            <select name="music_preference" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select preference</option>
+                                <option value="Quiet/No Music">Quiet/No Music</option>
+                                <option value="Soft Instrumental">Soft Instrumental</option>
+                                <option value="Nature Sounds">Nature Sounds</option>
+                                <option value="Classical">Classical</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Conversation During Massage</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="conversation_preference" value="I prefer quiet" class="text-blue-600">
+                                    <span class="text-sm">I prefer quiet</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="conversation_preference" value="Light conversation is fine" class="text-blue-600">
+                                    <span class="text-sm">Light conversation is fine</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="conversation_preference" value="I enjoy talking" class="text-blue-600">
+                                    <span class="text-sm">I enjoy talking</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electronic Signature -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-4 border-b pb-2">Electronic Signature</h3>
+                    <p class="text-sm text-gray-600 mb-4">Please sign below to confirm your intake information.</p>
+                    <div class="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
+                        <canvas id="intakeQuestionnaireSignature" class="signature-canvas w-full" width="600" height="200"></canvas>
+                        <div class="flex justify-between mt-2">
+                            <button type="button" id="clear-intake-signature" class="text-sm text-gray-500 hover:text-gray-700">Clear Signature</button>
+                            <span class="text-sm text-gray-500">Sign above</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between">
+                    <button type="button" id="prev-step-intake" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 font-medium">
+                        Previous
+                    </button>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                        Save & Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Business Agreements Section -->
+        <div id="businessAgreementsSection" class="form-section bg-white rounded-lg shadow-sm border p-6">
+            <h2 class="text-xl font-semibold mb-6">Legal Agreements</h2>
+            <div id="agreementsList" class="space-y-6">
+                <!-- Agreements will be loaded dynamically -->
+            </div>
+            
+            <!-- Electronic Signature for Agreements -->
+            <div class="mt-8">
+                <h3 class="text-lg font-medium mb-4 border-b pb-2">Electronic Signature</h3>
+                <p class="text-sm text-gray-600 mb-4">By signing below, you acknowledge that you have read, understood, and agree to all the above agreements.</p>
+                <div class="border-2 border-gray-300 rounded-lg p-4 bg-gray-50">
+                    <canvas id="agreementsSignature" class="signature-canvas w-full" width="600" height="200"></canvas>
+                    <div class="flex justify-between mt-2">
+                        <button type="button" id="clear-agreements-signature" class="text-sm text-gray-500 hover:text-gray-700">Clear Signature</button>
+                        <span class="text-sm text-gray-500">Sign above</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button type="button" id="prev-step-agreements" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 font-medium">
+                    Previous
+                </button>
+                <button type="button" id="submit-agreements-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                    Accept & Complete
+                </button>
+            </div>
+        </div>
+
+        <!-- Completion Section -->
+        <div id="completionSection" class="form-section bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+            <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h2 class="text-2xl font-bold text-green-900 mb-2">Paperwork Complete!</h2>
+            <p class="text-green-700 mb-4">All required forms have been submitted successfully.</p>
+            <div class="bg-white rounded-lg p-4 mb-4">
+                <p class="text-sm text-gray-600">Confirmation Code:</p>
+                <p class="text-xl font-mono font-bold text-gray-900" id="confirmationCode">PENDING</p>
+            </div>
+            <p class="text-sm text-green-700">You will receive email and SMS confirmations shortly.</p>
+            
+            <!-- Client Actions -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="print-paperwork-btn" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                    🖨️ Print Paperwork
+                </button>
+                <button id="email-paperwork-btn" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-medium">
+                    📧 Email Copy
+                </button>
+                <button id="review-paperwork-btn" class="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 font-medium">
+                    👁️ Review Forms
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Global variables
+        let sessionId = null;
+        let currentStep = 1;
+        let signaturePads = {};
+        let paperworkData = {};
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get session ID from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            sessionId = urlParams.get('session');
+            
+            if (!sessionId) {
+                showError('Session ID not found. Please use the link from your booking confirmation.');
+                return;
+            }
+            
+            document.getElementById('sessionId').textContent = sessionId;
+            
+            // Initialize signature pads
+            initializeSignaturePads();
+            
+            // Load paperwork status
+            loadPaperworkStatus();
+            
+            // Set up form handlers
+            setupFormHandlers();
+        });
+
+        function initializeSignaturePads() {
+            // Health History signature pad
+            const healthCanvas = document.getElementById('healthHistorySignature');
+            if (healthCanvas) {
+                signaturePads.healthHistory = new SignaturePad(healthCanvas, {
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    penColor: 'rgb(0, 0, 0)'
+                });
+            }
+            
+            // Intake Questionnaire signature pad
+            const intakeCanvas = document.getElementById('intakeQuestionnaireSignature');
+            if (intakeCanvas) {
+                signaturePads.intakeQuestionnaire = new SignaturePad(intakeCanvas, {
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    penColor: 'rgb(0, 0, 0)'
+                });
+            }
+            
+            // Agreements signature pad
+            const agreementsCanvas = document.getElementById('agreementsSignature');
+            if (agreementsCanvas) {
+                signaturePads.agreements = new SignaturePad(agreementsCanvas, {
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    penColor: 'rgb(0, 0, 0)'
+                });
+            }
+        }
+
+        function clearSignature(canvasId) {
+            const pad = signaturePads[canvasId.replace('Signature', '')];
+            if (pad) {
+                pad.clear();
+            }
+        }
+
+        async function loadPaperworkStatus() {
+            try {
+                const response = await fetch(`/api/paperwork/session/${sessionId}/status`);
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to load paperwork status');
+                }
+                
+                paperworkData = data;
+                updateDeadlineDisplay(data.deadline, data.deadlinePassed);
+                updateProgressDisplay(data);
+                
+                // Hide loading state
+                document.getElementById('loadingState').style.display = 'none';
+                
+                // Show appropriate section
+                if (data.isComplete) {
+                    showCompletionSection(data);
+                } else {
+                    showCurrentStep(data);
+                }
+                
+            } catch (error) {
+                console.error('Error loading paperwork status:', error);
+                showError(error.message);
+            }
+        }
+
+        function updateDeadlineDisplay(deadline, deadlinePassed) {
+            const deadlineElement = document.getElementById('deadlineTime');
+            const alertElement = document.getElementById('deadlineAlert');
+            
+            const deadlineDate = new Date(deadline);
+            deadlineElement.textContent = deadlineDate.toLocaleString();
+            
+            if (deadlinePassed) {
+                alertElement.className = 'mt-4 p-4 bg-red-50 border border-red-200 rounded-lg';
+                alertElement.innerHTML = `
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <strong>Deadline Passed:</strong> Please contact us immediately to reschedule your appointment.
+                            <div class="text-sm mt-1">Deadline was: ${deadlineDate.toLocaleString()}</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function updateProgressDisplay(data) {
+            const steps = document.querySelectorAll('.progress-step');
+            let progress = 0;
+            
+            // Update step indicators based on completion status
+            if (data.forms.health_history?.completed) {
+                steps[0].classList.add('completed');
+                steps[0].classList.remove('active');
+                progress = 25;
+            }
+            
+            if (data.forms.intake_questionnaire?.completed) {
+                steps[1].classList.add('completed');
+                steps[1].classList.remove('active');
+                progress = 50;
+            }
+            
+            if (data.progress.agreementsSigned) {
+                steps[2].classList.add('completed');
+                steps[2].classList.remove('active');
+                progress = 75;
+            }
+            
+            if (data.isComplete) {
+                steps[3].classList.add('completed');
+                steps[3].classList.remove('active');
+                progress = 100;
+            }
+            
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+
+        function showCurrentStep(data) {
+            // Determine which step to show based on completion status
+            if (!data.forms.health_history?.completed) {
+                showSection('healthHistorySection');
+                currentStep = 1;
+            } else if (!data.forms.intake_questionnaire?.completed) {
+                showSection('intakeQuestionnaireSection');
+                currentStep = 2;
+            } else if (!data.progress.agreementsSigned) {
+                showSection('businessAgreementsSection');
+                loadBusinessAgreements();
+                currentStep = 3;
+            }
+        }
+
+        function showCompletionSection(data) {
+            showSection('completionSection');
+            if (data.confirmationCode) {
+                document.getElementById('confirmationCode').textContent = data.confirmationCode;
+            }
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function showError(message) {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorState').classList.remove('hidden');
+        }
+
+        function setupFormHandlers() {
+            // Health History Form
+            document.getElementById('healthHistoryForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                await submitForm('health_history', this);
+            });
+            
+            // Intake Questionnaire Form
+            document.getElementById('intakeQuestionnaireForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                await submitForm('intake_questionnaire', this);
+            });
+        }
+        
+        function showPreviousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                if (currentStep === 1) {
+                    showSection('healthHistorySection');
+                } else if (currentStep === 2) {
+                    showSection('intakeQuestionnaireSection');
+                }
+            }
+        }
+        
+        async function loadBusinessAgreements() {
+            try {
+                const response = await fetch('/api/paperwork/agreements');
+                const agreements = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load agreements');
+                }
+                
+                const agreementsList = document.getElementById('agreementsList');
+                agreementsList.innerHTML = '';
+                
+                for (const agreement of agreements) {
+                    const agreementDiv = document.createElement('div');
+                    agreementDiv.className = 'border border-gray-200 rounded-lg p-4';
+                    agreementDiv.innerHTML = `
+                        <h4 class="font-semibold text-lg mb-2">${agreement.title}</h4>
+                        <div class="text-sm text-gray-700 mb-3 max-h-40 overflow-y-auto border p-3 bg-gray-50 rounded">
+                            ${agreement.content.replace(/\n/g, '<br>')}
+                        </div>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="agreement_${agreement.id}" value="${agreement.id}" required class="rounded">
+                            <span class="text-sm font-medium">I have read and agree to this ${agreement.agreement_type.replace('_', ' ')}</span>
+                        </label>
+                    `;
+                    agreementsList.appendChild(agreementDiv);
+                }
+                
+            } catch (error) {
+                console.error('Error loading agreements:', error);
+                alert('Error loading legal agreements: ' + error.message);
+            }
+        }
+        
+        async function submitAgreements() {
+            try {
+                // Check all agreements are accepted
+                const checkboxes = document.querySelectorAll('#agreementsList input[type="checkbox"]');
+                const unchecked = Array.from(checkboxes).filter(cb => !cb.checked);
+                
+                if (unchecked.length > 0) {
+                    alert('Please read and accept all legal agreements before continuing.');
+                    return;
+                }
+                
+                // Get signature
+                const signaturePad = signaturePads.agreements;
+                if (!signaturePad || signaturePad.isEmpty()) {
+                    alert('Please provide your electronic signature.');
+                    return;
+                }
+                
+                const signatureData = signaturePad.toDataURL();
+                
+                // Submit signatures for each agreement
+                for (const checkbox of checkboxes) {
+                    const agreementId = checkbox.value;
+                    await submitSignature(agreementId, 'agreement', signatureData, 'Client');
+                }
+                
+                // Complete paperwork
+                await completePaperwork();
+                
+            } catch (error) {
+                console.error('Error submitting agreements:', error);
+                alert('Error submitting agreements: ' + error.message);
+            }
+        }
+        
+        async function completePaperwork() {
+            try {
+                const response = await fetch(`/api/paperwork/session/${sessionId}/complete`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: null
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(result.error || 'Failed to complete paperwork');
+                }
+                
+                // Show completion
+                document.getElementById('confirmationCode').textContent = result.confirmationCode;
+                showSection('completionSection');
+                
+                // Update progress to 100%
+                document.getElementById('progressBar').style.width = '100%';
+                document.querySelectorAll('.progress-step').forEach(step => {
+                    step.classList.add('completed');
+                    step.classList.remove('active');
+                });
+                
+            } catch (error) {
+                console.error('Error completing paperwork:', error);
+                alert('Error completing paperwork: ' + error.message);
+            }
+        }
+
+        async function submitForm(formType, formElement) {
+            try {
+                // Collect form data
+                const formData = new FormData(formElement);
+                const data = {};
+                
+                // Convert FormData to object
+                for (let [key, value] of formData.entries()) {
+                    if (data[key]) {
+                        // Handle multiple values (like checkboxes)
+                        if (Array.isArray(data[key])) {
+                            data[key].push(value);
+                        } else {
+                            data[key] = [data[key], value];
+                        }
+                    } else {
+                        data[key] = value;
+                    }
+                }
+                
+                // Get signature data
+                const signaturePad = signaturePads[formType === 'health_history' ? 'healthHistory' : formType];
+                if (signaturePad && !signaturePad.isEmpty()) {
+                    data.signature = signaturePad.toDataURL();
+                }
+                
+                // Submit form
+                const response = await fetch(`/api/paperwork/forms/${sessionId}/${formType}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        formData: data,
+                        userId: null // Will be handled by backend for guest bookings
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(result.error || 'Failed to submit form');
+                }
+                
+                // If signature is required, submit it
+                if (result.requiresSignature && data.signature) {
+                    await submitSignature(result.formId, 'form', data.signature, data.full_name || 'Client');
+                }
+                
+                // Reload paperwork status and continue
+                await loadPaperworkStatus();
+                
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Error submitting form: ' + error.message);
+            }
+        }
+
+        async function submitSignature(documentId, documentType, signatureData, signerName) {
+            try {
+                const response = await fetch('/api/paperwork/signatures', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: null,
+                        sessionId: sessionId,
+                        documentType: documentType,
+                        documentId: documentId,
+                        signatureData: signatureData,
+                        signerName: signerName,
+                        consentText: 'I electronically sign this document and agree to its contents.',
+                        documentVersion: '2025.1'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(result.error || 'Failed to submit signature');
+                }
+                
+                return result;
+                
+            } catch (error) {
+                console.error('Error submitting signature:', error);
+                throw error;
+            }
+        }
+        
+        // Client Action Functions
+        function printPaperwork() {
+            // Create a printable version of the completed paperwork
+            const printWindow = window.open('', '_blank', 'width=800,height=600');
+            
+            const printContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>ITT Heal - Client Paperwork</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 20px; }
+                        .section { margin-bottom: 25px; }
+                        .section h3 { color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+                        .field { margin-bottom: 10px; }
+                        .field-label { font-weight: bold; }
+                        .signature-note { font-style: italic; color: #666; margin-top: 10px; }
+                        @media print { body { margin: 0; } }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h1>Integrative Touch Therapies</h1>
+                        <h2>Client Paperwork</h2>
+                        <p>Session ID: ${sessionId}</p>
+                        <p>Completion Date: ${new Date().toLocaleDateString()}</p>
+                        <p>Confirmation Code: ${document.getElementById('confirmationCode').textContent}</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>Paperwork Status</h3>
+                        <p>✅ All required forms completed and signed electronically</p>
+                        <p>✅ Business agreements accepted and signed</p>
+                        <p>✅ Texas state compliance requirements met</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>Legal Notice</h3>
+                        <p>This document confirms that all required paperwork for massage therapy services has been completed in compliance with Texas state regulations and the Electronic Signatures in Global and National Commerce Act (ESIGN).</p>
+                        <p class="signature-note">Electronic signatures are legally binding and have been verified with advanced security measures.</p>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>Contact Information</h3>
+                        <p>For questions about your paperwork or upcoming session:</p>
+                        <p>Email: admin@ittheal.com</p>
+                        <p>Phone: (469) 525-1001</p>
+                    </div>
+                </body>
+                </html>
+            `;
+            
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+        }
+        
+        async function emailPaperwork() {
+            try {
+                const response = await fetch(`/api/paperwork/session/${sessionId}/certificate`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                const certificate = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(certificate.error || 'Failed to generate certificate');
+                }
+                
+                // Request email copy
+                const emailResponse = await fetch('/api/paperwork/email-certificate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        sessionId: sessionId,
+                        certificate: certificate
+                    })
+                });
+                
+                if (emailResponse.ok) {
+                    alert('✅ Paperwork certificate has been emailed to you!');
+                } else {
+                    alert('⚠️ Email sending failed. Please contact support.');
+                }
+                
+            } catch (error) {
+                console.error('Error emailing paperwork:', error);
+                alert('Error sending email: ' + error.message);
+            }
+        }
+        
+        function reviewPaperwork() {
+            // Create a review modal showing all completed forms
+            const reviewModal = `
+                <div id="review-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 backdrop-blur-md" role="dialog" aria-modal="true">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+                            <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                                <h2 class="text-2xl font-bold text-gray-900">📋 Review Your Paperwork</h2>
+                                <button id="close-review-modal-btn" class="text-gray-400 hover:text-gray-600 text-2xl font-bold">
+                                    ×
+                                </button>
+                            </div>
+                            
+                            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                                <div class="space-y-6">
+                                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                        <h3 class="font-semibold text-green-800 mb-2">✅ Paperwork Status</h3>
+                                        <p class="text-green-700">All required forms have been completed and electronically signed.</p>
+                                        <p class="text-sm text-green-600 mt-2">Confirmation Code: ${document.getElementById('confirmationCode').textContent}</p>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <h4 class="font-semibold mb-2">📋 Health History</h4>
+                                            <p class="text-sm text-gray-600">Medical history and health information completed</p>
+                                            <p class="text-xs text-green-600 mt-2">✅ Signed electronically</p>
+                                        </div>
+                                        
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <h4 class="font-semibold mb-2">📝 Intake Form</h4>
+                                            <p class="text-sm text-gray-600">Session goals and preferences recorded</p>
+                                            <p class="text-xs text-green-600 mt-2">✅ Signed electronically</p>
+                                        </div>
+                                        
+                                        <div class="border border-gray-200 rounded-lg p-4">
+                                            <h4 class="font-semibold mb-2">📜 Legal Agreements</h4>
+                                            <p class="text-sm text-gray-600">Liability waiver and consent forms accepted</p>
+                                            <p class="text-xs text-green-600 mt-2">✅ Signed electronically</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                        <h3 class="font-semibold text-blue-800 mb-2">🔒 Security & Compliance</h3>
+                                        <ul class="text-sm text-blue-700 space-y-1">
+                                            <li>• Electronic signatures verified with advanced security</li>
+                                            <li>• HIPAA compliant data protection</li>
+                                            <li>• Texas state massage therapy regulations met</li>
+                                            <li>• ESIGN Act compliance for legal validity</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <p class="text-sm text-gray-600">If you need to make changes or have questions, please contact us at:</p>
+                                        <p class="font-semibold text-gray-800">admin@ittheal.com or (469) 525-1001</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', reviewModal);
+        }
+        
+        function closeReviewModal() {
+            const modal = document.getElementById('review-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+    </script>
+</body>
+</html>

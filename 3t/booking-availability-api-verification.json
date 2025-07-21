@@ -1,0 +1,83 @@
+{
+  "success": true,
+  "data": {
+    "date": "Mon Jul 14 2025",
+    "practitioner": {
+      "id": "060863f2-0623-4785-b01a-f1760cfb8d14",
+      "name": "Dr. Shiffer, CST, LMT"
+    },
+    "service": {
+      "type": "60min_massage",
+      "name": "60-Minute Reset",
+      "duration": 60
+    },
+    "available_slots": [
+      {
+        "time": "2025-07-14T15:00:00.000Z",
+        "display_time": "10:00 AM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T15:30:00.000Z",
+        "display_time": "10:30 AM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T16:00:00.000Z",
+        "display_time": "11:00 AM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T16:30:00.000Z",
+        "display_time": "11:30 AM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T17:00:00.000Z",
+        "display_time": "12:00 PM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T17:30:00.000Z",
+        "display_time": "12:30 PM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T18:00:00.000Z",
+        "display_time": "1:00 PM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T18:30:00.000Z",
+        "display_time": "1:30 PM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T19:00:00.000Z",
+        "display_time": "2:00 PM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T19:30:00.000Z",
+        "display_time": "2:30 PM",
+        "duration": 60,
+        "available": true
+      },
+      {
+        "time": "2025-07-14T20:00:00.000Z",
+        "display_time": "3:00 PM",
+        "duration": 60,
+        "available": true
+      }
+    ]
+  }
+}

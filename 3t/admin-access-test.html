@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITT Heal - Admin Access Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f4ef;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { color: #6b7b6b; margin-bottom: 20px; }
+        .access-link {
+            display: block;
+            padding: 15px 20px;
+            margin: 10px 0;
+            background: #8ba28b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .access-link:hover {
+            background: #6b7b6b;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .success { background: #d4ffd4; color: #2d5a2d; }
+        .info { background: #d4e8ff; color: #1a365d; }
+        .cache-info {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 ITT Heal Admin Dashboard Access</h1>
+        
+        <div class="status success">
+            ✅ Admin system is online and functional
+        </div>
+        
+        <div class="status info">
+            📊 Features: Booking management, scheduling, client records, payments
+        </div>
+        
+        <h2>🔗 Access Methods:</h2>
+        
+        <a href="/admin.html" class="access-link">
+            🎯 Primary: /admin.html
+        </a>
+        
+        <a href="/admin.html?v=2" class="access-link">
+            🔄 Cache Bypass: /admin.html?v=2
+        </a>
+        
+        <a href="/admin.html?t=1721855000" class="access-link">
+            ⏰ Timestamp: /admin.html?t=1721855000
+        </a>
+        
+        <div class="cache-info">
+            <h3>🛠️ If you're seeing 404:</h3>
+            <ul>
+                <li><strong>Clear browser cache:</strong> Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)</li>
+                <li><strong>Hard refresh:</strong> Ctrl+Shift+Delete to clear cache</li>
+                <li><strong>Try incognito/private mode</strong></li>
+                <li><strong>Use cache bypass links above</strong></li>
+            </ul>
+        </div>
+        
+        <div id="connectivity-test">
+            <h3>🔍 Connectivity Test:</h3>
+            <div id="test-results">Testing...</div>
+        </div>
+        
+        <script>
+            async function testConnectivity() {
+                const results = document.getElementById('test-results');
+                
+                try {
+                    // Test if admin.html is accessible
+                    const response = await fetch('/admin.html', { method: 'HEAD' });
+                    if (response.ok) {
+                        results.innerHTML = '<div class="status success">✅ Admin dashboard is accessible</div>';
+                    } else {
+                        results.innerHTML = '<div class="status error">❌ Admin dashboard returned: ' + response.status + '</div>';
+                    }
+                } catch (error) {
+                    results.innerHTML = '<div class="status error">❌ Connection error: ' + error.message + '</div>';
+                }
+            }
+            
+            testConnectivity();
+        </script>
+    </div>
+</body>
+</html>

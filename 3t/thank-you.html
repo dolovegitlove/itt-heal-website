@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Thank You | Integrative Touch Therapies</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your healing session has been confirmed. Thank you for choosing Integrative Touch Therapies for your wellness journey.">
+    <meta name="robots" content="noindex, nofollow"> <!-- Prevent indexing of thank you page -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logos/itt-heal-lotus-32.png?v=20250710">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./dist/tailwind.css?v=20250712-august-update">
+    <link rel="stylesheet" href="./dist/luxury-spa.css?v=20250712-hamburger-large">
+    
+    <style>
+        :root {
+            --spa-sage: #8ba28b;
+            --spa-sage-light: #e6f7e8;
+            --spa-charcoal: #2d3748;
+            --spa-warm-gray: #f7fafc;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, var(--spa-sage-light) 0%, #f0fdf4 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .thank-you-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(139, 162, 139, 0.2);
+            max-width: 600px;
+            width: 100%;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--spa-sage), #10b981);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--spa-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            animation: successPulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes successPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 162, 139, 0.4); }
+            100% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(139, 162, 139, 0); }
+        }
+        
+        .thank-you-title {
+            color: var(--spa-charcoal);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .thank-you-subtitle {
+            color: var(--spa-sage);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        
+        .confirmation-details {
+            background: var(--spa-warm-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+        
+        .confirmation-title {
+            color: var(--spa-charcoal);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .detail-value {
+            color: var(--spa-charcoal);
+            font-weight: 600;
+        }
+        
+        .confirmation-id {
+            background: var(--spa-sage);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .next-steps {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+        
+        .next-steps-title {
+            color: #92400e;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .next-steps ul {
+            color: #92400e;
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .next-steps li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            background: var(--spa-sage);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .action-button:hover {
+            background: #6b8a6b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 162, 139, 0.3);
+        }
+        
+        .action-button.secondary {
+            background: white;
+            color: var(--spa-sage);
+            border: 2px solid var(--spa-sage);
+        }
+        
+        .action-button.secondary:hover {
+            background: var(--spa-sage-light);
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info p {
+            margin: 0.25rem 0;
+        }
+        
+        .contact-info a {
+            color: var(--spa-sage);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+            
+            .thank-you-title {
+                font-size: 2rem;
+            }
+            
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Loading state */
+        .loading-message {
+            display: none;
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        .booking-content {
+            display: none;
+        }
+        
+        .booking-content.loaded {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <!-- Loading State -->
+            <div id="loading-state">
+                <div class="success-icon">⏳</div>
+                <h1 class="thank-you-title">Loading...</h1>
+                <p class="loading-message">Retrieving your booking confirmation...</p>
+            </div>
+            
+            <!-- Booking Confirmation Content -->
+            <div id="booking-content" class="booking-content">
+                <div class="success-icon">✅</div>
+                
+                <h1 class="thank-you-title">Thank You!</h1>
+                <p class="thank-you-subtitle">Your healing session has been confirmed</p>
+                
+                <div class="confirmation-details">
+                    <h3 class="confirmation-title">📋 Booking Confirmation</h3>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Confirmation ID:</span>
+                        <span class="detail-value">
+                            <span id="confirmation-id" class="confirmation-id">Loading...</span>
+                        </span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Service:</span>
+                        <span id="service-name" class="detail-value">Loading...</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Date:</span>
+                        <span id="booking-date" class="detail-value">Loading...</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Time:</span>
+                        <span id="booking-time" class="detail-value">Loading...</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Client:</span>
+                        <span id="client-name" class="detail-value">Loading...</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Total:</span>
+                        <span id="booking-total" class="detail-value">Loading...</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">Payment:</span>
+                        <span id="payment-method" class="detail-value">Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h4 class="next-steps-title">📝 What Happens Next</h4>
+                    <ul>
+                        <li><strong>Confirmation Email:</strong> You'll receive a detailed confirmation email within 5 minutes</li>
+                        <li><strong>Preparation:</strong> Please arrive 10 minutes early for intake and preparation</li>
+                        <li><strong>What to Bring:</strong> Comfortable clothing and any relevant medical information</li>
+                        <li><strong>Questions?</strong> Contact us at 940.268.5999 or info@ittheal.com</li>
+                    </ul>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="./" class="action-button">
+                        🏠 Return Home
+                    </a>
+                    <a href="tel:9402685999" class="action-button secondary">
+                        📞 Call Us
+                    </a>
+                </div>
+                
+                <div class="contact-info">
+                    <p><strong>Integrative Touch Therapies, LLC</strong></p>
+                    <p>Dr. Shiffer, CST, LMT • Movement Specialist</p>
+                    <p>📞 <a href="tel:9402685999">940.268.5999</a> • 📧 <a href="mailto:info@ittheal.com">info@ittheal.com</a></p>
+                    <p>🌐 <a href="https://ittheal.com">ittheal.com</a></p>
+                </div>
+            </div>
+            
+            <!-- No Booking Data Fallback -->
+            <div id="no-booking-content" class="booking-content" style="display: none;">
+                <div class="success-icon">❓</div>
+                <h1 class="thank-you-title">Booking Not Found</h1>
+                <p class="thank-you-subtitle">We couldn't find your booking information</p>
+                
+                <div class="next-steps">
+                    <h4 class="next-steps-title">📞 Contact Us</h4>
+                    <p style="text-align: center; margin: 0;">
+                        Please call us at <strong>940.268.5999</strong> to confirm your appointment or resolve any issues.
+                    </p>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="./" class="action-button">
+                        🏠 Return Home
+                    </a>
+                    <a href="tel:9402685999" class="action-button secondary">
+                        📞 Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load booking confirmation data
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎉 Thank you page loaded');
+            
+            // Small delay for visual effect
+            setTimeout(loadBookingData, 1000);
+        });
+        
+        function loadBookingData() {
+            try {
+                // Get booking data from sessionStorage
+                const bookingDataStr = sessionStorage.getItem('bookingConfirmation');
+                
+                if (bookingDataStr) {
+                    const bookingData = JSON.parse(bookingDataStr);
+                    console.log('📋 Loading booking data:', bookingData);
+                    
+                    // Populate confirmation details
+                    document.getElementById('confirmation-id').textContent = bookingData.confirmationId || 'N/A';
+                    document.getElementById('service-name').textContent = bookingData.serviceName || 'Selected Service';
+                    document.getElementById('booking-date').textContent = formatDate(bookingData.date) || 'N/A';
+                    document.getElementById('booking-time').textContent = formatTime(bookingData.time) || 'N/A';
+                    document.getElementById('client-name').textContent = bookingData.clientName || 'N/A';
+                    document.getElementById('booking-total').textContent = '$' + (bookingData.total || '0.00');
+                    document.getElementById('payment-method').textContent = formatPaymentMethod(bookingData.paymentMethod) || 'N/A';
+                    
+                    // Show booking content
+                    showBookingContent();
+                    
+                    // Clear the session data (optional - prevents back button issues)
+                    setTimeout(() => {
+                        sessionStorage.removeItem('bookingConfirmation');
+                    }, 30000); // Clear after 30 seconds
+                    
+                } else {
+                    console.warn('⚠️ No booking data found in sessionStorage');
+                    showNoBookingContent();
+                }
+                
+            } catch (error) {
+                console.error('❌ Error loading booking data:', error);
+                showNoBookingContent();
+            }
+        }
+        
+        function showBookingContent() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('booking-content').classList.add('loaded');
+            
+            // Add entrance animation
+            document.getElementById('booking-content').style.opacity = '0';
+            document.getElementById('booking-content').style.transform = 'translateY(20px)';
+            document.getElementById('booking-content').style.transition = 'all 0.5s ease';
+            
+            setTimeout(() => {
+                document.getElementById('booking-content').style.opacity = '1';
+                document.getElementById('booking-content').style.transform = 'translateY(0)';
+            }, 100);
+        }
+        
+        function showNoBookingContent() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('no-booking-content').style.display = 'block';
+        }
+        
+        function formatDate(dateStr) {
+            if (!dateStr) return null;
+            
+            try {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            } catch (error) {
+                return dateStr; // Return as-is if parsing fails
+            }
+        }
+        
+        function formatTime(timeStr) {
+            if (!timeStr) return null;
+            
+            try {
+                const [hours, minutes] = timeStr.split(':');
+                const hour24 = parseInt(hours);
+                const hour12 = hour24 > 12 ? hour24 - 12 : (hour24 === 0 ? 12 : hour24);
+                const ampm = hour24 >= 12 ? 'PM' : 'AM';
+                
+                return `${hour12}:${minutes} ${ampm}`;
+            } catch (error) {
+                return timeStr; // Return as-is if parsing fails
+            }
+        }
+        
+        function formatPaymentMethod(method) {
+            const methods = {
+                'credit-card': '💳 Credit Card',
+                'cash': '💵 Cash (at appointment)',
+                'other': '📱 Other (Venmo/CashApp)',
+                'card': '💳 Credit Card'
+            };
+            
+            return methods[method] || method;
+        }
+        
+        // Track page view (optional analytics)
+        console.log('📊 Thank you page viewed');
+    </script>
+</body>
+</html>

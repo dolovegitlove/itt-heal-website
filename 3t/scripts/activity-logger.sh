@@ -1,0 +1,1 @@
+/home/ittz/itt-scripts/scripts/activity-logger.sh

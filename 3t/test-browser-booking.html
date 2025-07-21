@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITT Heal - Browser Booking Test</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        button { padding: 10px 20px; margin: 10px 0; cursor: pointer; }
+        .loading { opacity: 0.6; cursor: not-allowed; }
+        #card-element { padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin: 10px 0; }
+        .log { background-color: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 4px; font-family: monospace; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Screen Readers -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 6px; background: #000; color: white; padding: 8px; text-decoration: none; border-radius: 4px; z-index: 1000;" aria-label="Skip to main content">Skip to main content</a>
+    
+    <main id="main-content">
+        <h1>ITT Heal - Complete Booking Flow Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Configuration</h2>
+        <div id="config">
+            <p><strong>Backend:</strong> http://localhost:3000</p>
+            <p><strong>Test User:</strong> test@example.com / +14695251001</p>
+            <p><strong>Service:</strong> 60-minute massage ($145)</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Step 1: Test Backend Connection</h2>
+        <button onclick="testBackend()">Test Backend Health</button>
+        <div id="backend-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Step 2: Test Payment Intent Creation</h2>
+        <button onclick="testPaymentIntent()">Create Payment Intent</button>
+        <div id="payment-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Step 3: Complete Stripe Payment</h2>
+        <form id="payment-form">
+            <div id="card-element"></div>
+            <button type="submit" id="submit-payment">Complete Payment ($145)</button>
+        </form>
+        <div id="stripe-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Step 4: Create Complete Booking</h2>
+        <button onclick="testCompleteBooking()">Create Complete Booking</button>
+        <div id="booking-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Logs</h2>
+        <div id="log" class="log"></div>
+    </div>
+
+    <script>
+const stripe = Stripe('pk_test_51RRBjzFxOpfkAGId3DsG7kyXDLKUET2Ht5jvpxzxKlELzjgwkRctz4goXrNJ5TqfQqufJBhEDuBoxfoZhxlbkNdm00cqSQtKVN');
+let elements, cardElement, paymentIntentId, clientSecret;
+
+function log(message) {
+    const logDiv = document.getElementById('log');
+    const timestamp = new Date().toLocaleTimeString();
+    logDiv.textContent += `[${timestamp}] ${message}\n`;
+    logDiv.scrollTop = logDiv.scrollHeight;
+    console.log(message);
+}
+
+async function testBackend() {
+    log('Testing backend connection...');
+    try {
+        const response = await fetch('http://localhost:3000/api/health');
+        const data = await response.json();
+        
+        const resultDiv = document.getElementById('backend-result');
+        if (response.ok) {
+            resultDiv.className = 'success';
+            resultDiv.innerHTML = `
+                <h3>✅ Backend Connected</h3>
+                <p>Status: ${data.status}</p>
+                <p>Environment: ${data.environment}</p>
+                <p>Services: ${Object.entries(data.services).map(([k,v]) => `${k}: ${v ? '✅' : '❌'}`).join(', ')}</p>
+            `;
+            log('✅ Backend health check passed');
+        } else {
+            throw new Error(`Backend error: ${response.status}`);
+        }
+    } catch (error) {
+        const resultDiv = document.getElementById('backend-result');
+        resultDiv.className = 'error';
+        resultDiv.innerHTML = `<h3>❌ Backend Error</h3><p>${error.message}</p>`;
+        log(`❌ Backend test failed: ${error.message}`);
+    }
+}
+
+async function testPaymentIntent() {
+    log('Creating payment intent...');
+    try {
+        const response = await fetch('http://localhost:3000/api/web-booking/create-payment-intent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                amount: 14500,
+                service_type: '60min_massage',
+                client_info: {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    phone: '+14695251001'
+                }
+            })
+        });
+        
+        const data = await response.json();
+        const resultDiv = document.getElementById('payment-result');
+        
+        if (response.ok && data.success) {
+            paymentIntentId = data.paymentIntentId;
+            clientSecret = data.clientSecret;
+            
+            resultDiv.className = 'success';
+            resultDiv.innerHTML = `
+                <h3>✅ Payment Intent Created</h3>
+                <p>Payment Intent ID: ${paymentIntentId}</p>
+                <p>Amount: $145.00</p>
+            `;
+            log(`✅ Payment intent created: ${paymentIntentId}`);
+            
+            // Initialize Stripe Elements
+            elements = stripe.elements();
+            cardElement = elements.create('card');
+            cardElement.mount('#card-element');
+            log('💳 Stripe card element mounted');
+            
+        } else {
+            throw new Error(data.error || 'Payment intent creation failed');
+        }
+    } catch (error) {
+        const resultDiv = document.getElementById('payment-result');
+        resultDiv.className = 'error';
+        resultDiv.innerHTML = `<h3>❌ Payment Intent Error</h3><p>${error.message}</p>`;
+        log(`❌ Payment intent failed: ${error.message}`);
+    }
+}
+
+document.getElementById('payment-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    if (!clientSecret) {
+        log('❌ No payment intent available');
+        return;
+    }
+    
+    log('Processing Stripe payment...');
+    const submitButton = document.getElementById('submit-payment');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Processing...';
+    
+    try {
+        const {error, paymentIntent} = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: cardElement,
+                billing_details: {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    phone: '+14695251001'
+                }
+            }
+        });
+        
+        const resultDiv = document.getElementById('stripe-result');
+        
+        if (error) {
+            resultDiv.className = 'error';
+            resultDiv.innerHTML = `<h3>❌ Payment Failed</h3><p>${error.message}</p>`;
+            log(`❌ Stripe payment failed: ${error.message}`);
+        } else {
+            resultDiv.className = 'success';
+            resultDiv.innerHTML = `
+                <h3>✅ Payment Successful</h3>
+                <p>Payment Intent: ${paymentIntent.id}</p>
+                <p>Status: ${paymentIntent.status}</p>
+                <p>Amount: $${(paymentIntent.amount / 100).toFixed(2)}</p>
+            `;
+            log(`✅ Stripe payment successful: ${paymentIntent.id}`);
+        }
+    } catch (error) {
+        const resultDiv = document.getElementById('stripe-result');
+        resultDiv.className = 'error';
+        resultDiv.innerHTML = `<h3>❌ Payment Error</h3><p>${error.message}</p>`;
+        log(`❌ Payment processing error: ${error.message}`);
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Complete Payment ($145)';
+    }
+});
+
+async function testCompleteBooking() {
+    log('Creating complete booking...');
+    try {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(14, 0, 0, 0);
+        
+        const bookingData = {
+            service_type: '60min_massage',
+            practitioner_id: '060863f2-0623-4785-b01a-f1760cfb8d14',
+            scheduled_date: tomorrow.toISOString(),
+            client_name: 'Test User',
+            client_email: 'test@example.com',
+            client_phone: '+14695251001',
+            payment_method: 'card',
+            payment_intent_id: paymentIntentId
+        };
+        
+        const response = await fetch('http://localhost:3000/api/web-booking/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingData)
+        });
+        
+        const data = await response.json();
+        const resultDiv = document.getElementById('booking-result');
+        
+        if (response.ok && data.success) {
+            resultDiv.className = 'success';
+            resultDiv.innerHTML = `
+                <h3>✅ Booking Created Successfully</h3>
+                <p>Session ID: ${data.data.session.id}</p>
+                <p>Service: ${data.data.session.service_name}</p>
+                <p>Date: ${new Date(data.data.session.scheduled_date).toLocaleString()}</p>
+                <p>Total: $${data.data.session.total_price}</p>
+                <p>Receipt: ${data.data.payment.receipt_number}</p>
+                <div style="margin-top: 15px; padding: 10px; background-color: #e7f3ff; border-radius: 4px;">
+                    <strong>📧 Notifications Status:</strong><br>
+                    Email notifications should be sent to: ${bookingData.client_email}<br>
+                    SMS notifications should be sent to: ${bookingData.client_phone}
+                </div>
+            `;
+            log(`✅ Complete booking created successfully`);
+            log(`📧 Check ${bookingData.client_email} for email notifications`);
+            log(`📱 Check ${bookingData.client_phone} for SMS notifications`);
+        } else {
+            throw new Error(data.error || 'Booking creation failed');
+        }
+    } catch (error) {
+        const resultDiv = document.getElementById('booking-result');
+        resultDiv.className = 'error';
+        resultDiv.innerHTML = `<h3>❌ Booking Error</h3><p>${error.message}</p>`;
+        log(`❌ Booking creation failed: ${error.message}`);
+    }
+}
+
+// Auto-run backend test on page load
+window.addEventListener('load', () => {
+    log('🚀 ITT Heal booking flow test initialized');
+    testBackend();
+});
+    </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,3932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITT Heal - Administrative Dashboard</title>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://ittheal.com;">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/logos/itt-heal-lotus-32.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../dist/luxury-spa.css">
+    
+    <style>
+        :root {
+            --admin-primary: #6b7b6b;
+            --admin-secondary: #8ba28b;
+            --admin-accent: #c7b8e8;
+            --admin-background: #f8faf8;
+            --admin-card: #ffffff;
+            --admin-text: #2d3748;
+            --admin-border: #e2e8e2;
+            --admin-success: #059669;
+            --admin-warning: #d97706;
+            --admin-error: #dc2626;
+        }
+
+        body {
+            background: var(--admin-background);
+            color: var(--admin-text);
+        }
+
+        .admin-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-toggle .menu-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, var(--admin-primary) 0%, var(--admin-secondary) 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(107, 123, 107, 0.15);
+            position: relative;
+            z-index: 100;
+        }
+
+        .admin-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+
+        .admin-header .subtitle {
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .admin-main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            position: relative;
+        }
+
+        .admin-sidebar {
+            background: var(--admin-card);
+            border-right: 1px solid var(--admin-border);
+            padding: 2rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .admin-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .admin-nav-item {
+            margin: 0;
+        }
+
+        .admin-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            color: var(--admin-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .admin-nav-link:hover,
+        .admin-nav-link.active {
+            background: var(--admin-background);
+            border-left-color: var(--admin-secondary);
+            color: var(--admin-secondary);
+        }
+
+        .admin-nav-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .admin-content {
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: var(--admin-text);
+            margin: 0 0 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .admin-card {
+            background: var(--admin-card);
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--admin-card);
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--admin-secondary), var(--admin-accent));
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--admin-secondary);
+            margin: 0;
+        }
+
+        .stat-label {
+            color: var(--admin-text);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--admin-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .data-table th {
+            background: var(--admin-background);
+            color: var(--admin-text);
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--admin-border);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--admin-border);
+            vertical-align: middle;
+        }
+
+        .data-table tr:hover {
+            background: var(--admin-background);
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-scheduled {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-paid {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-unpaid {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background: var(--admin-secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--admin-primary);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--admin-background);
+            color: var(--admin-text);
+            border: 1px solid var(--admin-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--admin-border);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+        }
+
+        /* Ensure action buttons are visible */
+        .booking-actions .btn {
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 1 !important;
+            min-height: 32px !important;
+            min-width: 80px !important;
+        }
+
+        .booking-card {
+            position: relative;
+            overflow: visible;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--admin-text);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--admin-secondary);
+            box-shadow: 0 0 0 3px rgba(139, 162, 139, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-label:hover {
+            background: var(--admin-background);
+            border-color: var(--admin-secondary);
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 0.5rem;
+            accent-color: var(--admin-secondary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--admin-text);
+        }
+
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--admin-border);
+            border-top: 2px solid var(--admin-secondary);
+            border-radius: 50%;
+            animation: none; /* Disabled spinning animation */
+            margin-left: 0.5rem;
+            display: none; /* Hide the spinner completely */
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Ensure booking cards never show loading spinners */
+        .booking-card.loading::after,
+        .booking-card .loading::after,
+        .bookings-grid .loading::after {
+            display: none !important;
+            animation: none !important;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--admin-card);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--admin-text);
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        /* Booking Cards Layout */
+        .bookings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .booking-card {
+            background: var(--admin-card);
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-height: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .booking-client {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--admin-text);
+            margin: 0;
+        }
+
+        .booking-date {
+            color: var(--admin-secondary);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .booking-details {
+            margin-bottom: 1rem;
+        }
+
+        .booking-detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .booking-detail-label {
+            color: var(--admin-text);
+            opacity: 0.7;
+        }
+
+        .booking-detail-value {
+            font-weight: 500;
+            color: var(--admin-text);
+        }
+
+        .booking-actions {
+            display: flex !important;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 1rem;
+            align-items: center;
+            justify-content: flex-start;
+            flex-shrink: 0;
+        }
+
+
+        /* Responsive Design */
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus indicators */
+        .btn:focus,
+        .admin-nav-link:focus {
+            outline: 2px solid var(--admin-secondary);
+            outline-offset: 2px;
+        }
+
+        /* Mobile and Tablet Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .admin-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .dashboard-title {
+                display: none;
+            }
+
+            .admin-header .subtitle {
+                font-size: 0.875rem;
+            }
+
+            .admin-main {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 280px;
+                height: 100vh;
+                z-index: 1000;
+                transform: translateX(-100%);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .admin-sidebar.active {
+                transform: translateX(0);
+            }
+
+            .admin-content {
+                padding: 1.5rem;
+            }
+
+            .bookings-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .data-table {
+                font-size: 0.875rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .stat-card h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .admin-header {
+                padding: 1rem;
+            }
+
+            .admin-sidebar {
+                width: 100%;
+            }
+
+            .admin-content {
+                padding: 1rem;
+            }
+
+            .bookings-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .booking-card {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Skip Navigation Links */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--admin-primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 9999;
+            font-weight: 600;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Calendar Styles */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .calendar-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .calendar-title {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--admin-text);
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .btn-nav {
+            background: var(--admin-background);
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-nav:hover {
+            background: var(--admin-secondary);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .calendar-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bulk-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-bulk {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            background: white;
+            color: var(--admin-text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .btn-bulk:hover {
+            background: var(--admin-background);
+            border-color: var(--admin-secondary);
+        }
+
+        .btn-bulk.block {
+            border-color: #ef4444;
+            color: #dc2626;
+        }
+
+        .btn-bulk.block:hover {
+            background: #fef2f2;
+            border-color: #dc2626;
+        }
+
+        .calendar-legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--admin-background);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-color.available {
+            background: #10b981;
+        }
+
+        .legend-color.blocked {
+            background: #ef4444;
+        }
+
+        .legend-color.booked {
+            background: #c084fc;
+        }
+
+        .legend-color.mixed {
+            background: linear-gradient(45deg, #10b981 50%, #ef4444 50%);
+        }
+
+        .calendar-container {
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background: var(--admin-background);
+        }
+
+        .weekday {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--admin-text);
+            border-right: 1px solid var(--admin-border);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .weekday:last-child {
+            border-right: none;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .calendar-day {
+            min-height: 120px;
+            border-right: 1px solid var(--admin-border);
+            border-bottom: 1px solid var(--admin-border);
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            background: white;
+        }
+
+        .calendar-day:nth-child(7n) {
+            border-right: none;
+        }
+
+        .calendar-day:hover {
+            background: #f8fafc;
+        }
+
+        .calendar-day.selected {
+            background: #e0e7ff;
+            border-color: var(--admin-secondary);
+        }
+
+        .calendar-day.other-month {
+            background: #f9fafb;
+            color: #9ca3af;
+        }
+
+        .calendar-day.today {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+
+        .calendar-day.fully-blocked {
+            background: #fee2e2;
+            border-color: #dc2626;
+        }
+
+        .day-number {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: inherit;
+        }
+
+        .day-slots {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .slot-indicator {
+            height: 4px;
+            border-radius: 2px;
+            margin-bottom: 1px;
+        }
+
+        .slot-indicator.available {
+            background: #10b981;
+        }
+
+        .slot-indicator.blocked {
+            background: #ef4444;
+        }
+
+        .slot-indicator.booked {
+            background: #c084fc;
+        }
+
+        .slot-count {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        .day-details {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--admin-background);
+            border-radius: 8px;
+            border: 1px solid var(--admin-border);
+        }
+
+        .day-details-title {
+            margin: 0 0 1rem 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--admin-text);
+        }
+
+        .day-details-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .time-slot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .time-slot:hover {
+            border-color: var(--admin-secondary);
+            transform: translateY(-1px);
+        }
+
+        .time-slot.available {
+            border-left: 4px solid #10b981;
+        }
+
+        .time-slot.blocked {
+            border-left: 4px solid #ef4444;
+            background: #fef2f2;
+        }
+
+        .time-slot.booked {
+            border-left: 4px solid #c084fc;
+            background: #faf5ff;
+        }
+
+        .slot-time {
+            font-weight: 600;
+            color: var(--admin-text);
+        }
+
+        .slot-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-available {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-blocked {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-booked {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .slot-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* Responsive Calendar */
+        @media (max-width: 768px) {
+            .calendar-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .calendar-navigation {
+                justify-content: center;
+            }
+
+            .calendar-actions {
+                justify-content: center;
+            }
+
+            .bulk-actions {
+                justify-content: center;
+            }
+
+            .calendar-legend {
+                justify-content: center;
+            }
+
+            .calendar-day {
+                min-height: 80px;
+                padding: 0.5rem;
+            }
+
+            .day-number {
+                font-size: 0.875rem;
+            }
+
+            .weekday {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar-day {
+                min-height: 60px;
+                padding: 0.25rem;
+            }
+
+            .day-number {
+                font-size: 0.75rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .slot-indicator {
+                height: 3px;
+            }
+
+            .weekday {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.625rem;
+            }
+
+            .calendar-title {
+                font-size: 1.25rem;
+                min-width: auto;
+            }
+
+            .bulk-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-bulk {
+                width: 100%;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --admin-border: #000000;
+                --admin-text: #000000;
+            }
+        }
+        
+        /* Complimentary booking highlighting */
+        .complimentary-highlight {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            color: white !important;
+            font-weight: 600 !important;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+            animation: complimentaryPulse 2s ease-in-out infinite !important;
+        }
+        
+        @keyframes complimentaryPulse {
+            0%, 100% { box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5); }
+        }
+        
+        /* Add-ons styling in booking cards */
+        .addon-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .addon-item {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 6px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            color: #0c4a6e;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .addon-price {
+            font-weight: 600;
+            color: #059669;
+        }
+        
+        .unknown-addon {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        
+        /* Enhanced booking card for complimentary bookings */
+        .booking-card.complimentary-booking {
+            border-left: 4px solid #10b981;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+        }
+        
+        .booking-card.complimentary-booking .booking-client {
+            color: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <!-- Skip Navigation Links -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#sidebar" class="skip-link">Skip to navigation</a>
+        
+        <header class="admin-header">
+            <div class="header-content">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <svg class="menu-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                    </svg>
+                </button>
+                <div>
+                    <h1>
+                        <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 10.5V9L21 8.5V10.5H15ZM11 7H9L3 8V9L9 8.5L11 7ZM3 10.5V9L9 9.5V10.5H3ZM12 7.5C11.2 7.5 10.5 8.2 10.5 9S11.2 10.5 12 10.5 13.5 9.8 13.5 9 12.8 7.5 12 7.5ZM12 11C10.9 11 10 11.9 10 13V22H14V13C14 11.9 13.1 11 12 11Z"/>
+                        </svg>
+                        <span class="dashboard-title">ITT Heal Administrative Dashboard</span>
+                    </h1>
+                    <div class="subtitle">Dr. Schiffer Practice Management System</div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Sidebar Navigation -->
+            <nav class="admin-sidebar" id="sidebar">
+                <ul class="admin-nav" role="navigation" aria-label="Admin Navigation">
+                    <li class="admin-nav-item">
+                        <a href="#" class="admin-nav-link active" data-section="dashboard" role="menuitem">
+                            <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" />
+                            </svg>
+                            Dashboard Overview
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#" class="admin-nav-link" data-section="bookings" role="menuitem">
+                            <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                            </svg>
+                            Bookings Management
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#" class="admin-nav-link" data-section="availability" role="menuitem">
+                            <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                            </svg>
+                            Schedule & Availability
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#" class="admin-nav-link" data-section="clients" role="menuitem">
+                            <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16,4C18.2,4 20,5.8 20,8C20,10.2 18.2,12 16,12C13.8,12 12,10.2 12,8C12,5.8 13.8,4 16,4M16,14C20.4,14 24,15.8 24,18V20H8V18C8,15.8 11.6,14 16,14M8.5,4C10.7,4 12.5,5.8 12.5,8C12.5,10.2 10.7,12 8.5,12C6.3,12 4.5,10.2 4.5,8C4.5,5.8 6.3,4 8.5,4M8.5,14C12.9,14 16.5,15.8 16.5,18V20H0.5V18C0.5,15.8 4.1,14 8.5,14Z" />
+                            </svg>
+                            Client Records
+                        </a>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a href="#" class="admin-nav-link" data-section="payments" role="menuitem">
+                            <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20,8H4V6H20M20,18H4V12H20M22,4H2V20H22V4Z" />
+                            </svg>
+                            Payments & Revenue
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Content Area -->
+            <div class="admin-content" id="main-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="admin-section active">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" />
+                        </svg>
+                        Practice Overview
+                    </h2>
+
+                    <!-- Statistics Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="todayBookings">-</div>
+                            <div class="stat-label">Today's Sessions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="weeklyRevenue">-</div>
+                            <div class="stat-label">Weekly Revenue</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalClients">-</div>
+                            <div class="stat-label">Total Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="upcomingBookings">-</div>
+                            <div class="stat-label">Upcoming Sessions</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="admin-card">
+                        <h3 style="margin: 0 0 1rem 0; font-family: 'Playfair Display', serif;">Recent Bookings</h3>
+                        <div id="recentBookingsTable" class="loading">Loading recent bookings...</div>
+                    </div>
+                </section>
+
+                <!-- Bookings Management Section -->
+                <section id="bookings" class="admin-section">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                        </svg>
+                        Bookings Management
+                    </h2>
+
+                    <div class="admin-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <h3 style="margin: 0; font-family: 'Playfair Display', serif;">All Bookings</h3>
+                            <button class="btn btn-primary" onclick="openCreateBookingModal()">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                                </svg>
+                                Create New Booking
+                            </button>
+                        </div>
+                        <div id="bookingsTable" class="loading">Loading bookings...</div>
+                    </div>
+                </section>
+
+                <!-- Schedule & Availability Section -->
+                <section id="availability" class="admin-section">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M19,6V5H5V6H19Z" />
+                        </svg>
+                        Schedule Management
+                    </h2>
+
+                    <div class="admin-card">
+                        <!-- Calendar Header -->
+                        <div class="calendar-header">
+                            <div class="calendar-navigation">
+                                <button class="btn-nav" id="prevMonth" aria-label="Previous month">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                                    </svg>
+                                </button>
+                                <h3 class="calendar-title" id="calendarTitle">Loading...</h3>
+                                <button class="btn-nav" id="nextMonth" aria-label="Next month">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="calendar-actions">
+                                <div class="bulk-actions">
+                                    <button class="btn-bulk block" onclick="blockCurrentDay()">Block Day</button>
+                                    <button class="btn-bulk block" onclick="blockCurrentWeek()">Block Week</button>
+                                    <button class="btn-bulk block" onclick="blockCurrentMonth()">Block Month</button>
+                                </div>
+                                <button class="btn btn-secondary" id="todayBtn">Today</button>
+                                <button class="btn btn-primary" onclick="openCreateAvailabilityModal()">
+                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                                    </svg>
+                                    Add Time Slot
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Calendar Legend -->
+                        <div class="calendar-legend">
+                            <div class="legend-item">
+                                <div class="legend-color available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color blocked"></div>
+                                <span>Blocked</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color booked"></div>
+                                <span>Booked</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color mixed"></div>
+                                <span>Mixed</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Calendar Grid -->
+                        <div class="calendar-container">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">Sun</div>
+                                <div class="weekday">Mon</div>
+                                <div class="weekday">Tue</div>
+                                <div class="weekday">Wed</div>
+                                <div class="weekday">Thu</div>
+                                <div class="weekday">Fri</div>
+                                <div class="weekday">Sat</div>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid">
+                                <!-- Calendar days will be dynamically generated -->
+                            </div>
+                        </div>
+                        
+                        <!-- Selected Day Details -->
+                        <div class="day-details" id="dayDetails" style="display: none;">
+                            <h4 class="day-details-title" id="dayDetailsTitle">Schedule for Selected Day</h4>
+                            <div class="day-details-content" id="dayDetailsContent">
+                                <!-- Day details will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Client Records Section -->
+                <section id="clients" class="admin-section">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16,4C18.2,4 20,5.8 20,8C20,10.2 18.2,12 16,12C13.8,12 12,10.2 12,8C12,5.8 13.8,4 16,4M16,14C20.4,14 24,15.8 24,18V20H8V18C8,15.8 11.6,14 16,14M8.5,4C10.7,4 12.5,5.8 12.5,8C12.5,10.2 10.7,12 8.5,12C6.3,12 4.5,10.2 4.5,8C4.5,5.8 6.3,4 8.5,4M8.5,14C12.9,14 16.5,15.8 16.5,18V20H0.5V18C0.5,15.8 4.1,14 8.5,14Z" />
+                        </svg>
+                        Client Records
+                    </h2>
+
+                    <div class="admin-card">
+                        <h3 style="margin: 0 0 1rem 0; font-family: 'Playfair Display', serif;">Client Database</h3>
+                        <div id="clientsTable" class="loading">Loading client records...</div>
+                    </div>
+                </section>
+
+                <!-- Payments & Revenue Section -->
+                <section id="payments" class="admin-section">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20,8H4V6H20M20,18H4V12H20M22,4H2V20H22V4Z" />
+                        </svg>
+                        Financial Overview
+                    </h2>
+
+                    <div class="admin-card">
+                        <h3 style="margin: 0 0 1rem 0; font-family: 'Playfair Display', serif;">Payment Records</h3>
+                        <div id="paymentsTable" class="loading">Loading payment records...</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create Booking Modal -->
+    <div id="createBookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Booking</h3>
+                <button class="modal-close" onclick="closeModal('createBookingModal')" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="createBookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="clientName">Client Name</label>
+                        <input type="text" id="clientName" name="client_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="clientEmail">Email Address</label>
+                        <input type="email" id="clientEmail" name="client_email" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="clientPhone">Phone Number</label>
+                        <input type="tel" id="clientPhone" name="client_phone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="scheduledDate">Date & Time</label>
+                        <input type="datetime-local" id="scheduledDate" name="scheduled_date" class="form-input" required>
+                    </div>
+                </div>
+                
+                <!-- Service Selection -->
+                <div class="form-group">
+                    <label class="form-label" for="serviceType">Service Type</label>
+                    <select id="serviceType" name="service_type" class="form-select" required>
+                        <option value="">Select Service</option>
+                        <option value="60min">60 Minute Session - $150</option>
+                        <option value="90min">90 Minute Session - $200</option>
+                        <option value="120min">120 Minute Session - $250</option>
+                    </select>
+                </div>
+                
+                <!-- Add-ons -->
+                <div class="form-group">
+                    <label class="form-label">Add-ons</label>
+                    <div id="addons-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="reflexologyAddon" name="addons[]" value="reflexology" data-price="25">
+                            <span>Reflexology (+$25)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="aromatherapyAddon" name="addons[]" value="aromatherapy" data-price="15">
+                            <span>Aromatherapy (+$15)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="hotStonesAddon" name="addons[]" value="hot_stones" data-price="30">
+                            <span>Hot Stones (+$30)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Pricing Breakdown -->
+                <div class="pricing-breakdown" style="background: #f8faf8; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Service Price:</span>
+                        <span id="servicePriceDisplay">$0.00</span>
+                        <input type="hidden" id="servicePrice" name="service_price" value="0" aria-label="Service price value">
+                    </div>
+                    <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Add-ons Total:</span>
+                        <span id="addonsTotal">$0.00</span>
+                        <input type="hidden" id="addonsTotalInput" name="addons_total" value="0" aria-label="Add-ons total value">
+                    </div>
+                    <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #ddd;">
+                        <strong>Total Price:</strong>
+                        <strong id="totalPriceDisplay">$0.00</strong>
+                        <input type="hidden" id="totalPrice" name="total_price" value="0" aria-label="Total price value">
+                        <input type="hidden" id="businessValue" name="business_value" value="0" aria-label="Business value calculation">
+                    </div>
+                </div>
+                
+                <!-- Payment Method Selection (Shared Component) -->
+                <div id="create-payment-container"></div>
+                
+                <!-- Payment & Session Status -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="paymentStatus">Payment Status</label>
+                        <select id="paymentStatus" name="payment_status" class="form-select" required>
+                            <option value="unpaid">Unpaid</option>
+                            <option value="paid">Paid</option>
+                            <option value="partial">Partial</option>
+                            <option value="complimentary">Complimentary</option>
+                            <option value="refunded">Refunded</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sessionStatus">Session Status</label>
+                        <select id="sessionStatus" name="session_status" class="form-select" required>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="no_show">No Show</option>
+                            <option value="pending_approval">Pending Approval</option>
+                            <option value="comp_request">Comp Request</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Tip and Final Price -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="tipAmount">Tip Amount</label>
+                        <input type="number" id="tipAmount" name="tip_amount" class="form-input" step="0.01" min="0" value="0" placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" id="compBooking" name="comp_booking" style="margin-right: 0.5rem;">
+                            Comp Booking (Free Session)
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Final Price -->
+                <div class="form-group">
+                    <label class="form-label" for="finalPrice">Final Price</label>
+                    <input type="number" id="finalPrice" name="final_price" class="form-input" step="0.01" min="0" readonly style="background: #f5f5f5; color: #333; font-weight: 600;">
+                    <small style="color: #666; font-size: 0.875rem;">
+                        <span id="finalPriceNote">Total Price + Tip Amount</span>
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" name="special_requests" class="form-textarea" placeholder="Any special requests or notes..."></textarea>
+                </div>
+                <div class="actions" style="margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary">Create Booking</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('createBookingModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Availability Modal -->
+    <div id="createAvailabilityModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Availability Slot</h3>
+                <button class="modal-close" onclick="closeModal('createAvailabilityModal')" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="createAvailabilityForm">
+                <div class="form-group">
+                    <label class="form-label" for="availabilityDate">Date</label>
+                    <input type="date" id="availabilityDate" name="date" class="form-input" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="startTime">Start Time</label>
+                        <input type="time" id="startTime" name="start_time" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="endTime">End Time</label>
+                        <input type="time" id="endTime" name="end_time" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="isAvailable">Availability Type</label>
+                    <select id="isAvailable" name="is_available" class="form-select" required>
+                        <option value="true">Available for Booking</option>
+                        <option value="false">Blocked/Unavailable</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reason">Notes (optional)</label>
+                    <textarea id="reason" name="reason" class="form-textarea" placeholder="Optional notes about this time slot..."></textarea>
+                </div>
+                <div class="actions" style="margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary">Add Time Slot</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('createAvailabilityModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Booking Modal -->
+    <div id="editBookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Booking</h3>
+                <button class="modal-close" onclick="closeModal('editBookingModal')" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="editBookingForm">
+                <input type="hidden" id="editBookingId" name="booking_id" aria-label="Booking ID for editing">
+                
+                <!-- Client Information -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="editClientName">Client Name</label>
+                        <input type="text" id="editClientName" name="client_name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editClientEmail">Email Address</label>
+                        <input type="email" id="editClientEmail" name="client_email" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="editClientPhone">Phone Number</label>
+                    <input type="tel" id="editClientPhone" name="client_phone" class="form-input">
+                </div>
+                
+                <!-- Service & Scheduling -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="editServiceType">Service Type</label>
+                        <select id="editServiceType" name="service_type" class="form-select" required>
+                            <option value="">Select Service</option>
+                            <!-- Options populated by populateEditServiceTypes() -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editScheduledDate">Date & Time</label>
+                        <input type="datetime-local" id="editScheduledDate" name="scheduled_date" class="form-input" required>
+                    </div>
+                </div>
+                
+                <!-- Add-ons -->
+                <div class="form-group">
+                    <label class="form-label">Add-ons</label>
+                    <div id="editAddonsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                        <!-- Add-ons populated by populateEditAddons() -->
+                    </div>
+                </div>
+                
+                <!-- Pricing Breakdown -->
+                <div class="pricing-breakdown" style="background: #f8faf8; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Service Price:</span>
+                        <span id="editServicePriceDisplay">$0.00</span>
+                        <input type="hidden" id="editServicePrice" name="service_price" value="0" aria-label="Edit service price value">
+                    </div>
+                    <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Add-ons Total:</span>
+                        <span id="editAddonsTotal">$0.00</span>
+                        <input type="hidden" id="editAddonsTotalInput" name="addons_total" value="0" aria-label="Edit add-ons total value">
+                    </div>
+                    <div class="pricing-row" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #ddd;">
+                        <strong>Total Price:</strong>
+                        <strong id="editTotalPriceDisplay">$0.00</strong>
+                        <input type="hidden" id="editTotalPrice" name="total_price" value="0" aria-label="Edit total price value">
+                        <input type="hidden" id="editBusinessValue" name="business_value" value="0" aria-label="Edit business value calculation">
+                    </div>
+                </div>
+                
+                <!-- Payment Method Selection (Shared Component) -->
+                <div id="edit-payment-container"></div>
+                
+                <!-- Payment & Session Status -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="editPaymentStatus">Payment Status</label>
+                        <select id="editPaymentStatus" name="payment_status" class="form-select" required>
+                            <option value="unpaid">Unpaid</option>
+                            <option value="paid">Paid</option>
+                            <option value="partial">Partial</option>
+                            <option value="complimentary">Complimentary</option>
+                            <option value="refunded">Refunded</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editSessionStatus">Session Status</label>
+                        <select id="editSessionStatus" name="session_status" class="form-select" required>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="in_progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="no_show">No Show</option>
+                            <option value="pending_approval">Pending Approval</option>
+                            <option value="comp_request">Comp Request</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Tip and Final Price -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="editTipAmount">Tip Amount</label>
+                        <input type="number" id="editTipAmount" name="tip_amount" class="form-input" step="0.01" min="0" value="0" placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input type="checkbox" id="editCompBooking" name="comp_booking" style="margin-right: 0.5rem;">
+                            Comp Booking (Free Session)
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Final Price -->
+                <div class="form-group">
+                    <label class="form-label" for="editFinalPrice">Final Price</label>
+                    <input type="number" id="editFinalPrice" name="final_price" class="form-input" step="0.01" min="0" readonly style="background: #f5f5f5; color: #333; font-weight: 600;">
+                    <small style="color: #666; font-size: 0.875rem;">
+                        <span id="editFinalPriceNote">Total Price + Tip Amount</span>
+                    </small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="editSpecialRequests">Special Requests</label>
+                    <textarea id="editSpecialRequests" name="special_requests" class="form-textarea" placeholder="Any special requests or notes..."></textarea>
+                </div>
+                <div class="actions" style="margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary">Update Booking</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('editBookingModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Shared Configuration -->
+    <script src="../shared-config.js"></script>
+    
+    <!-- Shared Payment Component -->
+    <script src="../js/shared-payment.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Admin API Configuration
+        const API_BASE = 'https://ittheal.com/api/admin';
+        const API_HEADERS = {
+            'Content-Type': 'application/json',
+            'x-admin-access': 'dr-shiffer-emergency-access'
+        };
+
+        // Global state
+        let currentData = {
+            bookings: [],
+            availability: [],
+            payments: []
+        };
+
+        // Initialize Admin Dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNavigation();
+            loadDashboardData();
+            setupForms();
+        });
+
+        // Navigation handling
+        function initializeNavigation() {
+            const navLinks = document.querySelectorAll('.admin-nav-link');
+            const sections = document.querySelectorAll('.admin-section');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            
+            // Mobile menu toggle functionality
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    mobileMenuOverlay.classList.toggle('active');
+                    const isExpanded = sidebar.classList.contains('active');
+                    this.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+            
+            // Close mobile menu when clicking overlay
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', function() {
+                    sidebar.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active nav link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.dataset.section;
+                    sections.forEach(s => s.classList.remove('active'));
+                    document.getElementById(sectionId).classList.add('active');
+                    
+                    // Load section data
+                    loadSectionData(sectionId);
+                    
+                    // Close mobile menu after navigation
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+            
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 768) {
+                        sidebar.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }, 250);
+            });
+        }
+
+        // Load dashboard overview data
+        async function loadDashboardData() {
+            try {
+                await Promise.all([
+                    loadBookings(),
+                    loadAvailability(),
+                    loadPayments()
+                ]);
+                
+                updateDashboardStats();
+                renderRecentBookings();
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                showAlert('Error loading dashboard data. Please check your connection.', 'error');
+            }
+        }
+
+        // Load section-specific data
+        async function loadSectionData(sectionId) {
+            switch(sectionId) {
+                case 'bookings':
+                    await loadBookings();
+                    renderBookingsTable();
+                    break;
+                case 'availability':
+                    await loadAvailability();
+                    initializeCalendar();
+                    break;
+                case 'clients':
+                    renderClientsTable();
+                    break;
+                case 'payments':
+                    await loadPayments();
+                    renderPaymentsTable();
+                    break;
+            }
+        }
+
+        // API Functions
+        async function loadBookings() {
+            try {
+                const response = await fetch(`${API_BASE}/bookings`, {
+                    headers: API_HEADERS
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const data = await response.json();
+                currentData.bookings = data.bookings || [];
+                
+                // APPLY PERSISTENT CORRECTIONS for backend-ignored add-ons removal
+                applyPersistentCorrections();
+                
+            } catch (error) {
+                console.error('Error loading bookings:', error);
+                currentData.bookings = [];
+            }
+        }
+
+        function applyPersistentCorrections() {
+            try {
+                const persistentCorrections = JSON.parse(localStorage.getItem('itt_booking_corrections') || '{}');
+                const now = Date.now();
+                const CORRECTION_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours
+                
+                let appliedCount = 0;
+                let expiredCount = 0;
+                
+                Object.keys(persistentCorrections).forEach(bookingId => {
+                    const correction = persistentCorrections[bookingId];
+                    
+                    // Remove expired corrections (older than 24 hours)
+                    if (now - correction.timestamp > CORRECTION_EXPIRY) {
+                        delete persistentCorrections[bookingId];
+                        expiredCount++;
+                        return;
+                    }
+                    
+                    // Apply correction to current booking data
+                    const bookingIndex = currentData.bookings.findIndex(b => b.id == bookingId);
+                    if (bookingIndex !== -1 && correction.clearAddons) {
+                        // Force clear add-ons from special requests
+                        if (currentData.bookings[bookingIndex].special_requests) {
+                            currentData.bookings[bookingIndex].special_requests = 
+                                currentData.bookings[bookingIndex].special_requests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                        }
+                        
+                        // Force correct pricing
+                        currentData.bookings[bookingIndex].addons_total = 0;
+                        currentData.bookings[bookingIndex].total_price = correction.servicePrice;
+                        currentData.bookings[bookingIndex].final_price = correction.servicePrice + correction.tipAmount;
+                        
+                        appliedCount++;
+                    }
+                });
+                
+                // Save cleaned corrections back to localStorage
+                if (expiredCount > 0) {
+                    localStorage.setItem('itt_booking_corrections', JSON.stringify(persistentCorrections));
+                }
+                
+                if (appliedCount > 0) {
+                    console.log(`🔧 Applied ${appliedCount} persistent add-ons corrections on data load`);
+                }
+                if (expiredCount > 0) {
+                    console.log(`🗑️ Cleaned ${expiredCount} expired corrections`);
+                }
+                
+            } catch (error) {
+                console.error('Error applying persistent corrections:', error);
+            }
+        }
+
+        async function loadAvailability() {
+            try {
+                const response = await fetch(`${API_BASE}/availability`, {
+                    headers: API_HEADERS
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const data = await response.json();
+                currentData.availability = data.availability || [];
+            } catch (error) {
+                console.error('Error loading availability:', error);
+                currentData.availability = [];
+            }
+        }
+
+        async function loadPayments() {
+            try {
+                const response = await fetch(`${API_BASE}/payments`, {
+                    headers: API_HEADERS
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const data = await response.json();
+                currentData.payments = data.payments || [];
+            } catch (error) {
+                console.error('Error loading payments:', error);
+                currentData.payments = [];
+            }
+        }
+
+        // Dashboard Statistics
+        function updateDashboardStats() {
+            const today = new Date().toISOString().split('T')[0];
+            const thisWeek = getWeekRange();
+            
+            // Today's bookings
+            const todayBookings = currentData.bookings.filter(booking => 
+                booking.scheduled_date && booking.scheduled_date.startsWith(today)
+            ).length;
+            
+            // Weekly revenue
+            const weeklyRevenue = currentData.bookings
+                .filter(booking => {
+                    if (!booking.scheduled_date) return false;
+                    const bookingDate = new Date(booking.scheduled_date);
+                    return bookingDate >= thisWeek.start && bookingDate <= thisWeek.end;
+                })
+                .reduce((sum, booking) => sum + (parseFloat(booking.final_price) || 0), 0);
+            
+            // Total clients (unique emails)
+            const uniqueClients = new Set(
+                currentData.bookings
+                    .filter(booking => booking.client_email)
+                    .map(booking => booking.client_email)
+            ).size;
+            
+            // Upcoming bookings
+            const now = new Date();
+            const upcomingBookings = currentData.bookings.filter(booking => {
+                if (!booking.scheduled_date) return false;
+                const bookingDate = new Date(booking.scheduled_date);
+                return bookingDate > now && booking.session_status !== 'cancelled';
+            }).length;
+            
+            // Update DOM
+            document.getElementById('todayBookings').textContent = todayBookings;
+            document.getElementById('weeklyRevenue').textContent = `$${weeklyRevenue.toFixed(0)}`;
+            document.getElementById('totalClients').textContent = uniqueClients;
+            document.getElementById('upcomingBookings').textContent = upcomingBookings;
+        }
+
+        // Utility function to get current week range
+        function getWeekRange() {
+            const now = new Date();
+            const dayOfWeek = now.getDay();
+            const startOfWeek = new Date(now);
+            startOfWeek.setDate(now.getDate() - dayOfWeek);
+            startOfWeek.setHours(0, 0, 0, 0);
+            
+            const endOfWeek = new Date(startOfWeek);
+            endOfWeek.setDate(startOfWeek.getDate() + 6);
+            endOfWeek.setHours(23, 59, 59, 999);
+            
+            return { start: startOfWeek, end: endOfWeek };
+        }
+
+        // Render Functions
+        function renderRecentBookings() {
+            const container = document.getElementById('recentBookingsTable');
+            
+            if (currentData.bookings.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">No bookings found.</p>';
+                return;
+            }
+            
+            // Sort by created date, most recent first
+            const recentBookings = currentData.bookings
+                .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                .slice(0, 3); // Show fewer on dashboard
+            
+            const cards = createBookingsCards(recentBookings);
+            container.innerHTML = '';
+            container.appendChild(cards);
+            
+            // Remove loading class from container after content loads
+            container.classList.remove('loading');
+        }
+
+        function renderBookingsTable() {
+            const container = document.getElementById('bookingsTable');
+            
+            if (currentData.bookings.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">No bookings found.</p>';
+                return;
+            }
+            
+            const cards = createBookingsCards(currentData.bookings);
+            container.innerHTML = '';
+            container.appendChild(cards);
+            
+            // FORCE REMOVE ALL LOADING CLASSES FROM BOOKING CARDS
+            setTimeout(() => {
+                const allBookingCards = document.querySelectorAll('.booking-card');
+                allBookingCards.forEach(card => {
+                    card.classList.remove('loading');
+                    // Also remove loading from any child elements
+                    const loadingChildren = card.querySelectorAll('.loading');
+                    loadingChildren.forEach(child => child.classList.remove('loading'));
+                });
+                
+                // Force remove loading from the container itself
+                container.classList.remove('loading');
+                
+                console.log('🔧 Force removed loading classes from all booking cards');
+            }, 100);
+        }
+
+        function createBookingsCards(bookings) {
+            const container = document.createElement('div');
+            container.className = 'bookings-grid';
+            
+            if (bookings.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem; grid-column: 1 / -1;">No bookings found.</p>';
+                return container;
+            }
+            
+            // Debug: Log booking data to see addon field names
+            if (bookings.length > 0) {
+                console.log('Sample booking data:', bookings[0]);
+                console.log('Available fields:', Object.keys(bookings[0]));
+            }
+            
+            container.innerHTML = bookings.map(booking => `
+                <div class="booking-card ${booking.payment_status === 'complimentary' ? 'complimentary-booking' : ''}">
+                    <div class="booking-card-header">
+                        <div>
+                            <h3 class="booking-client">${escapeHtml(booking.client_name || 'Unknown Client')}</h3>
+                            <div class="booking-date">${formatDateTime(booking.scheduled_date)}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <span class="status-badge status-${booking.session_status}">${booking.session_status || 'unknown'}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-details">
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Email:</span>
+                            <span class="booking-detail-value">${escapeHtml(booking.client_email || 'Not provided')}</span>
+                        </div>
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Service:</span>
+                            <span class="booking-detail-value">${escapeHtml(booking.service_type || 'Unknown')}</span>
+                        </div>
+                        ${(() => {
+                            // Parse add-ons from special_requests field (where they're actually stored)
+                            let addonsList = [];
+                            
+                            if (booking.special_requests) {
+                                // Look for "Add-ons:" pattern in special_requests
+                                const addonsMatch = booking.special_requests.match(/Add-ons:\s*([^\n]*)/i);
+                                if (addonsMatch) {
+                                    const addonsText = addonsMatch[1].trim();
+                                    console.log('Found add-ons in special_requests:', addonsText);
+                                    
+                                    // Parse the formatted text: "Reflexology (+$25), Aromatherapy (+$15)"
+                                    const addonParts = addonsText.split(',').map(part => part.trim());
+                                    
+                                    addonsList = addonParts.map(addonText => {
+                                        // Extract addon name from text like "Reflexology (+$25)"
+                                        const nameMatch = addonText.match(/^([^(]+)/);
+                                        if (nameMatch) {
+                                            const addonName = nameMatch[1].trim();
+                                            
+                                            // Find matching addon in config by name
+                                            const addonConfig = Object.values(window.ITTHealConfig?.ADDON_CONFIG || {})
+                                                .find(addon => addon.name.toLowerCase() === addonName.toLowerCase());
+                                            
+                                            if (addonConfig) {
+                                                return {
+                                                    id: addonConfig.id,
+                                                    name: addonConfig.name,
+                                                    price: addonConfig.price,
+                                                    originalText: addonText
+                                                };
+                                            }
+                                        }
+                                        
+                                        // Fallback: return the original text if no match found
+                                        return {
+                                            id: 'unknown',
+                                            name: addonText,
+                                            price: 0,
+                                            originalText: addonText
+                                        };
+                                    }).filter(addon => addon.name); // Remove empty entries
+                                }
+                            }
+                            
+                            console.log('Parsed add-ons from special_requests:', addonsList);
+                            
+                            if (addonsList.length > 0) {
+                                const addonItems = addonsList.map(addon => {
+                                    if (addon.id !== 'unknown') {
+                                        return `<span class="addon-item">${addon.name} <span class="addon-price">(+$${addon.price})</span></span>`;
+                                    } else {
+                                        return `<span class="addon-item unknown-addon">${addon.originalText}</span>`;
+                                    }
+                                }).join('');
+                                
+                                return `
+                                <div class="booking-detail-row">
+                                    <span class="booking-detail-label">Add-ons:</span>
+                                    <span class="booking-detail-value addon-list">
+                                        ${addonItems}
+                                    </span>
+                                </div>`;
+                            }
+                            
+                            return ''; // No add-ons found, don't show the row
+                        })()}
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Duration:</span>
+                            <span class="booking-detail-value">${booking.duration || 60} minutes</span>
+                        </div>
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Payment:</span>
+                            <span class="booking-detail-value">
+                                <span class="status-badge status-${booking.payment_status} ${booking.payment_status === 'complimentary' ? 'complimentary-highlight' : ''}">${booking.payment_status || 'unknown'}</span>
+                            </span>
+                        </div>
+                        ${booking.payment_method ? `
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Method:</span>
+                            <span class="booking-detail-value">
+                                ${booking.payment_method === 'credit_card' ? '💳 Credit Card' : 
+                                  booking.payment_method === 'cash' ? '💵 Cash' :
+                                  booking.payment_method === 'other' ? '📱 Other' :
+                                  booking.payment_method === 'comp' ? '🎁 Comp' : booking.payment_method}
+                                ${booking.comp_type ? ` (${booking.comp_type})` : ''}
+                            </span>
+                        </div>
+                        ` : ''}
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Price:</span>
+                            <span class="booking-detail-value" style="font-weight: 600; color: var(--admin-secondary);">$${parseFloat(booking.final_price || 0).toFixed(2)}</span>
+                        </div>
+                        ${booking.special_requests ? `
+                        <div class="booking-detail-row">
+                            <span class="booking-detail-label">Notes:</span>
+                            <span class="booking-detail-value">${escapeHtml(booking.special_requests)}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button class="btn btn-secondary btn-sm" onclick="editBooking('${booking.id}')">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                            </svg>
+                            Edit
+                        </button>
+                        <button class="btn btn-secondary btn-sm" onclick="deleteBooking('${booking.id}')">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                            </svg>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            return container;
+        }
+
+        // Calendar functionality
+        let currentCalendarDate = new Date();
+        let selectedDate = null;
+        
+        function initializeCalendar() {
+            // Set up calendar navigation
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+                renderCalendar();
+            });
+            
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+                renderCalendar();
+            });
+            
+            document.getElementById('todayBtn').addEventListener('click', () => {
+                currentCalendarDate = new Date();
+                renderCalendar();
+            });
+            
+            renderCalendar();
+        }
+        
+        function renderCalendar() {
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
+            
+            // Update calendar title
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            document.getElementById('calendarTitle').textContent = `${monthNames[month]} ${year}`;
+            
+            // Generate calendar grid
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay()); // Start from Sunday
+            
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+            
+            // Generate 6 weeks of calendar
+            for (let week = 0; week < 6; week++) {
+                for (let day = 0; day < 7; day++) {
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + (week * 7) + day);
+                    
+                    const dayElement = createCalendarDay(currentDate, year, month);
+                    calendarGrid.appendChild(dayElement);
+                }
+            }
+        }
+        
+        function createCalendarDay(date, currentYear, currentMonth) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            
+            const isCurrentMonth = date.getMonth() === currentMonth;
+            const isToday = date.toDateString() === new Date().toDateString();
+            const dateString = date.toISOString().split('T')[0];
+            
+            if (!isCurrentMonth) {
+                dayElement.classList.add('other-month');
+            }
+            if (isToday) {
+                dayElement.classList.add('today');
+            }
+            
+            // Get availability data for this date
+            const daySlots = currentData.availability.filter(slot => slot.date === dateString);
+            const availableSlots = daySlots.filter(slot => slot.is_available);
+            const blockedSlots = daySlots.filter(slot => !slot.is_available);
+            
+            // Get booking data for this date (from bookings if available)
+            const bookedSlots = currentData.bookings ? 
+                currentData.bookings.filter(booking => {
+                    const bookingDate = new Date(booking.scheduled_date).toISOString().split('T')[0];
+                    return bookingDate === dateString;
+                }) : [];
+            
+            dayElement.innerHTML = `
+                <div class="day-number">${date.getDate()}</div>
+                <div class="day-slots">
+                    ${availableSlots.slice(0, 3).map(() => '<div class="slot-indicator available"></div>').join('')}
+                    ${blockedSlots.slice(0, 3).map(() => '<div class="slot-indicator blocked"></div>').join('')}
+                    ${bookedSlots.slice(0, 3).map(() => '<div class="slot-indicator booked"></div>').join('')}
+                </div>
+                <div class="slot-count">
+                    ${daySlots.length > 0 ? `${availableSlots.length}/${daySlots.length} available` : ''}
+                    ${bookedSlots.length > 0 ? ` • ${bookedSlots.length} booked` : ''}
+                </div>
+            `;
+            
+            if (blockedSlots.length > 0 && availableSlots.length === 0) {
+                dayElement.classList.add('fully-blocked');
+            }
+            
+            dayElement.addEventListener('click', () => {
+                selectedDate = dateString;
+                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+                dayElement.classList.add('selected');
+                showDayDetails(dateString, daySlots, bookedSlots);
+            });
+            
+            return dayElement;
+        }
+        
+        function showDayDetails(dateString, slots, bookings) {
+            const dayDetails = document.getElementById('dayDetails');
+            const dayDetailsTitle = document.getElementById('dayDetailsTitle');
+            const dayDetailsContent = document.getElementById('dayDetailsContent');
+            
+            const date = new Date(dateString);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dayDetailsTitle.textContent = `Schedule for ${date.toLocaleDateString('en-US', options)}`;
+            
+            if (slots.length === 0 && bookings.length === 0) {
+                dayDetailsContent.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">No schedule set for this day.</p>';
+            } else {
+                const allItems = [...slots.map(slot => ({ ...slot, type: 'availability' })), 
+                                 ...bookings.map(booking => ({ ...booking, type: 'booking' }))];
+                
+                allItems.sort((a, b) => {
+                    const timeA = a.type === 'availability' ? a.start_time : new Date(a.scheduled_date).toTimeString().slice(0, 5);
+                    const timeB = b.type === 'availability' ? b.start_time : new Date(b.scheduled_date).toTimeString().slice(0, 5);
+                    return timeA.localeCompare(timeB);
+                });
+                
+                dayDetailsContent.innerHTML = allItems.map(item => {
+                    if (item.type === 'availability') {
+                        return `
+                            <div class="time-slot ${item.is_available ? 'available' : 'blocked'}">
+                                <div class="slot-time">${item.start_time} - ${item.end_time}</div>
+                                <div class="slot-status">
+                                    <span class="status-badge ${item.is_available ? 'status-available' : 'status-blocked'}">
+                                        ${item.is_available ? 'Available' : 'Blocked'}
+                                    </span>
+                                    <div class="slot-actions">
+                                        <button class="btn btn-secondary btn-sm" onclick="editAvailability('${item.id}')">Edit</button>
+                                        <button class="btn btn-secondary btn-sm" onclick="deleteAvailability('${item.id}')">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        const bookingTime = new Date(item.scheduled_date);
+                        const timeString = bookingTime.toTimeString().slice(0, 5);
+                        return `
+                            <div class="time-slot booked">
+                                <div class="slot-time">${timeString} - ${item.service_type}</div>
+                                <div class="slot-status">
+                                    <span class="status-badge status-booked">Booked: ${item.client_name}</span>
+                                    <div class="slot-actions">
+                                        <button class="btn btn-secondary btn-sm" onclick="editBooking('${item.id}')">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }).join('');
+            }
+            
+            dayDetails.style.display = 'block';
+        }
+        
+        // Bulk blocking functions
+        async function blockCurrentDay() {
+            if (!selectedDate) {
+                showAlert('Please select a day first', 'warning');
+                return;
+            }
+            
+            if (!confirm(`Block the entire day on ${selectedDate}?`)) return;
+            
+            try {
+                // Create a blocking slot for the entire day
+                const response = await fetch(`${API_BASE}/availability`, {
+                    method: 'POST',
+                    headers: {
+                        ...API_HEADERS,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        date: selectedDate,
+                        start_time: '00:00:00',
+                        end_time: '23:59:00',
+                        is_available: false,
+                        reason: 'Day blocked via admin calendar',
+                        description: 'Entire day blocked by administrator'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert('Day blocked successfully!', 'success');
+                    await loadAvailability();
+                    renderCalendar();
+                } else {
+                    throw new Error(result.message || 'Failed to block day');
+                }
+            } catch (error) {
+                console.error('Error blocking day:', error);
+                showAlert('Error blocking day: ' + error.message, 'error');
+            }
+        }
+        
+        async function blockCurrentWeek() {
+            if (!selectedDate) {
+                showAlert('Please select a day first', 'warning');
+                return;
+            }
+            
+            const date = new Date(selectedDate);
+            const startOfWeek = new Date(date);
+            startOfWeek.setDate(date.getDate() - date.getDay());
+            
+            const weekDays = [];
+            for (let i = 0; i < 7; i++) {
+                const currentDay = new Date(startOfWeek);
+                currentDay.setDate(startOfWeek.getDate() + i);
+                weekDays.push(currentDay.toISOString().split('T')[0]);
+            }
+            
+            const startDate = weekDays[0];
+            const endDate = weekDays[6];
+            
+            if (!confirm(`Block the entire week from ${startDate} to ${endDate}?`)) return;
+            
+            try {
+                const promises = weekDays.map(dayDate => 
+                    fetch(`${API_BASE}/availability`, {
+                        method: 'POST',
+                        headers: {
+                            ...API_HEADERS,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            date: dayDate,
+                            start_time: '00:00:00',
+                            end_time: '23:59:00',
+                            is_available: false,
+                            reason: 'Week blocked via admin calendar',
+                            description: `Week blocked by administrator (${startDate} to ${endDate})`
+                        })
+                    })
+                );
+                
+                await Promise.all(promises);
+                showAlert('Week blocked successfully!', 'success');
+                await loadAvailability();
+                renderCalendar();
+            } catch (error) {
+                console.error('Error blocking week:', error);
+                showAlert('Error blocking week: ' + error.message, 'error');
+            }
+        }
+        
+        async function blockCurrentMonth() {
+            if (!selectedDate) {
+                showAlert('Please select a day first', 'warning');
+                return;
+            }
+            
+            const date = new Date(selectedDate);
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            
+            const startOfMonth = new Date(year, month, 1);
+            const endOfMonth = new Date(year, month + 1, 0);
+            
+            const monthDays = [];
+            for (let day = 1; day <= endOfMonth.getDate(); day++) {
+                const currentDay = new Date(year, month, day);
+                monthDays.push(currentDay.toISOString().split('T')[0]);
+            }
+            
+            const startDate = monthDays[0];
+            const lastDate = monthDays[monthDays.length - 1];
+            
+            if (!confirm(`Block the entire month from ${startDate} to ${lastDate}? This will create ${monthDays.length} blocking entries.`)) return;
+            
+            try {
+                const promises = monthDays.map(dayDate => 
+                    fetch(`${API_BASE}/availability`, {
+                        method: 'POST',
+                        headers: {
+                            ...API_HEADERS,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            date: dayDate,
+                            start_time: '00:00:00',
+                            end_time: '23:59:00',
+                            is_available: false,
+                            reason: 'Month blocked via admin calendar',
+                            description: `Month blocked by administrator (${startDate} to ${lastDate})`
+                        })
+                    })
+                );
+                
+                await Promise.all(promises);
+                showAlert('Month blocked successfully!', 'success');
+                await loadAvailability();
+                renderCalendar();
+            } catch (error) {
+                console.error('Error blocking month:', error);
+                showAlert('Error blocking month: ' + error.message, 'error');
+            }
+        }
+
+        function renderClientsTable() {
+            const container = document.getElementById('clientsTable');
+            
+            // Extract unique clients from bookings
+            const clientsMap = new Map();
+            currentData.bookings.forEach(booking => {
+                if (booking.client_email) {
+                    const email = booking.client_email;
+                    if (!clientsMap.has(email)) {
+                        clientsMap.set(email, {
+                            name: booking.client_name || 'Unknown',
+                            email: booking.client_email,
+                            phone: booking.client_phone || '',
+                            totalBookings: 0,
+                            totalSpent: 0,
+                            lastSession: null
+                        });
+                    }
+                    
+                    const client = clientsMap.get(email);
+                    client.totalBookings++;
+                    client.totalSpent += parseFloat(booking.final_price || 0);
+                    
+                    const sessionDate = new Date(booking.scheduled_date);
+                    if (!client.lastSession || sessionDate > new Date(client.lastSession)) {
+                        client.lastSession = booking.scheduled_date;
+                    }
+                }
+            });
+            
+            const clients = Array.from(clientsMap.values());
+            
+            if (clients.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">No client records found.</p>';
+                return;
+            }
+            
+            const table = document.createElement('table');
+            table.className = 'data-table';
+            
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Client Name</th>
+                        <th>Contact</th>
+                        <th>Total Sessions</th>
+                        <th>Total Spent</th>
+                        <th>Last Session</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${clients.map(client => `
+                        <tr>
+                            <td style="font-weight: 600;">${escapeHtml(client.name)}</td>
+                            <td>
+                                <div>${escapeHtml(client.email)}</div>
+                                ${client.phone ? `<div style="font-size: 0.875rem; color: #666;">${escapeHtml(client.phone)}</div>` : ''}
+                            </td>
+                            <td>${client.totalBookings}</td>
+                            <td>$${client.totalSpent.toFixed(2)}</td>
+                            <td>${client.lastSession ? formatDate(client.lastSession) : 'Never'}</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm" onclick="viewClientHistory('${client.email}')">View History</button>
+                            </td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+            
+            container.innerHTML = '';
+            container.appendChild(table);
+        }
+
+        function renderPaymentsTable() {
+            const container = document.getElementById('paymentsTable');
+            
+            if (currentData.payments.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">No payment records found.</p>';
+                return;
+            }
+            
+            const table = document.createElement('table');
+            table.className = 'data-table';
+            
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Service</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${currentData.payments.map(payment => `
+                        <tr>
+                            <td>
+                                <div style="font-weight: 600;">${escapeHtml(payment.client_name || 'Unknown')}</div>
+                                <div style="font-size: 0.875rem; color: #666;">${escapeHtml(payment.client_email || '')}</div>
+                            </td>
+                            <td>${escapeHtml(payment.service_type || '')}</td>
+                            <td>$${parseFloat(payment.amount || 0).toFixed(2)}</td>
+                            <td><span class="status-badge status-${payment.payment_status}">${payment.payment_status || 'unknown'}</span></td>
+                            <td>${formatDate(payment.payment_date)}</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm" onclick="viewPaymentDetails('${payment.id}')">View Details</button>
+                            </td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+            
+            container.innerHTML = '';
+            container.appendChild(table);
+        }
+
+        // Modal Functions
+        function openCreateBookingModal() {
+            document.getElementById('createBookingModal').classList.add('active');
+        }
+
+        function openCreateAvailabilityModal() {
+            document.getElementById('createAvailabilityModal').classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Comprehensive pricing calculation system using shared config
+        // Global calculatePricing function accessible by payment manager
+        function calculatePricing() {
+                // Get form data
+                const serviceTypeSelect = document.getElementById('serviceType');
+                const pricingSelectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked')).map(cb => cb.value);
+                const tipAmount = parseFloat(document.getElementById('tipAmount')?.value) || 0;
+                const isCompBooking = document.getElementById('compBooking')?.checked || false;
+                const paymentStatus = document.getElementById('paymentStatus')?.value || '';
+                
+                // Update payment method based on status and tip
+                if (createPaymentManager) {
+                    createPaymentManager.updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount);
+                }
+                
+                // Get the selected payment method for pricing calculation
+                const paymentMethod = createPaymentManager ? createPaymentManager.getSelectedPaymentMethod() : 'credit_card';
+                
+                // Use shared config for pricing calculation
+                const pricing = window.ITTHealConfig.calculateBookingPricing({
+                    serviceType: serviceTypeSelect?.value,
+                    selectedAddons: pricingSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentStatus,
+                    paymentMethod
+                });
+                
+                console.log('Create form pricing calculation:', {
+                    serviceType: serviceTypeSelect?.value,
+                    selectedAddons: pricingSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentStatus,
+                    paymentMethod,
+                    result: pricing
+                });
+                
+                // Update display elements
+                const servicePriceDisplay = document.getElementById('servicePriceDisplay');
+                const addonsTotalDisplay = document.getElementById('addonsTotal');
+                const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+                const finalPriceInput = document.getElementById('finalPrice');
+                const finalPriceNote = document.getElementById('finalPriceNote');
+                
+                if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.servicePrice.toFixed(2)}`;
+                if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addonsTotal.toFixed(2)}`;
+                if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.totalPrice.toFixed(2)}`;
+                if (finalPriceInput) finalPriceInput.value = pricing.finalPrice.toFixed(2);
+                
+                // Update hidden inputs for form submission
+                const servicePriceInput = document.getElementById('servicePrice');
+                const addonsTotalInput = document.getElementById('addonsTotalInput');
+                const totalPriceInput = document.getElementById('totalPrice');
+                const businessValueInput = document.getElementById('businessValue');
+                
+                if (servicePriceInput) servicePriceInput.value = pricing.servicePrice.toFixed(2);
+                if (addonsTotalInput) addonsTotalInput.value = pricing.addonsTotal.toFixed(2);
+                if (totalPriceInput) totalPriceInput.value = pricing.totalPrice.toFixed(2);
+                if (businessValueInput) businessValueInput.value = pricing.businessValue.toFixed(2);
+                
+                // Update final price note
+                if (finalPriceNote) {
+                    if (pricing.isCompBooking) {
+                        finalPriceNote.textContent = 'Complimentary - Tip Only';
+                    } else {
+                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                    }
+                }
+        }
+        
+        // Global calculateEditPricing function accessible by payment manager
+        function calculateEditPricing() {
+                // Get form data from edit form
+                const serviceTypeSelect = document.getElementById('editServiceType');
+                const editSelectedAddons = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked')).map(cb => cb.value);
+                const tipAmount = parseFloat(document.getElementById('editTipAmount')?.value) || 0;
+                const isCompBooking = document.getElementById('editCompBooking')?.checked || false;
+                const paymentStatus = document.getElementById('editPaymentStatus')?.value || '';
+                
+                // Update payment method based on status and tip
+                if (editPaymentManager) {
+                    editPaymentManager.updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount);
+                }
+                
+                // Get the selected payment method for pricing calculation
+                const paymentMethod = editPaymentManager ? editPaymentManager.getSelectedPaymentMethod() : 'credit_card';
+                
+                // Use shared config for pricing calculation
+                const pricing = window.ITTHealConfig.calculateBookingPricing({
+                    serviceType: serviceTypeSelect?.value,
+                    selectedAddons: editSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentStatus,
+                    paymentMethod
+                });
+                
+                console.log('Edit form pricing calculation:', {
+                    serviceType: serviceTypeSelect?.value,
+                    selectedAddons: editSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentStatus,
+                    paymentMethod,
+                    result: pricing
+                });
+                
+                // UPDATE SPECIAL REQUESTS FIELD WITH CURRENT ADD-ONS
+                const specialRequestsField = document.getElementById('editSpecialRequests');
+                if (specialRequestsField && window.ITTHealConfig) {
+                    // Get current special requests content
+                    let currentRequests = specialRequestsField.value || '';
+                    
+                    // Remove any existing add-ons line
+                    currentRequests = currentRequests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                    
+                    // Build new add-ons line if any add-ons are selected
+                    if (editSelectedAddons.length > 0) {
+                        const addonTexts = editSelectedAddons.map(addonId => {
+                            const addonConfig = window.ITTHealConfig.ADDON_CONFIG[addonId];
+                            return addonConfig ? `${addonConfig.name} (+$${addonConfig.price})` : addonId;
+                        });
+                        const addonsLine = `Add-ons: ${addonTexts.join(', ')}`;
+                        
+                        // Add the new add-ons line at the beginning
+                        if (currentRequests) {
+                            specialRequestsField.value = `${addonsLine}\n${currentRequests}`;
+                        } else {
+                            specialRequestsField.value = addonsLine;
+                        }
+                    } else {
+                        // No add-ons selected, just use the cleaned requests
+                        specialRequestsField.value = currentRequests;
+                    }
+                    
+                    console.log('🔧 Updated special requests field with current add-ons');
+                }
+                
+                // Update display elements in edit form
+                const servicePriceDisplay = document.getElementById('editServicePriceDisplay');
+                const addonsTotalDisplay = document.getElementById('editAddonsTotal');
+                const totalPriceDisplay = document.getElementById('editTotalPriceDisplay');
+                const finalPriceInput = document.getElementById('editFinalPrice');
+                const finalPriceNote = document.getElementById('editFinalPriceNote');
+                
+                if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.servicePrice.toFixed(2)}`;
+                if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addonsTotal.toFixed(2)}`;
+                if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.totalPrice.toFixed(2)}`;
+                if (finalPriceInput) finalPriceInput.value = pricing.finalPrice.toFixed(2);
+                
+                // Update hidden inputs for form submission in edit form
+                const servicePriceInput = document.getElementById('editServicePrice');
+                const addonsTotalInput = document.getElementById('editAddonsTotalInput');
+                const totalPriceInput = document.getElementById('editTotalPrice');
+                const businessValueInput = document.getElementById('editBusinessValue');
+                
+                if (servicePriceInput) servicePriceInput.value = pricing.servicePrice.toFixed(2);
+                if (addonsTotalInput) addonsTotalInput.value = pricing.addonsTotal.toFixed(2);
+                if (totalPriceInput) totalPriceInput.value = pricing.totalPrice.toFixed(2);
+                if (businessValueInput) businessValueInput.value = pricing.businessValue.toFixed(2);
+                
+                // Update final price note in edit form
+                if (finalPriceNote) {
+                    if (pricing.isCompBooking) {
+                        finalPriceNote.textContent = 'Complimentary - Tip Only';
+                    } else {
+                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                    }
+                }
+        }
+        
+        function setupBookingPricing() {
+            // Populate service type dropdown with shared config
+            function populateServiceTypes() {
+                const serviceTypeSelect = document.getElementById('serviceType');
+                if (serviceTypeSelect && window.ITTHealConfig) {
+                    const options = window.ITTHealConfig.getSessionOptions();
+                    
+                    // Clear existing options except the first one
+                    while (serviceTypeSelect.children.length > 1) {
+                        serviceTypeSelect.removeChild(serviceTypeSelect.lastChild);
+                    }
+                    
+                    // Add options from shared config
+                    options.forEach(option => {
+                        const optionElement = document.createElement('option');
+                        optionElement.value = option.value;
+                        optionElement.textContent = option.label;
+                        serviceTypeSelect.appendChild(optionElement);
+                    });
+                }
+            }
+            
+            // Populate addons with shared config
+            function populateAddons() {
+                const addonsGrid = document.querySelector('.form-group:has(.form-label) > div[style*="grid"]');
+                if (addonsGrid && window.ITTHealConfig) {
+                    addonsGrid.innerHTML = '';
+                    
+                    Object.values(window.ITTHealConfig.ADDON_CONFIG).forEach(addon => {
+                        const label = document.createElement('label');
+                        label.className = 'checkbox-label';
+                        label.innerHTML = `
+                            <input type="checkbox" name="addons[]" value="${addon.id}" data-price="${addon.price}">
+                            <span>${addon.name} (+$${addon.price})</span>
+                        `;
+                        addonsGrid.appendChild(label);
+                    });
+                }
+            }
+            
+            // Initialize after shared config is loaded
+            function initialize() {
+                if (!window.ITTHealConfig) {
+                    setTimeout(initialize, 100);
+                    return;
+                }
+                
+                populateServiceTypes();
+                populateAddons();
+                
+                // Attach event listeners
+                const serviceTypeSelect = document.getElementById('serviceType');
+                const tipAmountInput = document.getElementById('tipAmount');
+                const compBookingCheckbox = document.getElementById('compBooking');
+                const paymentStatusSelect = document.getElementById('paymentStatus');
+                
+                if (serviceTypeSelect) {
+                    serviceTypeSelect.addEventListener('change', calculatePricing);
+                }
+                
+                if (tipAmountInput) {
+                    tipAmountInput.addEventListener('input', calculatePricing);
+                }
+                
+                if (compBookingCheckbox) {
+                    compBookingCheckbox.addEventListener('change', calculatePricing);
+                }
+                
+                if (paymentStatusSelect) {
+                    paymentStatusSelect.addEventListener('change', calculatePricing);
+                }
+                
+                // Delegate event for dynamically created addon checkboxes
+                document.addEventListener('change', function(e) {
+                    if (e.target.name === 'addons[]') {
+                        calculatePricing();
+                    }
+                });
+                
+                // Edit form event listeners
+                const editServiceTypeSelect = document.getElementById('editServiceType');
+                const editTipAmountInput = document.getElementById('editTipAmount');
+                const editCompBookingCheckbox = document.getElementById('editCompBooking');
+                const editPaymentStatusSelect = document.getElementById('editPaymentStatus');
+                
+                if (editServiceTypeSelect) {
+                    editServiceTypeSelect.addEventListener('change', calculateEditPricing);
+                }
+                
+                if (editTipAmountInput) {
+                    editTipAmountInput.addEventListener('input', calculateEditPricing);
+                }
+                
+                if (editCompBookingCheckbox) {
+                    editCompBookingCheckbox.addEventListener('change', calculateEditPricing);
+                }
+                
+                if (editPaymentStatusSelect) {
+                    editPaymentStatusSelect.addEventListener('change', calculateEditPricing);
+                }
+                
+                // Delegate event for edit form addon checkboxes
+                document.addEventListener('change', function(e) {
+                    if (e.target.closest('#editAddonsContainer') && e.target.name === 'addons[]') {
+                        calculateEditPricing();
+                    }
+                });
+                
+                // Initial calculation
+                calculatePricing();
+            }
+            
+            initialize();
+        }
+        
+        // Populate edit form service types (global scope)
+        function populateEditServiceTypes() {
+            const serviceTypeSelect = document.getElementById('editServiceType');
+            if (serviceTypeSelect && window.ITTHealConfig) {
+                const options = window.ITTHealConfig.getSessionOptions();
+                
+                // Clear existing options except the first one
+                while (serviceTypeSelect.children.length > 1) {
+                    serviceTypeSelect.removeChild(serviceTypeSelect.lastChild);
+                }
+                
+                // Add options from shared config
+                options.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.label;
+                    serviceTypeSelect.appendChild(optionElement);
+                });
+            }
+        }
+        
+        // Populate edit form addons (global scope)
+        function populateEditAddons() {
+            const addonsContainer = document.getElementById('editAddonsContainer');
+            if (addonsContainer && window.ITTHealConfig) {
+                addonsContainer.innerHTML = '';
+                
+                Object.values(window.ITTHealConfig.ADDON_CONFIG).forEach(addon => {
+                    const label = document.createElement('label');
+                    label.className = 'checkbox-label';
+                    label.innerHTML = `
+                        <input type="checkbox" name="addons[]" value="${addon.id}" data-price="${addon.price}">
+                        <span>${addon.name} (+$${addon.price})</span>
+                    `;
+                    
+                    // Add event listener to update special requests when checkbox changes
+                    const checkbox = label.querySelector('input[type="checkbox"]');
+                    checkbox.addEventListener('change', function() {
+                        console.log('🔧 Add-on checkbox changed:', addon.name, 'checked:', this.checked);
+                        calculateEditPricing(); // This will now update special requests field
+                    });
+                    
+                    addonsContainer.appendChild(label);
+                });
+                
+                console.log('🔧 Set up edit add-ons with change listeners');
+            }
+        }
+        
+        // Payment Components Setup
+        let createPaymentManager, editPaymentManager;
+        
+        function setupPaymentComponents() {
+            // Initialize create form payment component
+            createPaymentManager = new ITTPaymentManager({
+                containerId: 'create-payment-container',
+                formPrefix: '',
+                isAdminMode: true,
+                onPaymentMethodChange: (method) => {
+                    console.log('Create payment method changed to:', method);
+                    setTimeout(() => calculatePricing(), 10); // Small delay to ensure UI updates
+                }
+            });
+            
+            // Initialize edit form payment component  
+            editPaymentManager = new ITTPaymentManager({
+                containerId: 'edit-payment-container',
+                formPrefix: 'edit_',
+                isAdminMode: true,
+                onPaymentMethodChange: (method) => {
+                    console.log('Edit payment method changed to:', method);
+                    setTimeout(() => calculateEditPricing(), 10); // Small delay to ensure UI updates
+                }
+            });
+            
+            // Inject CSS
+            createPaymentManager.injectCSS();
+            
+            console.log('Payment components initialized');
+        }
+
+        // Form Setup
+        function setupForms() {
+            // Setup comprehensive pricing system
+            setupBookingPricing();
+            
+            // Initialize shared payment components
+            setupPaymentComponents();
+            
+            // Create Booking Form
+            document.getElementById('createBookingForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const bookingData = Object.fromEntries(formData.entries());
+                
+                // Process add-ons into special_requests field (following frontend storage format)
+                const createSelectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked'));
+                if (createSelectedAddons.length > 0) {
+                    const addonTexts = createSelectedAddons.map(checkbox => {
+                        const addonId = checkbox.value;
+                        const addonConfig = window.ITTHealConfig?.ADDON_CONFIG?.[addonId];
+                        if (addonConfig) {
+                            return `${addonConfig.name} (+$${addonConfig.price})`;
+                        }
+                        return addonId;
+                    });
+                    
+                    const addonsLine = `Add-ons: ${addonTexts.join(', ')}`;
+                    
+                    // Append to special_requests or create it
+                    if (bookingData.special_requests && bookingData.special_requests.trim()) {
+                        bookingData.special_requests = `${addonsLine}\n${bookingData.special_requests}`;
+                    } else {
+                        bookingData.special_requests = addonsLine;
+                    }
+                    
+                    console.log('Formatted add-ons for storage:', addonsLine);
+                }
+                
+                // Add duration field that backend expects
+                const serviceTypeSelect = document.getElementById('serviceType');
+                if (serviceTypeSelect && serviceTypeSelect.value) {
+                    const serviceConfig = window.ITTHealConfig?.PRICING_CONFIG?.sessions?.[serviceTypeSelect.value];
+                    if (serviceConfig) {
+                        bookingData.duration = serviceConfig.duration;
+                    }
+                }
+                
+                // Add addons array for backend duration calculation (reflexology)
+                const selectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked'));
+                if (selectedAddons.length > 0) {
+                    bookingData.addons = selectedAddons.map(checkbox => {
+                        const addonId = checkbox.value;
+                        const addonConfig = window.ITTHealConfig?.ADDON_CONFIG?.[addonId];
+                        return {
+                            id: addonId,
+                            name: addonConfig?.name || addonId,
+                            price: addonConfig?.price || 0
+                        };
+                    });
+                } else {
+                    // Explicitly set empty array when no add-ons selected
+                    bookingData.addons = [];
+                }
+                
+                // Remove addon checkboxes from data (they're now in special_requests and addons array)
+                delete bookingData['addons[]'];
+                
+                console.log('Booking data being submitted:', bookingData);
+                
+                try {
+                    const response = await fetch(`${API_BASE}/bookings`, {
+                        method: 'POST',
+                        headers: API_HEADERS,
+                        body: JSON.stringify(bookingData)
+                    });
+                    
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        showAlert('Booking created successfully!', 'success');
+                        closeModal('createBookingModal');
+                        this.reset();
+                        await loadBookings();
+                        if (document.getElementById('bookings').classList.contains('active')) {
+                            renderBookingsTable();
+                        }
+                        updateDashboardStats();
+                    } else {
+                        throw new Error(result.message || 'Failed to create booking');
+                    }
+                } catch (error) {
+                    console.error('Error creating booking:', error);
+                    showAlert('Error creating booking: ' + error.message, 'error');
+                }
+            });
+            
+            // Create Availability Form
+            document.getElementById('createAvailabilityForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const availabilityData = Object.fromEntries(formData.entries());
+                availabilityData.is_available = availabilityData.is_available === 'true';
+                
+                try {
+                    const response = await fetch(`${API_BASE}/availability`, {
+                        method: 'POST',
+                        headers: API_HEADERS,
+                        body: JSON.stringify(availabilityData)
+                    });
+                    
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        showAlert('Availability slot created successfully!', 'success');
+                        closeModal('createAvailabilityModal');
+                        this.reset();
+                        await loadAvailability();
+                        if (document.getElementById('availability').classList.contains('active')) {
+                            renderCalendar();
+                        }
+                    } else {
+                        throw new Error(result.message || 'Failed to create availability slot');
+                    }
+                } catch (error) {
+                    console.error('Error creating availability:', error);
+                    showAlert('Error creating availability slot: ' + error.message, 'error');
+                }
+            });
+
+            // Edit Booking Form
+            document.getElementById('editBookingForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                
+                // Set loading state
+                submitButton.disabled = true;
+                submitButton.textContent = 'Updating...';
+                
+                const formData = new FormData(this);
+                const bookingData = Object.fromEntries(formData.entries());
+                const bookingId = bookingData.booking_id;
+                delete bookingData.booking_id; // Remove from data to send
+                
+                // Process add-ons into special_requests field (following frontend storage format)
+                const editFormSelectedAddons = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked'));
+                if (editFormSelectedAddons.length > 0) {
+                    const addonTexts = editFormSelectedAddons.map(checkbox => {
+                        const addonId = checkbox.value;
+                        const addonConfig = window.ITTHealConfig?.ADDON_CONFIG?.[addonId];
+                        if (addonConfig) {
+                            return `${addonConfig.name} (+$${addonConfig.price})`;
+                        }
+                        return addonId;
+                    });
+                    
+                    const addonsLine = `Add-ons: ${addonTexts.join(', ')}`;
+                    
+                    // Handle existing special_requests - remove old add-ons line and add new one
+                    let existingRequests = bookingData.special_requests || '';
+                    // Remove any existing "Add-ons:" line
+                    existingRequests = existingRequests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                    
+                    // Add new add-ons line
+                    if (existingRequests) {
+                        bookingData.special_requests = `${addonsLine}\n${existingRequests}`;
+                    } else {
+                        bookingData.special_requests = addonsLine;
+                    }
+                    
+                    console.log('Updated add-ons for edit:', addonsLine);
+                } else {
+                    // No add-ons selected - remove any existing add-ons line
+                    if (bookingData.special_requests) {
+                        bookingData.special_requests = bookingData.special_requests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                    }
+                    // If special_requests is now empty, set it to empty string explicitly
+                    if (!bookingData.special_requests || bookingData.special_requests.trim() === '') {
+                        bookingData.special_requests = '';
+                    }
+                    // Force backend to clear add-ons by setting explicit flags
+                    bookingData.clear_addons = true;
+                    bookingData.force_addons_update = true;
+                    
+                    console.log('No add-ons selected - cleared special_requests:', bookingData.special_requests);
+                }
+                
+                // Add duration field that backend expects
+                const serviceTypeSelect = document.getElementById('editServiceType');
+                if (serviceTypeSelect && serviceTypeSelect.value) {
+                    const serviceConfig = window.ITTHealConfig?.PRICING_CONFIG?.sessions?.[serviceTypeSelect.value];
+                    if (serviceConfig) {
+                        bookingData.duration = serviceConfig.duration;
+                    }
+                }
+                
+                // Ensure final_price is properly set (backend expects it)
+                const finalPriceInput = document.getElementById('editFinalPrice');
+                if (finalPriceInput && finalPriceInput.value) {
+                    bookingData.final_price = parseFloat(finalPriceInput.value);
+                }
+                
+                // Add addons array for backend duration calculation (reflexology)
+                const editAddonsForDuration = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked'));
+                if (editAddonsForDuration.length > 0) {
+                    bookingData.addons = editAddonsForDuration.map(checkbox => {
+                        const addonId = checkbox.value;
+                        const addonConfig = window.ITTHealConfig?.ADDON_CONFIG?.[addonId];
+                        return {
+                            id: addonId,
+                            name: addonConfig?.name || addonId,
+                            price: addonConfig?.price || 0
+                        };
+                    });
+                } else {
+                    // Explicitly set empty array when no add-ons selected to clear existing add-ons
+                    bookingData.addons = [];
+                }
+                
+                // Remove addon checkboxes from data (they're now in special_requests and addons array)
+                delete bookingData['addons[]'];
+                
+                // Ensure special_requests is always included in the request, even if empty
+                if (bookingData.special_requests === undefined) {
+                    bookingData.special_requests = '';
+                }
+                
+                console.log('Edit booking data being submitted:', bookingData);
+                console.log('Booking ID:', bookingId);
+                console.log('Request URL:', `${API_BASE}/bookings/${bookingId}`);
+                console.log('Special requests in submission:', JSON.stringify(bookingData.special_requests));
+                
+                try {
+                    const response = await fetch(`${API_BASE}/bookings/${bookingId}`, {
+                        method: 'PUT',
+                        headers: {
+                            ...API_HEADERS,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(bookingData)
+                    });
+                    
+                    console.log('Edit response status:', response.status);
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Edit error response:', errorText);
+                        throw new Error(`HTTP ${response.status}: ${errorText}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('Edit response data:', result);
+                    
+                    if (result.success) {
+                        // Force complete booking data refresh with client-side corrections
+                        if (result.booking) {
+                            console.log('Updating local booking data with server response');
+                            const bookingIndex = currentData.bookings.findIndex(b => b.id == bookingId);
+                            if (bookingIndex !== -1) {
+                                // Update the local booking with the server response
+                                currentData.bookings[bookingIndex] = { ...currentData.bookings[bookingIndex], ...result.booking };
+                                
+                                // Force client-side corrections based on what we actually sent
+                                if (bookingData.clear_addons || editFormSelectedAddons.length === 0) {
+                                    console.log('Applying client-side add-ons removal correction');
+                                    
+                                    // Force clear special_requests add-ons line
+                                    if (currentData.bookings[bookingIndex].special_requests) {
+                                        currentData.bookings[bookingIndex].special_requests = 
+                                            currentData.bookings[bookingIndex].special_requests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                                    }
+                                    
+                                    // Force update pricing to reflect no add-ons
+                                    const servicePrice = parseFloat(bookingData.service_price) || 0;
+                                    const tipAmount = parseFloat(bookingData.tip_amount) || 0;
+                                    
+                                    currentData.bookings[bookingIndex].addons_total = 0;
+                                    currentData.bookings[bookingIndex].total_price = servicePrice;
+                                    currentData.bookings[bookingIndex].final_price = servicePrice + tipAmount;
+                                    
+                                    console.log('Corrected pricing - Service:', servicePrice, 'Tip:', tipAmount, 'Final:', servicePrice + tipAmount);
+                                }
+                                
+                                console.log('Updated booking data:', currentData.bookings[bookingIndex]);
+                            }
+                        }
+                        
+                        // Additional validation for add-ons removal if clear_addons was requested
+                        if (bookingData.clear_addons && result.booking) {
+                            const responseStillHasAddons = result.booking.special_requests && 
+                                result.booking.special_requests.includes('Add-ons:');
+                            
+                            if (responseStillHasAddons) {
+                                console.warn('Backend did not clear add-ons, forcing client-side correction');
+                                const bookingIndex = currentData.bookings.findIndex(b => b.id == bookingId);
+                                if (bookingIndex !== -1) {
+                                    // Force clear add-ons from special_requests
+                                    currentData.bookings[bookingIndex].special_requests = 
+                                        currentData.bookings[bookingIndex].special_requests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                                    
+                                    // Force clear pricing fields if they include add-on costs
+                                    const totalPrice = parseFloat(bookingData.final_price) || 0;
+                                    currentData.bookings[bookingIndex].final_price = totalPrice;
+                                    currentData.bookings[bookingIndex].total_price = totalPrice;
+                                    currentData.bookings[bookingIndex].addons_total = 0;
+                                }
+                            }
+                        }
+                        
+                        showAlert('Booking updated successfully!', 'success');
+                        closeModal('editBookingModal');
+                        this.reset();
+                        
+                        // Store correction data before reload
+                        const needsCorrection = bookingData.clear_addons || editFormSelectedAddons.length === 0;
+                        const correctionData = needsCorrection ? {
+                            bookingId: bookingId,
+                            servicePrice: parseFloat(bookingData.service_price) || 0,
+                            tipAmount: parseFloat(bookingData.tip_amount) || 0,
+                            clearAddons: true
+                        } : null;
+                        
+                        // Force reload fresh data from server
+                        console.log('Forcing complete data refresh from server...');
+                        await loadBookings();
+                        
+                        // Immediately refresh the bookings table if it's visible
+                        if (document.getElementById('bookings').classList.contains('active')) {
+                            renderBookingsTable();
+                        }
+                        
+                        // Also update dashboard stats
+                        updateDashboardStats();
+                        
+                        // Apply corrections AFTER reload if needed
+                        if (correctionData) {
+                            console.log('Applying post-reload corrections...');
+                            const bookingIndex = currentData.bookings.findIndex(b => b.id == correctionData.bookingId);
+                            if (bookingIndex !== -1) {
+                                // Force clear add-ons from reloaded data
+                                if (currentData.bookings[bookingIndex].special_requests) {
+                                    currentData.bookings[bookingIndex].special_requests = 
+                                        currentData.bookings[bookingIndex].special_requests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
+                                }
+                                
+                                // Force correct pricing
+                                currentData.bookings[bookingIndex].addons_total = 0;
+                                currentData.bookings[bookingIndex].total_price = correctionData.servicePrice;
+                                currentData.bookings[bookingIndex].final_price = correctionData.servicePrice + correctionData.tipAmount;
+                                
+                                console.log('Post-reload correction applied');
+                                
+                                // PERSISTENT CORRECTION: Store in localStorage to apply on future page loads
+                                const persistentCorrections = JSON.parse(localStorage.getItem('itt_booking_corrections') || '{}');
+                                persistentCorrections[correctionData.bookingId] = {
+                                    timestamp: Date.now(),
+                                    clearAddons: true,
+                                    servicePrice: correctionData.servicePrice,
+                                    tipAmount: correctionData.tipAmount,
+                                    reason: 'Backend ignoring add-ons removal'
+                                };
+                                localStorage.setItem('itt_booking_corrections', JSON.stringify(persistentCorrections));
+                                console.log('🔧 Stored persistent correction for booking', correctionData.bookingId);
+                            }
+                        }
+                        
+                        // Force re-render all booking displays
+                        if (document.getElementById('bookings').classList.contains('active')) {
+                            renderBookingsTable();
+                        }
+                        renderRecentBookings(); // Also update dashboard bookings
+                        updateDashboardStats();
+                        
+                        console.log('Booking display refresh completed');
+                    } else {
+                        throw new Error(result.message || 'Failed to update booking');
+                    }
+                } catch (error) {
+                    console.error('Error updating booking:', error);
+                    console.error('Full error details:', {
+                        message: error.message,
+                        stack: error.stack,
+                        bookingData: bookingData,
+                        bookingId: bookingId
+                    });
+                    showAlert('Error updating booking: ' + error.message, 'error');
+                } finally {
+                    // Reset loading state
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                }
+            });
+        }
+
+        // Action Functions
+        async function editBooking(bookingId) {
+            try {
+                // Get booking details
+                const response = await fetch(`${API_BASE}/bookings/${bookingId}`, {
+                    headers: API_HEADERS
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const result = await response.json();
+                
+                if (result.success && result.booking) {
+                    const booking = result.booking;
+                    
+                    // Populate edit form
+                    document.getElementById('editBookingId').value = booking.id;
+                    document.getElementById('editClientName').value = booking.client_name || '';
+                    document.getElementById('editClientEmail').value = booking.client_email || '';
+                    document.getElementById('editClientPhone').value = booking.client_phone || '';
+                    document.getElementById('editSessionStatus').value = booking.session_status || 'scheduled';
+                    document.getElementById('editPaymentStatus').value = booking.payment_status || 'unpaid';
+                    document.getElementById('editFinalPrice').value = booking.final_price || '';
+                    document.getElementById('editSpecialRequests').value = booking.special_requests || '';
+                    
+                    // Format datetime for input
+                    if (booking.scheduled_date) {
+                        const date = new Date(booking.scheduled_date);
+                        const formattedDate = date.toISOString().slice(0, 16);
+                        document.getElementById('editScheduledDate').value = formattedDate;
+                    }
+                    
+                    // Store service type to set after options are populated
+                    const bookingServiceType = booking.service_type || '';
+                    
+                    // Populate edit form with additional fields
+                    if (editPaymentManager) {
+                        editPaymentManager.populateFromBooking(booking);
+                    }
+                    
+                    // Store add-ons data to populate after checkboxes are created
+                    let addonsToRestore = [];
+                    if (booking.special_requests) {
+                        const addonsMatch = booking.special_requests.match(/Add-ons:\s*([^\n]*)/i);
+                        if (addonsMatch) {
+                            const addonsText = addonsMatch[1].trim();
+                            
+                            // Only process if there's actual addon content after "Add-ons:"
+                            if (addonsText && addonsText.length > 0) {
+                                console.log('Extracting add-ons for edit form:', addonsText);
+                                
+                                // Parse each addon from the text format
+                                const addonParts = addonsText.split(',').map(part => part.trim()).filter(part => part.length > 0);
+                                addonsToRestore = addonParts.map(addonText => {
+                                    // Extract addon name from text like "Reflexology (+$25)"
+                                    const nameMatch = addonText.match(/^([^(]+)/);
+                                    if (nameMatch) {
+                                        const addonName = nameMatch[1].trim();
+                                        
+                                        // Find matching addon config by name
+                                        const addonConfig = Object.values(window.ITTHealConfig?.ADDON_CONFIG || {})
+                                            .find(addon => addon.name.toLowerCase() === addonName.toLowerCase());
+                                        
+                                        if (addonConfig) {
+                                            return addonConfig.id;
+                                        }
+                                    }
+                                    return null;
+                                }).filter(id => id !== null);
+                            } else {
+                                console.log('Add-ons line found but empty - no add-ons to restore');
+                            }
+                        }
+                    }
+                    
+                    // Populate additional fields
+                    const editTipAmountInput = document.getElementById('editTipAmount');
+                    const editCompBookingCheckbox = document.getElementById('editCompBooking');
+                    
+                    if (editTipAmountInput) editTipAmountInput.value = booking.tip_amount || 0;
+                    if (editCompBookingCheckbox) editCompBookingCheckbox.checked = booking.comp_booking || false;
+                    
+                    // Populate service types and addons for edit form
+                    populateEditServiceTypes();
+                    populateEditAddons();
+                    
+                    // Set service type AFTER options are populated
+                    setTimeout(() => {
+                        document.getElementById('editServiceType').value = bookingServiceType;
+                        console.log('Set service type in edit form:', bookingServiceType);
+                        
+                        // Clear all addon checkboxes first
+                        const allAddonCheckboxes = document.querySelectorAll('#editAddonsContainer input[type="checkbox"]');
+                        allAddonCheckboxes.forEach(checkbox => {
+                            checkbox.checked = false;
+                        });
+                        console.log('Cleared all addon checkboxes');
+                        
+                        // Only restore add-ons if they exist in special_requests AND are not empty
+                        if (addonsToRestore.length > 0) {
+                            console.log('Restoring add-ons:', addonsToRestore);
+                            addonsToRestore.forEach(addonId => {
+                                const checkbox = document.querySelector(`#editAddonsContainer input[value="${addonId}"]`);
+                                if (checkbox) {
+                                    checkbox.checked = true;
+                                    console.log('Restored addon in edit form:', addonId);
+                                } else {
+                                    console.warn('Could not find checkbox for addon:', addonId);
+                                }
+                            });
+                        } else {
+                            console.log('No add-ons to restore - special_requests is empty or contains no add-ons');
+                        }
+                        
+                        // Additional safety check: if special_requests is empty, ensure no add-ons are checked
+                        if (!booking.special_requests || booking.special_requests.trim() === '' || !booking.special_requests.includes('Add-ons:')) {
+                            console.log('Special requests is empty or contains no add-ons - ensuring all add-ons are unchecked');
+                            const allEditAddons = document.querySelectorAll('#editAddonsContainer input[type="checkbox"]');
+                            allEditAddons.forEach(checkbox => {
+                                checkbox.checked = false;
+                            });
+                        }
+                        
+                        // Calculate pricing for edit form
+                        calculateEditPricing();
+                    }, 100);
+                    
+                    // Open edit modal
+                    document.getElementById('editBookingModal').classList.add('active');
+                } else {
+                    throw new Error('Booking not found');
+                }
+            } catch (error) {
+                console.error('Error loading booking for edit:', error);
+                showAlert('Error loading booking details: ' + error.message, 'error');
+            }
+        }
+
+        async function deleteBooking(bookingId) {
+            if (!confirm('Are you sure you want to delete this booking?')) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/bookings/${bookingId}`, {
+                    method: 'DELETE',
+                    headers: API_HEADERS
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert('Booking deleted successfully!', 'success');
+                    await loadBookings();
+                    if (document.getElementById('bookings').classList.contains('active')) {
+                        renderBookingsTable();
+                    }
+                    updateDashboardStats();
+                } else {
+                    throw new Error(result.message || 'Failed to delete booking');
+                }
+            } catch (error) {
+                console.error('Error deleting booking:', error);
+                showAlert('Error deleting booking: ' + error.message, 'error');
+            }
+        }
+
+        async function editAvailability(slotId) {
+            try {
+                // Prompt for date input
+                const date = prompt('Enter date to manage availability (YYYY-MM-DD):');
+                if (!date) return;
+                
+                // Validate date format
+                if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+                    showAlert('Invalid date format. Please use YYYY-MM-DD format.', 'error');
+                    return;
+                }
+                
+                // Check if override already exists
+                const checkResponse = await fetch(`${API_BASE}/api/bookings/availability?start_date=${date}&end_date=${date}`, {
+                    headers: {
+                        'x-admin-access': 'dr-shiffer-emergency-access',
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const checkData = await checkResponse.json();
+                const existingOverride = checkData.availability?.find(a => a.date === date);
+                
+                // Get override details
+                const isAvailable = confirm(`Set availability for ${date}:\nClick OK for AVAILABLE, Cancel for CLOSED`);
+                const reason = prompt('Enter reason for this override (optional):', existingOverride?.reason || '');
+                
+                // Create or update override
+                const response = await fetch(`${API_BASE}/api/bookings/availability`, {
+                    method: 'POST',
+                    headers: {
+                        'x-admin-access': 'dr-shiffer-emergency-access',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        date: date,
+                        is_available: isAvailable,
+                        reason: reason || (isAvailable ? 'Admin override - Available' : 'Admin override - Closed'),
+                        start_time: isAvailable ? '10:00:00' : '00:00:00',
+                        end_time: isAvailable ? '18:00:00' : '23:59:59'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert(`Availability override ${existingOverride ? 'updated' : 'created'} for ${date}`, 'success');
+                    loadSessions(); // Refresh the display
+                } else {
+                    showAlert(`Failed to manage availability: ${result.error}`, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Edit availability error:', error);
+                showAlert('Error managing availability. Please check console for details.', 'error');
+            }
+        }
+
+        async function deleteAvailability(slotId) {
+            if (!confirm('Are you sure you want to delete this availability slot?')) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/availability/${slotId}`, {
+                    method: 'DELETE',
+                    headers: API_HEADERS
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showAlert('Availability slot deleted successfully!', 'success');
+                    await loadAvailability();
+                    if (document.getElementById('availability').classList.contains('active')) {
+                        renderCalendar();
+                    }
+                } else {
+                    throw new Error(result.message || 'Failed to delete availability slot');
+                }
+            } catch (error) {
+                console.error('Error deleting availability:', error);
+                showAlert('Error deleting availability slot: ' + error.message, 'error');
+            }
+        }
+
+        function viewClientHistory(clientEmail) {
+            // Show client booking history
+            try {
+                const clientBookings = sessions.filter(s => s.client_email === clientEmail);
+                const historyHtml = clientBookings.map(booking => 
+                    `<div style="border: 1px solid #ddd; padding: 10px; margin: 5px; border-radius: 5px;">
+                        <strong>Date:</strong> ${new Date(booking.scheduled_date).toLocaleDateString()}<br>
+                        <strong>Service:</strong> ${booking.session_type} (${booking.duration_minutes} min)<br>
+                        <strong>Status:</strong> ${booking.session_status}<br>
+                        <strong>Payment:</strong> ${booking.payment_status}
+                    </div>`
+                ).join('');
+                
+                if (clientBookings.length > 0) {
+                    showAlert(`<div style="max-height: 300px; overflow-y: auto;">${historyHtml}</div>`, 'info');
+                } else {
+                    showAlert('No booking history found for this client.', 'info');
+                }
+            } catch (error) {
+                showAlert('Error loading client history: ' + error.message, 'error');
+            }
+        }
+
+        function viewPaymentDetails(sessionId) {
+            // Show payment details for session
+            try {
+                const session = sessions.find(s => s.id === sessionId);
+                if (!session) {
+                    showAlert('Session not found.', 'error');
+                    return;
+                }
+                
+                const paymentDetails = `
+                    <div style="text-align: left; line-height: 1.6;">
+                        <h4>Payment Details</h4>
+                        <strong>Session ID:</strong> ${session.id}<br>
+                        <strong>Client:</strong> ${session.client_name || 'N/A'}<br>
+                        <strong>Email:</strong> ${session.client_email || 'N/A'}<br>
+                        <strong>Service:</strong> ${session.session_type}<br>
+                        <strong>Duration:</strong> ${session.duration_minutes} minutes<br>
+                        <strong>Date:</strong> ${new Date(session.scheduled_date).toLocaleDateString()}<br>
+                        <strong>Payment Status:</strong> ${session.payment_status}<br>
+                        <strong>Session Status:</strong> ${session.session_status}<br>
+                        <strong>Payment Intent:</strong> ${session.payment_intent_id || 'N/A'}<br>
+                        <strong>Stripe Session:</strong> ${session.stripe_session_id || 'N/A'}
+                    </div>
+                `;
+                
+                showAlert(paymentDetails, 'info');
+            } catch (error) {
+                showAlert('Error loading payment details: ' + error.message, 'error');
+            }
+        }
+
+        // Utility Functions
+        function formatDateTime(dateString) {
+            if (!dateString) return 'Not set';
+            
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            } catch (error) {
+                return 'Invalid date';
+            }
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return 'Not set';
+            
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString();
+            } catch (error) {
+                return 'Invalid date';
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+
+        function showAlert(message, type = 'info') {
+            // Create alert element
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            
+            // Insert at top of content area
+            const content = document.querySelector('.admin-content');
+            content.insertBefore(alert, content.firstChild);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.parentNode.removeChild(alert);
+                }
+            }, 5000);
+        }
+
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Keyboard accessibility for modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                }
+                
+            }
+        });
+
+        // COMPREHENSIVE SPINNER FIX - Remove all persistent loading states
+        function forceRemoveAllSpinners() {
+            // Remove loading classes from all elements
+            const allLoadingElements = document.querySelectorAll('.loading');
+            allLoadingElements.forEach(el => {
+                el.classList.remove('loading');
+            });
+            
+            // Specifically target booking cards
+            const bookingCards = document.querySelectorAll('.booking-card');
+            bookingCards.forEach(card => {
+                card.classList.remove('loading');
+                const loadingChildren = card.querySelectorAll('.loading');
+                loadingChildren.forEach(child => child.classList.remove('loading'));
+            });
+            
+            console.log('🔧 Force removed loading classes from all elements');
+        }
+
+        // Run spinner fix on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(forceRemoveAllSpinners, 1000);
+        });
+
+        // Run spinner fix periodically to catch any that appear
+        setInterval(forceRemoveAllSpinners, 5000);
+
+        // Run spinner fix after any section change
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('admin-nav-link')) {
+                setTimeout(forceRemoveAllSpinners, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

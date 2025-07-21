@@ -1,0 +1,300 @@
+{
+  "timestamp": "2025-07-20T04:34:19.883Z",
+  "summary": {
+    "totalErrors": 4,
+    "totalWarnings": 1,
+    "categoriesChecked": [
+      "API_ENDPOINTS",
+      "DATA_ATTRIBUTES",
+      "REQUEST_RESPONSE_FIELDS",
+      "ENUM_VALUES",
+      "HTTP_METHODS"
+    ],
+    "validationPassed": false
+  },
+  "results": {
+    "apiEndpoints": [
+      "/api/web-booking/closed-dates",
+      "https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}",
+      "/api/web-booking/create-payment-intent",
+      "/api/bookings",
+      "/api/web-booking/confirm-payment/${bookingResult.data.session.id}"
+    ],
+    "dataAttributes": [
+      {
+        "attribute": "data-service-type",
+        "value": "30min_massage",
+        "fullMatch": "data-service-type=\"30min_massage\""
+      },
+      {
+        "attribute": "data-service",
+        "value": "30min",
+        "fullMatch": "data-service=\"30min\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "$85",
+        "fullMatch": "data-price=\"$85\""
+      },
+      {
+        "attribute": "data-service-type",
+        "value": "60min_massage",
+        "fullMatch": "data-service-type=\"60min_massage\""
+      },
+      {
+        "attribute": "data-service",
+        "value": "60min",
+        "fullMatch": "data-service=\"60min\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "$135",
+        "fullMatch": "data-price=\"$135\""
+      },
+      {
+        "attribute": "data-service-type",
+        "value": "90min_massage",
+        "fullMatch": "data-service-type=\"90min_massage\""
+      },
+      {
+        "attribute": "data-service",
+        "value": "90min",
+        "fullMatch": "data-service=\"90min\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "$180",
+        "fullMatch": "data-price=\"$180\""
+      },
+      {
+        "attribute": "data-service-type",
+        "value": "test",
+        "fullMatch": "data-service-type=\"test\""
+      },
+      {
+        "attribute": "data-service",
+        "value": "test",
+        "fullMatch": "data-service=\"test\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "$1.00",
+        "fullMatch": "data-price=\"$1.00\""
+      },
+      {
+        "attribute": "data-addon",
+        "value": "aromatherapy",
+        "fullMatch": "data-addon=\"aromatherapy\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "20",
+        "fullMatch": "data-price=\"20\""
+      },
+      {
+        "attribute": "data-addon",
+        "value": "hot_stones",
+        "fullMatch": "data-addon=\"hot_stones\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "25",
+        "fullMatch": "data-price=\"25\""
+      },
+      {
+        "attribute": "data-addon",
+        "value": "coldstone_facial",
+        "fullMatch": "data-addon=\"coldstone_facial\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "30",
+        "fullMatch": "data-price=\"30\""
+      },
+      {
+        "attribute": "data-addon",
+        "value": "peppermint_scalp",
+        "fullMatch": "data-addon=\"peppermint_scalp\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "18",
+        "fullMatch": "data-price=\"18\""
+      },
+      {
+        "attribute": "data-addon",
+        "value": "heated_mask",
+        "fullMatch": "data-addon=\"heated_mask\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "22",
+        "fullMatch": "data-price=\"22\""
+      },
+      {
+        "attribute": "data-addon",
+        "value": "reflexology",
+        "fullMatch": "data-addon=\"reflexology\""
+      },
+      {
+        "attribute": "data-price",
+        "value": "28",
+        "fullMatch": "data-price=\"28\""
+      },
+      {
+        "attribute": "data-validate",
+        "value": "name",
+        "fullMatch": "data-validate=\"name\""
+      },
+      {
+        "attribute": "data-validate",
+        "value": "email",
+        "fullMatch": "data-validate=\"email\""
+      },
+      {
+        "attribute": "data-validate",
+        "value": "phone",
+        "fullMatch": "data-validate=\"phone\""
+      },
+      {
+        "attribute": "data-update",
+        "value": "price",
+        "fullMatch": "data-update=\"price\""
+      },
+      {
+        "attribute": "data-hover",
+        "value": "true",
+        "fullMatch": "data-hover=\"true\""
+      },
+      {
+        "attribute": "data-update",
+        "value": "price",
+        "fullMatch": "data-update=\"price\""
+      }
+    ],
+    "requestFields": [
+      "amount",
+      "service_type",
+      "client_info"
+    ],
+    "responseFields": [
+      "json",
+      "success",
+      "data",
+      "ok",
+      "session",
+      "receipt_number",
+      "sessionId",
+      "error",
+      "status"
+    ],
+    "enumValues": [
+      [
+        "service_types",
+        [
+          "30min_massage",
+          "60min_massage",
+          "90min_massage",
+          "test"
+        ]
+      ],
+      [
+        "payment_methods",
+        [
+          "credit_card",
+          "complimentary",
+          "cash"
+        ]
+      ],
+      [
+        "booking_statuses",
+        [
+          "pending",
+          "confirmed",
+          "completed",
+          "cancelled"
+        ]
+      ]
+    ],
+    "httpMethods": [
+      [
+        "/api/web-booking/create-payment-intent",
+        [
+          "POST"
+        ]
+      ],
+      [
+        "/api/bookings",
+        [
+          "POST"
+        ]
+      ],
+      [
+        "/api/web-booking/confirm-payment/${bookingResult.data.session.id}",
+        [
+          "POST"
+        ]
+      ]
+    ]
+  },
+  "errors": [
+    {
+      "category": "ENUM_VALUES",
+      "message": "Backend rejected service type: 30min_massage",
+      "details": {
+        "enumType": "service_types",
+        "value": "30min_massage",
+        "backendResponse": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n",
+        "httpStatus": 502
+      },
+      "timestamp": "2025-07-20T04:34:19.877Z"
+    },
+    {
+      "category": "ENUM_VALUES",
+      "message": "Backend rejected service type: 60min_massage",
+      "details": {
+        "enumType": "service_types",
+        "value": "60min_massage",
+        "backendResponse": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n",
+        "httpStatus": 502
+      },
+      "timestamp": "2025-07-20T04:34:19.878Z"
+    },
+    {
+      "category": "ENUM_VALUES",
+      "message": "Backend rejected service type: 90min_massage",
+      "details": {
+        "enumType": "service_types",
+        "value": "90min_massage",
+        "backendResponse": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n",
+        "httpStatus": 502
+      },
+      "timestamp": "2025-07-20T04:34:19.879Z"
+    },
+    {
+      "category": "ENUM_VALUES",
+      "message": "Backend rejected service type: test",
+      "details": {
+        "enumType": "service_types",
+        "value": "test",
+        "backendResponse": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n",
+        "httpStatus": 502
+      },
+      "timestamp": "2025-07-20T04:34:19.880Z"
+    }
+  ],
+  "warnings": [
+    {
+      "category": "DATA_ATTRIBUTES",
+      "message": "Unused data attributes found: data-service-type, data-service, data-price, data-addon, data-validate, data-update, data-hover",
+      "details": {},
+      "timestamp": "2025-07-20T04:34:19.873Z"
+    }
+  ],
+  "recommendations": [
+    "Add this validation script to your CI/CD pipeline",
+    "Run validation before each deployment",
+    "Consider using TypeScript for better type safety",
+    "Implement API contract testing"
+  ]
+}

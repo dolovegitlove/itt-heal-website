@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-07-14 17:14:56",
+  "checks": {
+    "website": [2025-07-14 17:14:56] 🌐 Checking website accessibility...
+[2025-07-14 17:15:00] ALERT [CRITICAL]: Website is not accessible (HTTP 000)
+false,
+    "api": [2025-07-14 17:15:00] 🔗 Checking API health...
+[2025-07-14 17:15:04] ALERT [CRITICAL]: API health check failed: 
+false,
+    "backend": [2025-07-14 17:15:04] ⚙️  Checking backend processes...
+[2025-07-14 17:15:04] ✅ Backend process is running
+true,
+    "database": [2025-07-14 17:15:04] 🗄️  Checking database connectivity...
+[2025-07-14 17:15:08] ALERT [HIGH]: Database connection failed
+false,
+    "disk_space": [2025-07-14 17:15:08] 💾 Checking disk space...
+[2025-07-14 17:15:08] ✅ Disk space OK (74% used)
+true,
+    "ssl": [2025-07-14 17:15:08] 🔒 Checking SSL certificate...
+[2025-07-14 17:15:12] ALERT [HIGH]: Could not check SSL certificate
+false,
+    "errors": [2025-07-14 17:15:12] 📋 Checking error logs...
+[2025-07-14 17:15:12] ✅ Error logs look clean (2 recent errors)
+true,
+    "flows": [2025-07-14 17:15:12] 🔬 Testing critical user flows...
+[2025-07-14 17:15:16] ALERT [HIGH]: Booking system not responding correctly
+false,
+    "enums": [2025-07-14 17:15:16] 🎯 Checking enum consistency...
+[2025-07-14 17:15:16] ✅ Enum consistency check passed
+true
+  }
+}

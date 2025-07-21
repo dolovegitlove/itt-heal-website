@@ -363,33 +363,33 @@
                         }
                     }
                     
-                    /* Force light mode with sage background - override any dark mode preferences */
+                    /* Lavender & cream spa theme - override any dark mode preferences */
                     #custom-calendar-container {
-                        background: #f0f4f0 !important;
-                        border-color: #d4dcd4 !important;
-                        color: #2d3a2d !important;
+                        background: #fdfcf7 !important;
+                        border-color: #e5d8f0 !important;
+                        color: #4a3b5c !important;
                     }
                     
                     #calendar-header button {
-                        background: #e8ece8 !important;
-                        color: #2d3a2d !important;
-                        border-color: #c8d0c8 !important;
+                        background: #f3eef8 !important;
+                        color: #4a3b5c !important;
+                        border-color: #d5c7e0 !important;
                     }
                     
                     #calendar-header button:hover {
-                        background: #dce4dc !important;
-                        border-color: #b8c4b8 !important;
+                        background: #edebf7 !important;
+                        border-color: #c4b5d3 !important;
                     }
                     
                     .calendar-date:not([disabled]):not([role="columnheader"]) {
                         background: #ffffff !important;
-                        color: #2d3a2d !important;
-                        border-color: #c8d0c8 !important;
+                        color: #4a3b5c !important;
+                        border-color: #e5d8f0 !important;
                     }
                     
                     .calendar-date[role="columnheader"] {
                         background: transparent !important;
-                        color: #5a6a5a !important;
+                        color: #7a6b8a !important;
                         border: none !important;
                     }
                 </style>
@@ -522,11 +522,11 @@
                 `;
 
                 if (isPastDate || !isBusinessDay || isClosedDate) {
-                    // Closed/unavailable styling - Light sage
+                    // Closed/unavailable styling - Lavender & cream
                     cellStyle += `
-                        background: #e8ece8;
-                        color: #6b7b6b;
-                        border-color: #c8d0c8;
+                        background: #f8f4fc;
+                        color: #8a7a9a;
+                        border-color: #e5d8f0;
                         cursor: not-allowed;
                     `;
                     dateCell.disabled = true;

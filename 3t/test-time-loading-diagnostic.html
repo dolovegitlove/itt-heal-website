@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Loading Diagnostic</title>
+</head>
+<body>
+    <h1>Time Loading Diagnostic</h1>
+    
+    <button onclick="testTimeLoading()">Test Time Loading</button>
+    <button onclick="checkModule()">Check Module</button>
+    <button onclick="testAPI()">Test API Directly</button>
+    
+    <div id="results"></div>
+    
+    <script>
+        function log(message) {
+            document.getElementById('results').innerHTML += `<p>${message}</p>`;
+            console.log(message);
+        }
+        
+        function checkModule() {
+            log('=== Module Check ===');
+            log(`BookingAvailability exists: ${typeof window.BookingAvailability !== 'undefined'}`);
+            
+            if (window.BookingAvailability) {
+                log(`Has init: ${typeof window.BookingAvailability.init === 'function'}`);
+                log(`Has loadTimeSlots: ${typeof window.BookingAvailability.loadTimeSlots === 'function'}`);
+                log(`Has refresh: ${typeof window.BookingAvailability.refresh === 'function'}`);
+                log(`isLoading: ${window.BookingAvailability.isLoading}`);
+            }
+        }
+        
+        function testTimeLoading() {
+            log('=== Testing Time Loading ===');
+            
+            // Create mock elements
+            const container = document.createElement('div');
+            container.innerHTML = `
+                <input type="date" id="booking-date" value="${new Date().toISOString().split('T')[0]}">
+                <select id="booking-time"><option value="">Loading...</option></select>
+                <div id="time-loading" style="display:none;">Loading...</div>
+            `;
+            document.body.appendChild(container);
+            
+            if (window.BookingAvailability) {
+                log('Calling BookingAvailability.loadTimeSlots()...');
+                window.BookingAvailability.loadTimeSlots();
+            } else {
+                log('ERROR: BookingAvailability not found!');
+            }
+        }
+        
+        async function testAPI() {
+            log('=== Testing API Directly ===');
+            
+            const practitionerId = '060863f2-0623-4785-b01a-f1760cfb8d14';
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const dateStr = tomorrow.toISOString().split('T')[0];
+            const serviceType = '90min_massage';
+            
+            const url = `https://ittheal.com/api/web-booking/availability/${practitionerId}/${dateStr}?service_type=${serviceType}`;
+            log(`Testing URL: ${url}`);
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                log(`Response status: ${response.status}`);
+                log(`Response data: ${JSON.stringify(data, null, 2)}`);
+                
+                if (data.success && data.data && data.data.available_slots) {
+                    log(`Available slots: ${data.data.available_slots.length}`);
+                } else {
+                    log('No available slots in response');
+                }
+            } catch (error) {
+                log(`API Error: ${error.message}`);
+            }
+        }
+    </script>
+    
+    <script src="./js/booking-availability.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Load Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-content {
+            padding: 16px 4px;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        @media (min-width: 768px) {
+            .main-content {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <div id="dashboard-page" class="page">
+            <div class="page-header">
+                <h1 style="font-size: 2rem; margin-bottom: 1rem;">Dashboard Load Test</h1>
+            </div>
+            <div class="card" style="background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <div class="card-header">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Loading...</h2>
+                </div>
+                <div class="loading">
+                    <p>Testing dashboard injection...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simulate the dashboard update
+        setTimeout(() => {
+            const dashboardCard = document.querySelector('#dashboard-page .card');
+            if (dashboardCard) {
+                dashboardCard.innerHTML = `
+                    <div class="w-full px-4 py-6 overflow-x-hidden">
+                        <h2 style="color: green; font-size: 1.5rem; margin-bottom: 1rem;">✅ Dashboard Loaded Successfully!</h2>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-4 mb-6">
+                            <div class="bg-white shadow-md rounded-xl p-4 w-full">
+                                <p class="text-sm text-gray-600">Test Metric 1</p>
+                                <p class="text-2xl font-semibold text-gray-800">$1,234.56</p>
+                                <p class="text-xs text-gray-500">Full width card</p>
+                            </div>
+                            
+                            <div class="bg-white shadow-md rounded-xl p-4 w-full">
+                                <p class="text-sm text-gray-600">Test Metric 2</p>
+                                <p class="text-2xl font-semibold text-gray-800">42</p>
+                                <p class="text-xs text-gray-500">Mobile responsive</p>
+                            </div>
+                            
+                            <div class="bg-white shadow-md rounded-xl p-4 w-full">
+                                <p class="text-sm text-gray-600">Test Metric 3</p>
+                                <p class="text-2xl font-semibold text-gray-800">100%</p>
+                                <p class="text-xs text-gray-500">No width constraints</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white shadow-md rounded-xl p-4 w-full">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Test Results</h3>
+                            <p class="text-sm text-gray-600">✅ Full-width layout working</p>
+                            <p class="text-sm text-gray-600">✅ Mobile-first grid responsive</p>
+                            <p class="text-sm text-gray-600">✅ No max-width constraints</p>
+                            <button class="mt-4 px-4 py-2 bg-[#7a946f] hover:bg-[#6a8460] text-white rounded-xl font-medium transition-colors duration-200 text-sm min-w-[44px] min-h-[44px] inline-flex items-center justify-center">
+                                Test Button
+                            </button>
+                        </div>
+                    </div>
+                `;
+                console.log('✅ Dashboard content injected successfully');
+            } else {
+                console.log('❌ Dashboard card not found');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Integrative Touch Therapies</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .app-store-btn {
+            transition: transform 0.2s ease-in-out;
+        }
+        .app-store-btn:hover {
+            transform: scale(1.05);
+        }
+        .addon-card {
+            transition: all 0.3s ease;
+        }
+        .addon-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="/assets/itt-heal-lotus.png" alt="ITT Heal" class="h-10 w-10">
+                    <h1 class="text-2xl font-bold">Integrative Touch Therapies</h1>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm opacity-90">940.268.5999</p>
+                    <p class="text-sm opacity-90">info@ittheal.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Main Confirmation Card -->
+        <div class="bg-white rounded-2xl card-shadow p-8 mb-8">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Booking Confirmed!</h1>
+                <p class="text-lg text-gray-600">Your appointment has been successfully scheduled</p>
+            </div>
+
+            <!-- Appointment Details -->
+            <div class="bg-blue-50 rounded-xl p-6 mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Appointment Details</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Service</p>
+                        <p class="font-semibold text-gray-900" id="service-name">90-Minute Integrative Fascia</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Duration</p>
+                        <p class="font-semibold text-gray-900" id="duration">90 minutes</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Date & Time</p>
+                        <p class="font-semibold text-gray-900" id="appointment-datetime">Monday, July 14, 2025 at 2:00 PM</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Practitioner</p>
+                        <p class="font-semibold text-gray-900" id="practitioner-name">Dr. Shiffer, CST, LMT</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Confirmation Number</p>
+                        <p class="font-semibold text-blue-600" id="confirmation-number">ITT-2025-12345</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Total Paid</p>
+                        <p class="font-semibold text-green-600" id="total-amount">$190.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="bg-yellow-50 rounded-xl p-6 mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">What Happens Next?</h3>
+                <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-sm font-bold">1</div>
+                        <p class="text-gray-700">Email confirmation with appointment details has been sent to your inbox</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-sm font-bold">2</div>
+                        <p class="text-gray-700">SMS reminder will be sent 24 hours before your appointment</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-sm font-bold">3</div>
+                        <p class="text-gray-700">Arrive 10 minutes early for your appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Our App Section -->
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl card-shadow p-8 mb-8 text-white">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold mb-3">📱 Download the ITT Heal App</h2>
+                <p class="text-lg opacity-90">Take your wellness journey with you anywhere</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Book appointments instantly</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Track your wellness progress</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>AI-powered wellness insights</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Exclusive app-only features</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#" class="app-store-btn inline-block">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="h-14">
+                        </a>
+                        <a href="#" class="app-store-btn inline-block">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14">
+                        </a>
+                    </div>
+                    <p class="text-sm opacity-75 mt-3">Coming Soon - Be the first to know!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add-On Services -->
+        <div class="bg-white rounded-2xl card-shadow p-8 mb-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">🌟 Enhance Your Next Session</h2>
+                <p class="text-gray-600">Add these premium services to your next appointment</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Hot Stone Add-on -->
+                <div class="addon-card bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-200">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-full mb-3">
+                            <span class="text-2xl">🔥</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Hot Stone Therapy</h3>
+                        <p class="text-orange-600 font-bold text-xl">+$25</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Heated basalt stones placed on key points to deeply relax muscles and improve circulation.</p>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• Deep muscle relaxation</li>
+                        <li>• Enhanced circulation</li>
+                        <li>• Stress relief</li>
+                    </ul>
+                </div>
+
+                <!-- Aromatherapy Add-on -->
+                <div class="addon-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-3">
+                            <span class="text-2xl">🌸</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Aromatherapy</h3>
+                        <p class="text-purple-600 font-bold text-xl">+$15</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Custom essential oil blends to enhance relaxation and promote healing.</p>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• Custom scent selection</li>
+                        <li>• Mood enhancement</li>
+                        <li>• Therapeutic benefits</li>
+                    </ul>
+                </div>
+
+                <!-- Extended Session -->
+                <div class="addon-card bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
+                            <span class="text-2xl">⏰</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Extended Time</h3>
+                        <p class="text-green-600 font-bold text-xl">+$45</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Add 30 minutes to your session for deeper therapeutic work.</p>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• Additional 30 minutes</li>
+                        <li>• Deeper tissue work</li>
+                        <li>• Enhanced results</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-gray-600 mb-4">Want to add any of these to your next appointment?</p>
+                <a href="tel:940-268-5999" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    Call to Add Services: 940.268.5999
+                </a>
+            </div>
+        </div>
+
+        <!-- Wellness Journey Section -->
+        <div class="bg-gradient-to-r from-teal-500 to-cyan-600 rounded-2xl card-shadow p-8 mb-8 text-white">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold mb-3">🌿 Your Wellness Journey Continues</h2>
+                <p class="text-lg opacity-90">Make the most of your therapeutic investment</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Pre-Session Tips:</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-yellow-300">💧</span>
+                            <span>Hydrate well 24 hours before your session</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-yellow-300">🍽️</span>
+                            <span>Eat a light meal 2 hours before</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-yellow-300">🧘</span>
+                            <span>Arrive with a calm, open mindset</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold">Post-Session Care:</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-300">💧</span>
+                            <span>Drink plenty of water to flush toxins</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-300">🛀</span>
+                            <span>Take a warm bath with Epsom salts</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-300">😴</span>
+                            <span>Get adequate rest for optimal healing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact & Location -->
+        <div class="bg-white rounded-2xl card-shadow p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Contact Information</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span class="text-gray-700">940.268.5999</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span class="text-gray-700">info@ittheal.com</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-blue-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="text-gray-700">123 Wellness Way</p>
+                                <p class="text-gray-700">Denton, TX 76201</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Need to Make Changes?</h3>
+                    <div class="space-y-4">
+                        <p class="text-gray-600">If you need to reschedule or have questions about your appointment:</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="tel:940-268-5999" class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                                </svg>
+                                Call Us
+                            </a>
+                            <a href="mailto:info@ittheal.com" class="inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                Email Us
+                            </a>
+                        </div>
+                        <p class="text-sm text-gray-500">24-hour cancellation policy applies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Return Home Button -->
+        <div class="text-center mt-8">
+            <a href="/" class="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Return to Homepage
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Populate appointment details from URL parameters or localStorage
+        function populateAppointmentDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookingData = JSON.parse(localStorage.getItem('lastBookingData') || '{}');
+            
+            // Update elements with booking data
+            if (bookingData.serviceName) {
+                document.getElementById('service-name').textContent = bookingData.serviceName;
+            }
+            
+            if (bookingData.duration) {
+                document.getElementById('duration').textContent = `${bookingData.duration} minutes`;
+            }
+            
+            if (bookingData.datetime) {
+                document.getElementById('appointment-datetime').textContent = bookingData.datetime;
+            }
+            
+            if (bookingData.practitioner) {
+                document.getElementById('practitioner-name').textContent = bookingData.practitioner;
+            }
+            
+            if (bookingData.confirmationNumber) {
+                document.getElementById('confirmation-number').textContent = bookingData.confirmationNumber;
+            }
+            
+            if (bookingData.totalAmount) {
+                document.getElementById('total-amount').textContent = `$${bookingData.totalAmount}`;
+            }
+            
+            // Clear the stored data after use
+            localStorage.removeItem('lastBookingData');
+        }
+        
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', populateAppointmentDetails);
+    </script>
+</body>
+</html>

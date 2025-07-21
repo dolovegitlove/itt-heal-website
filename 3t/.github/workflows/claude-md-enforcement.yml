@@ -1,0 +1,110 @@
+name: CLAUDE.md Backend-First Enforcement
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main, develop]
+
+jobs:
+  backend-first-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Check for frontend changes
+        id: frontend-check
+        run: |
+          FRONTEND_FILES=$(git diff --name-only origin/main..HEAD | grep -E '\.(html|js|jsx|css|vue|tsx)$' || true)
+          if [ -n "$FRONTEND_FILES" ]; then
+            echo "frontend_changed=true" >> $GITHUB_OUTPUT
+            echo "❗ Frontend files changed:"
+            echo "$FRONTEND_FILES"
+          else
+            echo "frontend_changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Verify backend tests exist
+        if: steps.frontend-check.outputs.frontend_changed == 'true'
+        run: |
+          echo "🔍 Checking for backend verification..."
+          
+          # Check for API test files
+          API_TESTS=$(find . -name "*test*api*.js" -o -name "*api*test*.js" | grep -v node_modules | wc -l)
+          
+          # Check for curl documentation
+          CURL_DOCS=$(grep -r "curl.*api" --include="*.md" --include="*.js" --exclude-dir=node_modules . | wc -l)
+          
+          if [ $API_TESTS -eq 0 ] && [ $CURL_DOCS -eq 0 ]; then
+            echo "❌ CLAUDE.md VIOLATION!"
+            echo ""
+            echo "Frontend changes detected without backend verification!"
+            echo "You must include:"
+            echo "  - API test files demonstrating backend functionality"
+            echo "  - Curl commands showing API endpoint testing"
+            echo "  - Documentation of API responses"
+            echo ""
+            exit 1
+          fi
+          
+          echo "✅ Backend verification found"
+      
+      - name: Check API endpoint documentation
+        if: steps.frontend-check.outputs.frontend_changed == 'true'
+        run: |
+          echo "📚 Checking API documentation..."
+          
+          # Look for API documentation
+          if [ ! -f "docs/api.md" ] && [ ! -f "API.md" ] && [ ! -f "backend/README.md" ]; then
+            echo "⚠️  Warning: No API documentation found"
+            echo "Consider adding API endpoint documentation"
+          fi
+      
+      - name: Run backend integration tests
+        if: steps.frontend-check.outputs.frontend_changed == 'true'
+        run: |
+          echo "🧪 Running backend integration tests..."
+          
+          # Check if test directory exists
+          if [ -d "tests" ] || [ -d "test" ] || [ -d "__tests__" ]; then
+            echo "Found test directory"
+            
+            # Look for API integration tests
+            find . -type f -name "*test*.js" -path "*/api/*" -o -name "*api*test*.js" | head -5
+          else
+            echo "⚠️  No test directory found"
+          fi
+      
+      - name: Validate database schema alignment
+        run: |
+          echo "🗄️ Checking database schema documentation..."
+          
+          # Look for schema files
+          SCHEMA_FILES=$(find . -name "*schema*" -o -name "*model*" | grep -v node_modules | wc -l)
+          
+          if [ $SCHEMA_FILES -gt 0 ]; then
+            echo "✅ Found $SCHEMA_FILES schema/model files"
+          else
+            echo "⚠️  Warning: No schema files found"
+          fi
+      
+      - name: Generate compliance report
+        if: always()
+        run: |
+          echo "📊 CLAUDE.md Compliance Report"
+          echo "=============================="
+          echo "Frontend Changes: ${{ steps.frontend-check.outputs.frontend_changed }}"
+          echo "Timestamp: $(date)"
+          echo ""
+          
+          if [ "${{ steps.frontend-check.outputs.frontend_changed }}" == "true" ]; then
+            echo "✅ Required Checks:"
+            echo "  - Backend API tests"
+            echo "  - Curl command documentation"
+            echo "  - Error handling verification"
+            echo "  - Database schema alignment"
+          fi

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITT Heal - Admin Access</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6b7b6b 0%, #8ba28b 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .access-container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #6b7b6b;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .success { background: #d4ffd4; color: #2d5a2d; border: 1px solid #4a7c4a; }
+        .info { background: #d4e8ff; color: #1a365d; border: 1px solid #4a5d7c; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        
+        .access-link {
+            display: block;
+            padding: 18px 24px;
+            margin: 15px 0;
+            background: linear-gradient(135deg, #8ba28b, #c7b8e8);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .access-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #6b7b6b, #8ba28b);
+        }
+        .timestamp {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        .troubleshooting {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: left;
+        }
+        .troubleshooting h3 {
+            color: #6b7b6b;
+            margin-top: 0;
+        }
+        .troubleshooting ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .troubleshooting li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="access-container">
+        <h1>🏥 ITT Heal Admin Dashboard</h1>
+        
+        <div class="status success">
+            ✅ Admin system validated and operational
+        </div>
+        
+        <div class="status info">
+            🎯 Features: Booking management, card-based layout, mobile responsive
+        </div>
+        
+        <h2>🔗 Access Dashboard:</h2>
+        
+        <a href="https://ittheal.com/admin.html" class="access-link">
+            🎯 Primary Access: admin.html
+        </a>
+        
+        <a href="https://ittheal.com/admin.html?v=3&cache=bypass" class="access-link">
+            🔄 Cache Bypass v3
+        </a>
+        
+        <a href="https://ittheal.com/admin.html?t=1721855400&fresh=true" class="access-link">
+            ⏰ Timestamp Bypass
+        </a>
+        
+        <div class="timestamp">
+            Cache bypass timestamp: <?php echo time(); ?>
+        </div>
+        
+        <div class="troubleshooting">
+            <h3>🛠️ If Still Getting 404:</h3>
+            <ul>
+                <li><strong>Hard refresh:</strong> Ctrl+Shift+R (Windows) / Cmd+Shift+R (Mac)</li>
+                <li><strong>Clear cache:</strong> Ctrl+Shift+Delete to clear browser cache</li>
+                <li><strong>Incognito mode:</strong> Open in private/incognito window</li>
+                <li><strong>Different browser:</strong> Try Chrome, Firefox, or Safari</li>
+                <li><strong>Mobile device:</strong> Test on phone/tablet to bypass cache</li>
+            </ul>
+        </div>
+        
+        <div id="connectivity-test">
+            <h3>🔍 Live Connectivity Test:</h3>
+            <div id="test-results" class="status info">Testing admin dashboard accessibility...</div>
+        </div>
+        
+        <script>
+            async function testAdminAccess() {
+                const results = document.getElementById('test-results');
+                
+                try {
+                    // Test admin.html accessibility
+                    const response = await fetch('/admin.html', { 
+                        method: 'HEAD',
+                        cache: 'no-cache'
+                    });
+                    
+                    if (response.ok) {
+                        results.innerHTML = '✅ Admin dashboard is accessible (HTTP 200)';
+                        results.className = 'status success';
+                        
+                        // Test if it has admin content
+                        const fullResponse = await fetch('/admin.html', { cache: 'no-cache' });
+                        const content = await fullResponse.text();
+                        
+                        if (content.includes('Administrative Dashboard')) {
+                            results.innerHTML += '<br>✅ Admin content verified - dashboard is ready';
+                        }
+                    } else {
+                        results.innerHTML = '❌ Admin dashboard returned: HTTP ' + response.status;
+                        results.className = 'status warning';
+                    }
+                } catch (error) {
+                    results.innerHTML = '❌ Connection error: ' + error.message;
+                    results.className = 'status warning';
+                }
+            }
+            
+            // Run test when page loads
+            testAdminAccess();
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+🧹 ITT Heal VPS Cleanup Script
+==============================
+
+📊 Initial disk usage:
+💾 Current disk usage:
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   39G   29G  7.4G  80% /
+
+📝 Cleaning PM2 logs...
+  Truncating: itt-backend-error.log
+  Truncating: itt-backend-ittz-error.log
+  Truncating: itt-backend-ittz-out.log
+  Truncating: itt-backend-out.log
+  ✅ PM2 logs cleaned
+
+🗑️  Removing temporary files...
+  ✅ Temporary files removed
+
+📋 Removing old log files...
+  ✅ Old log files removed
+
+📊 Cleaning validation reports...
+  ✅ Old validation reports removed
+
+📦 Cleaning npm cache...
+  ✅ npm cache cleaned
+
+🏗️  Cleaning build artifacts...
+  ✅ Old build artifacts cleaned
+
+🔒 Cleaning duplicate package-lock files...
+  ✅ Duplicate package-lock files removed
+
+📦 Node modules analysis:
+  Main site node_modules: 18M
+  Backend node_modules: 
+  Total nested node_modules: 4
+
+  💡 To remove all nested node_modules (saves ~10MB), run:
+     find /home/ittz/projects/itt/site -name 'node_modules' -type d -path '*/node_modules/*/node_modules' -exec rm -rf {} +
+
+📊 Final disk usage:
+💾 Current disk usage:
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   39G   29G  7.4G  80% /
+
+✅ Cleanup complete!
+
+💡 Additional cleanup options:
+   - Clear browser cache files: rm -rf ~/.cache/*
+   - Remove old kernel packages: sudo apt-get autoremove
+   - Clean apt cache: sudo apt-get clean
+

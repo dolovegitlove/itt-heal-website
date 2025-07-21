@@ -1,0 +1,4 @@
+timestamp=20250710_001442
+user=root
+pwd=/home/ittz/projects/itt/site
+git_hash=no-git
