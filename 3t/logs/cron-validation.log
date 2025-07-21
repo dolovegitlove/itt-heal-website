@@ -3325,3 +3325,118 @@ Node.js v22.16.0
 [2025-07-18 16:45:38] ✅ Disk space OK (64% used)
 [2025-07-18 16:45:38] 🔧 Auto-healing completed
 [2025-07-18 16:45:38] 😴 Sleeping for 600 seconds...
+[2025-07-21 01:35:48] 📋 Starting comprehensive validation...
+[2025-07-21 01:35:48] 🔹 Starting: CSS Classes Validation
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/3t/validate-css-classes.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+[2025-07-21 01:35:48] ❌ Failed: CSS Classes Validation
+[2025-07-21 01:35:48] 🔹 Starting: Button Consistency Check
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/3t/validate-button-consistency.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+[2025-07-21 01:35:48] ❌ Failed: Button Consistency Check
+[2025-07-21 01:35:48] 🔹 Starting: Enum Consistency Check
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/3t/validate-enum-consistency-enhanced.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+[2025-07-21 01:35:48] ❌ Failed: Enum Consistency Check
+[2025-07-21 01:35:48] 🔹 Starting: Live Booking System Test
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/3t/test-booking-crud-live.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+[2025-07-21 01:35:48] ❌ Failed: Live Booking System Test
+[2025-07-21 01:35:48] 🔹 Starting: Health Check Endpoint
+{"status":"OK","timestamp":"2025-07-21T06:35:48.278Z","service":"ITT Heal Shared API","version":"1.0.0","database":"connected","clients":["site","app"]}[2025-07-21 01:35:48] ✅ Passed: Health Check Endpoint
+[2025-07-21 01:35:48] 🔹 Starting: System Health Monitor
+[2025-07-21 01:35:48] 🚀 ITT Heal Health Monitor Started
+[2025-07-21 01:35:48] ⏰ Monitoring interval: 600s
+[2025-07-21 01:35:48] 🌐 Monitoring site: https://ittheal.com
+[2025-07-21 01:35:48] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2025-07-21 01:35:48] 🔍 Starting health check cycle...
+[2025-07-21 01:35:48] 🌐 Checking website accessibility...
+[2025-07-21 01:35:48] ✅ Website is accessible (HTTP 200)
+[2025-07-21 01:35:48] 🔗 Checking API health...
+[2025-07-21 01:35:48] ✅ API is healthy
+[2025-07-21 01:35:48] ⚙️  Checking backend processes...
+[2025-07-21 01:35:48] ✅ Backend process is running
+[2025-07-21 01:35:48] 🗄️  Checking database connectivity...
+[2025-07-21 01:35:48] ✅ Database is connected
+[2025-07-21 01:35:48] 💾 Checking disk space...
+[2025-07-21 01:35:48] ✅ Disk space OK (68% used)
+[2025-07-21 01:35:48] 🔒 Checking SSL certificate...
+[2025-07-21 01:35:48] ✅ SSL certificate valid (44 days remaining)
+[2025-07-21 01:35:48] 📋 Checking error logs...
+[2025-07-21 01:35:48] ✅ Error logs look clean (2 recent errors)
+[2025-07-21 01:35:48] 🔬 Testing critical user flows...
+[2025-07-21 01:35:48] ✅ Booking system accessible
+[2025-07-21 01:35:48] 🎯 Checking enum consistency...
+[2025-07-21 01:35:48] ALERT [MEDIUM]: Enum consistency issues detected
+[2025-07-21 01:35:49] ⚠️  Some health checks failed - attempting auto-healing
+[2025-07-21 01:35:49] 🔧 Performing auto-healing actions...
+[2025-07-21 01:35:49] ⚙️  Checking backend processes...
+[2025-07-21 01:35:49] ✅ Backend process is running
+[2025-07-21 01:35:49] 💾 Checking disk space...
+[2025-07-21 01:35:49] ✅ Disk space OK (68% used)
+[2025-07-21 01:35:49] 🔧 Auto-healing completed
+[2025-07-21 01:35:49] 😴 Sleeping for 600 seconds...

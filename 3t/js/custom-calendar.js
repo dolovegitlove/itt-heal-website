@@ -9,43 +9,36 @@
         currentDate: new Date(),
         selectedDate: null,
         closedDates: [],
-        businessDays: [1, 3, 5, 6], // Monday, Wednesday, Friday, Saturday
-        holidays: {
-            '2025-01-01': 'New Year\'s Day',
-            '2025-05-26': 'Memorial Day',
-            '2025-07-04': 'Independence Day',
-            '2025-07-20': 'Closed',
-            '2025-09-01': 'Labor Day',
-            '2025-11-27': 'Thanksgiving',
-            '2025-11-28': 'Black Friday',
-            '2025-12-25': 'Christmas Day',
-            '2025-12-31': 'New Year\'s Eve'
-        },
+        // REMOVED: Hardcoded business rules - all fetched from API
+        // This ensures single source of truth from backend
         
         async init() {
-            await this.fetchClosedDates();
+            await this.fetchBusinessRules(); // Fetch all rules from API
             this.replaceDataInput();
             this.render();
             this.attachEventListeners();
-            console.log('✅ Custom calendar initialized');
+            console.log('✅ Custom calendar initialized with API-driven rules');
         },
 
-        async fetchClosedDates() {
+        async fetchBusinessRules() {
             try {
                 const startDate = new Date();
                 const endDate = new Date();
                 endDate.setDate(endDate.getDate() + 90);
                 
+                // Fetch ALL business rules from API - no hardcoded logic
                 const response = await fetch(`https://ittheal.com/api/web-booking/closed-dates?start_date=${startDate.toISOString().split('T')[0]}&end_date=${endDate.toISOString().split('T')[0]}`);
                 if (response.ok) {
                     const data = await response.json();
                     if (data.success && data.data && data.data.closed_dates) {
                         this.closedDates = data.data.closed_dates;
-                        console.log('✅ Closed dates loaded:', this.closedDates);
+                        console.log('✅ Business rules loaded from API:', this.closedDates.length, 'closed dates');
                     }
                 }
             } catch (error) {
-                console.error('Error fetching closed dates:', error);
+                console.error('Error fetching business rules from API:', error);
+                // Fallback: empty array - no hardcoded fallback logic
+                this.closedDates = [];
             }
         },
 
@@ -455,11 +448,10 @@
                 dateCell.type = 'button';
                 dateCell.textContent = day;
                 
-                // Check if date is available
+                // Check if date is available using API data only
                 const isPastDate = date < today;
-                const isBusinessDay = this.businessDays.includes(dayOfWeek);
                 const isClosedDate = this.closedDates.includes(dateString);
-                const isHoliday = this.holidays[dateString];
+                // Business day logic removed - determined by API closed dates response
                 const isSelected = this.selectedDate && 
                     date.toDateString() === this.selectedDate.toDateString();
 
@@ -480,15 +472,8 @@
                 if (isPastDate) {
                     ariaLabel += ', past date, unavailable';
                     dateCell.setAttribute('aria-disabled', 'true');
-                } else if (!isBusinessDay) {
-                    ariaLabel += ', closed day, unavailable';
-                    dateCell.setAttribute('aria-disabled', 'true');
                 } else if (isClosedDate) {
-                    if (isHoliday) {
-                        ariaLabel += `, closed for ${isHoliday}, unavailable`;
-                    } else {
-                        ariaLabel += ', closed, unavailable';
-                    }
+                    ariaLabel += ', closed day, unavailable';
                     dateCell.setAttribute('aria-disabled', 'true');
                 } else if (isSelected) {
                     ariaLabel += ', selected';
@@ -521,7 +506,7 @@
                     font-size: 1rem;
                 `;
 
-                if (isPastDate || !isBusinessDay || isClosedDate) {
+                if (isPastDate || isClosedDate) {
                     // Closed/unavailable styling - Lavender & cream
                     cellStyle += `
                         background: #f8f4fc;
@@ -532,11 +517,7 @@
                     dateCell.disabled = true;
                     dateCell.tabIndex = -1;
                     
-                    // Add holiday indicator
-                    if (isHoliday) {
-                        dateCell.title = isHoliday;
-                        dateCell.innerHTML = `${day}<span style="position: absolute; top: 2px; right: 2px; font-size: 0.6rem;" aria-hidden="true">🚫</span>`;
-                    }
+                    // Closed date - all closed dates handled uniformly by API
                 } else if (isSelected) {
                     // Selected styling - Sage green accent
                     cellStyle += `
@@ -576,7 +557,7 @@
                 dateCell.style.cssText = cellStyle;
                 
                 // Event handlers for available dates
-                if (!isPastDate && isBusinessDay && !isClosedDate) {
+                if (!isPastDate && !isClosedDate) {
                     // Click handler
                     dateCell.addEventListener('click', () => this.selectDate(date));
                     
@@ -602,6 +583,12 @@
                 hiddenInput.value = dateString;
                 // Trigger change event for other scripts
                 hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+                
+                // Direct call to BookingAvailability to ensure times load
+                if (window.BookingAvailability && window.BookingAvailability.refresh) {
+                    console.log('📅 Calendar triggering BookingAvailability refresh for:', dateString);
+                    window.BookingAvailability.refresh();
+                }
             }
             
             // Update display

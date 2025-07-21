@@ -11,7 +11,7 @@ const { SESSION_TYPES, SERVICE_TYPES } = require('../shared/constants/enums');
         currentDate: new Date(),
         selectedDate: null,
         selectedTime: null,
-        businessDays: [1, 3, 5, 6], // Monday, Wednesday, Friday, Saturday
+        // REMOVED: Hardcoded business days - all validation via API
         closedDates: [], // Will be populated from backend
         
         init() {

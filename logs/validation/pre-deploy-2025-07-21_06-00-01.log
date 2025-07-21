@@ -1,0 +1,122 @@
+🚀 Pre-deployment Validation Started: Mon Jul 21 06:00:01 AM CDT 2025
+🔍 Running full validation suite...
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/comprehensive-ui-validator.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/validate-edit-functionality.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/validate-loading-states.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+🔗 Running frontend-backend integration validation...
+[2025-07-21T11:00:01.718Z] ℹ️ 🚀 Starting comprehensive frontend-backend integration validation...
+[2025-07-21T11:00:01.718Z] ℹ️ This will catch ALL types of mismatches between frontend and backend!
+[2025-07-21T11:00:01.719Z] ℹ️ 🔍 Extracting API endpoints from frontend code...
+[2025-07-21T11:00:01.721Z] ℹ️ ✅ Found 1 API endpoints in frontend
+[2025-07-21T11:00:01.721Z] ℹ️    - https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}
+[2025-07-21T11:00:01.721Z] ℹ️ 🔍 Validating API endpoint existence...
+[2025-07-21T11:00:01.722Z] ℹ️    Testing: https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}
+[2025-07-21T11:00:01.790Z] ℹ️    ✅ https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType} - EXISTS
+[2025-07-21T11:00:01.790Z] ℹ️ 🔍 Extracting data attributes from HTML...
+[2025-07-21T11:00:01.791Z] ℹ️ ✅ Found 2 data attributes
+[2025-07-21T11:00:01.791Z] ℹ️ 🔍 Validating data attribute usage consistency...
+[2025-07-21T11:00:01.791Z] ⚠️ WARNING [DATA_ATTRIBUTES]: Unused data attributes found: data-hover, data-update
+[2025-07-21T11:00:01.791Z] ℹ️ ✅ Data attribute usage validation completed
+[2025-07-21T11:00:01.791Z] ℹ️ 🔍 Extracting request/response field patterns...
+[2025-07-21T11:00:01.792Z] ℹ️ ✅ Found 0 request fields, 7 response fields
+[2025-07-21T11:00:01.792Z] ℹ️ 🔍 Extracting enum values from frontend...
+[2025-07-21T11:00:01.792Z] ℹ️ ✅ Found 3 enum categories
+[2025-07-21T11:00:01.792Z] ℹ️ 🔍 Validating enum values with backend...
+[2025-07-21T11:00:01.792Z] ℹ️    Testing service_types: 
+[2025-07-21T11:00:01.792Z] ℹ️    Testing payment_methods: credit_card, complimentary, cash
+[2025-07-21T11:00:01.792Z] ℹ️    Testing booking_statuses: pending, confirmed, completed, cancelled
+[2025-07-21T11:00:01.792Z] ℹ️ 🔍 Extracting HTTP methods from frontend...
+[2025-07-21T11:00:01.793Z] ℹ️ ✅ Found HTTP methods for 0 endpoints
+[2025-07-21T11:00:01.793Z] ℹ️ 🔍 Validating HTTP methods with backend...
+[2025-07-21T11:00:01.797Z] ℹ️ 📊 Generating comprehensive validation report...
+[2025-07-21T11:00:01.797Z] ℹ️ 📋 Report saved to ./logs/frontend-backend-validation-report.json
+[2025-07-21T11:00:01.797Z] ℹ️ 📊 VALIDATION SUMMARY:
+[2025-07-21T11:00:01.797Z] ℹ️    Errors: 0
+[2025-07-21T11:00:01.797Z] ℹ️    Warnings: 1
+[2025-07-21T11:00:01.797Z] ℹ️    API Endpoints: 1
+[2025-07-21T11:00:01.797Z] ℹ️    Data Attributes: 2
+[2025-07-21T11:00:01.797Z] ℹ️    Request Fields: 0
+[2025-07-21T11:00:01.797Z] ℹ️    Response Fields: 7
+[2025-07-21T11:00:01.797Z] ℹ️ ✅ ALL VALIDATIONS PASSED!
+[2025-07-21T11:00:01.797Z] ℹ️ 🎉 No frontend-backend mismatches detected!
+👥 Running real user validation...
+🎉 ITT Heal Website - Enhanced go.md Execution
+===============================================
+
+🔄 Restoring Session Context...
+✅ Context restored from: Unknown
+🔧 Last command: Unknown
+
+📍 Current Context: ITT Heal Website Production Environment
+🌐 Project Type: Full-Stack Website (HTML/CSS/JS + Node.js Backend)
+🔧 Tech Stack: HTML5, CSS3, JavaScript, Node.js, PostgreSQL, Nginx
+🚀 Deployment: Production-ready with SSL and security
+
+⚡ Ready to Continue Website Development!
+
+[2025-07-21 06:00:01] 🎯 Starting REAL USER EXPERIENCE VALIDATION (Option 2)
+[2025-07-21 06:00:02] 🤖 Starting automation services...
+[2025-07-21 06:00:02] ✅ Health Monitor already running
+[2025-07-21 06:00:02] ✅ Error Watcher already running
+[2025-07-21 06:00:02] ✅ Performance Monitor already running
+[2025-07-21 06:00:02] 🎯 Testing real user scenarios...
+[2025-07-21 06:00:02] ✅ User experience validation completed!
+📊 Pre-deployment Validation Summary:
+  - Comprehensive validation: ❌ FAILED
+  - Edit functionality: ❌ FAILED
+  - Loading states: ❌ FAILED
+  - Integration validation: ✅ PASSED
+  - Real user validation: ✅ PASSED
+🚨 DEPLOYMENT BLOCKED - 3 issues must be fixed
+🏁 Pre-deployment validation completed: Mon Jul 21 06:00:02 AM CDT 2025

@@ -167,48 +167,9 @@
             this.loadTimeSlots();
         },
 
-        isValidBookingDate(dateString) {
-            if (!dateString) return false;
-            
-            const selectedDate = new Date(dateString + 'T00:00:00');
-            const now = new Date();
-            
-            // For same-day booking, check business hours and advance requirement
-            if (selectedDate.toDateString() === now.toDateString()) {
-                const dayOfWeek = selectedDate.getDay();
-                
-                // Business hours by day of week (0=Sunday, 6=Saturday)
-                const businessHours = {
-                    0: null, // Sunday - CLOSED
-                    1: { start: 10, end: 18 }, // Monday: 10 AM - 6 PM
-                    2: null, // Tuesday - CLOSED  
-                    3: { start: 12, end: 20 }, // Wednesday: 12 PM - 8 PM
-                    4: null, // Thursday - CLOSED
-                    5: { start: 10, end: 18 }, // Friday: 10 AM - 6 PM
-                    6: { start: 11, end: 19 }  // Saturday: 11 AM - 7 PM
-                };
-                
-                const todayHours = businessHours[dayOfWeek];
-                if (!todayHours) {
-                    return false; // Closed today
-                }
-                
-                // Check if we're currently in business hours
-                const currentHour = now.getHours();
-                const currentMinutes = now.getMinutes();
-                const currentTime = currentHour + (currentMinutes / 60);
-                
-                // Check if there's at least 1 hour left before business closes
-                const endTime = todayHours.end;
-                const timeUntilClose = endTime - currentTime;
-                
-                // Allow if there's more than 1 hour until close
-                return timeUntilClose > 1;
-            }
-            
-            // For future dates, always allow (backend will validate business days)
-            return selectedDate >= now;
-        },
+        // REMOVED: Frontend booking date validation
+        // All booking rules validation now handled by backend API
+        // This ensures consistency and single source of truth
 
         loadTimeSlots() {
             // Prevent overlapping API calls
@@ -235,24 +196,8 @@
             }
             
 
-            // Temporarily bypass frontend date validation - let backend handle it
-            // Backend already validates business days and advance booking requirements
-            // if (!this.isValidBookingDate(selectedDate)) {
-            //     const selectedDateObj = new Date(selectedDate + 'T00:00:00');
-            //     const now = new Date();
-            //     const isToday = selectedDateObj.toDateString() === now.toDateString();
-            //     
-            //     if (isToday) {
-            //         timeSelect.innerHTML = '<option value="">No availability - Need 1 hour advance within business hours</option>';
-            //     } else {
-            //         timeSelect.innerHTML = '<option value="">Please select a valid business day</option>';
-            //     }
-            //     timeSelect.disabled = true;
-            //     if (loadingDiv) {
-            //         loadingDiv.style.display = 'none';
-            //     }
-            //     return;
-            // }
+            // Frontend validation REMOVED - backend API handles all booking rules
+            // This ensures single source of truth for business rules
             
             // Show loading state
             if (loadingDiv) {
@@ -362,9 +307,8 @@
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
             
-            // Build proper URL - handle /3t/ subdirectory context
-            const baseUrl = window.location.origin;
-            const apiUrl = `${baseUrl}/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`;
+            // Build proper URL - use absolute API endpoint like main site
+            const apiUrl = `https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`;
             
             console.log('🔍 Making API call to:', apiUrl);
             

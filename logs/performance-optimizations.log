@@ -1,1197 +1,985 @@
-[2025-07-20 00:00:33] OPTIMIZATION: Running hourly optimization tasks
-[2025-07-20 00:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 00:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 00:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 00:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 00:15:14] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 00:15:14] OPTIMIZATION: High CPU processes detected: postgres 2637773 15.3  3.0 270680 184616 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57958) idle
-postgres 2636891 11.9  2.8 268460 175372 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57922) idle
-ittz     2633618  9.4  4.5 12000708 275572 ?     Ssl  00:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2634889  9.3  2.6 257488 162660 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(38252) idle
-postgres 2634858  9.0  2.4 256636 149616 ?       Ss   00:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(38242) idle
-[2025-07-20 00:15:14] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 00:15:14] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 00:15:14] OPTIMIZATION: High memory processes: ittz     1729874  5.0 13.0 33433404 790464 pts/2 Sl+  Jul19   8:51 claude
-ittz     2633618  9.4  4.5 12000708 275572 ?     Ssl  00:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2637773 15.3  3.0 270680 184616 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57958) idle
-postgres 2636891 11.9  2.8 268460 175372 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57922) idle
-postgres 2634889  9.3  2.6 257488 162660 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(38252) idle
-[2025-07-20 00:15:14] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 00:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 00:15:15] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 00:15:15] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 00:15:15] OPTIMIZATION: Cleaning old log files
-[2025-07-20 00:15:15] OPTIMIZATION: Optimizing database performance
-[2025-07-20 00:15:15] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 00:15:15] OPTIMIZATION: Updating table statistics
-[2025-07-20 00:15:15] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 00:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 00:30:46] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:30:46] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 00:35:48] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:35:48] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 00:40:50] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:40:50] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 00:45:52] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:45:52] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 00:50:54] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:50:54] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 00:55:56] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 00:55:56] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:00:59] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:00:59] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:00:59] OPTIMIZATION: Running hourly optimization tasks
-[2025-07-20 01:06:01] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:06:01] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:11:03] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:11:03] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 01:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 01:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 01:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 01:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 01:15:16] OPTIMIZATION: High CPU processes detected: postgres 2951001 14.5  3.0 270952 184564 ?       Ss   01:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52890) idle
-postgres 2951844  8.0  2.8 268524 175708 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60928) idle
-ittz     2950399  7.9  4.5 12000200 276172 ?     Ssl  01:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2952896  7.4  2.8 268828 171788 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60966) idle
-ittz     1729874  5.0 14.4 33492976 876616 pts/2 Sl+  Jul19  11:50 claude
-[2025-07-20 01:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 01:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 01:15:16] OPTIMIZATION: High memory processes: ittz     1729874  5.0 14.4 33492976 876616 pts/2 Sl+  Jul19  11:50 claude
-ittz     2950399  7.9  4.5 12000200 276172 ?     Ssl  01:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2951001 14.5  3.0 270952 184564 ?       Ss   01:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52890) idle
-postgres 2951844  8.0  2.8 268524 175708 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60928) idle
-postgres 2952896  7.4  2.8 268828 171788 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60966) idle
-[2025-07-20 01:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 01:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 01:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 01:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 01:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 01:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 01:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 01:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 01:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 01:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:16:05] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:16:05] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:21:07] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:21:07] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:26:09] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:26:09] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:31:11] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:31:11] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:36:13] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:36:13] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:41:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:41:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:46:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:46:18] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:51:20] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:51:20] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 01:56:22] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 01:56:22] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:01:24] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:01:24] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:01:24] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:01:24] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:01:24] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:01:24] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:01:24] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:06:31] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:06:31] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:06:31] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:06:31] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:06:31] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:06:31] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:06:32] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:11:36] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:11:36] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:11:36] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:11:36] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:11:36] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:11:36] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:11:36] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 02:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 02:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 02:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 02:15:19] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 02:15:19] OPTIMIZATION: High CPU processes detected: ittz     3261381  7.4  4.5 12000456 275296 ?     Ssl  02:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3263444  7.3  2.9 270664 177968 ?       Ss   02:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48148) idle
-postgres 3262438  7.1  2.7 257664 163760 ?       Ss   02:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36392) idle
-postgres 3263962  6.5  2.8 268568 173036 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48154) idle
-postgres 3263852  5.9  2.8 268904 172376 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48150) idle
-[2025-07-20 02:15:19] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 02:15:19] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 02:15:19] OPTIMIZATION: High memory processes: ittz     1729874  4.0 14.4 33493040 876920 pts/2 Sl+  Jul19  12:02 claude
-ittz     3261381  7.4  4.5 12000456 275296 ?     Ssl  02:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3263444  7.3  2.9 270664 177968 ?       Ss   02:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48148) idle
-postgres 3263962  6.5  2.8 268568 173036 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48154) idle
-postgres 3263852  5.9  2.8 268904 172376 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48150) idle
-[2025-07-20 02:15:19] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 02:15:19] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 02:15:19] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 02:15:19] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 02:15:20] OPTIMIZATION: Cleaning old log files
-[2025-07-20 02:15:20] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:15:20] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:15:20] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:15:20] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:15:20] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:15:20] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:16:40] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:16:40] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:16:40] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:16:40] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:16:40] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:16:40] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:16:40] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:21:45] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:21:45] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:21:45] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:21:45] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:21:45] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:21:45] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:21:45] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:26:49] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:26:49] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:26:49] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:26:49] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:26:49] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:26:49] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:26:49] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:31:53] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:31:53] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:31:53] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:31:53] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:31:53] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:31:53] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:31:53] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:36:57] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:36:57] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:36:57] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:36:57] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:36:57] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:36:57] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:36:57] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:42:02] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:42:02] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:42:02] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:42:02] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:42:02] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:42:02] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:42:02] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:47:06] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:47:06] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:47:06] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:47:06] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:47:06] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:47:06] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:47:06] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:52:10] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:52:10] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:52:10] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:52:10] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:52:10] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:52:10] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:52:10] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 02:57:15] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 02:57:15] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 02:57:15] OPTIMIZATION: Running daily optimization tasks
-[2025-07-20 02:57:15] OPTIMIZATION: Optimizing database performance
-[2025-07-20 02:57:15] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 02:57:15] OPTIMIZATION: Updating table statistics
-[2025-07-20 02:57:15] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 03:02:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:02:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:07:22] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:07:22] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:12:24] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:12:24] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 03:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 03:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 03:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 03:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 03:15:15] OPTIMIZATION: High CPU processes detected: postgres 3589241 13.6  3.0 270820 185320 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57878) idle
-postgres 3587037  9.6  2.6 257716 162540 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54208) idle
-ittz     3585949  9.1  4.5 12000716 274220 ?     Ssl  03:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3587948  7.8  2.8 268496 173276 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57848) idle
-postgres 3588950  4.8  1.9 238244 117804 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57862) idle
-[2025-07-20 03:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 03:15:15] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 03:15:15] OPTIMIZATION: High memory processes: ittz     1729874  4.2 11.4 33309708 691548 pts/2 Sl+  Jul19  15:10 claude
-ittz     3585949  9.1  4.5 12000716 274220 ?     Ssl  03:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3589241 13.6  3.0 270820 185320 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57878) idle
-postgres 3587948  7.8  2.8 268496 173276 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57848) idle
-postgres 3587037  9.6  2.6 257716 162540 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54208) idle
-[2025-07-20 03:15:15] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 03:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 03:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 03:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 03:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 03:15:16] OPTIMIZATION: Optimizing database performance
-[2025-07-20 03:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 03:15:16] OPTIMIZATION: Updating table statistics
-[2025-07-20 03:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 03:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:17:26] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:17:26] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:22:28] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:22:28] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:27:30] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:27:30] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:32:32] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:32:32] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:37:34] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:37:34] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:42:36] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:42:36] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:47:38] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:47:38] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:52:41] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:52:41] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 03:57:43] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 03:57:43] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:02:45] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:02:45] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:07:47] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:07:47] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:12:49] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:12:49] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 04:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 04:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 04:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 04:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 04:15:15] OPTIMIZATION: High CPU processes detected: postgres 3904548 14.6  2.9 273432 179360 ?       Ss   04:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60770) idle
-postgres 3906522 10.7  2.9 266756 177088 ?       Ss   04:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47556) idle
-ittz     3903440  9.2  4.5 12000200 273484 ?     Ssl  04:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3907666  8.9  2.8 268564 173652 ?       Ss   04:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47580) idle
-postgres 3904578  6.0  2.6 257628 162896 ?       Ss   04:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60776) idle
-[2025-07-20 04:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 04:15:15] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 04:15:15] OPTIMIZATION: High memory processes: ittz     1729874  3.6 11.4 33310732 692000 pts/2 Sl+  Jul19  15:11 claude
-ittz     3903440  9.2  4.5 12000200 273484 ?     Ssl  04:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3904548 14.6  2.9 273432 179360 ?       Ss   04:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60770) idle
-postgres 3906522 10.7  2.9 266756 177088 ?       Ss   04:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47556) idle
-postgres 3907666  8.9  2.8 268564 173652 ?       Ss   04:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47580) idle
-[2025-07-20 04:15:15] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 04:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 04:15:15] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 04:15:15] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 04:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 04:15:16] OPTIMIZATION: Optimizing database performance
-[2025-07-20 04:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 04:15:16] OPTIMIZATION: Updating table statistics
-[2025-07-20 04:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 04:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:17:51] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:17:51] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:22:53] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:22:53] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:27:55] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:27:56] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:32:58] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:32:58] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:38:00] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:38:00] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:43:02] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:43:02] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:48:04] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:48:04] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:53:06] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:53:06] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 04:58:08] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 04:58:08] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:03:10] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:03:10] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:08:13] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:08:13] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:13:15] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:13:15] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 05:15:02] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 05:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 05:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 05:15:19] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 05:15:19] OPTIMIZATION: High CPU processes detected: postgres   27167 11.4  2.9 273168 176508 ?       Ss   05:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52106) idle
-ittz       26739  7.1  4.5 12000452 275008 ?     Ssl  05:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres   29200  6.2  2.8 270496 173220 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52030) idle
-postgres   28081  6.0  2.8 268332 173900 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52010) idle
-ittz     1729874  3.2 11.4 33310732 692476 pts/2 Sl+  Jul19  15:11 claude
-[2025-07-20 05:15:19] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 05:15:19] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 05:15:19] OPTIMIZATION: High memory processes: ittz     1729874  3.2 11.4 33310732 692476 pts/2 Sl+  Jul19  15:11 claude
-ittz       26739  7.1  4.5 12000452 275008 ?     Ssl  05:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres   27167 11.4  2.9 273168 176508 ?       Ss   05:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52106) idle
-postgres   28081  6.0  2.8 268332 173900 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52010) idle
-postgres   29200  6.2  2.8 270496 173220 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52030) idle
-[2025-07-20 05:15:19] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 05:15:19] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 05:15:19] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 05:15:19] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 05:15:20] OPTIMIZATION: Cleaning old log files
-[2025-07-20 05:15:20] OPTIMIZATION: Optimizing database performance
-[2025-07-20 05:15:20] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 05:15:20] OPTIMIZATION: Updating table statistics
-[2025-07-20 05:15:20] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 05:15:20] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:15:20] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:18:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:18:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:23:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:23:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:28:21] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:28:21] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:33:23] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:33:23] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:38:25] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:38:25] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:43:27] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:43:27] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:48:29] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:48:29] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:53:32] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:53:32] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 05:58:34] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 05:58:34] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:03:36] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:03:36] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:08:38] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:08:38] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:13:40] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:13:40] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 06:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 06:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 06:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 06:15:17] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 06:15:17] OPTIMIZATION: High CPU processes detected: postgres  340922  9.8  3.0 273492 183136 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34398) idle
-postgres  342544  8.1  2.8 266860 175276 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50910) idle
-ittz      339570  7.9  4.5 12000452 274368 ?     Ssl  06:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  342051  7.0  2.8 268580 175316 ?       Ss   06:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50894) idle
-postgres  342791  2.8  1.8 235704 109896 ?       Ss   06:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50928) idle
-[2025-07-20 06:15:18] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 06:15:18] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 06:15:18] OPTIMIZATION: High memory processes: ittz     1729874  2.8 11.4 33310732 692716 pts/2 Sl+  Jul19  15:11 claude
-ittz      339570  7.9  4.5 12000452 274368 ?     Ssl  06:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  340922  9.8  3.0 273492 183136 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34398) idle
-postgres  342051  7.0  2.8 268580 175316 ?       Ss   06:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50894) idle
-postgres  342544  8.1  2.8 266860 175276 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50910) idle
-[2025-07-20 06:15:18] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 06:15:18] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 06:15:18] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 06:15:18] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 06:15:18] OPTIMIZATION: Cleaning old log files
-[2025-07-20 06:15:18] OPTIMIZATION: Optimizing database performance
-[2025-07-20 06:15:18] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 06:15:18] OPTIMIZATION: Updating table statistics
-[2025-07-20 06:15:18] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 06:15:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:15:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:18:42] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:18:42] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:23:44] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:23:45] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:28:47] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:28:47] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:33:49] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:33:49] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:38:51] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:38:51] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:43:53] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:43:53] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:48:55] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:48:55] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:53:57] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:53:57] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 06:58:59] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 06:58:59] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:04:01] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:04:01] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:09:04] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:09:04] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:14:06] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:14:06] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 07:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 07:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 07:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 07:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 07:15:15] OPTIMIZATION: High CPU processes detected: postgres  661186 13.0  2.7 270648 167868 ?       Ss   07:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37144) idle
-ittz      659918  9.6  4.5 12000196 275136 ?     Ssl  07:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  664073  9.0  2.8 268556 172616 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56768) idle
-postgres  664086  8.4  2.8 268944 171576 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56786) idle
-postgres  664085  8.2  2.8 266624 171240 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56776) idle
-[2025-07-20 07:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 07:15:15] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 07:15:15] OPTIMIZATION: High memory processes: ittz      659918  9.6  4.5 12000196 275136 ?     Ssl  07:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  664073  9.0  2.8 268556 172616 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56768) idle
-postgres  664086  8.4  2.8 268944 171576 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56786) idle
-postgres  664085  8.2  2.8 266624 171240 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56776) idle
-postgres  661186 13.0  2.7 270648 167868 ?       Ss   07:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37144) idle
-[2025-07-20 07:15:15] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 07:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 07:15:15] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 07:15:15] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 07:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 07:15:16] OPTIMIZATION: Optimizing database performance
-[2025-07-20 07:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 07:15:16] OPTIMIZATION: Updating table statistics
-[2025-07-20 07:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 07:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:19:08] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:19:08] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:24:10] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:24:10] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:29:12] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:29:12] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:34:14] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:34:14] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:39:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:39:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:44:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:44:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:49:21] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:49:21] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:54:23] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:54:23] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 07:59:25] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 07:59:25] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:04:27] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:04:27] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:09:29] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:09:29] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:14:31] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:14:31] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 08:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 08:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 08:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 08:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 08:15:15] OPTIMIZATION: High CPU processes detected: postgres  979796 13.4  3.0 270964 185600 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57848) idle
-postgres  977911  9.2  2.6 257808 163560 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54436) idle
-ittz      976644  8.8  4.5 12000968 276656 ?     Ssl  08:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  980406  8.3  2.8 268712 169824 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57876) idle
-postgres  977895  7.2  2.4 257376 147996 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54426) idle
-[2025-07-20 08:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 08:15:15] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 08:15:15] OPTIMIZATION: High memory processes: ittz      976644  8.8  4.5 12000968 276656 ?     Ssl  08:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  979796 13.4  3.0 270964 185600 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57848) idle
-postgres  980406  8.3  2.8 268712 169824 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57876) idle
-postgres  977911  9.2  2.6 257808 163560 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54436) idle
-postgres  977895  7.2  2.4 257376 147996 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54426) idle
-[2025-07-20 08:15:15] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 08:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 08:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 08:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 08:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 08:15:16] OPTIMIZATION: Optimizing database performance
-[2025-07-20 08:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 08:15:16] OPTIMIZATION: Updating table statistics
-[2025-07-20 08:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 08:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:19:34] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:19:34] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:24:36] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:24:36] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:29:38] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:29:38] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:34:40] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:34:40] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:39:42] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:39:42] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:44:44] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:44:44] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:49:46] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:49:46] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:54:48] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:54:48] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 08:59:50] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 08:59:50] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:04:52] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:04:52] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:09:55] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:09:55] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:14:57] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:14:57] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 09:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 09:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 09:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 09:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 09:15:15] OPTIMIZATION: High CPU processes detected: postgres 1299826 19.9  3.0 272812 186292 ?       Ss   09:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54834) idle
-postgres 1302917 13.6  3.0 270964 186828 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37790) idle
-ittz     1298690  9.3  4.5 12000456 274124 ?     Ssl  09:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1301858  4.6  1.9 235600 115960 ?       Ss   09:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37770) idle
-postgres 1299840  3.3  1.9 239988 118148 ?       Ss   09:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54846) idle
-[2025-07-20 09:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 09:15:15] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 09:15:15] OPTIMIZATION: High memory processes: ittz     1298690  9.3  4.5 12000456 274124 ?     Ssl  09:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1302917 13.6  3.0 270964 186828 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37790) idle
-postgres 1299826 19.9  3.0 272812 186292 ?       Ss   09:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54834) idle
-postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:18 postgres: 14/main: checkpointer 
+[2025-07-21 00:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 00:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 00:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 00:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 00:15:16] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 00:15:16] OPTIMIZATION: High CPU processes detected: postgres 2021563 15.3  3.0 273400 187144 ?       Ss   00:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50962) idle
+postgres 2023460  8.4  2.8 269668 174248 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33954) idle
+ittz     2020894  7.8  4.5 12002244 276720 ?     Ssl  00:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2023565  6.5  2.8 267076 173684 ?       Ss   00:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33956) idle
+postgres 2022841  3.2  1.9 236044 115636 ?       Ss   00:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50988) idle
+[2025-07-21 00:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 00:15:16] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 00:15:16] OPTIMIZATION: High memory processes: ittz     2020894  7.9  4.5 12002244 276720 ?     Ssl  00:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2021563 15.3  3.0 273400 187144 ?       Ss   00:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50962) idle
+postgres 2023460  8.4  2.8 269668 174248 ?       Ss   00:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33954) idle
+postgres 2023565  6.5  2.8 267076 173684 ?       Ss   00:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33956) idle
+postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:23 postgres: 14/main: checkpointer 
+[2025-07-21 00:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 00:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 00:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 00:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 00:15:17] OPTIMIZATION: Cleaning old log files
+[2025-07-21 00:15:17] OPTIMIZATION: Optimizing database performance
+[2025-07-21 00:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 00:15:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 00:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 00:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:16:22] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:16:22] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:21:24] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:21:24] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:26:26] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:26:26] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:31:28] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:31:28] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:36:30] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:36:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:41:32] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:41:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:46:34] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:46:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:51:36] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:51:36] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 00:56:38] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 00:56:39] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:01:41] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:01:41] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:06:43] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:06:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:11:45] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:11:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 01:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 01:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 01:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 01:15:17] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 01:15:17] OPTIMIZATION: High CPU processes detected: postgres 2351593 10.3  2.5 257636 153576 ?       Ss   01:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49246) idle
+postgres 2351626  9.7  3.1 273484 193292 ?       Ss   01:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49250) idle
+ittz     2350379  7.3  4.5 12001988 277332 ?     Ssl  01:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2353513  6.1  2.8 271220 175688 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50852) idle
+postgres 2352642  5.6  2.8 269976 175292 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49268) idle
+[2025-07-21 01:15:17] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 01:15:17] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 01:15:17] OPTIMIZATION: High memory processes: ittz     2350379  7.3  4.5 12001988 277332 ?     Ssl  01:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+ittz     2149683  2.0  4.3 32910516 263644 pts/0 Sl+  00:37   0:45 claude
+postgres 2351626  9.7  3.1 273484 193292 ?       Ss   01:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49250) idle
+postgres 2353513  6.1  2.8 271220 175688 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50852) idle
+postgres 2352642  5.6  2.8 269976 175292 ?       Ss   01:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49268) idle
+[2025-07-21 01:15:17] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 01:15:17] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 01:15:17] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 01:15:17] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 01:15:18] OPTIMIZATION: Cleaning old log files
+[2025-07-21 01:15:18] OPTIMIZATION: Optimizing database performance
+[2025-07-21 01:15:18] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 01:15:18] OPTIMIZATION: Updating table statistics
+[2025-07-21 01:15:18] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 01:15:18] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:15:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:16:47] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:16:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:21:49] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:21:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:26:51] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:26:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:31:53] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:31:53] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:36:55] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:36:55] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:41:57] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:41:57] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:46:59] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:46:59] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:52:01] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:52:01] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 01:57:03] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 01:57:03] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:02:05] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:02:05] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:02:05] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:02:05] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:02:05] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:02:05] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:02:06] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:07:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:07:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:07:13] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:07:13] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:07:13] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:07:13] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:07:13] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:12:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:12:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:12:17] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:12:17] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:12:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:12:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:12:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 02:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 02:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 02:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 02:15:16] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 02:15:16] OPTIMIZATION: High CPU processes detected: postgres 2688040 15.3  3.0 271512 187540 ?       Ss   02:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59412) idle
+ittz     2686938  8.4  4.5 12001988 278156 ?     Ssl  02:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2689013  8.1  2.9 269268 177548 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33830) idle
+postgres 2690054  7.2  2.8 269684 173680 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33856) idle
+postgres 2689739  6.4  1.9 236788 119204 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33850) idle
+[2025-07-21 02:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 02:15:16] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 02:15:16] OPTIMIZATION: High memory processes: ittz     2149683  1.0  5.0 32951624 307856 pts/0 Sl+  00:37   1:03 claude
+ittz     2686938  8.4  4.5 12001988 278156 ?     Ssl  02:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2688040 15.3  3.0 271512 187540 ?       Ss   02:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59412) idle
+postgres 2689013  8.1  2.9 269268 177548 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33830) idle
+postgres 2690054  7.2  2.8 269684 173680 ?       Ss   02:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33856) idle
+[2025-07-21 02:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 02:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 02:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 02:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 02:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 02:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:15:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:17:21] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:17:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:17:21] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:17:21] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:17:21] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:17:21] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:17:21] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:22:26] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:22:26] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:22:26] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:22:26] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:22:26] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:22:26] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:22:26] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:27:30] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:27:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:27:30] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:27:30] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:27:30] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:27:30] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:27:30] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:32:34] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:32:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:32:34] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:32:34] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:32:34] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:32:34] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:32:34] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:37:38] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:37:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:37:38] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:37:38] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:37:38] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:37:38] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:37:38] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:42:42] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:42:42] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:42:42] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:42:42] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:42:42] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:42:42] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:42:42] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:47:46] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:47:46] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:47:46] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:47:46] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:47:46] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:47:46] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:47:46] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:52:51] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:52:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:52:51] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:52:51] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:52:51] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:52:51] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:52:52] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 02:57:56] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 02:57:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 02:57:56] OPTIMIZATION: Running daily optimization tasks
+[2025-07-21 02:57:56] OPTIMIZATION: Optimizing database performance
+[2025-07-21 02:57:56] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 02:57:56] OPTIMIZATION: Updating table statistics
+[2025-07-21 02:57:56] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 03:02:59] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:03:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:08:02] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:08:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:13:04] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:13:04] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 03:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 03:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 03:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 03:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 03:15:15] OPTIMIZATION: High CPU processes detected: postgres 3030603 13.4  2.8 271256 172568 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(35802) idle
+postgres 3033493 10.5  2.9 269360 178216 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51540) idle
+ittz     3029576  9.0  4.5 12000708 276796 ?     Ssl  03:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3032524  8.3  2.9 271072 179000 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51532) idle
+postgres 3033720  7.6  2.8 269696 174816 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51562) idle
+[2025-07-21 03:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 03:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 03:15:15] OPTIMIZATION: High memory processes: ittz     2149683  0.6  5.0 32951624 307856 pts/0 Sl+  00:37   1:03 claude
+ittz     3029576  9.0  4.5 12000708 276796 ?     Ssl  03:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3032524  8.3  2.9 271072 179000 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51532) idle
+postgres 3033493 10.5  2.9 269360 178216 ?       Ss   03:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51540) idle
+postgres 3033720  7.6  2.8 269696 174816 ?       Ss   03:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51562) idle
+[2025-07-21 03:15:15] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 03:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 03:15:15] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 03:15:15] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 03:15:15] OPTIMIZATION: Cleaning old log files
+[2025-07-21 03:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 03:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 03:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 03:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 03:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:18:06] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:18:06] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:23:08] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:23:08] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:28:10] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:28:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:33:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:33:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:38:14] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:38:14] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:43:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:43:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:48:18] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:48:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:53:21] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:53:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 03:58:23] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 03:58:23] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:03:25] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:03:25] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:08:27] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:08:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:13:29] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:13:29] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 04:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 04:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 04:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 04:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 04:15:15] OPTIMIZATION: High CPU processes detected: postgres 3366324 19.6  3.2 273748 196248 ?       Ss   04:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57944) idle
+postgres 3364324 17.5  2.8 270740 173436 ?       Ss   04:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(44096) idle
+ittz     3363833  8.7  4.5 12000708 275248 ?     Ssl  04:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3364331  3.2  1.9 239936 117500 ?       Ss   04:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(44112) idle
+postgres 3366323  1.0  1.8 235712 115012 ?       Ss   04:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57930) idle
+[2025-07-21 04:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 04:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 04:15:15] OPTIMIZATION: High memory processes: ittz     3363833  8.7  4.5 12000708 275248 ?     Ssl  04:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3366324 19.6  3.2 273748 196248 ?       Ss   04:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57944) idle
+postgres 3364324 17.5  2.8 270740 173436 ?       Ss   04:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(44096) idle
+postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:24 postgres: 14/main: checkpointer 
 postgres    1092  0.0  1.9 218500 120776 ?       Ss   Jul08   0:06 postgres: 14/main: background writer 
-[2025-07-20 09:15:15] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 09:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 09:15:15] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 09:15:15] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 09:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 09:15:16] OPTIMIZATION: Optimizing database performance
-[2025-07-20 09:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 09:15:16] OPTIMIZATION: Updating table statistics
-[2025-07-20 09:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 09:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:19:59] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:19:59] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:25:01] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:25:01] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:30:03] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:30:03] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:35:06] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:35:06] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:40:08] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:40:08] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:45:10] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:45:10] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:50:12] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:50:12] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 09:55:14] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 09:55:14] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:00:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:00:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:00:16] OPTIMIZATION: Running hourly optimization tasks
-[2025-07-20 10:05:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:05:18] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:10:21] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:10:21] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 10:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 10:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 10:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 10:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 10:15:17] OPTIMIZATION: High CPU processes detected: postgres 1621083 12.5  2.9 272912 180172 ?       Ss   10:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50694) idle
-postgres 1621122 12.5  3.1 270740 188604 ?       Ss   10:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50696) idle
-ittz     1620435  8.0  4.5 12000200 276512 ?     Ssl  10:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1623027  6.7  2.8 269076 172996 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42754) idle
-postgres 1622869  3.0  1.8 235968 113848 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42740) idle
-[2025-07-20 10:15:17] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 10:15:17] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 10:15:17] OPTIMIZATION: High memory processes: ittz     1620435  8.0  4.5 12000200 276512 ?     Ssl  10:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1621122 12.5  3.1 270740 188604 ?       Ss   10:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50696) idle
-postgres 1621083 12.5  2.9 272912 180172 ?       Ss   10:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50694) idle
-postgres 1623027  6.7  2.8 269076 172996 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42754) idle
-postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:19 postgres: 14/main: checkpointer 
-[2025-07-20 10:15:17] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 10:15:17] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 10:15:17] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 10:15:17] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 10:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 10:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 10:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 10:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 10:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 10:15:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:15:18] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:15:23] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:15:23] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:20:25] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:20:25] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:25:27] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:25:27] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:30:29] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:30:29] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:35:31] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:35:31] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:40:33] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:40:33] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:45:35] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:45:35] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:50:38] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:50:38] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 10:55:40] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 10:55:40] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:00:42] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:00:42] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:00:42] OPTIMIZATION: Running hourly optimization tasks
-[2025-07-20 11:05:44] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:05:44] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:10:46] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:10:46] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 11:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 11:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 11:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 11:15:14] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 11:15:14] OPTIMIZATION: High CPU processes detected: postgres 1947385 16.1  3.1 273100 189112 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46592) idle
-postgres 1944540 13.1  3.0 273708 184340 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59794) idle
-postgres 1944523  9.7  2.4 257448 149700 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59790) idle
-ittz     1943242  9.5  4.5 12000704 276800 ?     Ssl  11:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1947386  4.2  1.8 234984 111140 ?       Ss   11:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46598) idle
-[2025-07-20 11:15:14] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 11:15:14] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 11:15:14] OPTIMIZATION: High memory processes: ittz     1943242  9.5  4.5 12000704 276800 ?     Ssl  11:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1947385 16.1  3.1 273100 189112 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46592) idle
-postgres 1944540 13.1  3.0 273708 184340 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59794) idle
-postgres 1944523  9.7  2.4 257448 149700 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59790) idle
-postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:19 postgres: 14/main: checkpointer 
-[2025-07-20 11:15:14] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 11:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 11:15:15] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 11:15:15] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 11:15:15] OPTIMIZATION: Cleaning old log files
-[2025-07-20 11:15:15] OPTIMIZATION: Optimizing database performance
-[2025-07-20 11:15:15] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 11:15:15] OPTIMIZATION: Updating table statistics
-[2025-07-20 11:15:15] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 11:15:15] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:15:15] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:15:48] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:15:48] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:20:50] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:20:50] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:25:52] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:25:52] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:30:54] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:30:54] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:35:56] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:35:56] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:40:59] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:40:59] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:46:01] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:46:01] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:51:03] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:51:03] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 11:56:05] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 11:56:05] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:01:07] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:01:07] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:06:09] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:06:09] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:11:11] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:11:11] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 12:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 12:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 12:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 12:15:18] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 12:15:18] OPTIMIZATION: High CPU processes detected: postgres 2263056 10.0  3.0 273008 185376 ?       Ss   12:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52474) idle
-postgres 2264460  8.0  2.9 266908 177528 ?       Ss   12:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32966) idle
-ittz     2262270  7.5  4.5 11999684 275516 ?     Ssl  12:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2264712  5.9  2.8 269168 174320 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32976) idle
-postgres 2264713  2.6  1.8 235996 112980 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32980) idle
-[2025-07-20 12:15:18] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 12:15:18] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 12:15:18] OPTIMIZATION: High memory processes: ittz     2262270  7.5  4.5 11999684 275516 ?     Ssl  12:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2263056 10.0  3.0 273008 185376 ?       Ss   12:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(52474) idle
-postgres 2264460  8.0  2.9 266908 177528 ?       Ss   12:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32966) idle
-postgres 2264712  5.9  2.8 269168 174320 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32976) idle
-postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:19 postgres: 14/main: checkpointer 
-[2025-07-20 12:15:18] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 12:15:18] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 12:15:18] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 12:15:18] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 12:15:19] OPTIMIZATION: Cleaning old log files
-[2025-07-20 12:15:19] OPTIMIZATION: Optimizing database performance
-[2025-07-20 12:15:19] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 12:15:19] OPTIMIZATION: Updating table statistics
-[2025-07-20 12:15:19] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 12:15:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:15:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:16:14] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:16:14] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:21:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:21:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:26:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:26:18] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:31:20] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:31:20] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:36:22] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:36:22] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:41:24] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:41:24] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:46:26] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:46:26] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:51:28] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:51:28] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 12:56:30] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 12:56:30] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:01:32] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:01:32] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:06:34] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:06:34] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:11:36] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:11:36] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 13:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 13:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 13:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 13:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 13:15:16] OPTIMIZATION: High CPU processes detected: postgres 2583925 10.2  3.0 270992 186812 ?       Ss   13:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45880) idle
-ittz     2583202  7.8  4.5 12000460 276432 ?     Ssl  13:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2586330  6.9  2.8 268820 173968 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43234) idle
-postgres 2586331  6.5  2.8 269232 174256 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43248) idle
-postgres 2586240  5.0  1.9 236476 119044 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43224) idle
-[2025-07-20 13:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 13:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 13:15:16] OPTIMIZATION: High memory processes: ittz     2583202  7.8  4.5 12000460 276432 ?     Ssl  13:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-ittz     2544713  0.3  3.5 32876556 214840 pts/0 Sl+  13:07   0:01 claude
-postgres 2583925 10.2  3.0 270992 186812 ?       Ss   13:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45880) idle
-postgres 2586331  6.5  2.8 269232 174256 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43248) idle
-postgres 2586330  6.9  2.8 268820 173968 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43234) idle
-[2025-07-20 13:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 13:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 13:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 13:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 13:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 13:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 13:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 13:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 13:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 13:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:16:38] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:16:38] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:21:40] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:21:41] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:26:43] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:26:43] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:31:45] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:31:45] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:36:47] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:36:47] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:41:49] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:41:49] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:46:52] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:46:52] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:51:54] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:51:54] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 13:56:56] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 13:56:56] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:01:58] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:01:58] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:07:00] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:07:00] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:12:02] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:12:02] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 14:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 14:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 14:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 14:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 14:15:16] OPTIMIZATION: High CPU processes detected: ittz     2910031  7.8  4.5 12000196 274380 ?     Ssl  14:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2913516  7.2  2.8 269196 173156 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60710) idle
-postgres 2910605  7.0  2.4 257508 146780 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54506) idle
-postgres 2913515  7.0  2.8 266848 172280 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60694) idle
-postgres 2912173  6.9  2.8 268808 173924 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60670) idle
-[2025-07-20 14:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 14:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 14:15:16] OPTIMIZATION: High memory processes: ittz     2544713  2.7  4.5 32915800 277588 pts/0 Sl+  13:07   1:52 claude
-ittz     2910031  7.8  4.5 12000196 274380 ?     Ssl  14:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 2912173  6.9  2.8 268808 173924 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60670) idle
-postgres 2913516  7.2  2.8 269196 173156 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60710) idle
-postgres 2913515  7.0  2.8 266848 172280 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60694) idle
-[2025-07-20 14:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 14:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 14:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 14:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 14:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 14:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 14:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 14:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 14:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 14:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:17:05] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:17:05] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:22:07] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:22:07] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:27:09] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:27:09] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:32:11] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:32:11] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:37:13] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:37:13] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:42:15] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:42:15] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:47:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:47:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:52:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:52:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 14:57:22] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 14:57:22] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:02:24] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:02:24] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:07:26] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:07:26] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:12:28] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:12:28] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 15:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 15:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 15:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 15:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 15:15:16] OPTIMIZATION: High CPU processes detected: postgres 3240555  9.8  2.9 272424 179992 ?       Ss   15:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48124) idle
-ittz     3238381  8.0  4.5 12000716 276616 ?     Ssl  15:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3238936  7.2  2.7 257960 166480 ?       Ss   15:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54492) idle
-postgres 3240795  7.2  2.8 270788 175136 ?       Ss   15:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48132) idle
-postgres 3240796  7.2  2.8 269348 174060 ?       Ss   15:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48144) idle
-[2025-07-20 15:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 15:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 15:15:16] OPTIMIZATION: High memory processes: ittz     2544713  4.6  6.2 33012964 377428 pts/0 Sl+  13:07   5:51 claude
-ittz     3238381  8.0  4.5 12000716 276616 ?     Ssl  15:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3240555  9.8  2.9 272424 179992 ?       Ss   15:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48124) idle
-postgres 3240795  7.2  2.8 270788 175136 ?       Ss   15:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48132) idle
-postgres 3240796  7.2  2.8 269348 174060 ?       Ss   15:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48144) idle
-[2025-07-20 15:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 15:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 15:15:17] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 15:15:17] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 15:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 15:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 15:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 15:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 15:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 15:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:17:30] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:17:30] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:22:32] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:22:32] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:27:35] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:27:35] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:32:37] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:32:37] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:37:39] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:37:39] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:42:41] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:42:41] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:47:43] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:47:43] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:52:45] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:52:46] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 15:57:48] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 15:57:48] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:02:50] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:02:50] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:07:52] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:07:52] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:12:54] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:12:54] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 16:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 16:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 16:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 16:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 16:15:16] OPTIMIZATION: High CPU processes detected: postgres 3570598 14.5  3.1 273028 189624 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57782) idle
-postgres 3570352  9.5  2.9 266940 176836 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57768) idle
-postgres 3568261  9.2  2.7 258052 165060 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43632) idle
-ittz     3567189  8.5  4.5 12001732 276880 ?     Ssl  16:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3568252  7.5  2.4 257596 149596 ?       Ss   16:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43622) idle
-[2025-07-20 16:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 16:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 16:15:16] OPTIMIZATION: High memory processes: ittz     2544713  4.9 10.2 33266952 622024 pts/0 Sl+  13:07   9:19 claude
-ittz     3567189  8.5  4.5 12001732 276880 ?     Ssl  16:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3570598 14.5  3.1 273028 189624 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57782) idle
-postgres 3570352  9.5  2.9 266940 176836 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(57768) idle
-postgres 3568261  9.2  2.7 258052 165060 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(43632) idle
-[2025-07-20 16:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 16:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 16:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 16:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 16:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 16:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 16:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 16:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 16:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 16:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:17:56] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:17:56] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:22:58] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:22:58] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:28:00] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:28:00] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:33:02] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:33:02] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:38:05] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:38:05] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:43:07] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:43:07] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:48:09] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:48:09] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:53:11] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:53:11] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 16:58:13] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 16:58:13] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:03:15] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:03:15] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:08:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:08:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:13:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:13:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 17:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 17:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 17:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 17:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 17:15:16] OPTIMIZATION: High CPU processes detected: postgres 3896339 13.7  2.9 273904 180308 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51214) idle
-ittz     3895723  7.9  4.5 12000708 275604 ?     Ssl  17:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3896934  6.9  2.9 269152 179592 ?       Ss   17:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59404) idle
-postgres 3897757  6.8  2.8 270476 175240 ?       Ss   17:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59430) idle
-postgres 3896341  4.7  2.7 258192 166668 ?       Ss   17:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51230) idle
-[2025-07-20 17:15:17] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 17:15:17] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 17:15:17] OPTIMIZATION: High memory processes: ittz     2544713  4.5  9.1 33170548 557292 pts/0 Sl+  13:07  11:08 claude
-ittz     3895723  7.9  4.5 12000708 275604 ?     Ssl  17:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 3896339 13.7  2.9 273904 180308 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(51214) idle
-postgres 3896934  6.9  2.9 269152 179592 ?       Ss   17:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59404) idle
-postgres 3897757  6.8  2.8 270476 175240 ?       Ss   17:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59430) idle
-[2025-07-20 17:15:17] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 17:15:17] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 17:15:17] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 17:15:17] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 17:15:18] OPTIMIZATION: Cleaning old log files
-[2025-07-20 17:15:18] OPTIMIZATION: Optimizing database performance
-[2025-07-20 17:15:18] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 17:15:18] OPTIMIZATION: Updating table statistics
-[2025-07-20 17:15:18] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 17:15:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:15:18] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:18:21] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:18:21] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:23:24] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:23:24] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:28:26] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:28:26] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:33:28] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:33:28] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:38:30] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:38:30] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:43:32] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:43:32] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:48:35] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:48:35] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:53:37] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:53:37] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 17:58:39] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 17:58:39] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:03:41] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:03:41] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:08:43] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:08:43] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:13:45] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:13:45] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 18:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 18:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 18:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 18:15:15] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 18:15:15] OPTIMIZATION: High CPU processes detected: postgres   36643 10.9  2.9 268988 178668 ?       Ss   18:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32848) idle
-postgres   36641 10.6  2.9 266996 176376 ?       Ss   18:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32832) idle
-ittz       33847  9.1  4.5 12000708 275848 ?     Ssl  18:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres   34492  8.1  2.4 256784 150044 ?       Ss   18:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(44516) idle
-postgres   37779  8.1  2.8 269384 172892 ?       Ss   18:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32866) idle
-[2025-07-20 18:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 18:15:15] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 18:15:15] OPTIMIZATION: High memory processes: ittz     4079460  5.4  5.3 32957020 324076 pts/0 Sl+  17:48   1:27 claude
-ittz       33847  9.1  4.5 12000708 275848 ?     Ssl  18:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres   36643 10.9  2.9 268988 178668 ?       Ss   18:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32848) idle
-postgres   36641 10.6  2.9 266996 176376 ?       Ss   18:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32832) idle
-postgres   37779  8.1  2.8 269384 172892 ?       Ss   18:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32866) idle
-[2025-07-20 18:15:15] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 18:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 18:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 18:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 18:15:16] OPTIMIZATION: Cleaning old log files
-[2025-07-20 18:15:16] OPTIMIZATION: Optimizing database performance
-[2025-07-20 18:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 18:15:16] OPTIMIZATION: Updating table statistics
-[2025-07-20 18:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 18:15:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:18:48] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:18:48] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:23:50] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:23:50] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:28:52] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:28:52] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:33:57] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:33:57] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:38:59] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:38:59] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:44:01] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:44:01] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:49:04] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:49:04] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:54:06] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:54:06] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 18:59:08] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 18:59:08] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:04:10] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:04:10] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:09:13] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:09:13] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:14:15] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:14:15] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 19:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 19:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 19:15:01] OPTIMIZATION: Checking static asset compression
-[2025-07-20 19:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 19:15:16] OPTIMIZATION: High CPU processes detected: postgres  366528 14.0  2.9 271284 180408 ?       Ss   19:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54666) idle
-postgres  366533 10.3  3.0 273608 184852 ?       Ss   19:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54670) idle
-ittz      366135  8.0  4.5 12000456 276048 ?     Ssl  19:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  367459  7.1  2.8 268968 174484 ?       Ss   19:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56102) idle
-ittz     4079460  4.4  5.7 32983196 350312 pts/0 Sl+  17:48   3:52 claude
-[2025-07-20 19:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 19:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 19:15:16] OPTIMIZATION: High memory processes: ittz     4079460  4.4  5.7 32983196 350312 pts/0 Sl+  17:48   3:52 claude
-ittz      366135  8.0  4.5 12000456 276048 ?     Ssl  19:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  366533 10.3  3.0 273608 184852 ?       Ss   19:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54670) idle
-postgres  366528 14.0  2.9 271284 180408 ?       Ss   19:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54666) idle
-postgres  367459  7.1  2.8 268968 174484 ?       Ss   19:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56102) idle
-[2025-07-20 19:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 19:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 19:15:16] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 19:15:16] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 19:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 19:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 19:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 19:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 19:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 19:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:19:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:19:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:24:19] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:24:19] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:29:21] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:29:21] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:34:23] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:34:23] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:39:25] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:39:25] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:44:28] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:44:28] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:49:30] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:49:30] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:54:32] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:54:32] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 19:59:34] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 19:59:34] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:04:36] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:04:36] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:09:38] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:09:38] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:14:40] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:14:40] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 20:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 20:15:02] OPTIMIZATION: Optimizing database connections
-[2025-07-20 20:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 20:15:25] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 20:15:25] OPTIMIZATION: High CPU processes detected: postgres  700613 10.0  2.9 273972 180004 ?       Ss   20:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59950) idle
-ittz      699387  5.8  4.5 12000716 276324 ?     Ssl  20:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  702121  5.3  2.9 269364 179524 ?       Ss   20:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59966) idle
-postgres  702543  4.8  2.8 267016 174144 ?       Ss   20:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60002) idle
-ittz     4079460  4.2  8.1 33127484 492336 pts/0 Rl+  17:48   6:16 claude
-[2025-07-20 20:15:25] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 20:15:25] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 20:15:25] OPTIMIZATION: High memory processes: ittz     4079460  4.2  8.1 33126636 491540 pts/0 Rl+  17:48   6:16 claude
-ittz      699387  5.8  4.5 12000716 276324 ?     Ssl  20:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres  700613 10.0  2.9 273972 180004 ?       Ss   20:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59950) idle
-postgres  702121  5.3  2.9 269364 179524 ?       Ss   20:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59966) idle
-postgres  702543  4.8  2.8 267016 174144 ?       Ss   20:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60002) idle
-[2025-07-20 20:15:25] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 20:15:25] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 20:15:25] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 20:15:25] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 20:15:26] OPTIMIZATION: Cleaning old log files
-[2025-07-20 20:15:26] OPTIMIZATION: Optimizing database performance
-[2025-07-20 20:15:26] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 20:15:26] OPTIMIZATION: Updating table statistics
-[2025-07-20 20:15:26] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 20:15:26] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:15:26] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:19:43] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:19:43] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:24:45] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:24:45] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:29:47] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:29:47] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:34:49] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:34:49] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:39:51] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:39:51] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:44:53] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:44:53] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:49:55] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:49:55] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:54:57] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:54:57] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 20:59:59] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 20:59:59] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:05:02] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:05:02] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:10:04] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:10:04] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:15:01] OPTIMIZATION: Optimizing web performance due to high response times
-[2025-07-20 21:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
-[2025-07-20 21:15:01] OPTIMIZATION: Optimizing database connections
-[2025-07-20 21:15:02] OPTIMIZATION: Checking static asset compression
-[2025-07-20 21:15:06] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:15:06] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:15:16] OPTIMIZATION: Optimizing CPU usage
-[2025-07-20 21:15:16] OPTIMIZATION: High CPU processes detected: postgres 1030690 15.9  2.9 271156 181024 ?       Ss   21:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59944) idle
-postgres 1030697 13.1  3.1 273288 193428 ?       Ss   21:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59952) idle
-ittz     1029869  8.2  4.5 12001224 276960 ?     Ssl  21:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1033426  7.2  2.8 269532 173980 ?       Ss   21:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58190) idle
-ittz     4079460  4.0  7.1 33060676 436540 pts/0 Sl+  17:48   8:28 claude
-[2025-07-20 21:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
-[2025-07-20 21:15:16] OPTIMIZATION: Optimizing memory usage
-[2025-07-20 21:15:16] OPTIMIZATION: High memory processes: ittz     4079460  4.0  7.1 33060676 436540 pts/0 Sl+  17:48   8:28 claude
-ittz     1029869  8.2  4.5 12001224 276960 ?     Ssl  21:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
-postgres 1030697 13.1  3.1 273288 193428 ?       Ss   21:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59952) idle
-postgres 1030690 15.9  2.9 271156 181024 ?       Ss   21:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(59944) idle
-postgres 1033426  7.2  2.8 269532 173980 ?       Ss   21:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58190) idle
-[2025-07-20 21:15:16] OPTIMIZATION: Clearing system caches to free memory
-[2025-07-20 21:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
-[2025-07-20 21:15:17] OPTIMIZATION: Optimizing disk usage
-[2025-07-20 21:15:17] OPTIMIZATION: Running VPS cleanup script
-[2025-07-20 21:15:17] OPTIMIZATION: Cleaning old log files
-[2025-07-20 21:15:17] OPTIMIZATION: Optimizing database performance
-[2025-07-20 21:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
-[2025-07-20 21:15:17] OPTIMIZATION: Updating table statistics
-[2025-07-20 21:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
-[2025-07-20 21:15:17] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:20:08] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:20:08] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:25:10] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:25:10] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:30:12] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:30:12] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:35:14] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:35:14] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:40:16] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:40:16] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:45:18] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:45:18] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:50:21] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:50:21] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 21:55:23] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 21:55:23] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 22:00:25] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 22:00:25] OPTIMIZATION: Nginx configuration is valid - reloading
-[2025-07-20 22:00:25] OPTIMIZATION: Running hourly optimization tasks
-[2025-07-20 22:05:27] OPTIMIZATION: Optimizing nginx performance
-[2025-07-20 22:05:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:15:15] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 04:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 04:15:15] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 04:15:15] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 04:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 04:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 04:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 04:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 04:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 04:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:18:31] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:18:31] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:23:33] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:23:33] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:28:35] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:28:35] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:33:37] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:33:37] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:38:40] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:38:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:43:42] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:43:42] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:48:44] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:48:44] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:53:46] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:53:46] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 04:58:48] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 04:58:48] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:03:50] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:03:50] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:08:52] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:08:52] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:13:54] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:13:54] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 05:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 05:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 05:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 05:15:17] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 05:15:17] OPTIMIZATION: High CPU processes detected: postgres 3704646  8.9  2.9 267316 176632 ?       Ss   05:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42618) idle
+ittz     3703062  7.3  4.5 12001220 275024 ?     Ssl  05:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3704151  7.3  2.9 269432 179548 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42602) idle
+postgres 3704735  6.5  2.8 269760 174952 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42626) idle
+postgres 3704734  2.7  1.8 236072 114792 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42622) idle
+[2025-07-21 05:15:17] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 05:15:17] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 05:15:17] OPTIMIZATION: High memory processes: ittz     3703062  7.3  4.5 12001220 275024 ?     Ssl  05:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3704151  7.3  2.9 269432 179548 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42602) idle
+postgres 3704646  8.9  2.9 267316 176632 ?       Ss   05:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42618) idle
+postgres 3704735  6.5  2.8 269760 174952 ?       Ss   05:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(42626) idle
+postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:24 postgres: 14/main: checkpointer 
+[2025-07-21 05:15:17] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 05:15:17] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 05:15:17] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 05:15:17] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 05:15:18] OPTIMIZATION: Cleaning old log files
+[2025-07-21 05:15:18] OPTIMIZATION: Optimizing database performance
+[2025-07-21 05:15:18] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 05:15:18] OPTIMIZATION: Updating table statistics
+[2025-07-21 05:15:18] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 05:15:18] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:15:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:18:56] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:18:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:23:58] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:23:58] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:29:00] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:29:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:34:02] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:34:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:39:05] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:39:05] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:44:07] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:44:07] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:49:09] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:49:09] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:54:11] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:54:11] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 05:59:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 05:59:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:04:15] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:04:15] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:09:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:09:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:14:19] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:14:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 06:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 06:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 06:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 06:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 06:15:15] OPTIMIZATION: High CPU processes detected: postgres 4046316 13.7  3.0 271540 187664 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(39572) idle
+postgres 4044124 11.6  2.5 257968 154456 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(41510) idle
+ittz     4042954  9.3  4.5 12003012 277408 ?     Ssl  06:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 4044156  9.2  2.7 258492 167824 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(41524) idle
+postgres 4046315  8.3  2.9 269284 176036 ?       Ss   06:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(39556) idle
+[2025-07-21 06:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 06:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 06:15:16] OPTIMIZATION: High memory processes: ittz     4042954  8.6  4.5 12003012 277408 ?     Ssl  06:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 4046316 12.4  3.0 271540 187664 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(39572) idle
+postgres 4046315  7.5  2.9 269284 176036 ?       Ss   06:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(39556) idle
+postgres 4044156  8.5  2.7 258492 167824 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(41524) idle
+postgres 4044124 10.7  2.5 257968 154456 ?       Ss   06:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(41510) idle
+[2025-07-21 06:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 06:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 06:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 06:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 06:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 06:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 06:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 06:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 06:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 06:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:19:21] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:19:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:24:23] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:24:23] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:29:25] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:29:25] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:34:28] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:34:28] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:39:30] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:39:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:44:32] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:44:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:49:34] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:49:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:54:36] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:54:36] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 06:59:38] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 06:59:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:04:40] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:04:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:09:42] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:09:42] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:14:44] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:14:44] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 07:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 07:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 07:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 07:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 07:15:15] OPTIMIZATION: High CPU processes detected: postgres  192502 12.0  3.0 273968 185864 ?       Ss   07:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60972) idle
+ittz      191280  9.2  4.5 12000448 276344 ?     Ssl  07:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres  195421  8.4  2.8 269336 175372 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(44992) idle
+postgres  195422  8.2  2.8 270968 175844 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45002) idle
+postgres  192471  8.0  2.5 257984 152624 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60964) idle
+[2025-07-21 07:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 07:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 07:15:15] OPTIMIZATION: High memory processes: ittz      191280  9.2  4.5 12000448 276344 ?     Ssl  07:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres  192502 12.0  3.0 273968 185864 ?       Ss   07:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60972) idle
+postgres  195422  8.2  2.8 270968 175844 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45002) idle
+postgres  195421  8.4  2.8 269336 175372 ?       Ss   07:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(44992) idle
+postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:25 postgres: 14/main: checkpointer 
+[2025-07-21 07:15:15] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 07:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 07:15:15] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 07:15:15] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 07:15:15] OPTIMIZATION: Cleaning old log files
+[2025-07-21 07:15:15] OPTIMIZATION: Optimizing database performance
+[2025-07-21 07:15:15] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 07:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 07:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 07:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:19:47] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:19:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:24:50] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:24:50] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:29:52] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:29:52] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:34:54] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:34:54] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:39:56] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:39:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:44:58] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:44:58] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:50:00] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:50:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 07:55:02] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 07:55:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:00:04] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:00:04] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:00:05] OPTIMIZATION: Running hourly optimization tasks
+[2025-07-21 08:05:07] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:05:07] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:10:09] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:10:09] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 08:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 08:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 08:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 08:15:11] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:15:11] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:15:16] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 08:15:16] OPTIMIZATION: High CPU processes detected: postgres  534039 12.0  3.0 273864 185100 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58772) idle
+postgres  535286  8.6  2.9 267488 177520 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32776) idle
+ittz      533110  8.3  4.5 12003016 274368 ?     Ssl  08:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres  536822  7.5  2.9 269408 176116 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32794) idle
+postgres  534030  7.4  2.5 257976 151724 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58762) idle
+[2025-07-21 08:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 08:15:16] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 08:15:16] OPTIMIZATION: High memory processes: ittz      533110  7.8  4.5 12003016 274368 ?     Ssl  08:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres  534039 11.2  3.0 273864 185100 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58772) idle
+postgres  535286  8.0  2.9 267488 177520 ?       Ss   08:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32776) idle
+postgres  536822  6.9  2.9 269408 176116 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(32794) idle
+postgres  534030  6.9  2.5 257976 151724 ?       Ss   08:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58762) idle
+[2025-07-21 08:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 08:15:17] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 08:15:17] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 08:15:17] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 08:15:17] OPTIMIZATION: Cleaning old log files
+[2025-07-21 08:15:17] OPTIMIZATION: Optimizing database performance
+[2025-07-21 08:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 08:15:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 08:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 08:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:15:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:20:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:20:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:25:15] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:25:15] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:30:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:30:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:35:19] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:35:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:40:21] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:40:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:45:24] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:45:24] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:50:26] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:50:26] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 08:55:28] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 08:55:28] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:00:30] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:00:30] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:00:30] OPTIMIZATION: Running hourly optimization tasks
+[2025-07-21 09:05:32] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:05:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:10:34] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:10:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 09:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 09:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 09:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 09:15:16] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 09:15:16] OPTIMIZATION: High CPU processes detected: postgres  877014 13.0  3.0 273772 185092 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36134) idle
+postgres  878582  8.1  2.9 267540 177348 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36156) idle
+ittz      876443  8.0  4.5 12003272 277380 ?     Ssl  09:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres  877023  7.5  2.7 258512 167664 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36150) idle
+postgres  879830  6.6  2.8 269852 175324 ?       Ss   09:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60232) idle
+[2025-07-21 09:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 09:15:16] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 09:15:16] OPTIMIZATION: High memory processes: ittz      876443  8.0  4.5 12003272 277380 ?     Ssl  09:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres  877014 13.0  3.0 273772 185092 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36134) idle
+postgres  878582  8.1  2.9 267540 177348 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36156) idle
+postgres  879830  6.6  2.8 269852 175324 ?       Ss   09:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60232) idle
+postgres  877023  7.5  2.7 258512 167664 ?       Ss   09:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(36150) idle
+[2025-07-21 09:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 09:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 09:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 09:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 09:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 09:15:17] OPTIMIZATION: Optimizing database performance
+[2025-07-21 09:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 09:15:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 09:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 09:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:15:36] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:15:36] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:20:38] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:20:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:25:40] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:25:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:30:43] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:30:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:35:45] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:35:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:40:47] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:40:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:45:49] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:45:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:50:51] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:50:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 09:55:53] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 09:55:53] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:00:55] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:00:55] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:00:55] OPTIMIZATION: Running hourly optimization tasks
+[2025-07-21 10:05:57] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:05:57] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:10:59] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:10:59] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 10:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 10:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 10:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 10:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 10:15:15] OPTIMIZATION: High CPU processes detected: postgres 1218243 18.3  2.9 274180 181600 ?       Ss   10:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60844) idle
+ittz     1217834  8.5  4.5 12003016 278168 ?     Ssl  10:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 1220675  7.3  2.9 269536 176164 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34510) idle
+postgres 1219558  6.9  2.8 267420 175000 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34484) idle
+postgres 1220674  3.1  1.8 236084 113672 ?       Rs   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34494) SELECT
+[2025-07-21 10:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 10:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 10:15:15] OPTIMIZATION: High memory processes: ittz     1217834  8.5  4.5 12003016 278168 ?     Ssl  10:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 1218243 18.3  2.9 274180 181600 ?       Ss   10:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(60844) idle
+postgres 1220675  7.3  2.9 269536 176164 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34510) idle
+postgres 1219558  6.9  2.8 267420 175000 ?       Ss   10:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(34484) idle
+postgres    1091  0.0  2.1 219056 133144 ?       Ss   Jul08   2:25 postgres: 14/main: checkpointer 
+[2025-07-21 10:15:15] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 10:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 10:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 10:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 10:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 10:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 10:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 10:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 10:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 10:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:16:01] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:16:01] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:21:03] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:21:03] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:26:05] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:26:06] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:31:08] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:31:08] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:36:10] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:36:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:41:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:41:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:46:14] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:46:14] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:51:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:51:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 10:56:18] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 10:56:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:01:20] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:01:20] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:06:22] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:06:22] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:11:25] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:11:25] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 11:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 11:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 11:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 11:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 11:15:15] OPTIMIZATION: High CPU processes detected: postgres 1564269 12.4  3.1 271704 189808 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45282) idle
+postgres 1565631  9.9  2.9 269592 180604 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58390) idle
+ittz     1563012  9.1  4.5 12002500 276940 ?     Ssl  11:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 1564234  8.1  2.5 258032 151804 ?       Ss   11:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45272) idle
+postgres 1566223  8.0  2.8 269876 175396 ?       Ss   11:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58424) idle
+[2025-07-21 11:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 11:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 11:15:15] OPTIMIZATION: High memory processes: ittz     1563012  9.1  4.5 12002500 276940 ?     Ssl  11:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 1564269 12.4  3.1 271704 189808 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45282) idle
+postgres 1565631  9.9  2.9 269592 180604 ?       Ss   11:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58390) idle
+postgres 1566223  8.0  2.8 269876 175396 ?       Ss   11:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(58424) idle
+postgres 1564234  8.1  2.5 258032 151804 ?       Ss   11:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(45272) idle
+[2025-07-21 11:15:15] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 11:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 11:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 11:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 11:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 11:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 11:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 11:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 11:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 11:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:16:27] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:16:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:21:29] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:21:29] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:26:31] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:26:31] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:31:33] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:31:33] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:36:35] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:36:35] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:41:37] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:41:37] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:46:39] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:46:39] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:51:41] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:51:41] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 11:56:43] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 11:56:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:01:45] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:01:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:06:47] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:06:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:11:50] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:11:50] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 12:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 12:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 12:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 12:15:15] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 12:15:15] OPTIMIZATION: High CPU processes detected: postgres 1910272 15.9  2.9 271576 181840 ?       Ss   12:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46832) idle
+postgres 1910285  9.0  2.7 258616 168036 ?       Ss   12:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46836) idle
+ittz     1909136  8.7  4.5 12002760 277480 ?     Ssl  12:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 1912307  7.5  2.8 269996 174952 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37936) idle
+postgres 1911311  7.0  2.9 269480 176728 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46854) idle
+[2025-07-21 12:15:15] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 12:15:15] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 12:15:15] OPTIMIZATION: High memory processes: ittz     1909136  8.7  4.5 12002760 277480 ?     Ssl  12:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 1910272 15.9  2.9 271576 181840 ?       Ss   12:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46832) idle
+postgres 1911311  7.0  2.9 269480 176728 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46854) idle
+postgres 1912307  7.5  2.8 269996 174952 ?       Ss   12:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37936) idle
+postgres 1910285  9.0  2.7 258616 168036 ?       Ss   12:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(46836) idle
+[2025-07-21 12:15:15] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 12:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 12:15:15] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 12:15:15] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 12:15:16] OPTIMIZATION: Cleaning old log files
+[2025-07-21 12:15:16] OPTIMIZATION: Optimizing database performance
+[2025-07-21 12:15:16] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 12:15:16] OPTIMIZATION: Updating table statistics
+[2025-07-21 12:15:16] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 12:15:16] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:15:16] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:16:52] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:16:52] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:21:54] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:21:54] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:26:56] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:26:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:31:58] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:31:58] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:37:00] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:37:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:42:02] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:42:02] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:47:04] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:47:04] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:52:06] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:52:06] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 12:57:08] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 12:57:08] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:02:10] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:02:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:07:13] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:07:13] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:12:15] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:12:15] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 13:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 13:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 13:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 13:15:18] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 13:15:18] OPTIMIZATION: High CPU processes detected: postgres 2257403 12.0  2.9 271596 180556 ?       Ss   13:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37608) idle
+ittz     2256460  7.7  4.5 12002760 277916 ?     Ssl  13:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2259462  6.4  2.9 269684 175972 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49292) idle
+postgres 2257408  6.2  2.7 258728 167580 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37618) idle
+postgres 2259618  6.1  2.8 270000 175404 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49320) idle
+[2025-07-21 13:15:18] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 13:15:18] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 13:15:18] OPTIMIZATION: High memory processes: ittz     2256460  7.7  4.5 12002760 277916 ?     Ssl  13:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2257403 12.0  2.9 271596 180556 ?       Ss   13:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37608) idle
+postgres 2259462  6.4  2.9 269684 175972 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49292) idle
+postgres 2259618  6.1  2.8 270000 175404 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(49320) idle
+postgres 2257408  6.2  2.7 258728 167580 ?       Ss   13:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(37618) idle
+[2025-07-21 13:15:18] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 13:15:19] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 13:15:19] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 13:15:19] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 13:15:19] OPTIMIZATION: Cleaning old log files
+[2025-07-21 13:15:19] OPTIMIZATION: Optimizing database performance
+[2025-07-21 13:15:19] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 13:15:19] OPTIMIZATION: Updating table statistics
+[2025-07-21 13:15:19] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 13:15:19] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:15:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:17:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:17:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:22:19] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:22:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:27:21] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:27:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:32:23] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:32:23] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:37:25] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:37:25] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:42:27] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:42:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:47:29] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:47:29] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:52:31] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:52:31] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 13:57:33] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 13:57:33] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:02:36] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:02:36] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:07:38] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:07:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:12:40] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:12:40] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 14:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 14:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 14:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 14:15:17] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 14:15:17] OPTIMIZATION: High CPU processes detected: postgres 2604004 13.0  3.0 273860 184256 ?       Ss   14:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50974) idle
+ittz     2602690  8.0  4.5 12002756 277616 ?     Ssl  14:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2604016  6.9  2.7 258712 166936 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50982) idle
+postgres 2606227  6.9  2.9 271328 177196 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47182) idle
+postgres 2606226  6.7  2.8 269972 175296 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47176) idle
+[2025-07-21 14:15:17] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 14:15:17] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 14:15:17] OPTIMIZATION: High memory processes: ittz     2602690  8.0  4.5 12002756 277616 ?     Ssl  14:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2604004 13.0  3.0 273860 184256 ?       Ss   14:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50974) idle
+postgres 2606227  6.9  2.9 271328 177196 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47182) idle
+postgres 2606226  6.7  2.8 269972 175296 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(47176) idle
+postgres 2604016  6.9  2.7 258712 166936 ?       Ss   14:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50982) idle
+[2025-07-21 14:15:17] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 14:15:17] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 14:15:17] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 14:15:17] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 14:15:18] OPTIMIZATION: Cleaning old log files
+[2025-07-21 14:15:18] OPTIMIZATION: Optimizing database performance
+[2025-07-21 14:15:18] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 14:15:18] OPTIMIZATION: Updating table statistics
+[2025-07-21 14:15:18] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 14:15:18] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:15:18] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:17:42] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:17:42] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:22:44] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:22:44] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:27:47] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:27:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:32:49] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:32:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:37:51] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:37:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:42:53] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:42:53] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:47:55] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:47:55] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:52:57] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:52:57] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 14:57:59] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 14:57:59] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:03:01] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:03:01] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:08:03] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:08:03] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:13:06] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:13:06] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 15:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 15:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 15:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 15:15:14] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 15:15:14] OPTIMIZATION: High CPU processes detected: postgres 2955111 24.1  3.1 274572 190588 ?       Ss   15:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33548) idle
+postgres 2957203 10.9  2.9 269632 179172 ?       Ss   15:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48090) idle
+ittz     2953882  9.6  4.5 12002504 277584 ?     Ssl  15:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2955144  6.1  2.7 258688 167608 ?       Ss   15:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33550) idle
+ittz     2807222  2.8 18.7 33787852 1135896 pts/0 Sl+ 14:49   0:43 claude
+[2025-07-21 15:15:14] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 15:15:14] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 15:15:14] OPTIMIZATION: High memory processes: ittz     2807222  2.8 18.7 33787852 1135896 pts/0 Sl+ 14:49   0:43 claude
+ittz     2953882  9.6  4.5 12002504 277584 ?     Ssl  15:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 2955111 24.1  3.1 274572 190588 ?       Ss   15:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33548) idle
+postgres 2957203 10.9  2.9 269632 179172 ?       Ss   15:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(48090) idle
+postgres 2955144  6.1  2.7 258688 167608 ?       Ss   15:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(33550) idle
+[2025-07-21 15:15:14] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 15:15:15] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 15:15:15] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 15:15:15] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 15:15:15] OPTIMIZATION: Cleaning old log files
+[2025-07-21 15:15:15] OPTIMIZATION: Optimizing database performance
+[2025-07-21 15:15:15] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 15:15:15] OPTIMIZATION: Updating table statistics
+[2025-07-21 15:15:15] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 15:15:15] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:15:15] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:18:08] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:18:08] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:23:10] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:23:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:28:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:28:12] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:33:15] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:33:15] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:38:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:38:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:43:19] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:43:19] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:48:21] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:48:21] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:53:23] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:53:23] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 15:58:25] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 15:58:25] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:03:27] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:03:27] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:08:29] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:08:29] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:13:32] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:13:32] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 16:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 16:15:01] OPTIMIZATION: Optimizing database connections
+[2025-07-21 16:15:01] OPTIMIZATION: Checking static asset compression
+[2025-07-21 16:15:16] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 16:15:16] OPTIMIZATION: High CPU processes detected: postgres 3306256 17.3  3.1 273840 188396 ?       Ss   16:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56394) idle
+postgres 3306266  9.6  2.9 267616 177460 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56402) idle
+ittz     3305036  8.5  4.5 12003012 277320 ?     Ssl  16:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3309108  8.2  2.8 270116 174528 ?       Ss   16:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(40684) idle
+postgres 3309107  3.7  1.8 236364 114928 ?       Ss   16:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(40672) idle
+[2025-07-21 16:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 16:15:16] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 16:15:16] OPTIMIZATION: High memory processes: ittz     2807222  3.6  8.1 33135484 496632 pts/0 Sl+  14:49   3:06 claude
+ittz     3305036  8.5  4.5 12003012 277320 ?     Ssl  16:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3306256 17.3  3.1 273840 188396 ?       Ss   16:15   0:02 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56394) idle
+postgres 3306266  9.6  2.9 267616 177460 ?       Ss   16:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(56402) idle
+postgres 3309108  8.2  2.8 270116 174528 ?       Ss   16:15   0:00 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(40684) idle
+[2025-07-21 16:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 16:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 16:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 16:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 16:15:17] OPTIMIZATION: Cleaning old log files
+[2025-07-21 16:15:17] OPTIMIZATION: Optimizing database performance
+[2025-07-21 16:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 16:15:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 16:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 16:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:18:34] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:18:34] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:23:36] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:23:36] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:28:38] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:28:38] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:33:41] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:33:41] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:38:43] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:38:43] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:43:45] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:43:45] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:48:47] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:48:47] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:53:49] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:53:49] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 16:58:51] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 16:58:51] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:03:54] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:03:54] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:08:56] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:08:56] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:13:58] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:13:58] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:15:01] OPTIMIZATION: Optimizing web performance due to high response times
+[2025-07-21 17:15:01] OPTIMIZATION: Restarting backend to clear potential memory leaks
+[2025-07-21 17:15:02] OPTIMIZATION: Optimizing database connections
+[2025-07-21 17:15:02] OPTIMIZATION: Checking static asset compression
+[2025-07-21 17:15:16] OPTIMIZATION: Optimizing CPU usage
+[2025-07-21 17:15:16] OPTIMIZATION: High CPU processes detected: postgres 3659688 12.3  3.1 271900 189660 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54428) idle
+postgres 3658562  8.5  2.9 269772 180368 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54390) idle
+ittz     3655772  8.4  4.5 12002756 277996 ?     Ssl  17:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3656671  7.7  2.7 258784 168048 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50954) idle
+ittz     2807222  3.2 10.1 33381700 612712 pts/0 Sl+  14:49   4:45 claude
+[2025-07-21 17:15:16] OPTIMIZATION: Adjusting process priorities for better CPU distribution
+[2025-07-21 17:15:16] OPTIMIZATION: Optimizing memory usage
+[2025-07-21 17:15:16] OPTIMIZATION: High memory processes: ittz     2807222  3.2 10.1 33381700 612712 pts/0 Sl+  14:49   4:45 claude
+ittz     3655772  8.4  4.5 12002756 277996 ?     Ssl  17:15   0:01 node /home/ittz/projects/itt/shared/backend/server.js
+postgres 3659688 12.3  3.1 271900 189660 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54428) idle
+postgres 3658562  8.5  2.9 269772 180368 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(54390) idle
+postgres 3656671  7.7  2.7 258784 168048 ?       Ss   17:15   0:01 postgres: 14/main: itt_user itt_heal_db 127.0.0.1(50954) idle
+[2025-07-21 17:15:16] OPTIMIZATION: Clearing system caches to free memory
+[2025-07-21 17:15:16] OPTIMIZATION: Triggering garbage collection in Node.js processes
+[2025-07-21 17:15:16] OPTIMIZATION: Optimizing disk usage
+[2025-07-21 17:15:16] OPTIMIZATION: Running VPS cleanup script
+[2025-07-21 17:15:17] OPTIMIZATION: Cleaning old log files
+[2025-07-21 17:15:17] OPTIMIZATION: Optimizing database performance
+[2025-07-21 17:15:17] OPTIMIZATION: Running database maintenance (VACUUM ANALYZE)
+[2025-07-21 17:15:17] OPTIMIZATION: Updating table statistics
+[2025-07-21 17:15:17] OPTIMIZATION: Terminating queries running longer than 5 minutes
+[2025-07-21 17:15:17] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:15:17] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:19:00] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:19:00] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:24:03] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:24:03] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:29:05] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:29:05] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:34:07] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:34:07] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:39:10] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:39:10] OPTIMIZATION: Nginx configuration is valid - reloading
+[2025-07-21 17:44:12] OPTIMIZATION: Optimizing nginx performance
+[2025-07-21 17:44:12] OPTIMIZATION: Nginx configuration is valid - reloading

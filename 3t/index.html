@@ -2139,10 +2139,10 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                     </p>
                                                 </div>
                                                 
-                                                <!-- Main Content Grid -->
-                                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+                                                <!-- Main Content -->
+                                                <div style="margin-bottom: 2.5rem;">
                                                     
-                                                    <!-- Left Column: Booking Details -->
+                                                    <!-- Booking Details -->
                                                     <section style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border: 1px solid #d1fae5; border-radius: 12px; padding: 2rem;" role="region" aria-labelledby="confirmation-heading">
                                                         <h3 id="confirmation-heading" style="color: #047857; font-weight: 600; margin: 0 0 1.5rem 0; font-size: 1.3rem; display: flex; align-items: center;">
                                                             <span style="background: #059669; color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.75rem; font-size: 0.9rem;">✓</span>
@@ -2168,28 +2168,6 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                             <div style="border-top: 2px solid #d1fae5; padding-top: 1rem; margin-top: 1.5rem;">
                                                                 <div style="font-weight: 600; color: #374151; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">Total Amount</div>
                                                                 <div style="color: #047857; font-size: 1.5rem; font-weight: 700;">$${confirmationData.totalAmount}</div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                    
-                                                    <!-- Right Column: Next Steps -->
-                                                    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 2rem;" role="region" aria-labelledby="details-heading">
-                                                        <h4 id="details-heading" style="color: #0369a1; font-weight: 600; margin: 0 0 1.5rem 0; font-size: 1.3rem; display: flex; align-items: center;">
-                                                            <span style="background: #0284c7; color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 0.75rem; font-size: 1rem;">📧</span>
-                                                            What Happens Next
-                                                        </h4>
-                                                        <div style="color: #1e293b; font-size: 1rem; line-height: 1.7;">
-                                                            <div style="margin-bottom: 1.25rem; padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #0284c7;">
-                                                                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">📧 Email Confirmation</div>
-                                                                <div style="font-size: 0.95rem; color: #4b5563;">A detailed confirmation email has been sent to your email address with all session information.</div>
-                                                            </div>
-                                                            <div style="margin-bottom: 1.25rem; padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #0284c7;">
-                                                                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">📱 SMS Reminder</div>
-                                                                <div style="font-size: 0.95rem; color: #4b5563;">You'll receive a text reminder 24 hours before your appointment.</div>
-                                                            </div>
-                                                            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #0284c7;">
-                                                                <div style="font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">🏢 Arrival Information</div>
-                                                                <div style="font-size: 0.95rem; color: #4b5563;">Please arrive 10 minutes early and bring comfortable clothing.</div>
                                                             </div>
                                                         </div>
                                                     </section>
@@ -2220,12 +2198,6 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                 <!-- Responsive Mobile Layout -->
                                                 <style>
                                                     @media (max-width: 768px) {
-                                                        [style*="display: grid"] { 
-                                                            display: block !important; 
-                                                        }
-                                                        [style*="display: grid"] > section {
-                                                            margin-bottom: 1.5rem !important;
-                                                        }
                                                         #thank-you-content {
                                                             padding: 2rem 1.5rem !important;
                                                         }
@@ -3238,16 +3210,6 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                 required 
                                                 aria-label="Available appointment times">
                                             <option value="">Select a time...</option>
-                                            <option value="16:30">11:30 AM (90 min)</option>
-                                            <option value="17:00">12:00 PM (90 min)</option>
-                                            <option value="17:30">12:30 PM (90 min)</option>
-                                            <option value="18:00">1:00 PM (90 min)</option>
-                                            <option value="18:30">1:30 PM (90 min)</option>
-                                            <option value="19:00">2:00 PM (90 min)</option>
-                                            <option value="19:30">2:30 PM (90 min)</option>
-                                            <option value="20:00">3:00 PM (90 min)</option>
-                                            <option value="20:30">3:30 PM (90 min)</option>
-                                            <option value="21:00">4:00 PM (90 min)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3424,7 +3386,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
                                                 <input type="radio" name="payment-method" value="other" id="payment-method-other" style="margin-right: 0.75rem;">
                                                 <div>
-                                                    <div style="font-weight: 600; color: var(--sage-700);">📱 Other (Venmo, CashApp)</div>
+                                                    <div style="font-weight: 600; color: var(--sage-700);">📱 Other (Zelle, Venmo, CashApp)</div>
                                                     <div style="font-size: 0.875rem; color: var(--sage-500);">Alternative payment methods - arranged with practitioner</div>
                                                 </div>
                                             </label>
@@ -3811,10 +3773,10 @@ My husband, a large man who's endured over 15 surgeries including six back proce
     </script>
 
     <!-- Booking Availability Handler -->
-    <!-- <script src="./js/booking-availability.js?v=20250708-booking-001"></script> -->
+    <script src="./js/booking-availability.js?v=20250721-no-hardcode-004"></script>
     
     <!-- Custom Calendar with Closed Date Support -->
-    <script src="./js/custom-calendar.js?v=20250720-002"></script>
+    <script src="./js/custom-calendar.js?v=20250721-times-fix-007"></script>
     
     <!-- Smooth scrolling for anchor links -->
     <script>

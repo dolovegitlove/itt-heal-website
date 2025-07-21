@@ -1,3 +1,0 @@
-The following error was encountered:
-[Errno 13] Permission denied: '/var/log/letsencrypt/.certbot.lock'
-Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.

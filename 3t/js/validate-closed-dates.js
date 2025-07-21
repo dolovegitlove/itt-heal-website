@@ -7,7 +7,7 @@
 
     const ClosedDateValidator = {
         closedDates: [],
-        businessDays: [1, 3, 5, 6], // Monday, Wednesday, Friday, Saturday
+        // REMOVED: Hardcoded business days - all validation via API
         
         async init() {
             await this.fetchClosedDates();
