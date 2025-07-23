@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-07-23 02:36:06",
+  "checks": {
+    "website": [2025-07-23 02:36:06] 🌐 Checking website accessibility...
+[2025-07-23 02:36:06] ✅ Website is accessible (HTTP 200)
+true,
+    "api": [2025-07-23 02:36:06] 🔗 Checking API health...
+[2025-07-23 02:36:06] ✅ API is healthy
+true,
+    "backend": [2025-07-23 02:36:06] ⚙️  Checking backend processes...
+[2025-07-23 02:36:06] ALERT [HIGH]: Backend process is not running (status: )
+[2025-07-23 02:36:06] 🔧 Attempting to restart backend...
+Use --update-env to update environment variables
+[2025-07-23 02:36:07] ALERT [CRITICAL]: Failed to restart backend process
+false,
+    "database": [2025-07-23 02:36:07] 🗄️  Checking database connectivity...
+[2025-07-23 02:36:07] ✅ Database is connected
+true,
+    "disk_space": [2025-07-23 02:36:07] 💾 Checking disk space...
+[2025-07-23 02:36:07] ✅ Disk space OK (81% used)
+true,
+    "ssl": [2025-07-23 02:36:07] 🔒 Checking SSL certificate...
+[2025-07-23 02:36:07] ✅ SSL certificate valid (42 days remaining)
+true,
+    "errors": [2025-07-23 02:36:07] 📋 Checking error logs...
+[2025-07-23 02:36:07] ✅ Error logs look clean (0 recent errors)
+true,
+    "flows": [2025-07-23 02:36:07] 🔬 Testing critical user flows...
+[2025-07-23 02:36:07] ✅ Booking system accessible
+true,
+    "enums": [2025-07-23 02:36:07] 🎯 Checking enum consistency...
+[2025-07-23 02:36:07] ✅ Enum consistency check passed
+true
+  }
+}

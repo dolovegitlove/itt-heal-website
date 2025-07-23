@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-07-23 05:29:56",
+  "checks": {
+    "website": [2025-07-23 05:29:56] 🌐 Checking website accessibility...
+[2025-07-23 05:29:56] ✅ Website is accessible (HTTP 200)
+true,
+    "api": [2025-07-23 05:29:56] 🔗 Checking API health...
+[2025-07-23 05:29:56] ✅ API is healthy
+true,
+    "backend": [2025-07-23 05:29:56] ⚙️  Checking backend processes...
+[2025-07-23 05:29:57] ✅ Backend process is running
+true,
+    "database": [2025-07-23 05:29:57] 🗄️  Checking database connectivity...
+[2025-07-23 05:29:57] ✅ Database is connected
+true,
+    "disk_space": [2025-07-23 05:29:57] 💾 Checking disk space...
+[2025-07-23 05:29:57] ✅ Disk space OK (81% used)
+true,
+    "ssl": [2025-07-23 05:29:57] 🔒 Checking SSL certificate...
+[2025-07-23 05:29:57] ✅ SSL certificate valid (42 days remaining)
+true,
+    "errors": [2025-07-23 05:29:57] 📋 Checking error logs...
+[2025-07-23 05:29:57] ✅ Error logs look clean (2 recent errors)
+true,
+    "flows": [2025-07-23 05:29:57] 🔬 Testing critical user flows...
+[2025-07-23 05:29:57] ✅ Booking system accessible
+true,
+    "enums": [2025-07-23 05:29:57] 🎯 Checking enum consistency...
+[2025-07-23 05:29:57] ✅ Enum consistency check passed
+true
+  }
+}

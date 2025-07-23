@@ -6,10 +6,23 @@
 // Import shared pricing configuration (converted from TypeScript)
 const PRICING_CONFIG = {
   sessions: {
+    '30min': {
+      duration: 30,
+      appPrice: 85,
+      webPrice: 85,
+      title: '30-Minute Quick Relief',
+      description: 'Targeted therapeutic session for specific issues',
+      features: [
+        'Focused assessment',
+        'Targeted therapy',
+        'Quick relief techniques'
+      ],
+      badge: 'Quick Relief'
+    },
     '60min': {
       duration: 60,
       appPrice: 135,
-      webPrice: 145,
+      webPrice: 135,
       title: '60-Minute Reset',
       description: 'Standard therapeutic session',
       features: [
@@ -23,7 +36,7 @@ const PRICING_CONFIG = {
     '90min': {
       duration: 90,
       appPrice: 180,
-      webPrice: 190,
+      webPrice: 180,
       title: '90-Minute Integrative Fascia',
       description: 'Extended therapeutic session with deeper work',
       features: [
@@ -38,7 +51,7 @@ const PRICING_CONFIG = {
     '120min': {
       duration: 120,
       appPrice: 225,
-      webPrice: 235,
+      webPrice: 225,
       title: '120-Minute Deep Transformation',
       description: 'Comprehensive therapeutic session',
       features: [
@@ -53,7 +66,7 @@ const PRICING_CONFIG = {
     'fasciaflow': {
       duration: 75,
       appPrice: 225,
-      webPrice: 235,
+      webPrice: 225,
       title: 'FasciaFlow Athlete Recovery',
       description: 'Elite athletic recovery protocol with advanced fascial techniques',
       features: [
@@ -84,41 +97,59 @@ const PRICING_CONFIG = {
 
 // Shared addon configuration
 const ADDON_CONFIG = {
-  reflexology: {
-    id: 'reflexology',
-    name: 'Reflexology',
-    price: 25.00,
-    duration_adjustment: 15,
-    description: 'Foot reflexology treatment targeting pressure points',
-    category: 'therapy',
-    available_for: ['60min', '90min', '120min', 'fasciaflow']
-  },
   aromatherapy: {
     id: 'aromatherapy', 
     name: 'Aromatherapy',
-    price: 15.00,
+    price: 20.00,
     duration_adjustment: 0,
-    description: 'Essential oil therapy during massage',
+    description: 'Custom essential oil blend for your session',
     category: 'enhancement',
-    available_for: ['60min', '90min', '120min', 'fasciaflow']
+    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
   },
   hot_stones: {
     id: 'hot_stones',
-    name: 'Hot Stones',
-    price: 30.00,
-    duration_adjustment: 10,
-    description: 'Heated stone therapy for deep muscle relaxation',
-    category: 'therapy',
-    available_for: ['90min', '120min', 'fasciaflow']
-  },
-  cupping: {
-    id: 'cupping',
-    name: 'Cupping Therapy',
-    price: 20.00,
-    duration_adjustment: 10,
-    description: 'Therapeutic cupping for muscle tension relief',
+    name: 'Hot Stone Therapy',
+    price: 25.00,
+    duration_adjustment: 15,
+    description: 'Heated basalt stones for deep muscle relaxation',
     category: 'therapy',
     available_for: ['60min', '90min', '120min', 'fasciaflow']
+  },
+  coldstone_facial: {
+    id: 'coldstone_facial',
+    name: 'Cold Stone Facial Massage',
+    price: 30.00,
+    duration_adjustment: 10,
+    description: 'Cooling stones for facial tension and rejuvenation',
+    category: 'luxury',
+    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
+  },
+  peppermint_scalp: {
+    id: 'peppermint_scalp',
+    name: 'Peppermint Scalp Massage',
+    price: 18.00,
+    duration_adjustment: 5,
+    description: 'Invigorating scalp treatment with peppermint oil',
+    category: 'enhancement',
+    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
+  },
+  heated_mask: {
+    id: 'heated_mask',
+    name: 'Heated Hydrated Hand/Foot Mask',
+    price: 22.00,
+    duration_adjustment: 10,
+    description: 'Moisturizing heated mask treatment',
+    category: 'therapy',
+    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
+  },
+  reflexology: {
+    id: 'reflexology',
+    name: 'Reflexology',
+    price: 28.00,
+    duration_adjustment: 15,
+    description: 'Therapeutic foot pressure point massage',
+    category: 'therapy',
+    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
   }
 };
 

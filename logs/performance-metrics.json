@@ -1,12 +1,12 @@
 {
-  "timestamp": "2025-07-23T06:18:22Z",
-  "cpu_usage": 40,
-  "memory_usage": 47,
-  "disk_usage": 79,
+  "timestamp": "2025-07-23T18:23:58Z",
+  "cpu_usage": 31,
+  "memory_usage": 49,
+  "disk_usage": 81,
   "disk_io": 0,
   "website_response_times": {
-    "main_page": 40,
-    "api_health": 40,
-    "booking_page": 37
+    "main_page": 44,
+    "api_health": 41,
+    "booking_page": 35
   }
 }

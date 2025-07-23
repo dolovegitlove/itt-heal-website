@@ -1,0 +1,33 @@
+#!/bin/bash
+# CLAUDE.md - One Word Enforcement
+
+# If enforcement isn't installed yet, install it
+if [ ! -f ".git/hooks/pre-commit" ] || [ ! -f "scripts/claude-gatekeeper.js" ]; then
+    echo "🔒 Installing CLAUDE.md enforcement..."
+    bash INSTALL-CLAUDE-ENFORCEMENT.sh
+else
+    # Already installed - show status and run check
+    echo "🔒 CLAUDE.md ENFORCEMENT STATUS"
+    echo "=============================="
+    echo ""
+    
+    # Quick status
+    echo -n "Git Hooks: "
+    if [ -f .git/hooks/pre-commit ]; then echo "✅"; else echo "❌"; fi
+    
+    echo -n "Watcher: "
+    if systemctl is-active --quiet claude-watcher.service 2>/dev/null; then echo "✅"; else echo "⚠️"; fi
+    
+    echo -n "Compliance: "
+    if node scripts/claude-gatekeeper.js > /dev/null 2>&1; then
+        echo "✅"
+        echo ""
+        echo "✅ All systems operational. Code is protected!"
+    else
+        echo "❌"
+        echo ""
+        echo "❌ VIOLATIONS DETECTED! Running full check..."
+        echo ""
+        node scripts/claude-gatekeeper.js
+    fi
+fi

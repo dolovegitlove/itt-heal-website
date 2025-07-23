@@ -16,7 +16,7 @@
             '30min': {
                 duration: 30,
                 appPrice: 85,
-                webPrice: 95,
+                webPrice: 85,
                 title: '30-Minute Quick Relief',
                 description: 'Targeted therapeutic session',
                 features: [
@@ -29,7 +29,7 @@
             '60min': {
                 duration: 60,
                 appPrice: 135,
-                webPrice: 145,
+                webPrice: 135,
                 title: '60-Minute Reset',
                 description: 'Standard therapeutic session',
                 features: [
@@ -43,7 +43,7 @@
             '90min': {
                 duration: 90,
                 appPrice: 180,
-                webPrice: 190,
+                webPrice: 180,
                 title: '90-Minute Integrative Fascia',
                 description: 'Extended therapeutic session with deeper work',
                 features: [
@@ -55,6 +55,22 @@
                 premium: true,
                 badge: 'Therapeutic Flagship',
                 note: '89% of clients choose this for their second visit'
+            },
+            'fasciaflow': {
+                duration: 75,
+                appPrice: 225,
+                webPrice: 225,
+                title: 'FasciaFlow Athlete Recovery',
+                description: 'Elite athletic recovery protocol with advanced fascial techniques',
+                features: [
+                    'Movement assessment & fascial mapping',
+                    'Deep myofascial release techniques',
+                    'Sport-specific recovery work',
+                    'Movement integration & optimization',
+                    'Recovery acceleration techniques'
+                ],
+                premium: true,
+                badge: 'Elite Athletic Recovery'
             }
         },
         promos: {

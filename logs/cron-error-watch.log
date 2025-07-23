@@ -190,3 +190,1731 @@
 0: integer expression expected
 /home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
 ✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 01:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 01:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 01:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 01:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 01:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 01:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 02:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 02:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 02:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 02:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 02:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 02:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 02:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 02:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 02:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 02:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 02:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 02:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 03:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 03:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 03:10:02] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 03:10:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 03:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 03:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 03:30:02] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 03:30:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 03:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 03:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 03:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 03:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 04:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 04:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 04:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 04:10:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 04:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 04:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 04:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 04:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 04:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 04:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 04:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 04:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 05:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 05:00:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 05:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 05:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 05:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 05:20:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 05:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 05:30:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 05:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 05:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 05:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 05:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 06:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 06:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 06:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 06:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 06:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 06:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 06:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 06:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 06:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 06:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 06:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 06:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 07:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 07:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 07:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 07:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 07:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 07:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 07:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 07:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 07:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 07:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 07:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 07:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 08:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 08:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 08:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 08:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 08:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 08:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 08:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 08:30:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 08:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 08:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 08:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 08:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 09:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 09:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 09:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 09:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 09:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 09:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 09:30:02] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 09:30:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 09:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 09:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 09:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 09:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 10:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 10:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 10:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 10:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 10:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 10:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 10:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 10:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 10:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 10:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 10:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 10:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 11:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 11:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 11:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 11:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 11:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 11:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 11:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 11:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 11:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 11:40:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 11:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 11:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 12:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 12:00:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 12:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 12:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 12:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 12:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 12:30:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 12:30:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 12:40:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 12:40:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 12:50:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 12:50:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 13:00:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 13:00:02] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 13:10:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 13:10:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed
+🧪 Running error watcher in test mode...
+[2025-07-23 13:20:01] 🔍 Analyzing recent backend errors with intelligent pattern recognition...
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 159: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 174: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 189: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 199: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 209: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 219: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 229: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 239: [: 0
+0: integer expression expected
+[2025-07-23 13:20:01] 🔧 Detected 2 validation/schema issues
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 252: fix_validation_issues: command not found
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 259: [: 0
+0: integer expression expected
+/home/ittz/projects/itt/site/scripts/error-watcher.sh: line 267: analyze_error_patterns: command not found
+✅ Test completed

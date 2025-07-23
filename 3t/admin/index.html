@@ -175,6 +175,15 @@
         body {
             background: var(--admin-background);
             color: var(--admin-text);
+            overflow-x: hidden;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
         }
 
         .admin-container {
@@ -305,6 +314,17 @@
             }
         }
         
+        @media (max-width: 768px) {
+            .data-table {
+                display: none !important;
+            }
+            
+            .clients-mobile-cards,
+            .payments-mobile-cards {
+                display: block !important;
+            }
+        }
+        
         @media (max-width: 480px) {
             .itt-header {
                 height: 160px !important;
@@ -350,6 +370,8 @@
             grid-template-columns: 280px 1fr;
             gap: 0;
             position: relative;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .admin-sidebar {
@@ -397,6 +419,10 @@
         .admin-content {
             padding: 2rem;
             overflow-y: auto;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
         }
 
         .admin-section {
@@ -425,6 +451,9 @@
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .stats-grid {
@@ -928,6 +957,14 @@
             .data-table td {
                 padding: 0.75rem 0.5rem;
             }
+            
+            .clients-table-wrapper {
+                max-height: 400px;
+            }
+            
+            .payments-table-wrapper {
+                max-height: 400px;
+            }
 
             .btn {
                 padding: 0.5rem 1rem;
@@ -966,8 +1003,131 @@
             }
 
             .data-table {
+                display: none;
+            }
+            
+            .clients-mobile-cards,
+            .payments-mobile-cards {
                 display: block;
-                overflow-x: auto;
+            }
+            
+            .client-mobile-card,
+            .payment-mobile-card {
+                background: white;
+                border: 1px solid var(--admin-border);
+                border-radius: 8px;
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            
+            .client-mobile-card:hover,
+            .payment-mobile-card:hover {
+                background: var(--admin-background);
+                transform: translateY(-1px);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .client-mobile-card:focus,
+            .payment-mobile-card:focus {
+                outline: 2px solid #2563eb;
+                outline-offset: 2px;
+            }
+            
+            .mobile-card-name {
+                font-weight: 600;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                color: var(--admin-text);
+            }
+            
+            .mobile-card-email {
+                font-size: 0.875rem;
+                color: #666;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                margin-bottom: 0.25rem;
+            }
+            
+            .mobile-card-phone {
+                font-size: 0.875rem;
+                color: #666;
+            }
+            
+            .clients-table-wrapper {
+                max-height: 300px;
+            }
+            
+            .client-row td:first-child {
+                font-weight: 600;
+                min-width: 150px;
+            }
+            
+            .client-row td:last-child {
+                min-width: 200px;
+            }
+            
+            .client-email {
+                max-width: 180px;
+                font-size: 0.8rem;
+            }
+            
+            .client-phone {
+                font-size: 0.75rem;
+            }
+            
+            .payments-table-wrapper {
+                max-height: 300px;
+            }
+            
+            .client-modal-content {
+                margin: 0.25rem;
+                max-height: 98vh;
+                max-width: calc(100vw - 0.5rem);
+                width: calc(100vw - 0.5rem);
+                border-radius: 8px;
+            }
+            
+            .client-modal-header {
+                padding: 1rem 1rem 0.75rem 1rem;
+            }
+            
+            .client-modal-header h2 {
+                font-size: 1.25rem;
+                margin-bottom: 0.25rem;
+            }
+            
+            .client-modal-body {
+                padding: 0.75rem 1rem;
+                max-height: calc(98vh - 160px);
+                overflow-y: auto;
+            }
+            
+            .client-modal-footer {
+                padding: 0.75rem 1rem 1rem 1rem;
+                border-top: 1px solid var(--admin-border);
+                margin-top: 0;
+            }
+            
+            .client-info-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem;
+            }
+            
+            .booking-history-item {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+            
+            .client-modal-footer .btn {
+                padding: 0.875rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -1170,6 +1330,9 @@
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
+            gap: 0;
+            border: 1px solid var(--admin-border);
+            overflow-x: auto;
         }
 
         .calendar-day {
@@ -1181,6 +1344,11 @@
             transition: all 0.2s ease;
             position: relative;
             background: white;
+        }
+        
+        .calendar-day[aria-selected="true"] {
+            background: #eff6ff;
+            border-color: #2563eb;
         }
 
         .calendar-day:nth-child(7n) {
@@ -1253,15 +1421,36 @@
         }
 
         .slot-indicator.available {
-            background: #10b981;
+            background: #059669;
+            position: relative;
+        }
+        
+        .slot-indicator.available::after {
+            content: 'Available';
+            position: absolute;
+            left: -9999px;
         }
 
         .slot-indicator.blocked {
-            background: #ef4444;
+            background: #dc2626;
+            position: relative;
+        }
+        
+        .slot-indicator.blocked::after {
+            content: 'Blocked';
+            position: absolute;
+            left: -9999px;
         }
 
         .slot-indicator.booked {
-            background: #c084fc;
+            background: #7c3aed;
+            position: relative;
+        }
+        
+        .slot-indicator.booked::after {
+            content: 'Booked';
+            position: absolute;
+            left: -9999px;
         }
 
         .slot-count {
@@ -1276,6 +1465,9 @@
             background: var(--admin-background);
             border-radius: 8px;
             border: 1px solid var(--admin-border);
+            max-height: 400px;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .day-details-title {
@@ -1288,6 +1480,8 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            min-height: 0;
+            overflow-y: auto;
         }
 
         .time-slot {
@@ -1295,6 +1489,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.75rem 1rem;
+            min-width: 0;
+            flex-shrink: 0;
             background: white;
             border: 1px solid var(--admin-border);
             border-radius: 6px;
@@ -1323,6 +1519,9 @@
         .slot-time {
             font-weight: 600;
             color: var(--admin-text);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .slot-status {
@@ -1387,14 +1586,60 @@
                 min-height: 80px;
                 padding: 0.5rem;
             }
+            
+            .calendar-day:focus {
+                outline: 2px solid #2563eb;
+                outline-offset: 1px;
+            }
 
             .day-number {
                 font-size: 0.875rem;
+            }
+            
+            .slot-count {
+                font-size: 0.6rem;
             }
 
             .weekday {
                 padding: 0.75rem 0.5rem;
                 font-size: 0.75rem;
+            }
+            
+            .day-details {
+                margin-top: 1rem;
+                padding: 1rem;
+                max-height: 300px;
+            }
+            
+            .time-slot {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 0.75rem;
+            }
+            
+            .slot-time {
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+            
+            .slot-status {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .slot-actions {
+                display: flex;
+                gap: 0.25rem;
+            }
+            
+            .slot-actions .btn {
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
             }
         }
 
@@ -1402,6 +1647,362 @@
             .calendar-day {
                 min-height: 60px;
                 padding: 0.25rem;
+            }
+            
+            .day-number {
+                font-size: 0.75rem;
+                margin-bottom: 0.125rem;
+            }
+            
+            .slot-indicator {
+                height: 2px;
+                margin-bottom: 0.5px;
+            }
+            
+            .slot-count {
+                font-size: 0.5rem;
+                line-height: 1.2;
+            }
+            
+            .weekday {
+                padding: 0.25rem;
+                font-size: 0.6rem;
+            }
+            
+            .day-details {
+                margin-top: 0.75rem;
+                padding: 0.75rem;
+                max-height: 250px;
+            }
+            
+            .day-details-title {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .time-slot {
+                padding: 0.5rem;
+            }
+            
+            .slot-time {
+                font-size: 0.8rem;
+            }
+            
+            .slot-actions .btn {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.5rem;
+            }
+        }
+        
+        /* Container for availability section to prevent overflow */
+        .availability-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .calendar-container {
+            flex-shrink: 0;
+        }
+        
+        /* Client Records Container */
+        .clients-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .clients-table-wrapper {
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--admin-border);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .clients-table-wrapper .data-table {
+            border: none;
+            border-radius: 0;
+        }
+        
+        .client-email {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 250px;
+        }
+        
+        .client-phone {
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 0.25rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .client-row {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .client-row:hover {
+            background-color: var(--admin-background) !important;
+        }
+        
+        .client-row:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: -2px;
+            background-color: #eff6ff;
+        }
+        
+        /* Payments Table Container */
+        .payments-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .payments-table-wrapper {
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--admin-border);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .payments-table-wrapper .data-table {
+            border: none;
+            border-radius: 0;
+        }
+        
+        /* Z Fold folded state (344px and below) */
+        @media (max-width: 344px) {
+            .calendar-grid {
+                grid-template-columns: repeat(7, minmax(0, 1fr));
+                gap: 1px;
+            }
+            
+            .calendar-day {
+                min-height: 45px;
+                padding: 0.125rem;
+                font-size: 0.6rem;
+            }
+            
+            .day-number {
+                font-size: 0.6rem;
+                margin-bottom: 0;
+            }
+            
+            .slot-indicator {
+                height: 1.5px;
+                margin-bottom: 0;
+            }
+            
+            .slot-count {
+                display: none;
+            }
+            
+            .weekday {
+                padding: 0.125rem 0;
+                font-size: 0.5rem;
+            }
+            
+            .calendar-day:focus {
+                outline: 1px solid #2563eb;
+                outline-offset: 0;
+            }
+            
+            .clients-table-wrapper {
+                max-height: 250px;
+                font-size: 0.75rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.7rem;
+            }
+            
+            .client-row td:first-child {
+                min-width: 100px;
+            }
+            
+            .client-row td:last-child {
+                min-width: 140px;
+            }
+            
+            .client-email {
+                max-width: 120px;
+                font-size: 0.65rem;
+            }
+            
+            .client-phone {
+                font-size: 0.6rem;
+                margin-top: 0.125rem;
+            }
+            
+            .payments-table-wrapper {
+                max-height: 250px;
+            }
+            
+            .mobile-card-name {
+                font-size: 0.9rem;
+            }
+            
+            .mobile-card-email,
+            .mobile-card-phone {
+                font-size: 0.75rem;
+            }
+            
+            .client-mobile-card,
+            .payment-mobile-card {
+                padding: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .client-modal-content {
+                margin: 0.25rem;
+                max-height: 98vh;
+                max-width: calc(100vw - 0.5rem);
+                width: calc(100vw - 0.5rem);
+                border-radius: 8px;
+            }
+            
+            .client-modal-header {
+                padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+            }
+            
+            .client-modal-body {
+                padding: 0.5rem 0.75rem;
+                max-height: calc(98vh - 140px);
+                overflow-y: auto;
+            }
+            
+            .client-modal-footer {
+                padding: 0.5rem 0.75rem 0.75rem 0.75rem;
+                border-top: 1px solid var(--admin-border);
+                margin-top: 0;
+            }
+            
+            .client-modal-header h2 {
+                font-size: 1.125rem;
+                margin-bottom: 0.125rem;
+                line-height: 1.3;
+            }
+            
+            .client-info-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.375rem;
+            }
+            
+            .stat-item {
+                padding: 0.375rem;
+                text-align: center;
+            }
+            
+            .stat-value {
+                font-size: 0.875rem;
+                font-weight: 700;
+            }
+            
+            .stat-label {
+                font-size: 0.625rem;
+                margin-top: 0.125rem;
+            }
+            
+            .booking-history-item {
+                padding: 0.375rem;
+                font-size: 0.75rem;
+                border-radius: 4px;
+                margin-bottom: 0.25rem;
+            }
+            
+            .booking-history-list {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+            
+            .client-contact-card,
+            .client-stats-card,
+            .client-history-card {
+                padding: 0.75rem;
+                border-radius: 6px;
+            }
+            
+            .client-contact-card h4,
+            .client-stats-card h4,
+            .client-history-card h4 {
+                font-size: 0.875rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .client-modal-footer {
+                padding-top: 0.75rem;
+            }
+            
+            .client-modal-footer .btn {
+                padding: 0.625rem;
+                font-size: 0.8125rem;
+                min-height: 44px;
+                border-radius: 6px;
+            }
+            
+            .contact-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.375rem;
+            }
+            
+            .contact-item .btn {
+                align-self: flex-start;
+                margin-top: 0.125rem;
+                padding: 0.375rem 0.625rem;
+                font-size: 0.6875rem;
+                min-height: 28px;
+            }
+            
+            .contact-details {
+                gap: 0.75rem;
+            }
+            
+            .day-details {
+                margin-top: 0.5rem;
+                padding: 0.5rem;
+                max-height: 200px;
+                font-size: 0.75rem;
+            }
+            
+            .day-details-title {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .time-slot {
+                padding: 0.375rem;
+                gap: 0.25rem;
+            }
+            
+            .slot-time {
+                font-size: 0.7rem;
+            }
+            
+            .status-badge {
+                font-size: 0.6rem;
+                padding: 0.125rem 0.375rem;
+            }
+            
+            .slot-actions .btn {
+                font-size: 0.6rem;
+                padding: 0.125rem 0.375rem;
             }
 
             .day-number {
@@ -1513,6 +2114,22 @@
             animation: fadeIn 0.3s ease forwards;
         }
         
+        @media (max-width: 480px) {
+            .modal-overlay {
+                padding: 0.25rem;
+                align-items: flex-start;
+                padding-top: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 344px) {
+            .modal-overlay {
+                padding: 0.125rem;
+                align-items: flex-start;
+                padding-top: 1rem;
+            }
+        }
+        
         @keyframes fadeIn {
             to { opacity: 1; }
         }
@@ -1527,6 +2144,7 @@
             overflow: hidden;
             transform: translateY(20px);
             animation: slideUp 0.3s ease forwards;
+            position: relative;
         }
         
         @keyframes slideUp {
@@ -1730,13 +2348,36 @@
         }
         
         .status-active {
-            background: #d1fae5;
-            color: #065f46;
+            background: #10b981;
+            color: #ffffff;
+            font-weight: 600;
         }
         
         .status-inactive {
-            background: #f3f4f6;
-            color: #6b7280;
+            background: #6b7280;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        /* Screen reader only content */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Enhanced focus styles for calendar */
+        .calendar-day:focus {
+            outline: 3px solid #2563eb;
+            outline-offset: 2px;
+            z-index: 10;
+            position: relative;
         }
         
         /* Mobile responsiveness for client modal */
@@ -1759,6 +2400,8 @@
             .client-modal-content {
                 margin: 0.5rem;
                 max-height: 95vh;
+                max-width: calc(100vw - 1rem);
+                width: calc(100vw - 1rem);
             }
             
             .client-modal-header,
@@ -1770,6 +2413,23 @@
             
             .client-modal-footer {
                 flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .client-modal-footer .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .contact-item .btn {
+                align-self: flex-start;
+                margin-top: 0.25rem;
             }
         }
     </style>
@@ -1944,7 +2604,7 @@
                         Schedule Management
                     </h2>
 
-                    <div class="admin-card">
+                    <div class="admin-card availability-container">
                         <!-- Calendar Header -->
                         <div class="calendar-header">
                             <div class="calendar-navigation">
@@ -2007,15 +2667,19 @@
                                 <div class="weekday">Fri</div>
                                 <div class="weekday">Sat</div>
                             </div>
-                            <div class="calendar-grid" id="calendarGrid">
+                            <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Schedule calendar" aria-describedby="calendar-instructions">
                                 <!-- Calendar days will be dynamically generated -->
                             </div>
+                            <div id="calendar-instructions" class="sr-only">
+                                Use arrow keys to navigate between dates. Press Enter or Space to select a date. Available, blocked, and booked slots are indicated by color and text descriptions.
+                            </div>
+                            <div id="calendar-announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
                         </div>
                         
                         <!-- Selected Day Details -->
-                        <div class="day-details" id="dayDetails" style="display: none;">
+                        <div class="day-details" id="dayDetails" style="display: none;" role="region" aria-labelledby="dayDetailsTitle">
                             <h4 class="day-details-title" id="dayDetailsTitle">Schedule for Selected Day</h4>
-                            <div class="day-details-content" id="dayDetailsContent">
+                            <div class="day-details-content" id="dayDetailsContent" role="list" aria-label="Time slots for selected day">
                                 <!-- Day details will be populated by JavaScript -->
                             </div>
                         </div>
@@ -2031,9 +2695,11 @@
                         Client Records
                     </h2>
 
-                    <div class="admin-card">
+                    <div class="admin-card clients-container">
                         <h3 style="margin: 0 0 1rem 0; font-family: 'Playfair Display', serif;">Client Database</h3>
-                        <div id="clientsTable" class="loading">Loading client records...</div>
+                        <div class="clients-table-wrapper">
+                            <div id="clientsTable" class="loading">Loading client records...</div>
+                        </div>
                     </div>
                 </section>
 
@@ -2046,9 +2712,11 @@
                         Financial Overview
                     </h2>
 
-                    <div class="admin-card">
+                    <div class="admin-card payments-container">
                         <h3 style="margin: 0 0 1rem 0; font-family: 'Playfair Display', serif;">Payment Records</h3>
-                        <div id="paymentsTable" class="loading">Loading payment records...</div>
+                        <div class="payments-table-wrapper">
+                            <div id="paymentsTable" class="loading">Loading payment records...</div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -2063,6 +2731,7 @@
                 <button class="modal-close" onclick="closeModal('createBookingModal')" aria-label="Close modal">&times;</button>
             </div>
             <form id="createBookingForm">
+                <!-- Client Information -->
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="clientName">Client Name</label>
@@ -2073,10 +2742,20 @@
                         <input type="email" id="clientEmail" name="client_email" class="form-input" required>
                     </div>
                 </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="clientPhone">Phone Number</label>
+                    <input type="tel" id="clientPhone" name="client_phone" class="form-input">
+                </div>
+                
+                <!-- Service & Scheduling -->
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label" for="clientPhone">Phone Number</label>
-                        <input type="tel" id="clientPhone" name="client_phone" class="form-input">
+                        <label class="form-label" for="serviceType">Service Type</label>
+                        <select id="serviceType" name="service_type" class="form-select" required>
+                            <option value="">Select Service</option>
+                            <!-- Options populated by populateCreateServiceTypes() -->
+                        </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="scheduledDate">Date & Time</label>
@@ -2084,34 +2763,11 @@
                     </div>
                 </div>
                 
-                <!-- Service Selection -->
-                <div class="form-group">
-                    <label class="form-label" for="serviceType">Service Type</label>
-                    <select id="serviceType" name="service_type" class="form-select" required>
-                        <option value="">Select Service</option>
-                        <option value="60min">60 Minute Session - $150</option>
-                        <option value="90min">90 Minute Session - $200</option>
-                        <option value="120min">120 Minute Session - $250</option>
-                        <option value="fasciaflow">FasciaFlow Athlete Recovery - $235</option>
-                    </select>
-                </div>
-                
                 <!-- Add-ons -->
                 <fieldset class="form-group">
                     <legend class="form-label">Add-ons</legend>
-                    <div id="addons-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="reflexologyAddon" name="addons[]" value="reflexology" data-price="25">
-                            <span>Reflexology (+$25)</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="aromatherapyAddon" name="addons[]" value="aromatherapy" data-price="15">
-                            <span>Aromatherapy (+$15)</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="hotStonesAddon" name="addons[]" value="hot_stones" data-price="30">
-                            <span>Hot Stones (+$30)</span>
-                        </label>
+                    <div id="createAddonsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
+                        <!-- Add-ons populated by populateCreateAddons() -->
                     </div>
                 </fieldset>
                 
@@ -2135,8 +2791,6 @@
                     </div>
                 </div>
                 
-                <!-- Payment Method Selection (Shared Component) -->
-                <div id="create-payment-container"></div>
                 
                 <!-- Payment & Session Status -->
                 <div class="form-row">
@@ -2175,6 +2829,24 @@
                     </label>
                 </div>
                 
+                <!-- Comp Type Selection (shown only when comp selected) -->
+                <div id="create-comp-type-section" style="display: none; margin-bottom: 1.5rem;">
+                    <label for="create-comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Comp Type *</label>
+                    <select name="comp-type" id="create-comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--admin-text); font-size: 1rem;">
+                        <option value="">Select comp type...</option>
+                        <option value="family">Family</option>
+                        <option value="friends">Friends</option>
+                        <option value="veterans">Veterans</option>
+                        <option value="elderly">Elderly</option>
+                        <option value="practitioner">Practitioner Comp</option>
+                        <option value="referral">Referral Comp</option>
+                        <option value="staff">Staff Comp</option>
+                        <option value="marketing">Marketing/Promotional</option>
+                        <option value="charity">Charity/Community Service</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
                 <!-- Tip Amount -->
                 <div class="form-group">
                     <label class="form-label" for="tipAmount">Tip Amount</label>
@@ -2191,8 +2863,13 @@
                     </small>
                 </div>
                 
+                <div class="form-group">
+                    <label class="form-label" for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" name="special_requests" class="form-textarea" placeholder="Any special requests or notes..."></textarea>
+                </div>
+                
                 <!-- Payment Method Selection -->
-                <fieldset style="border: none; padding: 0; margin: 0 0 1.5rem 0;">
+                <fieldset style="border: none; padding: 0; margin: 1.5rem 0;">
                     <legend style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Payment Method *</legend>
                     <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
                         <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
@@ -2222,25 +2899,7 @@
                     </div>
                 </fieldset>
                 
-                <!-- Comp Type Selection (shown only when comp selected) -->
-                <div id="create-comp-type-section" style="display: none; margin-bottom: 1.5rem;">
-                    <label for="create-comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Comp Type *</label>
-                    <select name="comp-type" id="create-comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--admin-text); font-size: 1rem;">
-                        <option value="">Select comp type...</option>
-                        <option value="family">Family</option>
-                        <option value="friends">Friends</option>
-                        <option value="veterans">Veterans</option>
-                        <option value="elderly">Elderly</option>
-                        <option value="practitioner">Practitioner Comp</option>
-                        <option value="referral">Referral Comp</option>
-                        <option value="staff">Staff Comp</option>
-                        <option value="marketing">Marketing/Promotional</option>
-                        <option value="charity">Charity/Community Service</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <!-- Credit Card Details (shown only when credit card selected) -->
+                <!-- Credit Card Details -->
                 <div id="create-credit-card-section" style="display: block;">
                     <div style="margin: 1rem 0;">
                         <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--admin-text);">Card Information</label>
@@ -2248,15 +2907,9 @@
                             <!-- Stripe card element -->
                         </div>
                     </div>
-                    <div id="stripe-card-errors-create" style="color: #dc2626; margin-top: 0.5rem; font-size: 0.875rem;"></div>
-                    
-                    <div style="background: #f0f9ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 1rem; margin-top: 1rem;">
-                        <p style="color: #1e40af; margin: 0; font-size: 0.875rem;">
-                            🔒 Your payment is secure and encrypted. We use Stripe for payment processing.
-                        </p>
-                    </div>
+                    <div id="create-stripe-card-errors" style="color: #dc2626; margin-top: 0.5rem; font-size: 0.875rem;"></div>
                 </div>
-                
+
                 <!-- Alternative Payment Instructions -->
                 <div id="create-alternative-payment-section" style="display: none;">
                     <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem;">
@@ -2266,13 +2919,28 @@
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label class="form-label" for="specialRequests">Special Requests</label>
-                    <textarea id="specialRequests" name="special_requests" class="form-textarea" placeholder="Any special requests or notes..."></textarea>
+                <!-- Admin Booking Notice -->
+                <div style="background: #e0f2fe; border: 1px solid #0277bd; border-radius: 8px; padding: 1rem; margin: 1rem 0;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="font-size: 1.5rem; margin-right: 0.75rem;">👨‍💼</div>
+                        <div>
+                            <div style="font-weight: 600; color: #01579b; margin-bottom: 0.25rem;">Admin Booking Creation</div>
+                            <div style="font-size: 0.875rem; color: #0277bd;">Payment method will be recorded but not processed immediately. Payment can be collected later based on the selected method and status.</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="actions" style="margin-top: 2rem;">
-                    <button type="submit" class="btn btn-primary">Create Booking</button>
+                    <button type="submit" class="btn btn-primary" id="create-submit-btn">Create Booking</button>
                     <button type="button" class="btn btn-secondary" onclick="closeModal('createBookingModal')">Cancel</button>
+                    
+                    <!-- Payment Processing Status -->
+                    <div id="create-payment-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;">
+                        <div style="text-align: center;">
+                            <div id="create-status-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">⏳</div>
+                            <div id="create-status-text" style="font-weight: 600; color: #374151; margin-bottom: 0.5rem;"></div>
+                            <div id="create-status-details" style="color: #6b7280; font-size: 0.875rem;"></div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -2427,6 +3095,24 @@
                     </label>
                 </div>
                 
+                <!-- Comp Type Selection (shown only when comp selected) -->
+                <div id="edit-comp-type-section" style="display: none; margin-bottom: 1.5rem;">
+                    <label for="edit-comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Comp Type *</label>
+                    <select name="comp-type" id="edit-comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--admin-text); font-size: 1rem;">
+                        <option value="">Select comp type...</option>
+                        <option value="family">Family</option>
+                        <option value="friends">Friends</option>
+                        <option value="veterans">Veterans</option>
+                        <option value="elderly">Elderly</option>
+                        <option value="practitioner">Practitioner Comp</option>
+                        <option value="referral">Referral Comp</option>
+                        <option value="staff">Staff Comp</option>
+                        <option value="marketing">Marketing/Promotional</option>
+                        <option value="charity">Charity/Community Service</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
                 <!-- Tip Amount -->
                 <div class="form-group">
                     <label class="form-label" for="editTipAmount">Tip Amount</label>
@@ -2478,24 +3164,6 @@
                         
                     </div>
                 </fieldset>
-                
-                <!-- Comp Type Selection (shown only when comp selected) -->
-                <div id="edit-comp-type-section" style="display: none; margin-bottom: 1.5rem;">
-                    <label for="edit-comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Comp Type *</label>
-                    <select name="comp-type" id="edit-comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--admin-text); font-size: 1rem;">
-                        <option value="">Select comp type...</option>
-                        <option value="family">Family</option>
-                        <option value="friends">Friends</option>
-                        <option value="veterans">Veterans</option>
-                        <option value="elderly">Elderly</option>
-                        <option value="practitioner">Practitioner Comp</option>
-                        <option value="referral">Referral Comp</option>
-                        <option value="staff">Staff Comp</option>
-                        <option value="marketing">Marketing/Promotional</option>
-                        <option value="charity">Charity/Community Service</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
                 
                 <!-- Credit Card Details (shown only when credit card selected) -->
                 <div id="edit-credit-card-section" style="display: block;">
@@ -3137,30 +3805,36 @@
             
             console.log(`✅ Calendar generated with ${calendarGrid.children.length} day elements`);
             
-            // Auto-select today's date if no date is selected
-            if (!selectedDate) {
-                const today = new Date();
-                const todayString = today.toISOString().split('T')[0];
-                selectedDate = todayString;
+            // Set initial focus to first day of current month or today
+            setTimeout(() => {
+                const todayElement = document.querySelector('.calendar-day.today');
+                const firstCurrentMonthDay = document.querySelector('.calendar-day:not(.other-month)');
+                const initialFocusElement = todayElement || firstCurrentMonthDay || document.querySelector('.calendar-day');
                 
-                // Find and select today's element
-                setTimeout(() => {
-                    const todayElement = document.querySelector('.calendar-day.today');
-                    if (todayElement) {
+                if (initialFocusElement) {
+                    initialFocusElement.setAttribute('tabindex', '0');
+                    
+                    // Auto-select today if no date is selected
+                    if (!selectedDate && todayElement) {
+                        const todayString = new Date().toISOString().split('T')[0];
+                        selectedDate = todayString;
                         todayElement.classList.add('selected');
+                        todayElement.setAttribute('aria-selected', 'true');
                         console.log(`📅 Auto-selected today: ${todayString}`);
                         
                         // Enable management buttons
                         const blockBtn = document.getElementById('blockSelectedDay');
                         if (blockBtn) blockBtn.disabled = false;
                     }
-                }, 100);
-            }
+                }
+            }, 100);
         }
         
         function createCalendarDay(date, currentYear, currentMonth) {
             const dayElement = document.createElement('div');
             dayElement.className = 'calendar-day';
+            dayElement.setAttribute('role', 'gridcell');
+            dayElement.setAttribute('tabindex', '-1');
             
             const isCurrentMonth = date.getMonth() === currentMonth;
             const isToday = date.toDateString() === new Date().toDateString();
@@ -3188,14 +3862,24 @@
             const dayNumber = date.getDate();
             console.log(`🔢 Creating day element: ${dayNumber} (${date.toDateString()}) - ${isCurrentMonth ? 'current' : 'other'} month`);
             
+            // Create accessibility description
+            const statusDesc = [];
+            if (availableSlots.length > 0) statusDesc.push(`${availableSlots.length} available slots`);
+            if (blockedSlots.length > 0) statusDesc.push(`${blockedSlots.length} blocked slots`);
+            if (bookedSlots.length > 0) statusDesc.push(`${bookedSlots.length} booked slots`);
+            const ariaLabel = `${date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}${statusDesc.length > 0 ? '. ' + statusDesc.join(', ') : '. No appointments scheduled'}`;
+            
+            dayElement.setAttribute('aria-label', ariaLabel);
+            dayElement.setAttribute('aria-selected', 'false');
+            
             dayElement.innerHTML = `
                 <div class="day-number">${dayNumber}</div>
-                <div class="day-slots">
-                    ${availableSlots.slice(0, 3).map(() => '<div class="slot-indicator available"></div>').join('')}
-                    ${blockedSlots.slice(0, 3).map(() => '<div class="slot-indicator blocked"></div>').join('')}
-                    ${bookedSlots.slice(0, 3).map(() => '<div class="slot-indicator booked"></div>').join('')}
+                <div class="day-slots" aria-hidden="true">
+                    ${availableSlots.slice(0, 3).map(() => '<div class="slot-indicator available" title="Available slot"></div>').join('')}
+                    ${blockedSlots.slice(0, 3).map(() => '<div class="slot-indicator blocked" title="Blocked slot"></div>').join('')}
+                    ${bookedSlots.slice(0, 3).map(() => '<div class="slot-indicator booked" title="Booked slot"></div>').join('')}
                 </div>
-                <div class="slot-count">
+                <div class="slot-count" aria-hidden="true">
                     ${daySlots.length > 0 ? `${availableSlots.length}/${daySlots.length} available` : ''}
                     ${bookedSlots.length > 0 ? ` • ${bookedSlots.length} booked` : ''}
                 </div>
@@ -3205,10 +3889,18 @@
                 dayElement.classList.add('fully-blocked');
             }
             
-            dayElement.addEventListener('click', () => {
+            // Handle both click and keyboard events
+            function selectDay() {
                 selectedDate = dateString;
-                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+                document.querySelectorAll('.calendar-day').forEach(d => {
+                    d.classList.remove('selected');
+                    d.setAttribute('aria-selected', 'false');
+                    d.setAttribute('tabindex', '-1');
+                });
                 dayElement.classList.add('selected');
+                dayElement.setAttribute('aria-selected', 'true');
+                dayElement.setAttribute('tabindex', '0');
+                dayElement.focus();
                 showDayDetails(dateString, daySlots, bookedSlots);
                 
                 // Enable management buttons now that a day is selected
@@ -3217,9 +3909,66 @@
                 
                 // Show visual feedback that day is selected
                 console.log(`📅 Selected date: ${dateString} (${isCurrentMonth ? 'current month' : 'other month'})`);
+                
+                // Announce to screen readers
+                const announcement = document.getElementById('calendar-announcement');
+                if (announcement) {
+                    announcement.textContent = `Selected ${ariaLabel}`;
+                }
+            }
+            
+            dayElement.addEventListener('click', selectDay);
+            
+            dayElement.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectDay();
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    navigateCalendar(dayElement, e.key);
+                }
             });
             
             return dayElement;
+        }
+        
+        function navigateCalendar(currentElement, direction) {
+            const allDays = Array.from(document.querySelectorAll('.calendar-day'));
+            const currentIndex = allDays.indexOf(currentElement);
+            let newIndex;
+            
+            switch (direction) {
+                case 'ArrowLeft':
+                    newIndex = currentIndex > 0 ? currentIndex - 1 : allDays.length - 1;
+                    break;
+                case 'ArrowRight':
+                    newIndex = currentIndex < allDays.length - 1 ? currentIndex + 1 : 0;
+                    break;
+                case 'ArrowUp':
+                    newIndex = currentIndex >= 7 ? currentIndex - 7 : currentIndex + (6 * 7) - (currentIndex % 7);
+                    if (newIndex >= allDays.length) newIndex = currentIndex + (5 * 7) - (currentIndex % 7);
+                    break;
+                case 'ArrowDown':
+                    newIndex = currentIndex + 7;
+                    if (newIndex >= allDays.length) newIndex = currentIndex % 7;
+                    break;
+            }
+            
+            if (newIndex >= 0 && newIndex < allDays.length) {
+                // Remove focus from current element
+                currentElement.setAttribute('tabindex', '-1');
+                
+                // Set focus to new element
+                const newElement = allDays[newIndex];
+                newElement.setAttribute('tabindex', '0');
+                newElement.focus();
+                
+                // Announce the new date
+                const announcement = document.getElementById('calendar-announcement');
+                if (announcement) {
+                    announcement.textContent = newElement.getAttribute('aria-label');
+                }
+            }
         }
         
         function showDayDetails(dateString, slots, bookings) {
@@ -3259,15 +4008,15 @@
                 dayDetailsContent.innerHTML = allItems.map(item => {
                     if (item.type === 'availability') {
                         return `
-                            <div class="time-slot ${item.is_available ? 'available' : 'blocked'}">
+                            <div class="time-slot ${item.is_available ? 'available' : 'blocked'}" role="listitem">
                                 <div class="slot-time">${item.start_time} - ${item.end_time}</div>
                                 <div class="slot-status">
                                     <span class="status-badge ${item.is_available ? 'status-available' : 'status-blocked'}">
                                         ${item.is_available ? 'Available' : 'Blocked'}
                                     </span>
                                     <div class="slot-actions">
-                                        <button class="btn btn-secondary btn-sm" onclick="editAvailability('${item.id}')">Edit</button>
-                                        <button class="btn btn-secondary btn-sm" onclick="deleteAvailability('${item.id}')">Delete</button>
+                                        <button class="btn btn-secondary btn-sm" onclick="editAvailability('${item.id}')" aria-label="Edit ${item.start_time} to ${item.end_time} slot">Edit</button>
+                                        <button class="btn btn-secondary btn-sm" onclick="deleteAvailability('${item.id}')" aria-label="Delete ${item.start_time} to ${item.end_time} slot">Delete</button>
                                     </div>
                                 </div>
                             </div>
@@ -3276,12 +4025,12 @@
                         const bookingTime = new Date(item.scheduled_date);
                         const timeString = bookingTime.toTimeString().slice(0, 5);
                         return `
-                            <div class="time-slot booked">
+                            <div class="time-slot booked" role="listitem">
                                 <div class="slot-time">${timeString} - ${item.service_type}</div>
                                 <div class="slot-status">
                                     <span class="status-badge status-booked">Booked: ${item.client_name}</span>
                                     <div class="slot-actions">
-                                        <button class="btn btn-secondary btn-sm" onclick="editBooking('${item.id}')">View</button>
+                                        <button class="btn btn-secondary btn-sm" onclick="editBooking('${item.id}')" aria-label="View booking for ${item.client_name} at ${timeString}">View</button>
                                     </div>
                                 </div>
                             </div>
@@ -3493,6 +4242,7 @@
             // Store clients data globally for modal access
             window.clientsData = clients;
             
+            // Create desktop table
             const table = document.createElement('table');
             table.className = 'data-table';
             
@@ -3505,19 +4255,33 @@
                 </thead>
                 <tbody>
                     ${clients.map(client => `
-                        <tr class="client-row" onclick="showClientModal('${client.email}')" style="cursor: pointer;">
+                        <tr class="client-row" onclick="this.setAttribute('data-last-focused', 'true'); showClientModal('${client.email}')" style="cursor: pointer;" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){this.setAttribute('data-last-focused', 'true'); showClientModal('${client.email}'); event.preventDefault();}">
                             <td style="font-weight: 600;">${escapeHtml(client.name)}</td>
                             <td>
-                                <div>${escapeHtml(client.email)}</div>
-                                ${client.phone ? `<div style="font-size: 0.875rem; color: #666; margin-top: 0.25rem;">${escapeHtml(client.phone)}</div>` : ''}
+                                <div class="client-email">${escapeHtml(client.email)}</div>
+                                ${client.phone ? `<div class="client-phone">${escapeHtml(client.phone)}</div>` : ''}
                             </td>
                         </tr>
                     `).join('')}
                 </tbody>
             `;
             
+            // Create mobile cards
+            const mobileCards = document.createElement('div');
+            mobileCards.className = 'clients-mobile-cards';
+            mobileCards.style.display = 'none';
+            
+            mobileCards.innerHTML = clients.map(client => `
+                <div class="client-mobile-card" onclick="this.setAttribute('data-last-focused', 'true'); showClientModal('${client.email}')" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){this.setAttribute('data-last-focused', 'true'); showClientModal('${client.email}'); event.preventDefault();}">
+                    <div class="mobile-card-name">${escapeHtml(client.name)}</div>
+                    <div class="mobile-card-email">${escapeHtml(client.email)}</div>
+                    ${client.phone ? `<div class="mobile-card-phone">${escapeHtml(client.phone)}</div>` : ''}
+                </div>
+            `).join('');
+            
             container.innerHTML = '';
             container.appendChild(table);
+            container.appendChild(mobileCards);
         }
         
         function showClientModal(email) {
@@ -3532,21 +4296,21 @@
             const isActive = client.lastSession && (new Date() - new Date(client.lastSession)) / (1000 * 60 * 60 * 24) < 30;
             
             const modalHtml = `
-                <div class="modal-overlay" id="clientModal" onclick="closeClientModal(event)">
+                <div class="modal-overlay" id="clientModal" onclick="closeClientModal(event)" role="dialog" aria-modal="true" aria-labelledby="client-modal-title" aria-describedby="client-modal-description">
                     <div class="client-modal-content" onclick="event.stopPropagation()">
                         <div class="client-modal-header">
                             <div>
-                                <h2>${escapeHtml(client.name)}</h2>
+                                <h2 id="client-modal-title">${escapeHtml(client.name)}</h2>
                                 <div class="client-status-badge">
                                     ${isActive 
                                         ? '<span class="status-badge status-active">Active Client</span>' 
                                         : '<span class="status-badge status-inactive">Inactive</span>'}
                                 </div>
                             </div>
-                            <button class="modal-close-btn" onclick="closeClientModal()">&times;</button>
+                            <button class="modal-close-btn" onclick="closeClientModal()" aria-label="Close client details modal">&times;</button>
                         </div>
                         
-                        <div class="client-modal-body">
+                        <div class="client-modal-body" id="client-modal-description">
                             <div class="client-info-grid">
                                 <div class="client-contact-card">
                                     <h4>Contact Information</h4>
@@ -3554,13 +4318,13 @@
                                         <div class="contact-item">
                                             <i class="contact-icon">📧</i>
                                             <span>${escapeHtml(client.email)}</span>
-                                            <button class="btn btn-sm btn-secondary" onclick="copyToClipboard('${client.email}')">Copy</button>
+                                            <button class="btn btn-sm btn-secondary" onclick="copyToClipboard('${client.email}')" aria-label="Copy email address to clipboard">Copy</button>
                                         </div>
                                         ${client.phone ? `
                                             <div class="contact-item">
                                                 <i class="contact-icon">📱</i>
                                                 <span>${escapeHtml(client.phone)}</span>
-                                                <button class="btn btn-sm btn-secondary" onclick="copyToClipboard('${client.phone}')">Copy</button>
+                                                <button class="btn btn-sm btn-secondary" onclick="copyToClipboard('${client.phone}')" aria-label="Copy phone number to clipboard">Copy</button>
                                             </div>
                                         ` : ''}
                                     </div>
@@ -3613,13 +4377,13 @@
                         </div>
                         
                         <div class="client-modal-footer">
-                            <button class="btn btn-primary" onclick="viewClientHistory('${client.email}')">
+                            <button class="btn btn-primary" onclick="viewClientHistory('${client.email}')" aria-label="View complete booking history for this client">
                                 📋 View Full History
                             </button>
-                            <button class="btn btn-secondary" onclick="contactClient('${client.email}')">
+                            <button class="btn btn-secondary" onclick="contactClient('${client.email}')" aria-label="Open email client to contact this client">
                                 📞 Contact Client
                             </button>
-                            <button class="btn btn-secondary" onclick="closeClientModal()">
+                            <button class="btn btn-secondary" onclick="closeClientModal()" aria-label="Close client details modal">
                                 Close
                             </button>
                         </div>
@@ -3629,14 +4393,57 @@
             
             document.body.insertAdjacentHTML('beforeend', modalHtml);
             document.body.style.overflow = 'hidden';
+            
+            // Focus management and accessibility
+            const modal = document.getElementById('clientModal');
+            const focusableElements = modal.querySelectorAll('button, [tabindex="0"]');
+            const firstFocusable = focusableElements[0];
+            const lastFocusable = focusableElements[focusableElements.length - 1];
+            
+            // Set initial focus to close button
+            const closeBtn = modal.querySelector('.modal-close-btn');
+            if (closeBtn) closeBtn.focus();
+            
+            // Trap focus within modal
+            function trapFocus(e) {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusable) {
+                            e.preventDefault();
+                            lastFocusable.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusable) {
+                            e.preventDefault();
+                            firstFocusable.focus();
+                        }
+                    }
+                }
+                
+                // Handle escape key
+                if (e.key === 'Escape') {
+                    closeClientModal();
+                }
+            }
+            
+            modal.addEventListener('keydown', trapFocus);
         }
         
         function closeClientModal(event) {
             if (event && event.target !== event.currentTarget) return;
             const modal = document.getElementById('clientModal');
             if (modal) {
+                // Remove event listeners
+                modal.removeEventListener('keydown', modal.trapFocus);
                 modal.remove();
                 document.body.style.overflow = '';
+                
+                // Return focus to the element that opened the modal (if available)
+                const triggerElement = document.querySelector('[data-last-focused]');
+                if (triggerElement) {
+                    triggerElement.focus();
+                    triggerElement.removeAttribute('data-last-focused');
+                }
             }
         }
         
@@ -3701,6 +4508,55 @@
         // Modal Functions
         function openCreateBookingModal() {
             document.getElementById('createBookingModal').classList.add('active');
+            
+            // Populate service types and add-ons when modal opens
+            populateCreateServiceTypes();
+            populateCreateAddons();
+            
+            // Set up event listeners for pricing calculations
+            const serviceTypeSelect = document.getElementById('serviceType');
+            const tipAmountInput = document.getElementById('tipAmount');
+            const compBookingCheckbox = document.getElementById('compBooking');
+            
+            if (serviceTypeSelect) {
+                serviceTypeSelect.addEventListener('change', calculateCreatePricing);
+            }
+            if (tipAmountInput) {
+                tipAmountInput.addEventListener('input', calculateCreatePricing);
+            }
+            if (compBookingCheckbox) {
+                compBookingCheckbox.addEventListener('change', function() {
+                    calculateCreatePricing();
+                    // Show/hide comp type section based on comp booking checkbox
+                    const createCompTypeSection = document.getElementById('create-comp-type-section');
+                    if (createCompTypeSection) {
+                        createCompTypeSection.style.display = this.checked ? 'block' : 'none';
+                    }
+                });
+            }
+            
+            // Initialize create payment component when modal opens
+            if (typeof ITTPaymentManager !== 'undefined' && !createPaymentManager) {
+                createPaymentManager = new ITTPaymentManager({
+                    containerId: 'create-payment-container',
+                    formPrefix: '',
+                    isAdminMode: true,
+                    onPaymentMethodChange: (method) => {
+                        console.log('Create payment method changed to:', method);
+                        setTimeout(() => calculateCreatePricing(), 10);
+                    }
+                });
+                createPaymentManager.injectCSS();
+            }
+            
+            // Set up payment method listeners
+            const paymentMethodRadios = document.querySelectorAll('#createBookingModal input[name="payment-method"]');
+            paymentMethodRadios.forEach(radio => {
+                radio.addEventListener('change', calculateCreatePricing);
+            });
+            
+            // Initial pricing calculation
+            setTimeout(calculateCreatePricing, 100);
         }
 
         function openCreateAvailabilityModal() {
@@ -4022,7 +4878,14 @@
                 }
                 
                 if (editCompBookingCheckbox) {
-                    editCompBookingCheckbox.addEventListener('change', calculateEditPricing);
+                    editCompBookingCheckbox.addEventListener('change', function() {
+                        calculateEditPricing();
+                        // Show/hide comp type section based on comp booking checkbox
+                        const editCompTypeSection = document.getElementById('edit-comp-type-section');
+                        if (editCompTypeSection) {
+                            editCompTypeSection.style.display = this.checked ? 'block' : 'none';
+                        }
+                    });
                 }
                 
                 if (editPaymentStatusSelect) {
@@ -4092,6 +4955,55 @@
             }
         }
         
+        // Populate create form service types (global scope)
+        function populateCreateServiceTypes() {
+            const serviceTypeSelect = document.getElementById('serviceType');
+            if (serviceTypeSelect && window.ITTHealConfig) {
+                const options = window.ITTHealConfig.getSessionOptions();
+                
+                // Clear existing options except the first one
+                while (serviceTypeSelect.children.length > 1) {
+                    serviceTypeSelect.removeChild(serviceTypeSelect.lastChild);
+                }
+                
+                // Add options from shared config
+                options.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.label;
+                    serviceTypeSelect.appendChild(optionElement);
+                });
+            }
+        }
+        
+        // Populate create form addons (global scope)
+        function populateCreateAddons() {
+            const addonsContainer = document.getElementById('createAddonsContainer');
+            if (addonsContainer && window.ITTHealConfig) {
+                addonsContainer.innerHTML = '';
+                
+                Object.values(window.ITTHealConfig.ADDON_CONFIG).forEach(addon => {
+                    const label = document.createElement('label');
+                    label.className = 'checkbox-label';
+                    label.innerHTML = `
+                        <input type="checkbox" name="addons[]" value="${addon.id}" data-price="${addon.price}">
+                        <span>${addon.name} (+$${addon.price})</span>
+                    `;
+                    
+                    // Add event listener to update pricing when checkbox changes
+                    const checkbox = label.querySelector('input[type="checkbox"]');
+                    checkbox.addEventListener('change', function() {
+                        console.log('🔧 Create add-on checkbox changed:', addon.name, 'checked:', this.checked);
+                        calculateCreatePricing(); // Update pricing calculation
+                    });
+                    
+                    addonsContainer.appendChild(label);
+                });
+                
+                console.log('🔧 Set up create add-ons with change listeners');
+            }
+        }
+        
         // Payment Components Setup
         let createPaymentManager;
         
@@ -4102,21 +5014,8 @@
                 return;
             }
             
-            // Initialize create form payment component
-            createPaymentManager = new ITTPaymentManager({
-                containerId: 'create-payment-container',
-                formPrefix: '',
-                isAdminMode: true,
-                onPaymentMethodChange: (method) => {
-                    console.log('Create payment method changed to:', method);
-                    setTimeout(() => calculatePricing(), 10); // Small delay to ensure UI updates
-                }
-            });
-            
             // Edit payment manager not needed - payment section is directly in HTML
-            
-            // Inject CSS
-            createPaymentManager.injectCSS();
+            // Create payment manager will be initialized when create modal opens
             
             console.log('Payment components initialized');
         }
@@ -4206,35 +5105,39 @@
                 console.log('Booking data being submitted:', bookingData);
                 
                 try {
-                    // Process Stripe payment if credit card is selected OR comp booking with tip
-                    let paymentIntentId = null;
+                    // Admin booking creation: Record payment method but don't process payment
+                    // This allows admin to create bookings without immediate payment processing
                     const finalPrice = parseFloat(bookingData.final_price) || 0;
-                    const shouldProcessPayment = selectedPaymentMethod === 'credit_card' || 
-                                               (bookingData.payment_status === 'comp' && finalPrice > 0);
                     
-                    if (shouldProcessPayment) {
-                        try {
-                            paymentIntentId = await processCreatePayment(bookingData);
-                            bookingData.payment_intent_id = paymentIntentId;
-                            bookingData.payment_status = 'paid';
-                        } catch (paymentError) {
-                            console.error('Payment processing failed:', paymentError);
-                            showAlert(`Payment failed: ${paymentError.message}`, 'error');
-                            return;
+                    // Always record the selected payment method for future reference
+                    bookingData.preferred_payment_method = selectedPaymentMethod;
+                    
+                    // Set payment status based on admin selection and payment method choice
+                    if (bookingData.payment_status === 'complimentary' || bookingData.comp_booking) {
+                        // Complimentary bookings
+                        if (finalPrice > 0) {
+                            // Comp booking with tip - record how tip will be paid
+                            bookingData.payment_status = 'comp_with_tip';
+                            bookingData.tip_payment_method = selectedPaymentMethod;
+                            console.log(`💰 Admin created comp booking with tip: $${finalPrice} via ${selectedPaymentMethod}`);
+                        } else {
+                            bookingData.payment_status = 'complimentary';
                         }
                     } else {
-                        // For non-credit card payments, set appropriate payment status and track tips
-                        if (selectedPaymentMethod === 'comp') {
-                            bookingData.payment_status = 'comp';
-                        } else if (bookingData.payment_status === 'comp' && finalPrice > 0) {
-                            // Comp booking with tip via non-credit methods - track for reporting
-                            bookingData.payment_status = 'comp_with_tip';
-                            bookingData.tip_payment_method = selectedPaymentMethod; // Track how tip was paid
-                            console.log(`💰 Tracking comp booking tip: $${finalPrice} via ${selectedPaymentMethod}`);
-                        } else {
-                            bookingData.payment_status = 'pending';
-                        }
+                        // Regular bookings - use the payment status selected by admin
+                        // Keep the payment_status as selected in the dropdown (unpaid, paid, partial, etc.)
+                        console.log(`📝 Admin created booking with ${selectedPaymentMethod} payment method, status: ${bookingData.payment_status}`);
                     }
+                    
+                    // Add note about admin creation and payment method choice
+                    const adminNote = `[Admin Created] Payment Method: ${selectedPaymentMethod.replace('_', ' ').toUpperCase()}`;
+                    if (bookingData.special_requests && bookingData.special_requests.trim()) {
+                        bookingData.special_requests = `${adminNote}\n${bookingData.special_requests}`;
+                    } else {
+                        bookingData.special_requests = adminNote;
+                    }
+                    
+                    console.log(`✅ Creating admin booking without payment processing. Payment method recorded: ${selectedPaymentMethod}`);
 
                     const response = await fetch(`${API_BASE}/bookings`, {
                         method: 'POST',
@@ -5585,6 +6488,74 @@
                 
                 // Update tip note based on comp status
                 const tipNote = document.getElementById('editTipNote');
+                if (tipNote) {
+                    if (isCompBooking) {
+                        tipNote.textContent = 'Tip amount for complimentary session - select payment method below';
+                        tipNote.style.color = '#7c3aed';
+                        tipNote.style.fontWeight = '600';
+                    } else {
+                        tipNote.textContent = 'Enter tip amount if applicable';
+                        tipNote.style.color = '';
+                        tipNote.style.fontWeight = '';
+                    }
+                }
+
+                return pricing;
+            }
+        }
+
+        // Create modal pricing calculation with comp logic
+        function calculateCreatePricing() {
+            const serviceTypeSelect = document.getElementById('serviceType');
+            const tipAmountInput = document.getElementById('tipAmount');
+            const compBookingCheckbox = document.getElementById('compBooking');
+            const selectedPaymentMethod = document.querySelector('#createBookingModal input[name="payment-method"]:checked')?.value || 'credit_card';
+
+            const serviceType = serviceTypeSelect?.value;
+            const tipAmount = parseFloat(tipAmountInput?.value) || 0;
+            const isCompBooking = compBookingCheckbox?.checked;
+
+            // Calculate selected addons for create form
+            const createSelectedAddons = Array.from(document.querySelectorAll('#createAddonsContainer input[name="addons[]"]:checked')).map(cb => cb.value);
+
+            if (window.ITTHealConfig) {
+                const pricing = window.ITTHealConfig.calculateBookingPricing({
+                    serviceType,
+                    selectedAddons: createSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentMethod: selectedPaymentMethod
+                });
+
+                // Update display elements
+                const servicePriceDisplay = document.getElementById('servicePriceDisplay');
+                const addonsTotalDisplay = document.getElementById('addonsTotal');
+                const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+                const finalPriceDisplay = document.getElementById('finalPriceDisplay');
+                const finalPriceInput = document.getElementById('finalPrice');
+                const finalPriceNote = document.getElementById('finalPriceNote');
+
+                if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.servicePrice.toFixed(2)}`;
+                if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addonsTotal.toFixed(2)}`;
+                if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.totalPrice.toFixed(2)}`;
+                if (finalPriceDisplay) finalPriceDisplay.textContent = `$${pricing.finalPrice.toFixed(2)}`;
+                if (finalPriceInput) finalPriceInput.value = pricing.finalPrice.toFixed(2);
+
+                // Update final price note based on comp status
+                if (finalPriceNote) {
+                    if (isCompBooking) {
+                        finalPriceNote.textContent = 'Tip Amount Only (Complimentary Session)';
+                        finalPriceNote.style.color = '#7c3aed';
+                        finalPriceNote.style.fontWeight = '600';
+                    } else {
+                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                        finalPriceNote.style.color = '';
+                        finalPriceNote.style.fontWeight = '';
+                    }
+                }
+                
+                // Update tip note based on comp status
+                const tipNote = document.getElementById('tipNote');
                 if (tipNote) {
                     if (isCompBooking) {
                         tipNote.textContent = 'Tip amount for complimentary session - select payment method below';

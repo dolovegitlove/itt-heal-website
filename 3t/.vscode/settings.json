@@ -1,0 +1,72 @@
+{
+    "files.watcherExclude": {
+        "**/node_modules/**": true,
+        "**/logs/**": true
+    },
+    
+    // Run CLAUDE.md checks on save
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.(js|html|jsx)$",
+                "cmd": "node ${workspaceFolder}/scripts/claude-lint.js ${file}",
+                "isAsync": true
+            }
+        ]
+    },
+    
+    // Custom problem matchers for CLAUDE.md violations
+    "problemMatcher": [
+        {
+            "owner": "claude-md",
+            "pattern": {
+                "regexp": "^(❌ CLAUDE\\.md VIOLATION): (.+) in (.+)$",
+                "severity": 1,
+                "message": 2,
+                "file": 3
+            }
+        }
+    ],
+    
+    // Highlight CLAUDE.md violations
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment.line.double-slash",
+                "settings": {
+                    "foreground": "#FF0000",
+                    "fontStyle": "bold"
+                },
+                "match": ".*CLAUDE\\.md VIOLATION.*"
+            }
+        ]
+    },
+    
+    // File templates to enforce backend-first
+    "fileTemplates": {
+        "New Feature": {
+            "js": "// CLAUDE.md Compliance Checklist:\n// [ ] Backend API endpoint exists\n// [ ] curl test documented below\n// [ ] No hardcoded values\n// [ ] Single source of truth\n\n// Backend verified: [DATE]\n// curl -X GET https://ittheal.com/api/[ENDPOINT]\n\n"
+        }
+    },
+    
+    // Snippets to encourage compliance
+    "snippets": {
+        "Fetch with verification": {
+            "prefix": "fetchverified",
+            "body": [
+                "// Backend verified: ${1:date}",
+                "// curl -X ${2:GET} https://ittheal.com/api/${3:endpoint}",
+                "const response = await fetch('/api/${3:endpoint}');",
+                "const data = await response.json();"
+            ]
+        },
+        "Price from API": {
+            "prefix": "priceapi",
+            "body": [
+                "// Prices loaded from backend API - no hardcoding",
+                "const pricing = await loadPricingFromAPI();",
+                "const price = pricing.sessions['${1:sessionType}'].price;"
+            ]
+        }
+    }
+}

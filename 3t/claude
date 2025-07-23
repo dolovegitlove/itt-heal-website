@@ -1,0 +1,64 @@
+#!/bin/bash
+# The Ultimate CLAUDE.md Command
+
+case "${1:-enforce}" in
+    enforce|e)
+        ./enforce
+        ;;
+    check|c)
+        node scripts/claude-gatekeeper.js
+        ;;
+    watch|w)
+        tail -f logs/claude-watcher.log
+        ;;
+    status|s)
+        ./check-claude-status.sh 2>/dev/null || ./enforce
+        ;;
+    fix|f)
+        echo "🔧 Auto-fixing common violations..."
+        # Replace hardcoded prices with TODO markers
+        find . -name "*.js" -o -name "*.html" | grep -v node_modules | while read file; do
+            if grep -q 'data-price=\|price: [0-9]' "$file" 2>/dev/null; then
+                echo "Fixing: $file"
+                sed -i.bak 's/data-price="[^"]*"/data-price="TODO-LOAD-FROM-API"/g' "$file"
+                sed -i 's/price: [0-9]*/price: \/\/ TODO: Load from API/g' "$file"
+            fi
+        done
+        echo "✅ Fixed! Now update TODO markers with API calls."
+        ;;
+    find|search)
+        # Use smart loader for intelligent search
+        shift
+        node smart-md-loader.js search "$@"
+        ;;
+    docs|d)
+        # Quick access to specific documentation
+        case "${2:-}" in
+            rules|claude)
+                less CLAUDE.md
+                ;;
+            commands|go)
+                less go.md
+                ;;
+            *)
+                echo "📚 Quick Docs Access:"
+                echo "  ./claude docs rules    - View CLAUDE.md"
+                echo "  ./claude docs commands - View go.md"
+                ;;
+        esac
+        ;;
+    *)
+        echo "🔒 CLAUDE.md ENFORCER"
+        echo ""
+        echo "Usage: ./claude [command]"
+        echo ""
+        echo "Commands:"
+        echo "  enforce (default) - Install/check enforcement"
+        echo "  check            - Run compliance check"
+        echo "  watch            - Watch real-time violations"
+        echo "  status           - Show enforcement status"
+        echo "  fix              - Auto-fix common violations"
+        echo "  find <query>     - Search rules & commands"
+        echo "  docs [rules|commands] - View documentation"
+        ;;
+esac
