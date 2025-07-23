@@ -15,6 +15,8 @@ const { SESSION_TYPES, SERVICE_TYPES } = require('../shared/constants/enums');
         closedDates: [], // Will be populated from backend
         
         init() {
+            // Default business days: Monday(1) to Friday(5)
+            this.businessDays = [1, 2, 3, 4, 5];
             this.fetchClosedDates().then(() => {
                 this.renderCalendar();
                 this.attachEventListeners();
@@ -113,20 +115,16 @@ const { SESSION_TYPES, SERVICE_TYPES } = require('../shared/constants/enums');
                 // Base styling
                 let cellStyle = 'background: white; border: none; padding: 0.75rem; min-height: 50px; cursor: pointer; transition: all 0.3s; width: 100%; text-align: center; font-weight: 500;';
                 
-                if (isPastDate || !isBusinessDay || isClosedDate) {
-                    cellStyle += 'color: #cbd5e1; cursor: not-allowed; background: #f8f9fa;';
-                    dateCell.disabled = true;
-                } else if (isSelected) {
+                // Admin override: Allow scheduling on any day (past dates, weekends, closed dates)
+                if (isSelected) {
                     cellStyle += 'background: #10b981; color: white; font-weight: 700;';
                 } else {
                     cellStyle += 'color: var(--sage-700); hover: {background: #f0f9ff;}';
                     dateCell.addEventListener('mouseenter', () => {
-                        if (!dateCell.disabled) {
-                            dateCell.style.background = '#f0f9ff';
-                        }
+                        dateCell.style.background = '#f0f9ff';
                     });
                     dateCell.addEventListener('mouseleave', () => {
-                        if (!dateCell.disabled && !isSelected) {
+                        if (!isSelected) {
                             dateCell.style.background = 'white';
                         }
                     });
@@ -135,9 +133,8 @@ const { SESSION_TYPES, SERVICE_TYPES } = require('../shared/constants/enums');
                 dateCell.style.cssText = cellStyle;
                 dateCell.setAttribute('aria-label', `Select ${date.toLocaleDateString()}`);
                 
-                if (!isPastDate && isBusinessDay && !isClosedDate) {
-                    dateCell.addEventListener('click', () => this.selectDate(date));
-                }
+                // Admin can schedule on any day - no restrictions
+                dateCell.addEventListener('click', () => this.selectDate(date));
 
                 calendarGrid.appendChild(dateCell);
             }

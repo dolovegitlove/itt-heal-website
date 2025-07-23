@@ -6,7 +6,7 @@
     <title>ITT Heal - Administrative Dashboard</title>
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://ittheal.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com ; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.stripe.com https://ittheal.com; frame-src https://js.stripe.com; object-src 'none'; base-uri 'self';">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/logos/itt-heal-lotus-32.png">
@@ -16,15 +16,154 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="../dist/luxury-spa.css">
+    <!-- Preload critical logo for faster loading -->
+    <link rel="preload" as="image" href="../assets/logos/itt-heal-lotus-64.png" fetchpriority="high">
+    <!-- Preconnect to image domain for faster loading -->
+    <link rel="dns-prefetch" href="https://ittheal.com">
+    
+    <!-- Tailwind CSS v4 -->
+    <link rel="stylesheet" href="../dist/tailwind.css?v=20250712-august-update">
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="../dist/luxury-spa.css?v=20250712-hamburger-large">
+    
+    <!-- Stripe JavaScript SDK -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- Logo Loading Optimization -->
+    <script src="../optimize-logo-loading.js"></script>
     
     <style>
+        /* CRITICAL: Header height override for all devices */
+        .itt-header {
+            height: 160px !important;
+        }
+        .itt-company-name {
+            font-size: 1.5rem !important;
+        }
+        .itt-tagline {
+            font-size: 1.5rem !important;
+        }
+        @media (max-width: 768px) {
+            .itt-header {
+                height: 160px !important;
+            }
+            .itt-company-name {
+                font-size: 1.3rem !important;
+            }
+            .itt-tagline {
+                font-size: 1.2rem !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .itt-header {
+                height: 160px !important;
+            }
+            .itt-company-name {
+                font-size: 1.1rem !important;
+            }
+            .itt-tagline {
+                font-size: 1rem !important;
+            }
+        }
+        @media (max-width: 344px) {
+            .itt-header {
+                height: 160px !important;
+            }
+            .itt-company-name {
+                font-size: 1rem !important;
+            }
+            .itt-tagline {
+                font-size: 0.9rem !important;
+            }
+        }
+        
+        /* CRITICAL: Hamburger menu size override */
+        .itt-hamburger {
+            width: 60px !important;
+            height: 60px !important;
+            padding: 12px !important;
+        }
+        
+        /* CRITICAL: Stripe card element layout fix - KEEP WITHIN CONTAINER */
+        #stripe-card-element {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            height: 50px !important;
+            min-height: 50px !important;
+            overflow: hidden !important;
+            position: relative !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 999 !important;
+            background: white !important;
+        }
+        
+        #stripe-card-element iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            height: 50px !important;
+            min-height: 50px !important;
+            overflow: hidden !important;
+            border: none !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 1000 !important;
+            background: white !important;
+            position: relative !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
+        
+        #stripe-card-element .__PrivateStripeElement {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            height: 50px !important;
+            min-height: 50px !important;
+            overflow: visible !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            background: white !important;
+            pointer-events: auto !important;
+        }
+        
+        /* Force ALL Stripe Elements to stay within container bounds - Accessibility Fixed */
+        #stripe-card-element *,
+        #stripe-card-element iframe *,
+        #stripe-card-element .__PrivateStripeElement * {
+            visibility: visible !important;
+            opacity: 1 !important;
+            display: block !important;
+            pointer-events: auto !important;
+            background: transparent !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+        }
+        
+        /* Fix Stripe accessibility - remove aria-hidden from focusable elements */
+        #stripe-card-element-edit input[aria-hidden="true"], 
+        #stripe-card-element-create input[aria-hidden="true"],
+        .__PrivateStripeElement-input[aria-hidden="true"] {
+            /* Override Stripe's problematic aria-hidden on focusable elements */
+        }
+        
+        /* Ensure Stripe inputs are accessible */
+        .__PrivateStripeElement-input {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
         :root {
             --admin-primary: #6b7b6b;
             --admin-secondary: #8ba28b;
             --admin-accent: #c7b8e8;
-            --admin-background: #f8faf8;
+            --admin-background: #f5f3ff;
             --admin-card: #ffffff;
             --admin-text: #2d3748;
             --admin-border: #e2e8e2;
@@ -68,6 +207,114 @@
         .mobile-menu-toggle .menu-icon {
             width: 24px;
             height: 24px;
+        }
+
+        
+        .itt-company-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.1;
+            color: #2d3748;
+        }
+        
+        .itt-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #4a5568;
+            margin: 0;
+        }
+        
+
+        /* Mobile navigation menu styles */
+        .itt-mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+        }
+
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-menu:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-menu-list li {
+            margin: 1rem 0;
+        }
+
+        .mobile-menu-list a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-list a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .itt-header {
+                height: 160px !important;
+                padding: 1rem;
+            }
+            .itt-company-name {
+                font-size: 1.3rem !important;
+            }
+            .itt-tagline {
+                font-size: 1.2rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .itt-header {
+                height: 160px !important;
+            }
+            .itt-company-name {
+                font-size: 1.1rem !important;
+            }
+            .itt-tagline {
+                font-size: 1rem !important;
+            }
         }
 
         .admin-header {
@@ -643,7 +890,7 @@
                 left: 0;
                 width: 280px;
                 height: 100vh;
-                z-index: 1000;
+                z-index: 1001;
                 transform: translateX(-100%);
                 box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             }
@@ -733,7 +980,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
+            z-index: 999;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -810,6 +1057,12 @@
             gap: 0.75rem;
             align-items: center;
             flex-wrap: wrap;
+        }
+        
+        .btn-bulk:disabled, .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: #9ca3af !important;
         }
 
         .bulk-actions {
@@ -939,13 +1192,30 @@
         }
 
         .calendar-day.selected {
-            background: #e0e7ff;
-            border-color: var(--admin-secondary);
+            background: #3b82f6;
+            color: white;
+            border-color: #1d4ed8;
+            box-shadow: 0 0 0 2px #93c5fd;
+        }
+        
+        .calendar-day.selected .day-number {
+            font-weight: 600;
+        }
+        
+        .calendar-day.selected .slot-count {
+            color: #e5e7eb;
         }
 
         .calendar-day.other-month {
-            background: #f9fafb;
-            color: #9ca3af;
+            background: #f1f5f9;
+            color: #64748b;
+            border: 1px dashed #cbd5e0;
+        }
+        
+        .calendar-day.other-month:hover {
+            background: #e2e8f0;
+            color: #475569;
+            cursor: pointer;
         }
 
         .calendar-day.today {
@@ -959,10 +1229,15 @@
         }
 
         .day-number {
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 1.125rem;
             margin-bottom: 0.5rem;
             color: inherit;
+            line-height: 1.2;
+            min-height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
 
         .day-slots {
@@ -1219,6 +1494,284 @@
         .booking-card.complimentary-booking .booking-client {
             color: #059669;
         }
+        
+        /* Client Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .client-modal-content {
+            background: var(--admin-card);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow: hidden;
+            transform: translateY(20px);
+            animation: slideUp 0.3s ease forwards;
+        }
+        
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+        
+        .client-modal-header {
+            padding: 2rem 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--admin-border);
+        }
+        
+        .client-modal-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--admin-text);
+            margin: 0;
+        }
+        
+        .client-status-badge {
+            margin-top: 0.5rem;
+        }
+        
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--admin-text);
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .modal-close-btn:hover {
+            background: var(--admin-background);
+        }
+        
+        .client-modal-body {
+            padding: 1.5rem 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .client-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .client-contact-card,
+        .client-stats-card,
+        .client-history-card {
+            background: var(--admin-background);
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .client-contact-card h4,
+        .client-stats-card h4,
+        .client-history-card h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--admin-text);
+            margin: 0 0 1rem 0;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--admin-card);
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+        }
+        
+        .contact-icon {
+            font-size: 1.25rem;
+        }
+        
+        .contact-item span {
+            flex: 1;
+            color: var(--admin-text);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--admin-card);
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--admin-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--admin-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .client-history-card {
+            grid-column: 1 / -1;
+        }
+        
+        .booking-history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .booking-history-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--admin-card);
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            align-items: center;
+        }
+        
+        .booking-date strong {
+            color: var(--admin-text);
+            display: block;
+        }
+        
+        .booking-time {
+            font-size: 0.875rem;
+            color: var(--admin-text);
+            opacity: 0.7;
+        }
+        
+        .booking-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .service-type {
+            font-weight: 500;
+            color: var(--admin-text);
+        }
+        
+        .booking-price {
+            font-weight: 600;
+            color: var(--admin-secondary);
+        }
+        
+        .booking-history-more {
+            text-align: center;
+            padding: 1rem;
+            color: var(--admin-text);
+            font-style: italic;
+            opacity: 0.7;
+        }
+        
+        .client-modal-footer {
+            padding: 1.5rem 2rem 2rem;
+            border-top: 1px solid var(--admin-border);
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        
+        .client-row:hover {
+            background: var(--admin-background);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-active {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .status-inactive {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+        
+        /* Mobile responsiveness for client modal */
+        @media (max-width: 768px) {
+            .client-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .booking-history-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                text-align: left;
+            }
+            
+            .client-modal-content {
+                margin: 0.5rem;
+                max-height: 95vh;
+            }
+            
+            .client-modal-header,
+            .client-modal-body,
+            .client-modal-footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .client-modal-footer {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1228,25 +1781,47 @@
         <a href="#main-content" class="skip-link">Skip to main content</a>
         <a href="#sidebar" class="skip-link">Skip to navigation</a>
         
-        <header class="admin-header">
-            <div class="header-content">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <svg class="menu-icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-                    </svg>
-                </button>
-                <div>
-                    <h1>
-                        <svg class="admin-nav-icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 10.5V9L21 8.5V10.5H15ZM11 7H9L3 8V9L9 8.5L11 7ZM3 10.5V9L9 9.5V10.5H3ZM12 7.5C11.2 7.5 10.5 8.2 10.5 9S11.2 10.5 12 10.5 13.5 9.8 13.5 9 12.8 7.5 12 7.5ZM12 11C10.9 11 10 11.9 10 13V22H14V13C14 11.9 13.1 11 12 11Z"/>
-                        </svg>
-                        <span class="dashboard-title">ITT Heal Administrative Dashboard</span>
-                    </h1>
-                    <div class="subtitle">Dr. Schiffer Practice Management System</div>
-                </div>
-            </div>
+        <header class="itt-header" style="height: 160px !important;">
+          <!-- Left Side - Logo (Leaf/Droplet) -->
+          <div class="itt-header-logo">
+            <img src="../assets/logos/itt-heal-lotus-64.png" alt="ITT Heal Logo" class="itt-logo-leaf" style="width: 60px; height: 60px;" loading="eager">
+          </div>
+          
+          <!-- Center - Typography -->
+          <div class="itt-header-center">
+            <h1 id="hero-heading" class="itt-company-name" style="font-size: clamp(2rem, 6vw, 4rem);">
+              <div>Integrative Touch</div>
+              <div>Therapies</div>
+            </h1>
+            <p class="itt-tagline" style="font-size: clamp(1.2rem, 4vw, 2.5rem); margin-top: 0.5rem;">Holistic Healing &amp; Wellness</p>
+            <p class="itt-admin-subtitle" style="font-size: clamp(0.9rem, 2.5vw, 1.2rem); margin-top: 0.25rem; opacity: 0.8; font-weight: 400;">Administrative Dashboard</p>
+          </div>
+          
+          <!-- Right Side - Hamburger Menu -->
+          <div class="itt-header-menu">
+            <button class="itt-hamburger" aria-label="Open navigation menu" id="hamburger-btn" aria-expanded="false" aria-controls="sidebar" style="min-width: 44px; min-height: 44px; padding: 7px;" onclick="toggleAdminMenu()">
+              <span class="itt-hamburger-line" style="width: 35px !important; height: 10px !important; background-color: #2d3748 !important; display: block !important;"></span>
+              <span class="itt-hamburger-line" style="width: 35px !important; height: 10px !important; background-color: #2d3748 !important; display: block !important;"></span>
+              <span class="itt-hamburger-line" style="width: 35px !important; height: 10px !important; background-color: #2d3748 !important; display: block !important;"></span>
+            </button>
+          </div>
         </header>
-
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-menu" class="itt-mobile-nav" style="display: none;" role="navigation" aria-label="Mobile navigation menu" aria-hidden="true">
+            <div class="mobile-menu-content">
+                <button class="close-menu" id="close-menu-btn" aria-label="Close navigation menu" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">
+                    <span style="font-size: 24px;" aria-hidden="true">✕</span>
+                </button>
+                <ul class="mobile-nav-list">
+                    <li><a href="#dashboard" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">Dashboard</a></li>
+                    <li><a href="#bookings" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">Bookings</a></li>
+                    <li><a href="#clients" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">Clients</a></li>
+                    <li><a href="#schedule" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">Schedule</a></li>
+                    <li><a href="#reports" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">Reports</a></li>
+                    <li><a href="../" onclick="document.getElementById('mobile-menu').style.display = 'none'; document.body.style.overflow = '';">Return to Main Site</a></li>
+                </ul>
+            </div>
+        </nav>
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
@@ -1387,7 +1962,7 @@
                             </div>
                             <div class="calendar-actions">
                                 <div class="bulk-actions">
-                                    <button class="btn-bulk block" onclick="blockCurrentDay()">Block Day</button>
+                                    <button class="btn-bulk block" onclick="blockCurrentDay()" id="blockSelectedDay">Block Selected Day</button>
                                     <button class="btn-bulk block" onclick="blockCurrentWeek()">Block Week</button>
                                     <button class="btn-bulk block" onclick="blockCurrentMonth()">Block Month</button>
                                 </div>
@@ -1517,12 +2092,13 @@
                         <option value="60min">60 Minute Session - $150</option>
                         <option value="90min">90 Minute Session - $200</option>
                         <option value="120min">120 Minute Session - $250</option>
+                        <option value="fasciaflow">FasciaFlow Athlete Recovery - $235</option>
                     </select>
                 </div>
                 
                 <!-- Add-ons -->
-                <div class="form-group">
-                    <label class="form-label">Add-ons</label>
+                <fieldset class="form-group">
+                    <legend class="form-label">Add-ons</legend>
                     <div id="addons-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
                         <label class="checkbox-label">
                             <input type="checkbox" id="reflexologyAddon" name="addons[]" value="reflexology" data-price="25">
@@ -1537,7 +2113,7 @@
                             <span>Hot Stones (+$30)</span>
                         </label>
                     </div>
-                </div>
+                </fieldset>
                 
                 <!-- Pricing Breakdown -->
                 <div class="pricing-breakdown" style="background: #f8faf8; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
@@ -1588,18 +2164,22 @@
                     </div>
                 </div>
                 
-                <!-- Tip and Final Price -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="tipAmount">Tip Amount</label>
-                        <input type="number" id="tipAmount" name="tip_amount" class="form-input" step="0.01" min="0" value="0" placeholder="0.00">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">
-                            <input type="checkbox" id="compBooking" name="comp_booking" style="margin-right: 0.5rem;">
-                            Comp Booking (Free Session)
-                        </label>
-                    </div>
+                <!-- Comp Booking Selection -->
+                <div class="form-group">
+                    <label class="form-label" style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                        <input type="checkbox" id="compBooking" name="comp_booking" style="margin-right: 0.75rem; transform: scale(1.2);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--admin-text);">🎁 Complimentary Session</div>
+                            <div style="font-size: 0.875rem; color: #666;">Service is free - only tip amount will be charged</div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Tip Amount -->
+                <div class="form-group">
+                    <label class="form-label" for="tipAmount">Tip Amount</label>
+                    <input type="number" id="tipAmount" name="tip_amount" class="form-input" step="0.01" min="0" value="0" placeholder="0.00">
+                    <small style="color: #666; font-size: 0.875rem;" id="tipNote">Enter tip amount if applicable</small>
                 </div>
                 
                 <!-- Final Price -->
@@ -1609,6 +2189,81 @@
                     <small style="color: #666; font-size: 0.875rem;">
                         <span id="finalPriceNote">Total Price + Tip Amount</span>
                     </small>
+                </div>
+                
+                <!-- Payment Method Selection -->
+                <fieldset style="border: none; padding: 0; margin: 0 0 1.5rem 0;">
+                    <legend style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Payment Method *</legend>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
+                        <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                            <input type="radio" name="payment-method" value="credit_card" id="create-payment-method-card" style="margin-right: 0.75rem;" checked>
+                            <div>
+                                <div style="font-weight: 600; color: var(--admin-text);">💳 Credit Card</div>
+                                <div style="font-size: 0.875rem; color: #666;">Secure online payment via Stripe</div>
+                            </div>
+                        </label>
+                        
+                        <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                            <input type="radio" name="payment-method" value="cash" id="create-payment-method-cash" style="margin-right: 0.75rem;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--admin-text);">💵 Cash</div>
+                                <div style="font-size: 0.875rem; color: #666;">Pay in cash at your appointment</div>
+                            </div>
+                        </label>
+                        
+                        <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                            <input type="radio" name="payment-method" value="other" id="create-payment-method-other" style="margin-right: 0.75rem;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--admin-text);">📱 Other (Zelle, Venmo, CashApp)</div>
+                                <div style="font-size: 0.875rem; color: #666;">Alternative payment methods - arranged with practitioner</div>
+                            </div>
+                        </label>
+                        
+                    </div>
+                </fieldset>
+                
+                <!-- Comp Type Selection (shown only when comp selected) -->
+                <div id="create-comp-type-section" style="display: none; margin-bottom: 1.5rem;">
+                    <label for="create-comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Comp Type *</label>
+                    <select name="comp-type" id="create-comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--admin-text); font-size: 1rem;">
+                        <option value="">Select comp type...</option>
+                        <option value="family">Family</option>
+                        <option value="friends">Friends</option>
+                        <option value="veterans">Veterans</option>
+                        <option value="elderly">Elderly</option>
+                        <option value="practitioner">Practitioner Comp</option>
+                        <option value="referral">Referral Comp</option>
+                        <option value="staff">Staff Comp</option>
+                        <option value="marketing">Marketing/Promotional</option>
+                        <option value="charity">Charity/Community Service</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <!-- Credit Card Details (shown only when credit card selected) -->
+                <div id="create-credit-card-section" style="display: block;">
+                    <div style="margin: 1rem 0;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--admin-text);">Card Information</label>
+                        <div id="stripe-card-element-create" style="padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; width: 100%; max-width: 100%; box-sizing: border-box; height: auto; min-height: 50px; overflow: visible;">
+                            <!-- Stripe card element -->
+                        </div>
+                    </div>
+                    <div id="stripe-card-errors-create" style="color: #dc2626; margin-top: 0.5rem; font-size: 0.875rem;"></div>
+                    
+                    <div style="background: #f0f9ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 1rem; margin-top: 1rem;">
+                        <p style="color: #1e40af; margin: 0; font-size: 0.875rem;">
+                            🔒 Your payment is secure and encrypted. We use Stripe for payment processing.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Alternative Payment Instructions -->
+                <div id="create-alternative-payment-section" style="display: none;">
+                    <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem;">
+                        <p style="color: #92400e; margin: 0; font-size: 0.875rem; font-weight: 600;">
+                            💡 Payment will be collected at your appointment. Please bring cash or arrange alternative payment with your practitioner.
+                        </p>
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -1707,12 +2362,12 @@
                 </div>
                 
                 <!-- Add-ons -->
-                <div class="form-group">
-                    <label class="form-label">Add-ons</label>
+                <fieldset class="form-group">
+                    <legend class="form-label">Add-ons</legend>
                     <div id="editAddonsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 0.5rem;">
                         <!-- Add-ons populated by populateEditAddons() -->
                     </div>
-                </div>
+                </fieldset>
                 
                 <!-- Pricing Breakdown -->
                 <div class="pricing-breakdown" style="background: #f8faf8; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
@@ -1734,8 +2389,6 @@
                     </div>
                 </div>
                 
-                <!-- Payment Method Selection (Shared Component) -->
-                <div id="edit-payment-container"></div>
                 
                 <!-- Payment & Session Status -->
                 <div class="form-row">
@@ -1763,18 +2416,22 @@
                     </div>
                 </div>
                 
-                <!-- Tip and Final Price -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="editTipAmount">Tip Amount</label>
-                        <input type="number" id="editTipAmount" name="tip_amount" class="form-input" step="0.01" min="0" value="0" placeholder="0.00">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">
-                            <input type="checkbox" id="editCompBooking" name="comp_booking" style="margin-right: 0.5rem;">
-                            Comp Booking (Free Session)
-                        </label>
-                    </div>
+                <!-- Comp Booking Selection -->
+                <div class="form-group">
+                    <label class="form-label" style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                        <input type="checkbox" id="editCompBooking" name="comp_booking" style="margin-right: 0.75rem; transform: scale(1.2);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--admin-text);">🎁 Complimentary Session</div>
+                            <div style="font-size: 0.875rem; color: #666;">Service is free - only tip amount will be charged</div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Tip Amount -->
+                <div class="form-group">
+                    <label class="form-label" for="editTipAmount">Tip Amount</label>
+                    <input type="number" id="editTipAmount" name="tip_amount" class="form-input" step="0.01" min="0" value="0" placeholder="0.00">
+                    <small style="color: #666; font-size: 0.875rem;" id="editTipNote">Enter tip amount if applicable</small>
                 </div>
                 
                 <!-- Final Price -->
@@ -1790,9 +2447,93 @@
                     <label class="form-label" for="editSpecialRequests">Special Requests</label>
                     <textarea id="editSpecialRequests" name="special_requests" class="form-textarea" placeholder="Any special requests or notes..."></textarea>
                 </div>
+                
+                <!-- Payment Method Selection -->
+                <fieldset style="border: none; padding: 0; margin: 1.5rem 0;">
+                    <legend style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Payment Method *</legend>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
+                        <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                            <input type="radio" name="payment-method" value="credit_card" id="edit-payment-method-card" style="margin-right: 0.75rem;" checked>
+                            <div>
+                                <div style="font-weight: 600; color: var(--admin-text);">💳 Credit Card</div>
+                                <div style="font-size: 0.875rem; color: #666;">Secure online payment via Stripe</div>
+                            </div>
+                        </label>
+                        
+                        <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                            <input type="radio" name="payment-method" value="cash" id="edit-payment-method-cash" style="margin-right: 0.75rem;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--admin-text);">💵 Cash</div>
+                                <div style="font-size: 0.875rem; color: #666;">Pay in cash at your appointment</div>
+                            </div>
+                        </label>
+                        
+                        <label style="display: flex; align-items: center; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: white;">
+                            <input type="radio" name="payment-method" value="other" id="edit-payment-method-other" style="margin-right: 0.75rem;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--admin-text);">📱 Other (Zelle, Venmo, CashApp)</div>
+                                <div style="font-size: 0.875rem; color: #666;">Alternative payment methods - arranged with practitioner</div>
+                            </div>
+                        </label>
+                        
+                    </div>
+                </fieldset>
+                
+                <!-- Comp Type Selection (shown only when comp selected) -->
+                <div id="edit-comp-type-section" style="display: none; margin-bottom: 1.5rem;">
+                    <label for="edit-comp-type" style="display: block; font-weight: 600; margin-bottom: 0.75rem; color: var(--admin-text);">Comp Type *</label>
+                    <select name="comp-type" id="edit-comp-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; color: var(--admin-text); font-size: 1rem;">
+                        <option value="">Select comp type...</option>
+                        <option value="family">Family</option>
+                        <option value="friends">Friends</option>
+                        <option value="veterans">Veterans</option>
+                        <option value="elderly">Elderly</option>
+                        <option value="practitioner">Practitioner Comp</option>
+                        <option value="referral">Referral Comp</option>
+                        <option value="staff">Staff Comp</option>
+                        <option value="marketing">Marketing/Promotional</option>
+                        <option value="charity">Charity/Community Service</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <!-- Credit Card Details (shown only when credit card selected) -->
+                <div id="edit-credit-card-section" style="display: block;">
+                    <div style="margin: 1rem 0;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--admin-text);">Card Information</label>
+                        <div id="stripe-card-element" style="padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; background: white; width: 100%; max-width: 100%; box-sizing: border-box; height: auto; min-height: 50px; overflow: visible;">
+                            <!-- Stripe card element -->
+                        </div>
+                    </div>
+                    <div id="stripe-card-errors" style="color: #dc2626; margin-top: 0.5rem; font-size: 0.875rem;"></div>
+                    
+                    <div style="background: #f0f9ff; border: 1px solid #3b82f6; border-radius: 8px; padding: 1rem; margin-top: 1rem;">
+                        <p style="color: #1e40af; margin: 0; font-size: 0.875rem;">
+                            🔒 Your payment is secure and encrypted. We use Stripe for payment processing.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Alternative Payment Instructions -->
+                <div id="edit-alternative-payment-section" style="display: none;">
+                    <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem;">
+                        <p style="color: #92400e; margin: 0; font-size: 0.875rem; font-weight: 600;">
+                            💡 Payment will be collected at your appointment. Please bring cash or arrange alternative payment with your practitioner.
+                        </p>
+                    </div>
+                </div>
                 <div class="actions" style="margin-top: 2rem;">
-                    <button type="submit" class="btn btn-primary">Update Booking</button>
+                    <button type="submit" class="btn btn-primary" id="edit-submit-btn">Update Booking</button>
                     <button type="button" class="btn btn-secondary" onclick="closeModal('editBookingModal')">Cancel</button>
+                    
+                    <!-- Payment Processing Status -->
+                    <div id="edit-payment-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;">
+                        <div style="text-align: center;">
+                            <div id="edit-status-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">⏳</div>
+                            <div id="edit-status-text" style="font-weight: 600; color: #374151; margin-bottom: 0.5rem;"></div>
+                            <div id="edit-status-details" style="color: #6b7280; font-size: 0.875rem;"></div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -1806,6 +2547,43 @@
     
     <!-- JavaScript -->
     <script>
+        // Add error handler to catch script loading issues
+        window.addEventListener('error', function(event) {
+            if (event.filename && event.filename.includes('shared-payment.js')) {
+                console.error('❌ Error in shared-payment.js:', event.message);
+                console.error('Line:', event.lineno, 'Column:', event.colno);
+            }
+        });
+
+        // Fast logo loading optimization
+        function optimizeLogoLoading() {
+            const logo = document.querySelector('.itt-logo-leaf');
+            if (!logo) return;
+            
+            // Create a new image to test loading
+            const testImg = new Image();
+            testImg.onload = function() {
+                // Logo loaded successfully, show it
+                logo.style.opacity = '1';
+                console.log('✅ Logo loaded successfully');
+            };
+            testImg.onerror = function() {
+                // Fallback to main logo if 64px version fails
+                logo.src = '../assets/itt-heal-lotus-64.png';
+                logo.style.opacity = '1';
+                console.log('⚠️ Logo fallback loaded');
+            };
+            testImg.src = logo.src;
+            
+            // Timeout fallback - show logo after 1 second regardless
+            setTimeout(function() {
+                if (logo.style.opacity !== '1') {
+                    logo.style.opacity = '0.8';
+                    console.log('⏰ Logo timeout fallback triggered');
+                }
+            }, 1000);
+        }
+        
         // Admin API Configuration
         const API_BASE = 'https://ittheal.com/api/admin';
         const API_HEADERS = {
@@ -1822,6 +2600,9 @@
 
         // Initialize Admin Dashboard
         document.addEventListener('DOMContentLoaded', function() {
+            // Fast logo loading first (critical path)
+            optimizeLogoLoading();
+            
             initializeNavigation();
             loadDashboardData();
             setupForms();
@@ -1831,26 +2612,12 @@
         function initializeNavigation() {
             const navLinks = document.querySelectorAll('.admin-nav-link');
             const sections = document.querySelectorAll('.admin-section');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const sidebar = document.getElementById('sidebar');
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-            
-            // Mobile menu toggle functionality
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                    mobileMenuOverlay.classList.toggle('active');
-                    const isExpanded = sidebar.classList.contains('active');
-                    this.setAttribute('aria-expanded', isExpanded);
-                });
-            }
             
             // Close mobile menu when clicking overlay
             if (mobileMenuOverlay) {
                 mobileMenuOverlay.addEventListener('click', function() {
-                    sidebar.classList.remove('active');
-                    mobileMenuOverlay.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    closeMenu();
                 });
             }
 
@@ -1872,9 +2639,7 @@
                     
                     // Close mobile menu after navigation
                     if (window.innerWidth <= 768) {
-                        sidebar.classList.remove('active');
-                        mobileMenuOverlay.classList.remove('active');
-                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        closeMenu();
                     }
                 });
             });
@@ -1885,9 +2650,7 @@
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
                     if (window.innerWidth > 768) {
-                        sidebar.classList.remove('active');
-                        mobileMenuOverlay.classList.remove('active');
-                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        closeMenu();
                     }
                 }, 250);
             });
@@ -2255,7 +3018,9 @@
                         <div class="booking-detail-row">
                             <span class="booking-detail-label">Payment:</span>
                             <span class="booking-detail-value">
-                                <span class="status-badge status-${booking.payment_status} ${booking.payment_status === 'complimentary' ? 'complimentary-highlight' : ''}">${booking.payment_status || 'unknown'}</span>
+                                <span class="status-badge status-${booking.payment_status} ${booking.payment_status === 'complimentary' || booking.payment_status === 'comp_with_tip' ? 'complimentary-highlight' : ''}">${
+                                    booking.payment_status === 'comp_with_tip' ? 'comp + tip' : (booking.payment_status || 'unknown')
+                                }</span>
                             </span>
                         </div>
                         ${booking.payment_method ? `
@@ -2267,6 +3032,12 @@
                                   booking.payment_method === 'other' ? '📱 Other' :
                                   booking.payment_method === 'comp' ? '🎁 Comp' : booking.payment_method}
                                 ${booking.comp_type ? ` (${booking.comp_type})` : ''}
+                                ${booking.payment_status === 'comp_with_tip' && booking.tip_payment_method ? 
+                                  `<br><small>Tip via: ${
+                                    booking.tip_payment_method === 'credit_card' ? '💳 Credit Card' : 
+                                    booking.tip_payment_method === 'cash' ? '💵 Cash' :
+                                    booking.tip_payment_method === 'other' ? '📱 Other' : booking.tip_payment_method
+                                  }</small>` : ''}
                             </span>
                         </div>
                         ` : ''}
@@ -2344,15 +3115,46 @@
             const calendarGrid = document.getElementById('calendarGrid');
             calendarGrid.innerHTML = '';
             
-            // Generate 6 weeks of calendar
-            for (let week = 0; week < 6; week++) {
-                for (let day = 0; day < 7; day++) {
-                    const currentDate = new Date(startDate);
-                    currentDate.setDate(startDate.getDate() + (week * 7) + day);
-                    
-                    const dayElement = createCalendarDay(currentDate, year, month);
-                    calendarGrid.appendChild(dayElement);
+            // Calculate number of weeks needed (minimum 5, maximum 6)
+            const totalDays = 42; // 6 weeks * 7 days = 42 days to ensure full calendar
+            
+            // Generate complete calendar with all days
+            console.log(`📅 Generating calendar for ${monthNames[month]} ${year}`);
+            console.log(`🗓️ Start date: ${startDate.toDateString()}, generating ${totalDays} days`);
+            
+            for (let i = 0; i < totalDays; i++) {
+                const currentDate = new Date(startDate);
+                currentDate.setDate(startDate.getDate() + i);
+                
+                const dayElement = createCalendarDay(currentDate, year, month);
+                calendarGrid.appendChild(dayElement);
+                
+                // Debug first week
+                if (i < 7) {
+                    console.log(`Day ${i + 1}: ${currentDate.toDateString()} (${currentDate.getDate()})`);
                 }
+            }
+            
+            console.log(`✅ Calendar generated with ${calendarGrid.children.length} day elements`);
+            
+            // Auto-select today's date if no date is selected
+            if (!selectedDate) {
+                const today = new Date();
+                const todayString = today.toISOString().split('T')[0];
+                selectedDate = todayString;
+                
+                // Find and select today's element
+                setTimeout(() => {
+                    const todayElement = document.querySelector('.calendar-day.today');
+                    if (todayElement) {
+                        todayElement.classList.add('selected');
+                        console.log(`📅 Auto-selected today: ${todayString}`);
+                        
+                        // Enable management buttons
+                        const blockBtn = document.getElementById('blockSelectedDay');
+                        if (blockBtn) blockBtn.disabled = false;
+                    }
+                }, 100);
             }
         }
         
@@ -2383,8 +3185,11 @@
                     return bookingDate === dateString;
                 }) : [];
             
+            const dayNumber = date.getDate();
+            console.log(`🔢 Creating day element: ${dayNumber} (${date.toDateString()}) - ${isCurrentMonth ? 'current' : 'other'} month`);
+            
             dayElement.innerHTML = `
-                <div class="day-number">${date.getDate()}</div>
+                <div class="day-number">${dayNumber}</div>
                 <div class="day-slots">
                     ${availableSlots.slice(0, 3).map(() => '<div class="slot-indicator available"></div>').join('')}
                     ${blockedSlots.slice(0, 3).map(() => '<div class="slot-indicator blocked"></div>').join('')}
@@ -2405,6 +3210,13 @@
                 document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
                 dayElement.classList.add('selected');
                 showDayDetails(dateString, daySlots, bookedSlots);
+                
+                // Enable management buttons now that a day is selected
+                const blockBtn = document.getElementById('blockSelectedDay');
+                if (blockBtn) blockBtn.disabled = false;
+                
+                // Show visual feedback that day is selected
+                console.log(`📅 Selected date: ${dateString} (${isCurrentMonth ? 'current month' : 'other month'})`);
             });
             
             return dayElement;
@@ -2420,7 +3232,20 @@
             dayDetailsTitle.textContent = `Schedule for ${date.toLocaleDateString('en-US', options)}`;
             
             if (slots.length === 0 && bookings.length === 0) {
-                dayDetailsContent.innerHTML = '<p style="text-align: center; color: #666; padding: 1rem;">No schedule set for this day.</p>';
+                dayDetailsContent.innerHTML = `
+                    <p style="text-align: center; color: #666; padding: 1rem;">No schedule set for this day.</p>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <button class="btn btn-primary" onclick="openCreateAvailabilityModal()" style="margin: 0 0.5rem;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;">
+                                <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            </svg>
+                            Add Time Slot
+                        </button>
+                        <button class="btn btn-secondary" onclick="blockCurrentDay()" style="margin: 0 0.5rem;">
+                            Block Day
+                        </button>
+                    </div>
+                `;
             } else {
                 const allItems = [...slots.map(slot => ({ ...slot, type: 'availability' })), 
                                  ...bookings.map(booking => ({ ...booking, type: 'booking' }))];
@@ -2462,7 +3287,16 @@
                             </div>
                         `;
                     }
-                }).join('');
+                }).join('') + `
+                    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;">
+                        <button class="btn btn-primary" onclick="openCreateAvailabilityModal()" style="margin: 0 0.5rem;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 0.5rem;">
+                                <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            </svg>
+                            Add Time Slot
+                        </button>
+                    </div>
+                `;
             }
             
             dayDetails.style.display = 'block';
@@ -2629,13 +3463,15 @@
                             phone: booking.client_phone || '',
                             totalBookings: 0,
                             totalSpent: 0,
-                            lastSession: null
+                            lastSession: null,
+                            bookingHistory: []
                         });
                     }
                     
                     const client = clientsMap.get(email);
                     client.totalBookings++;
                     client.totalSpent += parseFloat(booking.final_price || 0);
+                    client.bookingHistory.push(booking);
                     
                     const sessionDate = new Date(booking.scheduled_date);
                     if (!client.lastSession || sessionDate > new Date(client.lastSession)) {
@@ -2644,12 +3480,18 @@
                 }
             });
             
-            const clients = Array.from(clientsMap.values());
+            const clients = Array.from(clientsMap.values()).sort((a, b) => {
+                // Sort by name alphabetically
+                return a.name.localeCompare(b.name);
+            });
             
             if (clients.length === 0) {
                 container.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">No client records found.</p>';
                 return;
             }
+            
+            // Store clients data globally for modal access
+            window.clientsData = clients;
             
             const table = document.createElement('table');
             table.className = 'data-table';
@@ -2658,26 +3500,16 @@
                 <thead>
                     <tr>
                         <th>Client Name</th>
-                        <th>Contact</th>
-                        <th>Total Sessions</th>
-                        <th>Total Spent</th>
-                        <th>Last Session</th>
-                        <th>Actions</th>
+                        <th>Contact Information</th>
                     </tr>
                 </thead>
                 <tbody>
                     ${clients.map(client => `
-                        <tr>
+                        <tr class="client-row" onclick="showClientModal('${client.email}')" style="cursor: pointer;">
                             <td style="font-weight: 600;">${escapeHtml(client.name)}</td>
                             <td>
                                 <div>${escapeHtml(client.email)}</div>
-                                ${client.phone ? `<div style="font-size: 0.875rem; color: #666;">${escapeHtml(client.phone)}</div>` : ''}
-                            </td>
-                            <td>${client.totalBookings}</td>
-                            <td>$${client.totalSpent.toFixed(2)}</td>
-                            <td>${client.lastSession ? formatDate(client.lastSession) : 'Never'}</td>
-                            <td>
-                                <button class="btn btn-secondary btn-sm" onclick="viewClientHistory('${client.email}')">View History</button>
+                                ${client.phone ? `<div style="font-size: 0.875rem; color: #666; margin-top: 0.25rem;">${escapeHtml(client.phone)}</div>` : ''}
                             </td>
                         </tr>
                     `).join('')}
@@ -2686,6 +3518,139 @@
             
             container.innerHTML = '';
             container.appendChild(table);
+        }
+        
+        function showClientModal(email) {
+            const client = window.clientsData?.find(c => c.email === email);
+            if (!client) return;
+            
+            // Sort booking history by date (most recent first)
+            const sortedBookings = client.bookingHistory.sort((a, b) => 
+                new Date(b.scheduled_date) - new Date(a.scheduled_date)
+            );
+            
+            const isActive = client.lastSession && (new Date() - new Date(client.lastSession)) / (1000 * 60 * 60 * 24) < 30;
+            
+            const modalHtml = `
+                <div class="modal-overlay" id="clientModal" onclick="closeClientModal(event)">
+                    <div class="client-modal-content" onclick="event.stopPropagation()">
+                        <div class="client-modal-header">
+                            <div>
+                                <h2>${escapeHtml(client.name)}</h2>
+                                <div class="client-status-badge">
+                                    ${isActive 
+                                        ? '<span class="status-badge status-active">Active Client</span>' 
+                                        : '<span class="status-badge status-inactive">Inactive</span>'}
+                                </div>
+                            </div>
+                            <button class="modal-close-btn" onclick="closeClientModal()">&times;</button>
+                        </div>
+                        
+                        <div class="client-modal-body">
+                            <div class="client-info-grid">
+                                <div class="client-contact-card">
+                                    <h4>Contact Information</h4>
+                                    <div class="contact-details">
+                                        <div class="contact-item">
+                                            <i class="contact-icon">📧</i>
+                                            <span>${escapeHtml(client.email)}</span>
+                                            <button class="btn btn-sm btn-secondary" onclick="copyToClipboard('${client.email}')">Copy</button>
+                                        </div>
+                                        ${client.phone ? `
+                                            <div class="contact-item">
+                                                <i class="contact-icon">📱</i>
+                                                <span>${escapeHtml(client.phone)}</span>
+                                                <button class="btn btn-sm btn-secondary" onclick="copyToClipboard('${client.phone}')">Copy</button>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                                
+                                <div class="client-stats-card">
+                                    <h4>Client Statistics</h4>
+                                    <div class="stats-grid">
+                                        <div class="stat-item">
+                                            <div class="stat-value">${client.totalBookings}</div>
+                                            <div class="stat-label">Total Sessions</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-value">$${client.totalSpent.toFixed(2)}</div>
+                                            <div class="stat-label">Total Spent</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-value">${client.totalBookings > 0 ? '$' + (client.totalSpent / client.totalBookings).toFixed(2) : '$0'}</div>
+                                            <div class="stat-label">Avg per Session</div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-value">${client.lastSession ? formatDate(client.lastSession) : 'Never'}</div>
+                                            <div class="stat-label">Last Visit</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="client-history-card">
+                                <h4>Booking History (${sortedBookings.length} sessions)</h4>
+                                <div class="booking-history-list">
+                                    ${sortedBookings.slice(0, 10).map(booking => `
+                                        <div class="booking-history-item">
+                                            <div class="booking-date">
+                                                <strong>${formatDate(booking.scheduled_date)}</strong>
+                                                <span class="booking-time">${booking.scheduled_time || 'Time not set'}</span>
+                                            </div>
+                                            <div class="booking-details">
+                                                <span class="service-type">${escapeHtml(booking.service_type || 'Service not specified')}</span>
+                                                <span class="booking-price">$${parseFloat(booking.final_price || 0).toFixed(2)}</span>
+                                            </div>
+                                            <div class="booking-status">
+                                                <span class="status-badge status-${booking.session_status || 'unknown'}">${booking.session_status || 'unknown'}</span>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                    ${sortedBookings.length > 10 ? `<div class="booking-history-more">... and ${sortedBookings.length - 10} more sessions</div>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="client-modal-footer">
+                            <button class="btn btn-primary" onclick="viewClientHistory('${client.email}')">
+                                📋 View Full History
+                            </button>
+                            <button class="btn btn-secondary" onclick="contactClient('${client.email}')">
+                                📞 Contact Client
+                            </button>
+                            <button class="btn btn-secondary" onclick="closeClientModal()">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeClientModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('clientModal');
+            if (modal) {
+                modal.remove();
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showAlert('Copied to clipboard!', 'success');
+            }).catch(() => {
+                showAlert('Failed to copy to clipboard', 'error');
+            });
+        }
+        
+        function contactClient(email) {
+            // You can implement email client opening or SMS functionality here
+            window.open(`mailto:${email}`, '_blank');
         }
 
         function renderPaymentsTable() {
@@ -2739,11 +3704,46 @@
         }
 
         function openCreateAvailabilityModal() {
-            document.getElementById('createAvailabilityModal').classList.add('active');
+            const modal = document.getElementById('createAvailabilityModal');
+            const dateInput = document.getElementById('availabilityDate');
+            
+            // Pre-fill with selected date if available, otherwise use today
+            if (selectedDate) {
+                dateInput.value = selectedDate;
+                console.log(`🗓️ Pre-filling availability modal with selected date: ${selectedDate}`);
+            } else {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.value = today;
+                console.log(`🗓️ Pre-filling availability modal with today's date: ${today}`);
+            }
+            
+            modal.classList.add('active');
         }
 
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
+            
+            // Clean up Stripe elements when edit modal is closed
+            if (modalId === 'editBookingModal' && editCardElement) {
+                try {
+                    editCardElement.destroy();
+                    console.log('🧹 Cleaned up edit Stripe element on modal close');
+                } catch (e) {
+                    console.log('⚠️ Error cleaning up edit Stripe element:', e.message);
+                }
+                editCardElement = null;
+            }
+            
+            // Clean up Stripe elements when create modal is closed
+            if (modalId === 'createBookingModal' && createCardElement) {
+                try {
+                    createCardElement.destroy();
+                    console.log('🧹 Cleaned up create Stripe element on modal close');
+                } catch (e) {
+                    console.log('⚠️ Error cleaning up create Stripe element:', e.message);
+                }
+                createCardElement = null;
+            }
         }
 
         // Comprehensive pricing calculation system using shared config
@@ -2764,7 +3764,13 @@
                 // Get the selected payment method for pricing calculation
                 const paymentMethod = createPaymentManager ? createPaymentManager.getSelectedPaymentMethod() : 'credit_card';
                 
-                // Use shared config for pricing calculation
+                // Use shared config for pricing calculation with safety check
+                if (!window.ITTHealConfig || !window.ITTHealConfig.calculateBookingPricing) {
+                    console.error('❌ ITTHealConfig not loaded - shared-config.js may be missing');
+                    document.getElementById('totalPrice').textContent = 'Config Error';
+                    return;
+                }
+                
                 const pricing = window.ITTHealConfig.calculateBookingPricing({
                     serviceType: serviceTypeSelect?.value,
                     selectedAddons: pricingSelectedAddons,
@@ -2826,15 +3832,19 @@
                 const isCompBooking = document.getElementById('editCompBooking')?.checked || false;
                 const paymentStatus = document.getElementById('editPaymentStatus')?.value || '';
                 
-                // Update payment method based on status and tip
-                if (editPaymentManager) {
-                    editPaymentManager.updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount);
+                // Get payment method directly from the form
+                const paymentMethod = document.querySelector('#edit-booking-modal input[name="payment-method"]:checked')?.value || 'credit_card';
+                
+                // Payment method is independent of comp selection now
+                // Admin can choose any payment method for processing the final amount
+                
+                // Use shared config for pricing calculation with safety check
+                if (!window.ITTHealConfig || !window.ITTHealConfig.calculateBookingPricing) {
+                    console.error('❌ ITTHealConfig not loaded - shared-config.js may be missing');
+                    document.getElementById('editTotalPrice').textContent = 'Config Error';
+                    return;
                 }
                 
-                // Get the selected payment method for pricing calculation
-                const paymentMethod = editPaymentManager ? editPaymentManager.getSelectedPaymentMethod() : 'credit_card';
-                
-                // Use shared config for pricing calculation
                 const pricing = window.ITTHealConfig.calculateBookingPricing({
                     serviceType: serviceTypeSelect?.value,
                     selectedAddons: editSelectedAddons,
@@ -3083,9 +4093,15 @@
         }
         
         // Payment Components Setup
-        let createPaymentManager, editPaymentManager;
+        let createPaymentManager;
         
         function setupPaymentComponents() {
+            // Check if ITTPaymentManager is available
+            if (typeof ITTPaymentManager === 'undefined') {
+                console.error('❌ ITTPaymentManager not defined - shared-payment.js may have loading issues');
+                return;
+            }
+            
             // Initialize create form payment component
             createPaymentManager = new ITTPaymentManager({
                 containerId: 'create-payment-container',
@@ -3097,16 +4113,7 @@
                 }
             });
             
-            // Initialize edit form payment component  
-            editPaymentManager = new ITTPaymentManager({
-                containerId: 'edit-payment-container',
-                formPrefix: 'edit_',
-                isAdminMode: true,
-                onPaymentMethodChange: (method) => {
-                    console.log('Edit payment method changed to:', method);
-                    setTimeout(() => calculateEditPricing(), 10); // Small delay to ensure UI updates
-                }
-            });
+            // Edit payment manager not needed - payment section is directly in HTML
             
             // Inject CSS
             createPaymentManager.injectCSS();
@@ -3119,8 +4126,18 @@
             // Setup comprehensive pricing system
             setupBookingPricing();
             
-            // Initialize shared payment components
-            setupPaymentComponents();
+            // Initialize shared payment components with retry logic
+            function initializePaymentComponents(retries = 5) {
+                if (typeof ITTPaymentManager !== 'undefined') {
+                    setupPaymentComponents();
+                } else if (retries > 0) {
+                    console.log(`⏳ Waiting for ITTPaymentManager to load... (${retries} retries left)`);
+                    setTimeout(() => initializePaymentComponents(retries - 1), 500);
+                } else {
+                    console.error('❌ Failed to load ITTPaymentManager after multiple attempts');
+                }
+            }
+            initializePaymentComponents();
             
             // Create Booking Form
             document.getElementById('createBookingForm').addEventListener('submit', async function(e) {
@@ -3128,6 +4145,10 @@
                 
                 const formData = new FormData(this);
                 const bookingData = Object.fromEntries(formData.entries());
+                
+                // Add payment method to booking data
+                const selectedPaymentMethod = document.querySelector('#createBookingModal input[name="payment-method"]:checked')?.value || 'credit_card';
+                bookingData.payment_method = selectedPaymentMethod;
                 
                 // Process add-ons into special_requests field (following frontend storage format)
                 const createSelectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked'));
@@ -3185,6 +4206,36 @@
                 console.log('Booking data being submitted:', bookingData);
                 
                 try {
+                    // Process Stripe payment if credit card is selected OR comp booking with tip
+                    let paymentIntentId = null;
+                    const finalPrice = parseFloat(bookingData.final_price) || 0;
+                    const shouldProcessPayment = selectedPaymentMethod === 'credit_card' || 
+                                               (bookingData.payment_status === 'comp' && finalPrice > 0);
+                    
+                    if (shouldProcessPayment) {
+                        try {
+                            paymentIntentId = await processCreatePayment(bookingData);
+                            bookingData.payment_intent_id = paymentIntentId;
+                            bookingData.payment_status = 'paid';
+                        } catch (paymentError) {
+                            console.error('Payment processing failed:', paymentError);
+                            showAlert(`Payment failed: ${paymentError.message}`, 'error');
+                            return;
+                        }
+                    } else {
+                        // For non-credit card payments, set appropriate payment status and track tips
+                        if (selectedPaymentMethod === 'comp') {
+                            bookingData.payment_status = 'comp';
+                        } else if (bookingData.payment_status === 'comp' && finalPrice > 0) {
+                            // Comp booking with tip via non-credit methods - track for reporting
+                            bookingData.payment_status = 'comp_with_tip';
+                            bookingData.tip_payment_method = selectedPaymentMethod; // Track how tip was paid
+                            console.log(`💰 Tracking comp booking tip: $${finalPrice} via ${selectedPaymentMethod}`);
+                        } else {
+                            bookingData.payment_status = 'pending';
+                        }
+                    }
+
                     const response = await fetch(`${API_BASE}/bookings`, {
                         method: 'POST',
                         headers: API_HEADERS,
@@ -3255,15 +4306,38 @@
                 
                 const submitButton = this.querySelector('button[type="submit"]');
                 const originalText = submitButton.textContent;
+                const statusDiv = document.getElementById('edit-payment-status');
+                const statusIcon = document.getElementById('edit-status-icon');
+                const statusText = document.getElementById('edit-status-text');
+                const statusDetails = document.getElementById('edit-status-details');
                 
-                // Set loading state
-                submitButton.disabled = true;
-                submitButton.textContent = 'Updating...';
+                // Show payment processing UI for credit card payments
+                const selectedPaymentMethod = document.querySelector('#editBookingModal input[name="payment-method"]:checked')?.value;
+                const finalPrice = parseFloat(document.getElementById('editFinalPrice')?.value) || 0;
+                const shouldProcessPayment = selectedPaymentMethod === 'credit_card' && finalPrice > 0;
+                
+                if (shouldProcessPayment) {
+                    // Show payment processing status
+                    statusDiv.style.display = 'block';
+                    statusDiv.style.background = '#f0f9ff';
+                    statusDiv.style.border = '2px solid #3b82f6';
+                    statusIcon.textContent = '⏳';
+                    statusText.textContent = 'Processing Payment...';
+                    statusDetails.textContent = 'Please wait while we securely process your payment';
+                    submitButton.style.display = 'none';
+                } else {
+                    // Regular update without payment processing
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Updating...';
+                }
                 
                 const formData = new FormData(this);
                 const bookingData = Object.fromEntries(formData.entries());
                 const bookingId = bookingData.booking_id;
                 delete bookingData.booking_id; // Remove from data to send
+                
+                // Add payment method to booking data (reuse already declared variable)
+                bookingData.payment_method = selectedPaymentMethod;
                 
                 // Process add-ons into special_requests field (following frontend storage format)
                 const editFormSelectedAddons = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked'));
@@ -3354,6 +4428,70 @@
                 console.log('Special requests in submission:', JSON.stringify(bookingData.special_requests));
                 
                 try {
+                    // Process Stripe payment if credit card is selected OR comp booking with tip
+                    let paymentIntentId = null;
+                    const finalPrice = parseFloat(bookingData.final_price) || 0;
+                    const shouldProcessPayment = selectedPaymentMethod === 'credit_card' || 
+                                               (bookingData.payment_status === 'comp' && finalPrice > 0);
+                    
+                    if (shouldProcessPayment) {
+                        try {
+                            // Update status: Creating payment intent
+                            if (statusDiv.style.display === 'block') {
+                                statusIcon.textContent = '💳';
+                                statusText.textContent = 'Creating Payment Intent...';
+                                statusDetails.textContent = 'Setting up secure payment processing';
+                            }
+                            
+                            paymentIntentId = await processEditPayment(bookingData);
+                            
+                            if (paymentIntentId) {
+                                bookingData.payment_intent_id = paymentIntentId;
+                                bookingData.payment_status = 'paid';
+                                
+                                // Update status: Payment successful
+                                if (statusDiv.style.display === 'block') {
+                                    statusIcon.textContent = '✅';
+                                    statusText.textContent = 'Payment Successful!';
+                                    statusDetails.textContent = 'Payment processed successfully';
+                                    statusDiv.style.background = '#f0fdf4';
+                                    statusDiv.style.border = '2px solid #22c55e';
+                                }
+                            }
+                        } catch (paymentError) {
+                            console.error('Payment processing failed:', paymentError);
+                            
+                            // Update status: Payment failed
+                            if (statusDiv.style.display === 'block') {
+                                statusIcon.textContent = '❌';
+                                statusText.textContent = 'Payment Failed';
+                                statusDetails.textContent = paymentError.message;
+                                statusDiv.style.background = '#fef2f2';
+                                statusDiv.style.border = '2px solid #ef4444';
+                                submitButton.style.display = 'inline-block';
+                                submitButton.disabled = false;
+                                submitButton.textContent = originalText;
+                            } else {
+                                showAlert(`Payment failed: ${paymentError.message}`, 'error');
+                                submitButton.disabled = false;
+                                submitButton.textContent = originalText;
+                            }
+                            return;
+                        }
+                    } else {
+                        // For non-credit card payments, set appropriate payment status and track tips
+                        if (selectedPaymentMethod === 'comp') {
+                            bookingData.payment_status = 'comp';
+                        } else if (bookingData.payment_status === 'comp' && finalPrice > 0) {
+                            // Comp booking with tip via non-credit methods - track for reporting
+                            bookingData.payment_status = 'comp_with_tip';
+                            bookingData.tip_payment_method = selectedPaymentMethod; // Track how tip was paid
+                            console.log(`💰 Tracking comp booking tip: $${finalPrice} via ${selectedPaymentMethod}`);
+                        } else {
+                            bookingData.payment_status = 'pending';
+                        }
+                    }
+
                     const response = await fetch(`${API_BASE}/bookings/${bookingId}`, {
                         method: 'PUT',
                         headers: {
@@ -3430,9 +4568,24 @@
                             }
                         }
                         
-                        showAlert('Booking updated successfully!', 'success');
-                        closeModal('editBookingModal');
-                        this.reset();
+                        // Show final success status for payment workflows
+                        if (statusDiv.style.display === 'block') {
+                            statusIcon.textContent = '🎉';
+                            statusText.textContent = 'Booking Updated Successfully!';
+                            statusDetails.textContent = paymentIntentId ? 'Payment processed and booking updated' : 'Booking updated successfully';
+                            statusDiv.style.background = '#f0fdf4';
+                            statusDiv.style.border = '2px solid #22c55e';
+                            
+                            // Auto-close modal after showing success
+                            setTimeout(() => {
+                                closeModal('editBookingModal');
+                                this.reset();
+                            }, 2000);
+                        } else {
+                            showAlert('Booking updated successfully!', 'success');
+                            closeModal('editBookingModal');
+                            this.reset();
+                        }
                         
                         // Store correction data before reload
                         const needsCorrection = bookingData.clear_addons || editFormSelectedAddons.length === 0;
@@ -3506,7 +4659,18 @@
                         bookingData: bookingData,
                         bookingId: bookingId
                     });
-                    showAlert('Error updating booking: ' + error.message, 'error');
+                    
+                    // Show error status for payment workflows
+                    if (statusDiv.style.display === 'block') {
+                        statusIcon.textContent = '❌';
+                        statusText.textContent = 'Update Failed';
+                        statusDetails.textContent = error.message;
+                        statusDiv.style.background = '#fef2f2';
+                        statusDiv.style.border = '2px solid #ef4444';
+                        submitButton.style.display = 'inline-block';
+                    } else {
+                        showAlert('Error updating booking: ' + error.message, 'error');
+                    }
                 } finally {
                     // Reset loading state
                     submitButton.disabled = false;
@@ -3540,6 +4704,32 @@
                     document.getElementById('editFinalPrice').value = booking.final_price || '';
                     document.getElementById('editSpecialRequests').value = booking.special_requests || '';
                     
+                    // Set payment method based on booking data
+                    const editPaymentMethod = booking.payment_method || (booking.payment_status === 'comp' ? 'comp' : 'credit_card');
+                    const editPaymentMethodRadio = document.querySelector(`#editBookingModal input[name="payment-method"][value="${editPaymentMethod}"]`);
+                    if (editPaymentMethodRadio) {
+                        editPaymentMethodRadio.checked = true;
+                        // Show/hide sections based on selection
+                        const editCreditCardSection = document.getElementById('edit-credit-card-section');
+                        const editCompTypeSection = document.getElementById('edit-comp-type-section');
+                        const editAltPaymentSection = document.getElementById('edit-alternative-payment-section');
+                        
+                        if (editPaymentMethod === 'credit_card') {
+                            editCreditCardSection.style.display = 'block';
+                            editCompTypeSection.style.display = 'none';
+                            editAltPaymentSection.style.display = 'none';
+                            setTimeout(() => initializeEditStripeElementsSafely(), 100);
+                        } else if (editPaymentMethod === 'comp') {
+                            editCreditCardSection.style.display = 'none';
+                            editCompTypeSection.style.display = 'block';
+                            editAltPaymentSection.style.display = 'none';
+                        } else {
+                            editCreditCardSection.style.display = 'none';
+                            editCompTypeSection.style.display = 'none';
+                            editAltPaymentSection.style.display = 'block';
+                        }
+                    }
+                    
                     // Format datetime for input
                     if (booking.scheduled_date) {
                         const date = new Date(booking.scheduled_date);
@@ -3550,9 +4740,21 @@
                     // Store service type to set after options are populated
                     const bookingServiceType = booking.service_type || '';
                     
-                    // Populate edit form with additional fields
-                    if (editPaymentManager) {
-                        editPaymentManager.populateFromBooking(booking);
+                    // Populate payment method directly
+                    if (booking.payment_method) {
+                        const paymentRadio = document.querySelector(`#edit-booking-modal input[name="payment-method"][value="${booking.payment_method}"]`);
+                        if (paymentRadio) {
+                            paymentRadio.checked = true;
+                            // Trigger change event to show/hide payment sections
+                            paymentRadio.dispatchEvent(new Event('change'));
+                        }
+                    }
+                    
+                    // Show/hide credit card section based on payment method
+                    const selectedPaymentMethod = document.querySelector('#edit-booking-modal input[name="payment-method"]:checked')?.value;
+                    const creditCardSection = document.getElementById('edit-credit-card-section');
+                    if (creditCardSection) {
+                        creditCardSection.style.display = selectedPaymentMethod === 'credit_card' ? 'block' : 'none';
                     }
                     
                     // Store add-ons data to populate after checkboxes are created
@@ -3662,23 +4864,33 @@
                     headers: API_HEADERS
                 });
                 
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                
                 const result = await response.json();
                 
-                if (result.success) {
+                if (response.ok && result.success) {
                     showAlert('Booking deleted successfully!', 'success');
                     await loadBookings();
                     if (document.getElementById('bookings').classList.contains('active')) {
                         renderBookingsTable();
                     }
                     updateDashboardStats();
+                } else if (response.status === 404) {
+                    showAlert('Booking not found - it may have already been deleted', 'warning');
+                    // Refresh the bookings list to update UI
+                    await loadBookings();
+                    if (document.getElementById('bookings').classList.contains('active')) {
+                        renderBookingsTable();
+                    }
+                    updateDashboardStats();
                 } else {
-                    throw new Error(result.message || 'Failed to delete booking');
+                    throw new Error(result.message || `Failed to delete booking (${response.status})`);
                 }
             } catch (error) {
                 console.error('Error deleting booking:', error);
-                showAlert('Error deleting booking: ' + error.message, 'error');
+                if (error.message.includes('404')) {
+                    showAlert('Booking not found - it may have already been deleted', 'warning');
+                } else {
+                    showAlert('Error deleting booking: ' + error.message, 'error');
+                }
             }
         }
 
@@ -3926,6 +5138,590 @@
             if (e.target.classList.contains('admin-nav-link')) {
                 setTimeout(forceRemoveAllSpinners, 1000);
             }
+        });
+
+        // Admin menu toggle function - Ensure global scope
+        window.toggleAdminMenu = function toggleAdminMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            
+            console.log('🍔 Toggle menu clicked', { sidebar: !!sidebar, overlay: !!overlay, hamburgerBtn: !!hamburgerBtn });
+            
+            if (sidebar && overlay && hamburgerBtn) {
+                const isActive = sidebar.classList.contains('active');
+                console.log('📱 Menu state:', isActive ? 'closing' : 'opening');
+                
+                if (isActive) {
+                    // Close menu
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                    hamburgerBtn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                    console.log('✅ Menu closed');
+                } else {
+                    // Open menu
+                    sidebar.classList.add('active');
+                    overlay.classList.add('active');
+                    hamburgerBtn.setAttribute('aria-expanded', 'true');
+                    document.body.style.overflow = 'hidden';
+                    console.log('✅ Menu opened');
+                }
+            } else {
+                console.error('❌ Missing menu elements:', { sidebar: !!sidebar, overlay: !!overlay, hamburgerBtn: !!hamburgerBtn });
+            }
+        }
+
+        window.closeMenu = function closeMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            
+            if (sidebar && overlay && hamburgerBtn) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Update existing navigation functions to work with mobile menu
+        function showDashboard() {
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('dashboard').style.display = 'block';
+            updateActiveNavItem('dashboard-nav');
+            closeMenu(); // Close mobile menu after navigation
+        }
+
+        function showBookings() {
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('bookings').style.display = 'block';
+            updateActiveNavItem('bookings-nav');
+            loadBookings();
+            closeMenu(); // Close mobile menu after navigation
+        }
+
+        function showAvailability() {
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('availability').style.display = 'block';
+            updateActiveNavItem('availability-nav');
+            loadAvailability();
+            closeMenu(); // Close mobile menu after navigation
+        }
+
+        function showReports() {
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById('reports').style.display = 'block';
+            updateActiveNavItem('reports-nav');
+            loadReports();
+            closeMenu(); // Close mobile menu after navigation
+        }
+
+        // Initialize Stripe
+        const stripe = Stripe('pk_live_51RRBjzFxOpfkAGIdJjkEORbCZPPZjvMQW8scmVNxxgcuB0v96NQVgmvbvA6ilCBZzyKj4CuyZMDjh4udoMihhflX00uqEC3iQk');
+        
+        // Global accessibility fix for Stripe elements
+        function fixStripeAccessibility() {
+            // Remove aria-hidden from any focusable Stripe inputs
+            const stripeInputs = document.querySelectorAll('.__PrivateStripeElement-input[aria-hidden="true"]');
+            stripeInputs.forEach(input => {
+                input.removeAttribute('aria-hidden');
+                console.log('🔧 Accessibility: Removed aria-hidden from focusable Stripe input');
+            });
+        }
+        
+        // Monitor for dynamically added Stripe elements
+        if (window.MutationObserver) {
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'childList' || mutation.type === 'attributes') {
+                        // Check for new Stripe elements or attribute changes
+                        fixStripeAccessibility();
+                    }
+                });
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['aria-hidden']
+            });
+        }
+        const elements = stripe.elements();
+        let editCardElement = null;
+        let createCardElement = null;
+        
+        // Enhanced Stripe initialization for EDIT modal
+        async function initializeEditStripeElementsSafely() {
+            return new Promise((resolve, reject) => {
+                try {
+                    // Validate card element container exists
+                    const cardContainer = document.getElementById('stripe-card-element');
+                    
+                    if (!cardContainer) {
+                        reject(new Error('Stripe container not found - element may be detached'));
+                        return;
+                    }
+                    
+                    // Destroy existing edit element if it exists
+                    if (editCardElement) {
+                        try {
+                            editCardElement.destroy();
+                            console.log('🧹 Destroyed existing edit card element');
+                        } catch (destroyError) {
+                            console.warn('Error destroying existing edit element:', destroyError);
+                        }
+                        editCardElement = null;
+                    }
+                    
+                    // Destroy create element to avoid conflicts (only one element allowed per elements instance)
+                    if (createCardElement) {
+                        try {
+                            createCardElement.destroy();
+                            console.log('🧹 Destroyed create card element to avoid conflict');
+                        } catch (destroyError) {
+                            console.warn('Error destroying create element:', destroyError);
+                        }
+                        createCardElement = null;
+                    }
+                    
+                    // Create new edit element
+                    try {
+                        editCardElement = elements.create('card', {
+                            style: {
+                                base: {
+                                    fontSize: '14px',
+                                    color: '#374151',
+                                    fontFamily: 'system-ui, -apple-system, sans-serif',
+                                    '::placeholder': { color: '#9ca3af' }
+                                },
+                                invalid: {
+                                    color: '#dc2626',
+                                    iconColor: '#dc2626'
+                                }
+                            },
+                            hidePostalCode: false
+                        });
+                        
+                        // Mount element with error handling
+                        editCardElement.mount('#stripe-card-element');
+                        
+                        // Fix accessibility: Remove aria-hidden from focusable Stripe elements
+                        setTimeout(() => {
+                            const stripeInputs = document.querySelectorAll('#stripe-card-element .__PrivateStripeElement-input');
+                            stripeInputs.forEach(input => {
+                                if (input.hasAttribute('aria-hidden')) {
+                                    input.removeAttribute('aria-hidden');
+                                    console.log('🔧 Removed aria-hidden from edit Stripe input for accessibility');
+                                }
+                            });
+                        }, 100);
+                        
+                        editCardElement.on('change', ({ error }) => {
+                            const displayError = document.getElementById('stripe-card-errors');
+                            if (displayError) {
+                                if (error) {
+                                    displayError.textContent = error.message;
+                                } else {
+                                    displayError.textContent = '';
+                                }
+                            }
+                        });
+                        
+                        console.log('✅ Edit Stripe Element initialized successfully');
+                        resolve();
+                        
+                    } catch (error) {
+                        console.error('❌ Error creating edit Stripe element:', error);
+                        reject(error);
+                    }
+                    
+                } catch (error) {
+                    console.error('❌ Error in initializeEditStripeElementsSafely:', error);
+                    reject(error);
+                }
+            });
+        }
+
+        function initializeCreateStripeElement() {
+            // Check if element is already mounted
+            const mountPoint = document.getElementById('stripe-card-element-create');
+            if (mountPoint && mountPoint.children.length > 0) {
+                console.log('✅ Create Stripe card element already mounted');
+                return;
+            }
+            
+            // Destroy ALL existing elements if they exist (Stripe allows only one card element per elements instance)
+            if (createCardElement) {
+                try {
+                    createCardElement.destroy();
+                    console.log('🧹 Destroyed existing create card element');
+                } catch (e) {
+                    console.log('⚠️ Error destroying existing create element:', e.message);
+                }
+                createCardElement = null;
+            }
+            if (editCardElement) {
+                try {
+                    editCardElement.destroy();
+                    console.log('🧹 Destroyed existing edit card element');
+                } catch (e) {
+                    console.log('⚠️ Error destroying existing edit element:', e.message);
+                }
+                editCardElement = null;
+            }
+            
+            // Create new element
+            try {
+                createCardElement = elements.create('card', {
+                    style: {
+                        base: {
+                            fontSize: '14px',
+                            color: '#374151',
+                            fontFamily: 'system-ui, -apple-system, sans-serif',
+                            '::placeholder': { color: '#9ca3af' }
+                        },
+                        invalid: {
+                            color: '#dc2626'
+                        }
+                    },
+                    hidePostalCode: false
+                });
+                
+                createCardElement.mount('#stripe-card-element-create');
+                console.log('✅ Create Stripe card element created and mounted');
+                
+                // Fix accessibility: Remove aria-hidden from focusable Stripe elements
+                setTimeout(() => {
+                    const stripeInputs = document.querySelectorAll('#stripe-card-element-create .__PrivateStripeElement-input');
+                    stripeInputs.forEach(input => {
+                        if (input.hasAttribute('aria-hidden')) {
+                            input.removeAttribute('aria-hidden');
+                            console.log('🔧 Removed aria-hidden from Stripe input for accessibility');
+                        }
+                    });
+                }, 100);
+                
+                createCardElement.on('change', ({ error }) => {
+                    const displayError = document.getElementById('stripe-card-errors-create');
+                    if (error) {
+                        displayError.textContent = error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+            } catch (error) {
+                console.error('❌ Error creating create Stripe element:', error);
+                createCardElement = null;
+            }
+        }
+
+        // Payment method visibility handlers
+        function setupPaymentMethodHandlers() {
+            // Payment method handlers for both modals using shared field name
+            const paymentMethods = document.querySelectorAll('input[name="payment-method"]');
+            
+            paymentMethods.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    const modalId = radio.closest('.modal') ? radio.closest('.modal').id : '';
+                    
+                    if (modalId === 'editBookingModal') {
+                        // Edit modal handlers
+                        const editCreditCardSection = document.getElementById('edit-credit-card-section');
+                        const editCompTypeSection = document.getElementById('edit-comp-type-section');
+                        const editAltPaymentSection = document.getElementById('edit-alternative-payment-section');
+                        
+                        if (radio.value === 'credit_card') {
+                            editCreditCardSection.style.display = 'block';
+                            editCompTypeSection.style.display = 'none';
+                            editAltPaymentSection.style.display = 'none';
+                            setTimeout(() => initializeEditStripeElementsSafely(), 100);
+                        } else {
+                            editCreditCardSection.style.display = 'none';
+                            editCompTypeSection.style.display = 'none';
+                            editAltPaymentSection.style.display = 'block';
+                        }
+                        calculateEditPricing();
+                        
+                    } else if (modalId === 'createBookingModal') {
+                        // Create modal handlers
+                        const createCreditCardSection = document.getElementById('create-credit-card-section');
+                        const createCompTypeSection = document.getElementById('create-comp-type-section');
+                        const createAltPaymentSection = document.getElementById('create-alternative-payment-section');
+                        
+                        if (radio.value === 'credit_card') {
+                            createCreditCardSection.style.display = 'block';
+                            createCompTypeSection.style.display = 'none';
+                            createAltPaymentSection.style.display = 'none';
+                            setTimeout(() => initializeCreateStripeElement(), 100);
+                        } else {
+                            createCreditCardSection.style.display = 'none';
+                            createCompTypeSection.style.display = 'none';
+                            createAltPaymentSection.style.display = 'block';
+                        }
+                        calculateCreatePricing();
+                    }
+                });
+            });
+        }
+
+        // Create modal pricing calculation with comp logic
+        function calculateCreatePricing() {
+            const serviceTypeSelect = document.getElementById('serviceType');
+            const tipAmountInput = document.getElementById('tipAmount');
+            const compBookingCheckbox = document.getElementById('compBooking');
+            const selectedPaymentMethod = document.querySelector('#createBookingModal input[name="payment-method"]:checked')?.value || 'credit_card';
+
+            const serviceType = serviceTypeSelect?.value;
+            const tipAmount = parseFloat(tipAmountInput?.value) || 0;
+            const isCompBooking = compBookingCheckbox?.checked;
+
+            // Calculate selected addons
+            const createSelectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked')).map(cb => cb.value);
+
+            if (window.ITTHealConfig) {
+                const pricing = window.ITTHealConfig.calculateBookingPricing({
+                    serviceType,
+                    selectedAddons: createSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentMethod: selectedPaymentMethod
+                });
+
+                // Update display elements
+                document.getElementById('servicePriceDisplay').textContent = `$${pricing.servicePrice.toFixed(2)}`;
+                document.getElementById('addonsTotal').textContent = `$${pricing.addonsTotal.toFixed(2)}`;
+                document.getElementById('totalPriceDisplay').textContent = `$${pricing.totalPrice.toFixed(2)}`;
+                document.getElementById('finalPrice').value = pricing.finalPrice.toFixed(2);
+
+                // Update final price note based on comp status
+                const finalPriceNote = document.getElementById('finalPriceNote');
+                if (finalPriceNote) {
+                    if (isCompBooking) {
+                        finalPriceNote.textContent = 'Tip Amount Only (Complimentary Session)';
+                        finalPriceNote.style.color = '#7c3aed';
+                        finalPriceNote.style.fontWeight = '600';
+                    } else {
+                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                        finalPriceNote.style.color = '';
+                        finalPriceNote.style.fontWeight = '';
+                    }
+                }
+                
+                // Update tip note based on comp status
+                const tipNote = document.getElementById('tipNote');
+                if (tipNote) {
+                    if (isCompBooking) {
+                        tipNote.textContent = 'Tip amount for complimentary session - select payment method below';
+                        tipNote.style.color = '#7c3aed';
+                        tipNote.style.fontWeight = '600';
+                    } else {
+                        tipNote.textContent = 'Enter tip amount if applicable';
+                        tipNote.style.color = '';
+                        tipNote.style.fontWeight = '';
+                    }
+                }
+
+                return pricing;
+            }
+        }
+
+        // Edit modal pricing calculation with comp logic
+        function calculateEditPricing() {
+            const serviceTypeSelect = document.getElementById('editServiceType');
+            const tipAmountInput = document.getElementById('editTipAmount');
+            const compBookingCheckbox = document.getElementById('editCompBooking');
+            const selectedPaymentMethod = document.querySelector('#editBookingModal input[name="payment-method"]:checked')?.value || 'credit_card';
+
+            const serviceType = serviceTypeSelect?.value;
+            const tipAmount = parseFloat(tipAmountInput?.value) || 0;
+            const isCompBooking = compBookingCheckbox?.checked;
+
+            // Calculate selected addons for edit form
+            const editSelectedAddons = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked')).map(cb => cb.value);
+
+            if (window.ITTHealConfig) {
+                const pricing = window.ITTHealConfig.calculateBookingPricing({
+                    serviceType,
+                    selectedAddons: editSelectedAddons,
+                    tipAmount,
+                    isCompBooking,
+                    paymentMethod: selectedPaymentMethod
+                });
+
+                // Update display elements
+                const servicePriceDisplay = document.getElementById('editServicePriceDisplay');
+                const addonsTotalDisplay = document.getElementById('editAddonsTotal');
+                const totalPriceDisplay = document.getElementById('editTotalPriceDisplay');
+                const finalPriceInput = document.getElementById('editFinalPrice');
+                const finalPriceNote = document.getElementById('editFinalPriceNote');
+
+                if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.servicePrice.toFixed(2)}`;
+                if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addonsTotal.toFixed(2)}`;
+                if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.totalPrice.toFixed(2)}`;
+                if (finalPriceInput) finalPriceInput.value = pricing.finalPrice.toFixed(2);
+
+                // Update final price note based on comp status
+                if (finalPriceNote) {
+                    if (isCompBooking) {
+                        finalPriceNote.textContent = 'Tip Amount Only (Complimentary Session)';
+                        finalPriceNote.style.color = '#7c3aed';
+                        finalPriceNote.style.fontWeight = '600';
+                    } else {
+                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                        finalPriceNote.style.color = '';
+                        finalPriceNote.style.fontWeight = '';
+                    }
+                }
+                
+                // Update tip note based on comp status
+                const tipNote = document.getElementById('editTipNote');
+                if (tipNote) {
+                    if (isCompBooking) {
+                        tipNote.textContent = 'Tip amount for complimentary session - select payment method below';
+                        tipNote.style.color = '#7c3aed';
+                        tipNote.style.fontWeight = '600';
+                    } else {
+                        tipNote.textContent = 'Enter tip amount if applicable';
+                        tipNote.style.color = '';
+                        tipNote.style.fontWeight = '';
+                    }
+                }
+
+                return pricing;
+            }
+        }
+
+        // Payment processing for create booking
+        async function processCreatePayment(formData) {
+            const selectedPaymentMethod = document.querySelector('#createBookingModal input[name="payment-method"]:checked')?.value;
+            const finalPrice = parseFloat(document.getElementById('finalPrice').value) || 0;
+
+            // Process payment if credit card selected and amount > 0
+            const shouldProcessPayment = selectedPaymentMethod === 'credit_card' && finalPrice > 0;
+            
+            if (shouldProcessPayment && finalPrice > 0) {
+                // Create payment intent
+                const paymentData = {
+                    amount: finalPrice, // Use dollars, not cents - same as main site
+                    service_type: formData.service_type === '60min' ? '60min_massage' : formData.service_type || '60min_massage',
+                    client_info: {
+                        name: formData.client_name,
+                        email: formData.client_email
+                    }
+                };
+
+                const response = await fetch('https://ittheal.com/api/web-booking/create-payment-intent', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }, // Use same headers as main site
+                    body: JSON.stringify(paymentData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Payment intent creation failed: ${response.status}`);
+                }
+
+                const result = await response.json();
+                if (!result.success) {
+                    throw new Error(result.error || 'Payment intent creation failed');
+                }
+
+                // Confirm payment with Stripe
+                const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment(
+                    result.clientSecret,
+                    {
+                        payment_method: {
+                            card: createCardElement,
+                            billing_details: {
+                                name: formData.client_name,
+                                email: formData.client_email
+                            }
+                        }
+                    }
+                );
+
+                if (stripeError) {
+                    throw new Error(`Stripe payment failed: ${stripeError.message}`);
+                }
+
+                return paymentIntent.id;
+            }
+
+            return null; // No payment intent needed for other methods
+        }
+
+        // Payment processing for edit booking
+        async function processEditPayment(formData) {
+            const selectedPaymentMethod = document.querySelector('#editBookingModal input[name="payment-method"]:checked')?.value;
+            const finalPrice = parseFloat(document.getElementById('editFinalPrice').value) || 0;
+
+            // Process payment if credit card selected and amount > 0
+            const shouldProcessPayment = selectedPaymentMethod === 'credit_card' && finalPrice > 0;
+            
+            if (shouldProcessPayment && finalPrice > 0) {
+                // Create payment intent
+                const paymentData = {
+                    amount: finalPrice, // Use dollars, not cents - same as main site
+                    service_type: formData.service_type === '60min' ? '60min_massage' : formData.service_type || '60min_massage',
+                    client_info: {
+                        name: formData.client_name,
+                        email: formData.client_email
+                    }
+                };
+
+                const response = await fetch('https://ittheal.com/api/web-booking/create-payment-intent', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }, // Use same headers as main site
+                    body: JSON.stringify(paymentData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Payment intent creation failed: ${response.status}`);
+                }
+
+                const result = await response.json();
+                if (!result.success) {
+                    throw new Error(result.error || 'Payment intent creation failed');
+                }
+
+                // Confirm payment with Stripe
+                const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment(
+                    result.clientSecret,
+                    {
+                        payment_method: {
+                            card: editCardElement,
+                            billing_details: {
+                                name: formData.client_name,
+                                email: formData.client_email
+                            }
+                        }
+                    }
+                );
+
+                if (stripeError) {
+                    throw new Error(`Stripe payment failed: ${stripeError.message}`);
+                }
+
+                return paymentIntent.id;
+            }
+
+            return null; // No payment intent needed for other methods
+        }
+
+        // Call setup function when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setupPaymentMethodHandlers();
+            // Initialize create Stripe element by default since credit card is selected
+            setTimeout(() => initializeCreateStripeElement(), 100);
         });
     </script>
 </body>

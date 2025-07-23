@@ -16,7 +16,7 @@
     let isInitialized = false;
     
     // Configuration
-    const STRIPE_PUBLIC_KEY = 'pk_test_51OBxkCKQ9k1QV9wX8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8';
+    const STRIPE_PUBLIC_KEY = 'pk_live_51RRBjzFxOpfkAGIdJjkEORbCZPPZjvMQW8scmVNxxgcuB0v96NQVgmvbvA6ilCBZzyKj4CuyZMDjh4udoMihhflX00uqEC3iQk';
     
     const SERVICE_PRICING = {
         '30min': { name: '30-Minute Targeted Relief', price: 8500, duration: 30 },

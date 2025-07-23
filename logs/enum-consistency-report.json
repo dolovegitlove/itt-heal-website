@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-07-23T06:22:49.459Z",
+  "summary": {
+    "total_issues": 0,
+    "high_severity": 0,
+    "medium_severity": 0,
+    "low_severity": 0
+  },
+  "issues": [],
+  "fixes": [],
+  "backend_enums": {
+    "session_types": [
+      "30min",
+      "60min",
+      "90min",
+      "120min",
+      "fasciaflow",
+      "consultation",
+      "follow_up"
+    ],
+    "payment_types": [
+      "card",
+      "cash",
+      "bank_transfer",
+      "insurance",
+      "other",
+      "comp"
+    ],
+    "session_status": [
+      "scheduled",
+      "in_progress",
+      "completed",
+      "cancelled",
+      "no_show",
+      "pending_approval",
+      "comp_request"
+    ]
+  }
+}

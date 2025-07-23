@@ -1,800 +1,532 @@
 {
-    "timestamp": "2025-07-21T01:35:47-05:00",
+    "timestamp": "2025-07-21T21:09:49-05:00",
     "working_directory": "/home/ittz/projects/itt/site/3t",
     "last_command": "go 1",
     "git_branch": "master",
-    "git_status": " M 3t/logs/activity.log
+    "git_status": " M 3t/index.html.gz
+ M 3t/js/custom-calendar.js.gz
+ M 3t/logs/activity.log
  M 3t/logs/session-context.json
+ M admin/index.html
  M logs/backup-alerts.log
- M logs/backup-alerts.log.1
- M logs/backup-alerts.log.2.gz
- M logs/backup-alerts.log.3.gz
- M logs/backup-alerts.log.4.gz
- M logs/backup-alerts.log.5.gz
- M logs/backup-alerts.log.6.gz
- M logs/backup-alerts.log.7.gz
- M logs/backup-alerts.log.8.gz
- M logs/cron-daily-report.log
- M logs/cron-daily-report.log.2.gz
- M logs/cron-daily-report.log.3.gz
- M logs/cron-daily-report.log.4.gz
- M logs/cron-daily-report.log.5.gz
- M logs/cron-daily-report.log.6.gz
- M logs/cron-daily-report.log.7.gz
- M logs/cron-daily-report.log.8.gz
- M logs/cron-daily-report.log.9.gz
  M logs/cron-db-cleanup.log
- M logs/cron-db-cleanup.log.2.gz
- M logs/cron-db-cleanup.log.3.gz
- M logs/cron-db-cleanup.log.4.gz
- M logs/cron-db-cleanup.log.5.gz
- M logs/cron-db-cleanup.log.6.gz
- M logs/cron-db-cleanup.log.7.gz
- M logs/cron-db-cleanup.log.8.gz
- M logs/cron-db-cleanup.log.9.gz
- M logs/cron-db-maintenance.log
- M logs/cron-db-maintenance.log.2.gz
- M logs/cron-db-maintenance.log.3.gz
- M logs/cron-db-maintenance.log.4.gz
- M logs/cron-db-maintenance.log.5.gz
- M logs/cron-db-maintenance.log.6.gz
- M logs/cron-db-maintenance.log.7.gz
- M logs/cron-db-maintenance.log.8.gz
- M logs/cron-db-stats.log
  M logs/cron-enum-check.log
- M logs/cron-enum-check.log.2.gz
- M logs/cron-enum-check.log.3.gz
- M logs/cron-enum-check.log.4.gz
- M logs/cron-enum-check.log.5.gz
- M logs/cron-enum-check.log.6.gz
- M logs/cron-enum-check.log.7.gz
- M logs/cron-enum-check.log.8.gz
- M logs/cron-enum-check.log.9.gz
  M logs/cron-error-watch.log
- M logs/cron-error-watch.log.1
- M logs/cron-error-watch.log.2.gz
- M logs/cron-error-watch.log.3.gz
- M logs/cron-error-watch.log.4.gz
- M logs/cron-error-watch.log.5.gz
- M logs/cron-error-watch.log.6.gz
- M logs/cron-error-watch.log.7.gz
- M logs/cron-error-watch.log.8.gz
- M logs/cron-error-watch.log.9.gz
  M logs/cron-health-check.log
- M logs/cron-health-check.log.1
- M logs/cron-health-check.log.2.gz
- M logs/cron-health-check.log.3.gz
- M logs/cron-health-check.log.4.gz
- M logs/cron-health-check.log.5.gz
- M logs/cron-health-check.log.6.gz
- M logs/cron-health-check.log.7.gz
- M logs/cron-health-check.log.8.gz
- M logs/cron-health-check.log.9.gz
  M logs/cron-live-testing.log
- M logs/cron-live-testing.log.2.gz
- M logs/cron-live-testing.log.3.gz
- M logs/cron-live-testing.log.4.gz
- M logs/cron-live-testing.log.5.gz
- M logs/cron-live-testing.log.6.gz
- M logs/cron-live-testing.log.7.gz
- M logs/cron-live-testing.log.8.gz
- M logs/cron-live-testing.log.9.gz
- M logs/cron-maintenance.log
- M logs/cron-maintenance.log.1
- M logs/cron-maintenance.log.2.gz
- M logs/cron-maintenance.log.3.gz
- M logs/cron-maintenance.log.4.gz
- M logs/cron-maintenance.log.5.gz
- M logs/cron-maintenance.log.6.gz
- M logs/cron-maintenance.log.7.gz
- M logs/cron-maintenance.log.8.gz
  M logs/cron-optimization.log
- M logs/cron-optimization.log.1
- M logs/cron-optimization.log.2.gz
- M logs/cron-optimization.log.3.gz
- M logs/cron-optimization.log.4.gz
- M logs/cron-optimization.log.5.gz
- M logs/cron-optimization.log.6.gz
- M logs/cron-optimization.log.7.gz
- M logs/cron-optimization.log.8.gz
- M logs/cron-optimization.log.9.gz
  M logs/cron-performance.log
- M logs/cron-performance.log.1
- M logs/cron-performance.log.2.gz
- M logs/cron-performance.log.3.gz
- M logs/cron-performance.log.4.gz
- M logs/cron-performance.log.5.gz
- M logs/cron-performance.log.6.gz
- M logs/cron-performance.log.7.gz
- M logs/cron-performance.log.8.gz
- M logs/cron-performance.log.9.gz
- M logs/cron-security-scan.log
- M logs/cron-security-scan.log.1
- M logs/cron-security-scan.log.2.gz
- M logs/cron-security-scan.log.3.gz
- M logs/cron-security-scan.log.4.gz
- M logs/cron-security-scan.log.5.gz
- M logs/cron-security-scan.log.6.gz
- M logs/cron-security-scan.log.7.gz
- M logs/cron-security-scan.log.8.gz
- M logs/cron-ssl-renewal.log
  M logs/cron-system-check.log
  M logs/cron-system-check.log.1
- M logs/cron-system-check.log.2.gz
- M logs/cron-system-check.log.3.gz
- M logs/cron-system-check.log.4.gz
- M logs/cron-system-check.log.5.gz
- M logs/cron-system-check.log.6.gz
- M logs/cron-system-check.log.7.gz
- M logs/cron-system-check.log.8.gz
- M logs/cron-system-check.log.9.gz
  M logs/cron-validation.log
  M logs/cron-validation.log.1
- M logs/cron-validation.log.2.gz
- M logs/cron-validation.log.3.gz
- M logs/cron-validation.log.4.gz
- M logs/cron-validation.log.5.gz
- M logs/cron-validation.log.6.gz
- M logs/cron-validation.log.7.gz
- M logs/cron-validation.log.8.gz
- M logs/cron-validation.log.9.gz
  M logs/error-watcher.log
- M logs/error-watcher.log.1
- M logs/error-watcher.log.2.gz
- M logs/error-watcher.log.3.gz
- M logs/error-watcher.log.4.gz
- M logs/error-watcher.log.5.gz
- M logs/error-watcher.log.6.gz
- M logs/error-watcher.log.7.gz
- M logs/error-watcher.log.8.gz
- M logs/error-watcher.log.9.gz
+ M logs/frontend-backend-validation-report.json
  M logs/health-monitor.log
- M logs/health-monitor.log.1
- M logs/health-monitor.log.2.gz
- M logs/health-monitor.log.3.gz
- M logs/health-monitor.log.4.gz
- M logs/health-monitor.log.5.gz
- M logs/health-monitor.log.6.gz
- M logs/health-monitor.log.7.gz
- M logs/health-monitor.log.8.gz
- D logs/health-report-20250716-2115.json
- D logs/health-report-20250716-2116.json
- D logs/health-report-20250716-2117.json
- D logs/health-report-20250716-2118.json
- D logs/health-report-20250716-2119.json
- D logs/health-report-20250716-2120.json
- D logs/health-report-20250716-2121.json
- D logs/health-report-20250716-2122.json
- D logs/health-report-20250716-2123.json
- D logs/health-report-20250716-2124.json
- D logs/health-report-20250716-2125.json
- D logs/health-report-20250716-2126.json
- D logs/health-report-20250716-2127.json
- D logs/health-report-20250716-2128.json
- D logs/health-report-20250716-2129.json
- D logs/health-report-20250716-2130.json
- D logs/health-report-20250716-2131.json
- D logs/health-report-20250716-2132.json
- D logs/health-report-20250716-2133.json
- D logs/health-report-20250716-2134.json
- D logs/health-report-20250716-2135.json
- D logs/health-report-20250716-2136.json
- D logs/health-report-20250716-2137.json
- D logs/health-report-20250716-2138.json
- D logs/health-report-20250716-2139.json
- D logs/health-report-20250716-2140.json
- D logs/health-report-20250716-2141.json
- D logs/health-report-20250716-2142.json
- D logs/health-report-20250716-2143.json
- D logs/health-report-20250716-2144.json
- D logs/health-report-20250716-2145.json
- D logs/health-report-20250716-2146.json
- D logs/health-report-20250716-2147.json
- D logs/health-report-20250716-2148.json
- D logs/health-report-20250716-2149.json
- D logs/health-report-20250716-2150.json
- D logs/health-report-20250716-2151.json
- D logs/health-report-20250716-2152.json
- D logs/health-report-20250716-2153.json
- D logs/health-report-20250716-2154.json
- D logs/health-report-20250716-2155.json
- D logs/health-report-20250716-2156.json
- D logs/health-report-20250716-2157.json
- D logs/health-report-20250716-2158.json
- D logs/health-report-20250716-2159.json
- D logs/health-report-20250716-2200.json
- D logs/health-report-20250716-2201.json
- D logs/health-report-20250716-2202.json
- D logs/health-report-20250716-2203.json
- D logs/health-report-20250716-2204.json
- D logs/health-report-20250716-2205.json
- D logs/health-report-20250716-2206.json
- D logs/health-report-20250716-2207.json
- D logs/health-report-20250716-2208.json
- D logs/health-report-20250716-2209.json
- D logs/health-report-20250716-2210.json
- D logs/health-report-20250716-2211.json
- D logs/health-report-20250716-2212.json
- D logs/health-report-20250716-2213.json
- D logs/health-report-20250716-2214.json
- D logs/health-report-20250716-2215.json
- D logs/health-report-20250716-2216.json
- D logs/health-report-20250716-2217.json
- D logs/health-report-20250716-2218.json
- D logs/health-report-20250716-2219.json
- D logs/health-report-20250716-2220.json
- D logs/health-report-20250716-2221.json
- D logs/health-report-20250716-2222.json
- D logs/health-report-20250716-2223.json
- D logs/health-report-20250716-2224.json
- D logs/health-report-20250716-2225.json
- D logs/health-report-20250716-2226.json
- D logs/health-report-20250716-2227.json
- D logs/health-report-20250716-2228.json
- D logs/health-report-20250716-2229.json
- D logs/health-report-20250716-2230.json
- D logs/health-report-20250716-2231.json
- D logs/health-report-20250716-2232.json
- D logs/health-report-20250716-2233.json
- D logs/health-report-20250716-2234.json
- D logs/health-report-20250716-2235.json
- D logs/health-report-20250716-2236.json
- D logs/health-report-20250716-2237.json
- D logs/health-report-20250716-2238.json
- D logs/health-report-20250716-2239.json
- D logs/health-report-20250716-2240.json
- D logs/health-report-20250716-2241.json
- D logs/health-report-20250716-2242.json
- D logs/health-report-20250716-2243.json
- D logs/health-report-20250716-2244.json
- D logs/health-report-20250716-2245.json
- D logs/health-report-20250716-2246.json
- D logs/health-report-20250716-2247.json
- D logs/health-report-20250716-2248.json
- D logs/health-report-20250716-2249.json
- D logs/health-report-20250716-2250.json
- D logs/health-report-20250716-2251.json
- D logs/health-report-20250716-2252.json
- D logs/health-report-20250716-2253.json
- D logs/health-report-20250716-2254.json
- D logs/health-report-20250716-2255.json
- D logs/health-report-20250716-2256.json
- D logs/health-report-20250716-2257.json
- D logs/health-report-20250716-2258.json
- D logs/health-report-20250716-2259.json
- D logs/health-report-20250716-2300.json
- D logs/health-report-20250716-2301.json
- D logs/health-report-20250716-2302.json
- D logs/health-report-20250716-2303.json
- D logs/health-report-20250716-2304.json
- D logs/health-report-20250716-2305.json
- D logs/health-report-20250716-2306.json
- D logs/health-report-20250716-2307.json
- D logs/health-report-20250716-2308.json
- D logs/health-report-20250716-2309.json
- D logs/health-report-20250716-2310.json
- D logs/health-report-20250716-2311.json
- D logs/health-report-20250716-2312.json
- D logs/health-report-20250716-2313.json
- D logs/health-report-20250716-2314.json
- D logs/health-report-20250716-2315.json
- D logs/health-report-20250716-2316.json
- D logs/health-report-20250716-2317.json
- D logs/health-report-20250716-2318.json
- D logs/health-report-20250716-2319.json
- D logs/health-report-20250716-2320.json
- D logs/health-report-20250716-2321.json
- D logs/health-report-20250716-2322.json
- D logs/health-report-20250716-2323.json
- D logs/health-report-20250716-2324.json
- D logs/health-report-20250716-2325.json
- D logs/health-report-20250716-2326.json
- D logs/health-report-20250716-2327.json
- D logs/health-report-20250716-2328.json
- D logs/health-report-20250716-2329.json
- D logs/health-report-20250716-2330.json
- D logs/health-report-20250716-2331.json
- D logs/health-report-20250716-2332.json
- D logs/health-report-20250716-2333.json
- D logs/health-report-20250716-2334.json
- D logs/health-report-20250716-2335.json
- D logs/health-report-20250716-2336.json
- D logs/health-report-20250716-2337.json
- D logs/health-report-20250716-2338.json
- D logs/health-report-20250716-2339.json
- D logs/health-report-20250716-2340.json
- D logs/health-report-20250716-2341.json
- D logs/health-report-20250716-2342.json
- D logs/health-report-20250716-2343.json
- D logs/health-report-20250716-2344.json
- D logs/health-report-20250716-2345.json
- D logs/health-report-20250716-2346.json
- D logs/health-report-20250716-2347.json
- D logs/health-report-20250716-2348.json
- D logs/health-report-20250716-2349.json
- D logs/health-report-20250716-2350.json
- D logs/health-report-20250716-2351.json
- D logs/health-report-20250716-2352.json
- D logs/health-report-20250716-2353.json
- D logs/health-report-20250716-2354.json
- D logs/health-report-20250716-2355.json
- D logs/health-report-20250716-2356.json
- D logs/health-report-20250716-2357.json
- D logs/health-report-20250716-2358.json
- D logs/health-report-20250716-2359.json
- D logs/health-report-20250717-0000.json
- D logs/health-report-20250717-0001.json
- D logs/health-report-20250717-0002.json
- D logs/health-report-20250717-0003.json
- D logs/health-report-20250717-0004.json
- D logs/health-report-20250717-0005.json
- D logs/health-report-20250717-0006.json
- D logs/health-report-20250717-0007.json
- D logs/health-report-20250717-0008.json
- D logs/health-report-20250717-0009.json
- D logs/health-report-20250717-0010.json
- D logs/health-report-20250717-0011.json
- D logs/health-report-20250717-0012.json
- D logs/health-report-20250717-0013.json
- D logs/health-report-20250717-0014.json
- D logs/health-report-20250717-0015.json
- D logs/health-report-20250717-0016.json
- D logs/health-report-20250717-0017.json
- D logs/health-report-20250717-0018.json
- D logs/health-report-20250717-0019.json
- D logs/health-report-20250717-0020.json
- D logs/health-report-20250717-0021.json
- D logs/health-report-20250717-0022.json
- D logs/health-report-20250717-0023.json
- D logs/health-report-20250717-0024.json
- D logs/health-report-20250717-0025.json
- D logs/health-report-20250717-0026.json
- D logs/health-report-20250717-0027.json
- D logs/health-report-20250717-0028.json
- D logs/health-report-20250717-0029.json
- D logs/health-report-20250717-0030.json
- D logs/health-report-20250717-0031.json
- D logs/health-report-20250717-0032.json
- D logs/health-report-20250717-0033.json
- D logs/health-report-20250717-0034.json
- D logs/health-report-20250717-0035.json
- D logs/health-report-20250717-0036.json
- D logs/health-report-20250717-0037.json
- D logs/health-report-20250717-0038.json
- D logs/health-report-20250717-0039.json
- D logs/health-report-20250717-0040.json
- D logs/health-report-20250717-0041.json
- D logs/health-report-20250717-0042.json
- D logs/health-report-20250717-0043.json
- D logs/health-report-20250717-0044.json
- D logs/health-report-20250717-0045.json
- D logs/health-report-20250717-0046.json
- D logs/health-report-20250717-0047.json
- D logs/health-report-20250717-0048.json
- D logs/health-report-20250717-0049.json
- D logs/health-report-20250717-0050.json
- D logs/health-report-20250717-0051.json
- D logs/health-report-20250717-0052.json
- D logs/health-report-20250717-0053.json
- D logs/health-report-20250717-0054.json
- D logs/health-report-20250717-0055.json
- D logs/health-report-20250717-0056.json
- D logs/health-report-20250717-0057.json
- D logs/health-report-20250717-0058.json
- D logs/health-report-20250717-0059.json
- D logs/health-report-20250717-0100.json
- D logs/health-report-20250717-0101.json
- D logs/health-report-20250717-0102.json
- D logs/health-report-20250717-0103.json
- D logs/health-report-20250717-0104.json
- D logs/health-report-20250717-0105.json
- D logs/health-report-20250717-0106.json
- D logs/health-report-20250717-0107.json
- D logs/health-report-20250717-0108.json
- D logs/health-report-20250717-0109.json
- D logs/health-report-20250717-0110.json
- D logs/health-report-20250717-0111.json
- D logs/health-report-20250717-0112.json
- D logs/health-report-20250717-0113.json
- D logs/health-report-20250717-0114.json
- M logs/health-report-20250720-2205.json
+ D logs/health-report-20250717-1715.json
+ D logs/health-report-20250717-1716.json
+ D logs/health-report-20250717-1717.json
+ D logs/health-report-20250717-1718.json
+ D logs/health-report-20250717-1719.json
+ D logs/health-report-20250717-1720.json
+ D logs/health-report-20250717-1721.json
+ D logs/health-report-20250717-1722.json
+ D logs/health-report-20250717-1723.json
+ D logs/health-report-20250717-1724.json
+ D logs/health-report-20250717-1725.json
+ D logs/health-report-20250717-1726.json
+ D logs/health-report-20250717-1727.json
+ D logs/health-report-20250717-1728.json
+ D logs/health-report-20250717-1729.json
+ D logs/health-report-20250717-1730.json
+ D logs/health-report-20250717-1731.json
+ D logs/health-report-20250717-1732.json
+ D logs/health-report-20250717-1733.json
+ D logs/health-report-20250717-1734.json
+ D logs/health-report-20250717-1735.json
+ D logs/health-report-20250717-1736.json
+ D logs/health-report-20250717-1737.json
+ D logs/health-report-20250717-1738.json
+ D logs/health-report-20250717-1739.json
+ D logs/health-report-20250717-1740.json
+ D logs/health-report-20250717-1741.json
+ D logs/health-report-20250717-1742.json
+ D logs/health-report-20250717-1743.json
+ D logs/health-report-20250717-1744.json
+ D logs/health-report-20250717-1745.json
+ D logs/health-report-20250717-1746.json
+ D logs/health-report-20250717-1747.json
+ D logs/health-report-20250717-1748.json
+ D logs/health-report-20250717-1749.json
+ D logs/health-report-20250717-1750.json
+ D logs/health-report-20250717-1751.json
+ D logs/health-report-20250717-1752.json
+ D logs/health-report-20250717-1753.json
+ D logs/health-report-20250717-1754.json
+ D logs/health-report-20250717-1755.json
+ D logs/health-report-20250717-1756.json
+ D logs/health-report-20250717-1757.json
+ D logs/health-report-20250717-1758.json
+ D logs/health-report-20250717-1759.json
+ D logs/health-report-20250717-1800.json
+ D logs/health-report-20250717-1801.json
+ D logs/health-report-20250717-1802.json
+ D logs/health-report-20250717-1803.json
+ D logs/health-report-20250717-1804.json
+ D logs/health-report-20250717-1805.json
+ D logs/health-report-20250717-1806.json
+ D logs/health-report-20250717-1807.json
+ D logs/health-report-20250717-1808.json
+ D logs/health-report-20250717-1809.json
+ D logs/health-report-20250717-1810.json
+ D logs/health-report-20250717-1811.json
+ D logs/health-report-20250717-1812.json
+ D logs/health-report-20250717-1813.json
+ D logs/health-report-20250717-1814.json
+ D logs/health-report-20250717-1815.json
+ D logs/health-report-20250717-1816.json
+ D logs/health-report-20250717-1817.json
+ D logs/health-report-20250717-1818.json
+ D logs/health-report-20250717-1819.json
+ D logs/health-report-20250717-1820.json
+ D logs/health-report-20250717-1821.json
+ D logs/health-report-20250717-1822.json
+ D logs/health-report-20250717-1823.json
+ D logs/health-report-20250717-1824.json
+ D logs/health-report-20250717-1825.json
+ D logs/health-report-20250717-1826.json
+ D logs/health-report-20250717-1827.json
+ D logs/health-report-20250717-1828.json
+ D logs/health-report-20250717-1829.json
+ D logs/health-report-20250717-1830.json
+ D logs/health-report-20250717-1831.json
+ D logs/health-report-20250717-1832.json
+ D logs/health-report-20250717-1833.json
+ D logs/health-report-20250717-1834.json
+ D logs/health-report-20250717-1835.json
+ D logs/health-report-20250717-1836.json
+ D logs/health-report-20250717-1837.json
+ D logs/health-report-20250717-1838.json
+ D logs/health-report-20250717-1839.json
+ D logs/health-report-20250717-1840.json
+ D logs/health-report-20250717-1841.json
+ D logs/health-report-20250717-1842.json
+ D logs/health-report-20250717-1843.json
+ D logs/health-report-20250717-1844.json
+ D logs/health-report-20250717-1845.json
+ D logs/health-report-20250717-1846.json
+ D logs/health-report-20250717-1847.json
+ D logs/health-report-20250717-1848.json
+ D logs/health-report-20250717-1849.json
+ D logs/health-report-20250717-1850.json
+ D logs/health-report-20250717-1851.json
+ D logs/health-report-20250717-1852.json
+ D logs/health-report-20250717-1853.json
+ D logs/health-report-20250717-1854.json
+ D logs/health-report-20250717-1855.json
+ D logs/health-report-20250717-1856.json
+ D logs/health-report-20250717-1857.json
+ D logs/health-report-20250717-1858.json
+ D logs/health-report-20250717-1859.json
+ D logs/health-report-20250717-1900.json
+ D logs/health-report-20250717-1901.json
+ D logs/health-report-20250717-1902.json
+ D logs/health-report-20250717-1903.json
+ D logs/health-report-20250717-1904.json
+ D logs/health-report-20250717-1905.json
+ D logs/health-report-20250717-1906.json
+ D logs/health-report-20250717-1907.json
+ D logs/health-report-20250717-1908.json
+ D logs/health-report-20250717-1909.json
+ D logs/health-report-20250717-1910.json
+ D logs/health-report-20250717-1911.json
+ D logs/health-report-20250717-1912.json
+ D logs/health-report-20250717-1913.json
+ D logs/health-report-20250717-1914.json
+ D logs/health-report-20250717-1915.json
+ D logs/health-report-20250717-1916.json
+ D logs/health-report-20250717-1917.json
+ D logs/health-report-20250717-1918.json
+ D logs/health-report-20250717-1919.json
+ D logs/health-report-20250717-1920.json
+ D logs/health-report-20250717-1921.json
+ D logs/health-report-20250717-1922.json
+ D logs/health-report-20250717-1923.json
+ D logs/health-report-20250717-1924.json
+ D logs/health-report-20250717-1925.json
+ D logs/health-report-20250717-1926.json
+ D logs/health-report-20250717-1927.json
+ D logs/health-report-20250717-1928.json
+ D logs/health-report-20250717-1929.json
+ D logs/health-report-20250717-1930.json
+ D logs/health-report-20250717-1931.json
+ D logs/health-report-20250717-1932.json
+ D logs/health-report-20250717-1933.json
+ D logs/health-report-20250717-1934.json
+ D logs/health-report-20250717-1935.json
+ D logs/health-report-20250717-1936.json
+ D logs/health-report-20250717-1937.json
+ D logs/health-report-20250717-1938.json
+ D logs/health-report-20250717-1939.json
+ D logs/health-report-20250717-1940.json
+ D logs/health-report-20250717-1941.json
+ D logs/health-report-20250717-1942.json
+ D logs/health-report-20250717-1943.json
+ D logs/health-report-20250717-1944.json
+ D logs/health-report-20250717-1945.json
+ D logs/health-report-20250717-1946.json
+ D logs/health-report-20250717-1947.json
+ D logs/health-report-20250717-1948.json
+ D logs/health-report-20250717-1949.json
+ D logs/health-report-20250717-1950.json
+ D logs/health-report-20250717-1951.json
+ D logs/health-report-20250717-1952.json
+ D logs/health-report-20250717-1953.json
+ D logs/health-report-20250717-1954.json
+ D logs/health-report-20250717-1955.json
+ D logs/health-report-20250717-1956.json
+ D logs/health-report-20250717-1957.json
+ D logs/health-report-20250717-1958.json
+ D logs/health-report-20250717-1959.json
+ D logs/health-report-20250717-2000.json
+ D logs/health-report-20250717-2001.json
+ D logs/health-report-20250717-2002.json
+ D logs/health-report-20250717-2003.json
+ D logs/health-report-20250717-2004.json
+ D logs/health-report-20250717-2005.json
+ D logs/health-report-20250717-2006.json
+ D logs/health-report-20250717-2007.json
+ D logs/health-report-20250717-2008.json
+ D logs/health-report-20250717-2009.json
+ D logs/health-report-20250717-2010.json
+ D logs/health-report-20250717-2011.json
+ D logs/health-report-20250717-2012.json
+ D logs/health-report-20250717-2013.json
+ D logs/health-report-20250717-2014.json
+ M logs/health-report-20250721-1756.json
  M logs/performance-metrics.json
  M logs/performance-monitor.log
- M logs/performance-monitor.log.1
- M logs/performance-monitor.log.2.gz
- M logs/performance-monitor.log.3.gz
- M logs/performance-monitor.log.4.gz
- M logs/performance-monitor.log.5.gz
- M logs/performance-monitor.log.6.gz
- M logs/performance-monitor.log.7.gz
- M logs/performance-monitor.log.8.gz
- M logs/performance-monitor.log.9.gz
  M logs/performance-optimizations.log
- M logs/performance-optimizations.log.1
- M logs/performance-optimizations.log.2.gz
- M logs/performance-optimizations.log.3.gz
- M logs/performance-optimizations.log.4.gz
- M logs/performance-optimizations.log.5.gz
- M logs/performance-optimizations.log.6.gz
- M logs/performance-optimizations.log.7.gz
- M logs/performance-optimizations.log.8.gz
- M logs/performance-optimizations.log.9.gz
- D logs/performance-report-20250716-2120.json
- D logs/performance-report-20250716-2125.json
- D logs/performance-report-20250716-2130.json
- D logs/performance-report-20250716-2135.json
- D logs/performance-report-20250716-2140.json
- D logs/performance-report-20250716-2145.json
- D logs/performance-report-20250716-2150.json
- D logs/performance-report-20250716-2155.json
- D logs/performance-report-20250716-2200.json
- D logs/performance-report-20250716-2205.json
- D logs/performance-report-20250716-2210.json
- D logs/performance-report-20250716-2215.json
- D logs/performance-report-20250716-2220.json
- D logs/performance-report-20250716-2225.json
- D logs/performance-report-20250716-2230.json
- D logs/performance-report-20250716-2235.json
- D logs/performance-report-20250716-2240.json
- D logs/performance-report-20250716-2245.json
- D logs/performance-report-20250716-2250.json
- D logs/performance-report-20250716-2255.json
- D logs/performance-report-20250716-2300.json
- D logs/performance-report-20250716-2305.json
- D logs/performance-report-20250716-2310.json
- D logs/performance-report-20250716-2315.json
- D logs/performance-report-20250716-2320.json
- D logs/performance-report-20250716-2325.json
- D logs/performance-report-20250716-2330.json
- D logs/performance-report-20250716-2335.json
- D logs/performance-report-20250716-2340.json
- D logs/performance-report-20250716-2345.json
- D logs/performance-report-20250716-2350.json
- D logs/performance-report-20250716-2355.json
- D logs/performance-report-20250717-0000.json
- D logs/performance-report-20250717-0005.json
- D logs/performance-report-20250717-0010.json
- D logs/performance-report-20250717-0015.json
- D logs/performance-report-20250717-0020.json
- D logs/performance-report-20250717-0025.json
- D logs/performance-report-20250717-0030.json
- D logs/performance-report-20250717-0035.json
- D logs/performance-report-20250717-0040.json
- D logs/performance-report-20250717-0045.json
- D logs/performance-report-20250717-0050.json
- D logs/performance-report-20250717-0055.json
- D logs/performance-report-20250717-0100.json
- D logs/performance-report-20250717-0105.json
- D logs/performance-report-20250717-0110.json
- D logs/performance-report-20250717-0115.json
-?? 3t/test-api-thank-you.js.gz
-?? 3t/test-backend-thank-you.js.gz
-?? 3t/test-wcag-thank-you.js
-?? 3t/test-wcag-thank-you.js.gz
-?? logs/backup-alerts.log.9.gz
-?? logs/cron-daily-report.log.10.gz
-?? logs/cron-db-cleanup.log.10.gz
-?? logs/cron-db-maintenance.log.9.gz
-?? logs/cron-db-stats.log.2.gz
-?? logs/cron-enum-check.log.10.gz
-?? logs/cron-error-watch.log.10.gz
-?? logs/cron-health-check.log.10.gz
-?? logs/cron-live-testing.log.10.gz
-?? logs/cron-maintenance.log.9.gz
-?? logs/cron-optimization.log.10.gz
-?? logs/cron-performance.log.10.gz
-?? logs/cron-security-scan.log.9.gz
-?? logs/cron-ssl-renewal.log.2.gz
-?? logs/cron-system-check.log.10.gz
-?? logs/cron-validation.log.10.gz
-?? logs/error-watcher.log.10.gz
-?? logs/health-monitor.log.9.gz
-?? logs/health-report-20250720-2206.json
-?? logs/health-report-20250720-2207.json
-?? logs/health-report-20250720-2208.json
-?? logs/health-report-20250720-2209.json
-?? logs/health-report-20250720-2210.json
-?? logs/health-report-20250720-2211.json
-?? logs/health-report-20250720-2212.json
-?? logs/health-report-20250720-2213.json
-?? logs/health-report-20250720-2214.json
-?? logs/health-report-20250720-2215.json
-?? logs/health-report-20250720-2216.json
-?? logs/health-report-20250720-2217.json
-?? logs/health-report-20250720-2218.json
-?? logs/health-report-20250720-2219.json
-?? logs/health-report-20250720-2220.json
-?? logs/health-report-20250720-2221.json
-?? logs/health-report-20250720-2222.json
-?? logs/health-report-20250720-2223.json
-?? logs/health-report-20250720-2224.json
-?? logs/health-report-20250720-2225.json
-?? logs/health-report-20250720-2226.json
-?? logs/health-report-20250720-2227.json
-?? logs/health-report-20250720-2228.json
-?? logs/health-report-20250720-2229.json
-?? logs/health-report-20250720-2230.json
-?? logs/health-report-20250720-2231.json
-?? logs/health-report-20250720-2232.json
-?? logs/health-report-20250720-2233.json
-?? logs/health-report-20250720-2234.json
-?? logs/health-report-20250720-2235.json
-?? logs/health-report-20250720-2236.json
-?? logs/health-report-20250720-2237.json
-?? logs/health-report-20250720-2238.json
-?? logs/health-report-20250720-2239.json
-?? logs/health-report-20250720-2240.json
-?? logs/health-report-20250720-2241.json
-?? logs/health-report-20250720-2242.json
-?? logs/health-report-20250720-2243.json
-?? logs/health-report-20250720-2244.json
-?? logs/health-report-20250720-2245.json
-?? logs/health-report-20250720-2246.json
-?? logs/health-report-20250720-2247.json
-?? logs/health-report-20250720-2248.json
-?? logs/health-report-20250720-2249.json
-?? logs/health-report-20250720-2250.json
-?? logs/health-report-20250720-2251.json
-?? logs/health-report-20250720-2252.json
-?? logs/health-report-20250720-2253.json
-?? logs/health-report-20250720-2254.json
-?? logs/health-report-20250720-2255.json
-?? logs/health-report-20250720-2256.json
-?? logs/health-report-20250720-2257.json
-?? logs/health-report-20250720-2258.json
-?? logs/health-report-20250720-2259.json
-?? logs/health-report-20250720-2300.json
-?? logs/health-report-20250720-2301.json
-?? logs/health-report-20250720-2302.json
-?? logs/health-report-20250720-2303.json
-?? logs/health-report-20250720-2304.json
-?? logs/health-report-20250720-2305.json
-?? logs/health-report-20250720-2306.json
-?? logs/health-report-20250720-2307.json
-?? logs/health-report-20250720-2308.json
-?? logs/health-report-20250720-2309.json
-?? logs/health-report-20250720-2310.json
-?? logs/health-report-20250720-2311.json
-?? logs/health-report-20250720-2312.json
-?? logs/health-report-20250720-2313.json
-?? logs/health-report-20250720-2314.json
-?? logs/health-report-20250720-2315.json
-?? logs/health-report-20250720-2316.json
-?? logs/health-report-20250720-2317.json
-?? logs/health-report-20250720-2318.json
-?? logs/health-report-20250720-2319.json
-?? logs/health-report-20250720-2320.json
-?? logs/health-report-20250720-2321.json
-?? logs/health-report-20250720-2322.json
-?? logs/health-report-20250720-2323.json
-?? logs/health-report-20250720-2324.json
-?? logs/health-report-20250720-2325.json
-?? logs/health-report-20250720-2326.json
-?? logs/health-report-20250720-2327.json
-?? logs/health-report-20250720-2328.json
-?? logs/health-report-20250720-2329.json
-?? logs/health-report-20250720-2330.json
-?? logs/health-report-20250720-2331.json
-?? logs/health-report-20250720-2332.json
-?? logs/health-report-20250720-2333.json
-?? logs/health-report-20250720-2334.json
-?? logs/health-report-20250720-2335.json
-?? logs/health-report-20250720-2336.json
-?? logs/health-report-20250720-2337.json
-?? logs/health-report-20250720-2338.json
-?? logs/health-report-20250720-2339.json
-?? logs/health-report-20250720-2340.json
-?? logs/health-report-20250720-2341.json
-?? logs/health-report-20250720-2342.json
-?? logs/health-report-20250720-2343.json
-?? logs/health-report-20250720-2344.json
-?? logs/health-report-20250720-2345.json
-?? logs/health-report-20250720-2346.json
-?? logs/health-report-20250720-2347.json
-?? logs/health-report-20250720-2348.json
-?? logs/health-report-20250720-2349.json
-?? logs/health-report-20250720-2350.json
-?? logs/health-report-20250720-2351.json
-?? logs/health-report-20250720-2352.json
-?? logs/health-report-20250720-2353.json
-?? logs/health-report-20250720-2354.json
-?? logs/health-report-20250720-2355.json
-?? logs/health-report-20250720-2356.json
-?? logs/health-report-20250720-2357.json
-?? logs/health-report-20250720-2358.json
-?? logs/health-report-20250720-2359.json
-?? logs/health-report-20250721-0000.json
-?? logs/health-report-20250721-0001.json
-?? logs/health-report-20250721-0002.json
-?? logs/health-report-20250721-0003.json
-?? logs/health-report-20250721-0004.json
-?? logs/health-report-20250721-0005.json
-?? logs/health-report-20250721-0006.json
-?? logs/health-report-20250721-0007.json
-?? logs/health-report-20250721-0008.json
-?? logs/health-report-20250721-0009.json
-?? logs/health-report-20250721-0010.json
-?? logs/health-report-20250721-0011.json
-?? logs/health-report-20250721-0012.json
-?? logs/health-report-20250721-0013.json
-?? logs/health-report-20250721-0014.json
-?? logs/health-report-20250721-0015.json
-?? logs/health-report-20250721-0016.json
-?? logs/health-report-20250721-0017.json
-?? logs/health-report-20250721-0018.json
-?? logs/health-report-20250721-0019.json
-?? logs/health-report-20250721-0020.json
-?? logs/health-report-20250721-0021.json
-?? logs/health-report-20250721-0022.json
-?? logs/health-report-20250721-0023.json
-?? logs/health-report-20250721-0024.json
-?? logs/health-report-20250721-0025.json
-?? logs/health-report-20250721-0026.json
-?? logs/health-report-20250721-0027.json
-?? logs/health-report-20250721-0028.json
-?? logs/health-report-20250721-0029.json
-?? logs/health-report-20250721-0030.json
-?? logs/health-report-20250721-0031.json
-?? logs/health-report-20250721-0032.json
-?? logs/health-report-20250721-0033.json
-?? logs/health-report-20250721-0034.json
-?? logs/health-report-20250721-0035.json
-?? logs/health-report-20250721-0036.json
-?? logs/health-report-20250721-0037.json
-?? logs/health-report-20250721-0038.json
-?? logs/health-report-20250721-0039.json
-?? logs/health-report-20250721-0040.json
-?? logs/health-report-20250721-0041.json
-?? logs/health-report-20250721-0042.json
-?? logs/health-report-20250721-0043.json
-?? logs/health-report-20250721-0044.json
-?? logs/health-report-20250721-0045.json
-?? logs/health-report-20250721-0046.json
-?? logs/health-report-20250721-0047.json
-?? logs/health-report-20250721-0048.json
-?? logs/health-report-20250721-0049.json
-?? logs/health-report-20250721-0050.json
-?? logs/health-report-20250721-0051.json
-?? logs/health-report-20250721-0052.json
-?? logs/health-report-20250721-0053.json
-?? logs/health-report-20250721-0054.json
-?? logs/health-report-20250721-0055.json
-?? logs/health-report-20250721-0056.json
-?? logs/health-report-20250721-0057.json
-?? logs/health-report-20250721-0058.json
-?? logs/health-report-20250721-0059.json
-?? logs/health-report-20250721-0100.json
-?? logs/health-report-20250721-0101.json
-?? logs/health-report-20250721-0102.json
-?? logs/health-report-20250721-0103.json
-?? logs/health-report-20250721-0104.json
-?? logs/health-report-20250721-0105.json
-?? logs/health-report-20250721-0106.json
-?? logs/health-report-20250721-0107.json
-?? logs/health-report-20250721-0108.json
-?? logs/health-report-20250721-0109.json
-?? logs/health-report-20250721-0110.json
-?? logs/health-report-20250721-0111.json
-?? logs/health-report-20250721-0112.json
-?? logs/health-report-20250721-0113.json
-?? logs/health-report-20250721-0114.json
-?? logs/health-report-20250721-0115.json
-?? logs/health-report-20250721-0116.json
-?? logs/health-report-20250721-0117.json
-?? logs/health-report-20250721-0118.json
-?? logs/health-report-20250721-0119.json
-?? logs/health-report-20250721-0120.json
-?? logs/health-report-20250721-0121.json
-?? logs/health-report-20250721-0122.json
-?? logs/health-report-20250721-0123.json
-?? logs/health-report-20250721-0124.json
-?? logs/health-report-20250721-0125.json
-?? logs/health-report-20250721-0126.json
-?? logs/health-report-20250721-0127.json
-?? logs/health-report-20250721-0128.json
-?? logs/health-report-20250721-0129.json
-?? logs/health-report-20250721-0130.json
-?? logs/health-report-20250721-0131.json
-?? logs/health-report-20250721-0132.json
-?? logs/health-report-20250721-0133.json
-?? logs/health-report-20250721-0134.json
-?? logs/health-report-20250721-0135.json
-?? logs/performance-monitor.log.10.gz
-?? logs/performance-optimizations.log.10.gz
-?? logs/performance-report-20250720-2210.json
-?? logs/performance-report-20250720-2215.json
-?? logs/performance-report-20250720-2220.json
-?? logs/performance-report-20250720-2225.json
-?? logs/performance-report-20250720-2230.json
-?? logs/performance-report-20250720-2235.json
-?? logs/performance-report-20250720-2240.json
-?? logs/performance-report-20250720-2245.json
-?? logs/performance-report-20250720-2250.json
-?? logs/performance-report-20250720-2255.json
-?? logs/performance-report-20250720-2300.json
-?? logs/performance-report-20250720-2305.json
-?? logs/performance-report-20250720-2310.json
-?? logs/performance-report-20250720-2315.json
-?? logs/performance-report-20250720-2320.json
-?? logs/performance-report-20250720-2325.json
-?? logs/performance-report-20250720-2326.json
-?? logs/performance-report-20250720-2330.json
-?? logs/performance-report-20250720-2331.json
-?? logs/performance-report-20250720-2335.json
-?? logs/performance-report-20250720-2336.json
-?? logs/performance-report-20250720-2340.json
-?? logs/performance-report-20250720-2341.json
-?? logs/performance-report-20250720-2345.json
-?? logs/performance-report-20250720-2346.json
-?? logs/performance-report-20250720-2350.json
-?? logs/performance-report-20250720-2351.json
-?? logs/performance-report-20250720-2355.json
-?? logs/performance-report-20250720-2356.json
-?? logs/performance-report-20250721-0000.json
-?? logs/performance-report-20250721-0001.json
-?? logs/performance-report-20250721-0005.json
-?? logs/performance-report-20250721-0006.json
-?? logs/performance-report-20250721-0010.json
-?? logs/performance-report-20250721-0011.json
-?? logs/performance-report-20250721-0015.json
-?? logs/performance-report-20250721-0016.json
-?? logs/performance-report-20250721-0020.json
-?? logs/performance-report-20250721-0021.json
-?? logs/performance-report-20250721-0025.json
-?? logs/performance-report-20250721-0026.json
-?? logs/performance-report-20250721-0030.json
-?? logs/performance-report-20250721-0031.json
-?? logs/performance-report-20250721-0035.json
-?? logs/performance-report-20250721-0036.json
-?? logs/performance-report-20250721-0040.json
-?? logs/performance-report-20250721-0041.json
-?? logs/performance-report-20250721-0045.json
-?? logs/performance-report-20250721-0046.json
-?? logs/performance-report-20250721-0050.json
-?? logs/performance-report-20250721-0051.json
-?? logs/performance-report-20250721-0055.json
-?? logs/performance-report-20250721-0056.json
-?? logs/performance-report-20250721-0100.json
-?? logs/performance-report-20250721-0101.json
-?? logs/performance-report-20250721-0105.json
-?? logs/performance-report-20250721-0106.json
-?? logs/performance-report-20250721-0110.json
-?? logs/performance-report-20250721-0111.json
-?? logs/performance-report-20250721-0115.json
-?? logs/performance-report-20250721-0116.json
-?? logs/performance-report-20250721-0120.json
-?? logs/performance-report-20250721-0121.json
-?? logs/performance-report-20250721-0125.json
-?? logs/performance-report-20250721-0126.json
-?? logs/performance-report-20250721-0130.json
-?? logs/performance-report-20250721-0131.json
-?? logs/performance-report-20250721-0135.json
-?? logs/validation/monitor-2025-07-20_22-15-01.log
-?? logs/validation/monitor-2025-07-20_22-19-01.log
-?? logs/validation/monitor-2025-07-20_22-30-01.log
-?? logs/validation/monitor-2025-07-20_22-34-01.log
-?? logs/validation/monitor-2025-07-20_22-45-01.log
-?? logs/validation/monitor-2025-07-20_22-49-01.log
-?? logs/validation/monitor-2025-07-20_23-00-01.log
-?? logs/validation/monitor-2025-07-20_23-04-02.log
-?? logs/validation/monitor-2025-07-20_23-15-01.log
-?? logs/validation/monitor-2025-07-20_23-19-02.log
-?? logs/validation/monitor-2025-07-20_23-30-01.log
-?? logs/validation/monitor-2025-07-20_23-34-02.log
-?? logs/validation/monitor-2025-07-20_23-45-01.log
-?? logs/validation/monitor-2025-07-20_23-49-02.log
-?? logs/validation/monitor-2025-07-21_00-00-01.log
-?? logs/validation/monitor-2025-07-21_00-04-03.log
-?? logs/validation/monitor-2025-07-21_00-15-01.log
-?? logs/validation/monitor-2025-07-21_00-19-03.log
-?? logs/validation/monitor-2025-07-21_00-30-01.log
-?? logs/validation/monitor-2025-07-21_00-34-03.log
-?? logs/validation/monitor-2025-07-21_00-45-01.log
-?? logs/validation/monitor-2025-07-21_00-49-03.log
-?? logs/validation/monitor-2025-07-21_01-00-01.log
-?? logs/validation/monitor-2025-07-21_01-04-04.log
-?? logs/validation/monitor-2025-07-21_01-15-01.log
-?? logs/validation/monitor-2025-07-21_01-19-04.log
-?? logs/validation/monitor-2025-07-21_01-30-01.log
-?? logs/validation/monitor-2025-07-21_01-34-04.log"
+ D logs/performance-report-20250717-1720.json
+ D logs/performance-report-20250717-1725.json
+ D logs/performance-report-20250717-1730.json
+ D logs/performance-report-20250717-1735.json
+ D logs/performance-report-20250717-1740.json
+ D logs/performance-report-20250717-1745.json
+ D logs/performance-report-20250717-1750.json
+ D logs/performance-report-20250717-1755.json
+ D logs/performance-report-20250717-1800.json
+ D logs/performance-report-20250717-1805.json
+ D logs/performance-report-20250717-1810.json
+ D logs/performance-report-20250717-1815.json
+ D logs/performance-report-20250717-1820.json
+ D logs/performance-report-20250717-1825.json
+ D logs/performance-report-20250717-1830.json
+ D logs/performance-report-20250717-1835.json
+ D logs/performance-report-20250717-1840.json
+ D logs/performance-report-20250717-1845.json
+ D logs/performance-report-20250717-1850.json
+ D logs/performance-report-20250717-1855.json
+ D logs/performance-report-20250717-1900.json
+ D logs/performance-report-20250717-1905.json
+ D logs/performance-report-20250717-1910.json
+ D logs/performance-report-20250717-1915.json
+ D logs/performance-report-20250717-1920.json
+ D logs/performance-report-20250717-1925.json
+ D logs/performance-report-20250717-1930.json
+ D logs/performance-report-20250717-1935.json
+ D logs/performance-report-20250717-1940.json
+ D logs/performance-report-20250717-1945.json
+ D logs/performance-report-20250717-1950.json
+ D logs/performance-report-20250717-1955.json
+ D logs/performance-report-20250717-2000.json
+ D logs/performance-report-20250717-2005.json
+ D logs/performance-report-20250717-2010.json
+ D logs/performance-report-20250717-2015.json
+?? 3t/test-calendar-times-connection.js.gz
+?? 3t/test-event-listener-debug.js.gz
+?? 3t/test-final-calendar-validation.js.gz
+?? 3t/test-final-times-validation.js.gz
+?? 3t/test-live-calendar-debug.js.gz
+?? 3t/test-simple-event-debug.js.gz
+?? 3t/test-specific-calendar-date.js.gz
+?? 3t/test-times-loading-x11-real.js.gz
+?? claude-md-compliance-verification.js
+?? logs/health-report-20250721-1757.json
+?? logs/health-report-20250721-1758.json
+?? logs/health-report-20250721-1759.json
+?? logs/health-report-20250721-1800.json
+?? logs/health-report-20250721-1801.json
+?? logs/health-report-20250721-1802.json
+?? logs/health-report-20250721-1803.json
+?? logs/health-report-20250721-1804.json
+?? logs/health-report-20250721-1805.json
+?? logs/health-report-20250721-1806.json
+?? logs/health-report-20250721-1807.json
+?? logs/health-report-20250721-1808.json
+?? logs/health-report-20250721-1809.json
+?? logs/health-report-20250721-1810.json
+?? logs/health-report-20250721-1811.json
+?? logs/health-report-20250721-1812.json
+?? logs/health-report-20250721-1813.json
+?? logs/health-report-20250721-1814.json
+?? logs/health-report-20250721-1815.json
+?? logs/health-report-20250721-1816.json
+?? logs/health-report-20250721-1817.json
+?? logs/health-report-20250721-1818.json
+?? logs/health-report-20250721-1819.json
+?? logs/health-report-20250721-1820.json
+?? logs/health-report-20250721-1821.json
+?? logs/health-report-20250721-1822.json
+?? logs/health-report-20250721-1823.json
+?? logs/health-report-20250721-1824.json
+?? logs/health-report-20250721-1825.json
+?? logs/health-report-20250721-1826.json
+?? logs/health-report-20250721-1827.json
+?? logs/health-report-20250721-1828.json
+?? logs/health-report-20250721-1829.json
+?? logs/health-report-20250721-1830.json
+?? logs/health-report-20250721-1831.json
+?? logs/health-report-20250721-1832.json
+?? logs/health-report-20250721-1833.json
+?? logs/health-report-20250721-1834.json
+?? logs/health-report-20250721-1835.json
+?? logs/health-report-20250721-1836.json
+?? logs/health-report-20250721-1837.json
+?? logs/health-report-20250721-1838.json
+?? logs/health-report-20250721-1839.json
+?? logs/health-report-20250721-1840.json
+?? logs/health-report-20250721-1841.json
+?? logs/health-report-20250721-1842.json
+?? logs/health-report-20250721-1843.json
+?? logs/health-report-20250721-1844.json
+?? logs/health-report-20250721-1845.json
+?? logs/health-report-20250721-1846.json
+?? logs/health-report-20250721-1847.json
+?? logs/health-report-20250721-1848.json
+?? logs/health-report-20250721-1849.json
+?? logs/health-report-20250721-1850.json
+?? logs/health-report-20250721-1851.json
+?? logs/health-report-20250721-1852.json
+?? logs/health-report-20250721-1853.json
+?? logs/health-report-20250721-1854.json
+?? logs/health-report-20250721-1855.json
+?? logs/health-report-20250721-1856.json
+?? logs/health-report-20250721-1857.json
+?? logs/health-report-20250721-1858.json
+?? logs/health-report-20250721-1859.json
+?? logs/health-report-20250721-1900.json
+?? logs/health-report-20250721-1901.json
+?? logs/health-report-20250721-1902.json
+?? logs/health-report-20250721-1903.json
+?? logs/health-report-20250721-1904.json
+?? logs/health-report-20250721-1905.json
+?? logs/health-report-20250721-1906.json
+?? logs/health-report-20250721-1907.json
+?? logs/health-report-20250721-1908.json
+?? logs/health-report-20250721-1909.json
+?? logs/health-report-20250721-1910.json
+?? logs/health-report-20250721-1911.json
+?? logs/health-report-20250721-1912.json
+?? logs/health-report-20250721-1913.json
+?? logs/health-report-20250721-1914.json
+?? logs/health-report-20250721-1915.json
+?? logs/health-report-20250721-1916.json
+?? logs/health-report-20250721-1917.json
+?? logs/health-report-20250721-1918.json
+?? logs/health-report-20250721-1919.json
+?? logs/health-report-20250721-1920.json
+?? logs/health-report-20250721-1921.json
+?? logs/health-report-20250721-1922.json
+?? logs/health-report-20250721-1923.json
+?? logs/health-report-20250721-1924.json
+?? logs/health-report-20250721-1925.json
+?? logs/health-report-20250721-1926.json
+?? logs/health-report-20250721-1927.json
+?? logs/health-report-20250721-1928.json
+?? logs/health-report-20250721-1929.json
+?? logs/health-report-20250721-1930.json
+?? logs/health-report-20250721-1931.json
+?? logs/health-report-20250721-1932.json
+?? logs/health-report-20250721-1933.json
+?? logs/health-report-20250721-1934.json
+?? logs/health-report-20250721-1935.json
+?? logs/health-report-20250721-1936.json
+?? logs/health-report-20250721-1937.json
+?? logs/health-report-20250721-1938.json
+?? logs/health-report-20250721-1939.json
+?? logs/health-report-20250721-1940.json
+?? logs/health-report-20250721-1941.json
+?? logs/health-report-20250721-1942.json
+?? logs/health-report-20250721-1943.json
+?? logs/health-report-20250721-1944.json
+?? logs/health-report-20250721-1945.json
+?? logs/health-report-20250721-1946.json
+?? logs/health-report-20250721-1947.json
+?? logs/health-report-20250721-1948.json
+?? logs/health-report-20250721-1949.json
+?? logs/health-report-20250721-1950.json
+?? logs/health-report-20250721-1951.json
+?? logs/health-report-20250721-1952.json
+?? logs/health-report-20250721-1953.json
+?? logs/health-report-20250721-1954.json
+?? logs/health-report-20250721-1955.json
+?? logs/health-report-20250721-1956.json
+?? logs/health-report-20250721-1957.json
+?? logs/health-report-20250721-1958.json
+?? logs/health-report-20250721-1959.json
+?? logs/health-report-20250721-2000.json
+?? logs/health-report-20250721-2001.json
+?? logs/health-report-20250721-2002.json
+?? logs/health-report-20250721-2003.json
+?? logs/health-report-20250721-2004.json
+?? logs/health-report-20250721-2005.json
+?? logs/health-report-20250721-2006.json
+?? logs/health-report-20250721-2007.json
+?? logs/health-report-20250721-2008.json
+?? logs/health-report-20250721-2009.json
+?? logs/health-report-20250721-2010.json
+?? logs/health-report-20250721-2011.json
+?? logs/health-report-20250721-2012.json
+?? logs/health-report-20250721-2013.json
+?? logs/health-report-20250721-2014.json
+?? logs/health-report-20250721-2015.json
+?? logs/health-report-20250721-2016.json
+?? logs/health-report-20250721-2017.json
+?? logs/health-report-20250721-2018.json
+?? logs/health-report-20250721-2019.json
+?? logs/health-report-20250721-2020.json
+?? logs/health-report-20250721-2021.json
+?? logs/health-report-20250721-2022.json
+?? logs/health-report-20250721-2023.json
+?? logs/health-report-20250721-2024.json
+?? logs/health-report-20250721-2025.json
+?? logs/health-report-20250721-2026.json
+?? logs/health-report-20250721-2027.json
+?? logs/health-report-20250721-2028.json
+?? logs/health-report-20250721-2029.json
+?? logs/health-report-20250721-2030.json
+?? logs/health-report-20250721-2031.json
+?? logs/health-report-20250721-2032.json
+?? logs/health-report-20250721-2033.json
+?? logs/health-report-20250721-2034.json
+?? logs/health-report-20250721-2035.json
+?? logs/health-report-20250721-2036.json
+?? logs/health-report-20250721-2037.json
+?? logs/health-report-20250721-2038.json
+?? logs/health-report-20250721-2039.json
+?? logs/health-report-20250721-2040.json
+?? logs/health-report-20250721-2041.json
+?? logs/health-report-20250721-2042.json
+?? logs/health-report-20250721-2043.json
+?? logs/health-report-20250721-2044.json
+?? logs/health-report-20250721-2045.json
+?? logs/health-report-20250721-2046.json
+?? logs/health-report-20250721-2047.json
+?? logs/health-report-20250721-2048.json
+?? logs/health-report-20250721-2049.json
+?? logs/health-report-20250721-2050.json
+?? logs/health-report-20250721-2051.json
+?? logs/health-report-20250721-2052.json
+?? logs/health-report-20250721-2053.json
+?? logs/health-report-20250721-2054.json
+?? logs/health-report-20250721-2055.json
+?? logs/health-report-20250721-2056.json
+?? logs/health-report-20250721-2057.json
+?? logs/health-report-20250721-2058.json
+?? logs/health-report-20250721-2059.json
+?? logs/health-report-20250721-2100.json
+?? logs/health-report-20250721-2101.json
+?? logs/health-report-20250721-2102.json
+?? logs/health-report-20250721-2103.json
+?? logs/health-report-20250721-2104.json
+?? logs/health-report-20250721-2105.json
+?? logs/health-report-20250721-2106.json
+?? logs/health-report-20250721-2107.json
+?? logs/health-report-20250721-2108.json
+?? logs/health-report-20250721-2109.json
+?? logs/performance-report-20250721-1759.json
+?? logs/performance-report-20250721-1800.json
+?? logs/performance-report-20250721-1804.json
+?? logs/performance-report-20250721-1805.json
+?? logs/performance-report-20250721-1809.json
+?? logs/performance-report-20250721-1810.json
+?? logs/performance-report-20250721-1814.json
+?? logs/performance-report-20250721-1815.json
+?? logs/performance-report-20250721-1819.json
+?? logs/performance-report-20250721-1820.json
+?? logs/performance-report-20250721-1824.json
+?? logs/performance-report-20250721-1825.json
+?? logs/performance-report-20250721-1829.json
+?? logs/performance-report-20250721-1830.json
+?? logs/performance-report-20250721-1834.json
+?? logs/performance-report-20250721-1835.json
+?? logs/performance-report-20250721-1839.json
+?? logs/performance-report-20250721-1840.json
+?? logs/performance-report-20250721-1844.json
+?? logs/performance-report-20250721-1845.json
+?? logs/performance-report-20250721-1849.json
+?? logs/performance-report-20250721-1850.json
+?? logs/performance-report-20250721-1854.json
+?? logs/performance-report-20250721-1855.json
+?? logs/performance-report-20250721-1859.json
+?? logs/performance-report-20250721-1900.json
+?? logs/performance-report-20250721-1904.json
+?? logs/performance-report-20250721-1905.json
+?? logs/performance-report-20250721-1909.json
+?? logs/performance-report-20250721-1910.json
+?? logs/performance-report-20250721-1914.json
+?? logs/performance-report-20250721-1915.json
+?? logs/performance-report-20250721-1919.json
+?? logs/performance-report-20250721-1920.json
+?? logs/performance-report-20250721-1924.json
+?? logs/performance-report-20250721-1925.json
+?? logs/performance-report-20250721-1929.json
+?? logs/performance-report-20250721-1930.json
+?? logs/performance-report-20250721-1935.json
+?? logs/performance-report-20250721-1940.json
+?? logs/performance-report-20250721-1945.json
+?? logs/performance-report-20250721-1950.json
+?? logs/performance-report-20250721-1955.json
+?? logs/performance-report-20250721-2000.json
+?? logs/performance-report-20250721-2005.json
+?? logs/performance-report-20250721-2010.json
+?? logs/performance-report-20250721-2015.json
+?? logs/performance-report-20250721-2020.json
+?? logs/performance-report-20250721-2025.json
+?? logs/performance-report-20250721-2030.json
+?? logs/performance-report-20250721-2035.json
+?? logs/performance-report-20250721-2040.json
+?? logs/performance-report-20250721-2045.json
+?? logs/performance-report-20250721-2050.json
+?? logs/performance-report-20250721-2055.json
+?? logs/performance-report-20250721-2100.json
+?? logs/performance-report-20250721-2105.json
+?? logs/validation/monitor-2025-07-21_18-00-02.log
+?? logs/validation/monitor-2025-07-21_18-04-20.log
+?? logs/validation/monitor-2025-07-21_18-15-01.log
+?? logs/validation/monitor-2025-07-21_18-19-20.log
+?? logs/validation/monitor-2025-07-21_18-30-01.log
+?? logs/validation/monitor-2025-07-21_18-34-21.log
+?? logs/validation/monitor-2025-07-21_18-45-01.log
+?? logs/validation/monitor-2025-07-21_18-49-21.log
+?? logs/validation/monitor-2025-07-21_19-00-01.log
+?? logs/validation/monitor-2025-07-21_19-04-21.log
+?? logs/validation/monitor-2025-07-21_19-15-01.log
+?? logs/validation/monitor-2025-07-21_19-19-21.log
+?? logs/validation/monitor-2025-07-21_19-30-01.log
+?? logs/validation/monitor-2025-07-21_19-34-22.log
+?? logs/validation/monitor-2025-07-21_19-45-01.log
+?? logs/validation/monitor-2025-07-21_19-49-22.log
+?? logs/validation/monitor-2025-07-21_20-00-01.log
+?? logs/validation/monitor-2025-07-21_20-04-22.log
+?? logs/validation/monitor-2025-07-21_20-15-01.log
+?? logs/validation/monitor-2025-07-21_20-19-22.log
+?? logs/validation/monitor-2025-07-21_20-30-01.log
+?? logs/validation/monitor-2025-07-21_20-34-23.log
+?? logs/validation/monitor-2025-07-21_20-45-01.log
+?? logs/validation/monitor-2025-07-21_20-49-23.log
+?? logs/validation/monitor-2025-07-21_21-00-01.log
+?? logs/validation/monitor-2025-07-21_21-04-23.log
+?? test-edit-booking-backend-validation.js"
 }

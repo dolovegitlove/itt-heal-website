@@ -145,6 +145,8 @@
                 '30min_massage': '30min_massage',
                 '60min_massage': '60min_massage',
                 '90min_massage': '90min_massage',
+                'fasciaflow_athlete_recovery': 'fasciaflow', // Backend now supports fasciaflow
+                'fasciaflow': 'fasciaflow', // Backend now supports fasciaflow
                 'consultation': SERVICE_TYPES.consultation
                 // Using backend-verified service types
             };

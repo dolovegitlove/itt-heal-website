@@ -1517,6 +1517,7 @@
                         <option value="60min">60 Minute Session - $150</option>
                         <option value="90min">90 Minute Session - $200</option>
                         <option value="120min">120 Minute Session - $250</option>
+                        <option value="fasciaflow">FasciaFlow Athlete Recovery - $235</option>
                     </select>
                 </div>
                 
@@ -2748,122 +2749,98 @@
 
         // Comprehensive pricing calculation system using shared config
         // Global calculatePricing function accessible by payment manager
-        function calculatePricing() {
-                // Get form data
+        async function calculatePricing() {
                 const serviceTypeSelect = document.getElementById('serviceType');
                 const pricingSelectedAddons = Array.from(document.querySelectorAll('input[name="addons[]"]:checked')).map(cb => cb.value);
                 const tipAmount = parseFloat(document.getElementById('tipAmount')?.value) || 0;
                 const isCompBooking = document.getElementById('compBooking')?.checked || false;
                 const paymentStatus = document.getElementById('paymentStatus')?.value || '';
                 
-                // Update payment method based on status and tip
                 if (createPaymentManager) {
                     createPaymentManager.updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount);
                 }
                 
-                // Get the selected payment method for pricing calculation
                 const paymentMethod = createPaymentManager ? createPaymentManager.getSelectedPaymentMethod() : 'credit_card';
                 
-                // Use shared config for pricing calculation
-                const pricing = window.ITTHealConfig.calculateBookingPricing({
-                    serviceType: serviceTypeSelect?.value,
-                    selectedAddons: pricingSelectedAddons,
-                    tipAmount,
-                    isCompBooking,
-                    paymentStatus,
-                    paymentMethod
-                });
-                
-                console.log('Create form pricing calculation:', {
-                    serviceType: serviceTypeSelect?.value,
-                    selectedAddons: pricingSelectedAddons,
-                    tipAmount,
-                    isCompBooking,
-                    paymentStatus,
-                    paymentMethod,
-                    result: pricing
-                });
-                
-                // Update display elements
-                const servicePriceDisplay = document.getElementById('servicePriceDisplay');
-                const addonsTotalDisplay = document.getElementById('addonsTotal');
-                const totalPriceDisplay = document.getElementById('totalPriceDisplay');
-                const finalPriceInput = document.getElementById('finalPrice');
-                const finalPriceNote = document.getElementById('finalPriceNote');
-                
-                if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.servicePrice.toFixed(2)}`;
-                if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addonsTotal.toFixed(2)}`;
-                if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.totalPrice.toFixed(2)}`;
-                if (finalPriceInput) finalPriceInput.value = pricing.finalPrice.toFixed(2);
-                
-                // Update hidden inputs for form submission
-                const servicePriceInput = document.getElementById('servicePrice');
-                const addonsTotalInput = document.getElementById('addonsTotalInput');
-                const totalPriceInput = document.getElementById('totalPrice');
-                const businessValueInput = document.getElementById('businessValue');
-                
-                if (servicePriceInput) servicePriceInput.value = pricing.servicePrice.toFixed(2);
-                if (addonsTotalInput) addonsTotalInput.value = pricing.addonsTotal.toFixed(2);
-                if (totalPriceInput) totalPriceInput.value = pricing.totalPrice.toFixed(2);
-                if (businessValueInput) businessValueInput.value = pricing.businessValue.toFixed(2);
-                
-                // Update final price note
-                if (finalPriceNote) {
-                    if (pricing.isCompBooking) {
-                        finalPriceNote.textContent = 'Complimentary - Tip Only';
+                try {
+                    const response = await fetch(`${API_BASE}/api/admin/pricing/calculate`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${getToken()}`
+                        },
+                        body: JSON.stringify({
+                            service_type: serviceTypeSelect?.value,
+                            selected_addons: pricingSelectedAddons,
+                            tip_amount: tipAmount,
+                            is_comp_booking: isCompBooking,
+                            payment_status: paymentStatus,
+                            payment_method: paymentMethod
+                        })
+                    });
+
+                    if (response.ok) {
+                        const pricing = await response.json();
+                        
+                        const servicePriceDisplay = document.getElementById('servicePriceDisplay');
+                        const addonsTotalDisplay = document.getElementById('addonsTotal');
+                        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+                        const finalPriceInput = document.getElementById('finalPrice');
+                        const finalPriceNote = document.getElementById('finalPriceNote');
+                        
+                        if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.service_price.toFixed(2)}`;
+                        if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addons_total.toFixed(2)}`;
+                        if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.total_price.toFixed(2)}`;
+                        if (finalPriceInput) finalPriceInput.value = pricing.final_price.toFixed(2);
+                        
+                        const servicePriceInput = document.getElementById('servicePrice');
+                        const addonsTotalInput = document.getElementById('addonsTotalInput');
+                        const totalPriceInput = document.getElementById('totalPrice');
+                        const businessValueInput = document.getElementById('businessValue');
+                        
+                        if (servicePriceInput) servicePriceInput.value = pricing.service_price.toFixed(2);
+                        if (addonsTotalInput) addonsTotalInput.value = pricing.addons_total.toFixed(2);
+                        if (totalPriceInput) totalPriceInput.value = pricing.total_price.toFixed(2);
+                        if (businessValueInput) businessValueInput.value = pricing.business_value.toFixed(2);
+                        
+                        if (finalPriceNote) {
+                            if (pricing.is_comp_booking) {
+                                finalPriceNote.textContent = 'Complimentary - Tip Only';
+                            } else {
+                                finalPriceNote.textContent = 'Total Price + Tip Amount';
+                            }
+                        }
+                        
+                        console.log('✅ Backend pricing calculation completed:', pricing);
                     } else {
-                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                        console.error('❌ Backend pricing calculation failed:', response.status);
+                        alert('Pricing calculation failed. Please try again.');
                     }
+                } catch (error) {
+                    console.error('❌ Backend pricing calculation error:', error);
+                    alert('Error calculating pricing. Please check your connection.');
                 }
         }
         
         // Global calculateEditPricing function accessible by payment manager
-        function calculateEditPricing() {
-                // Get form data from edit form
+        async function calculateEditPricing() {
                 const serviceTypeSelect = document.getElementById('editServiceType');
                 const editSelectedAddons = Array.from(document.querySelectorAll('#editAddonsContainer input[name="addons[]"]:checked')).map(cb => cb.value);
                 const tipAmount = parseFloat(document.getElementById('editTipAmount')?.value) || 0;
                 const isCompBooking = document.getElementById('editCompBooking')?.checked || false;
                 const paymentStatus = document.getElementById('editPaymentStatus')?.value || '';
                 
-                // Update payment method based on status and tip
                 if (editPaymentManager) {
                     editPaymentManager.updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount);
                 }
                 
-                // Get the selected payment method for pricing calculation
                 const paymentMethod = editPaymentManager ? editPaymentManager.getSelectedPaymentMethod() : 'credit_card';
                 
-                // Use shared config for pricing calculation
-                const pricing = window.ITTHealConfig.calculateBookingPricing({
-                    serviceType: serviceTypeSelect?.value,
-                    selectedAddons: editSelectedAddons,
-                    tipAmount,
-                    isCompBooking,
-                    paymentStatus,
-                    paymentMethod
-                });
-                
-                console.log('Edit form pricing calculation:', {
-                    serviceType: serviceTypeSelect?.value,
-                    selectedAddons: editSelectedAddons,
-                    tipAmount,
-                    isCompBooking,
-                    paymentStatus,
-                    paymentMethod,
-                    result: pricing
-                });
-                
-                // UPDATE SPECIAL REQUESTS FIELD WITH CURRENT ADD-ONS
                 const specialRequestsField = document.getElementById('editSpecialRequests');
                 if (specialRequestsField && window.ITTHealConfig) {
-                    // Get current special requests content
                     let currentRequests = specialRequestsField.value || '';
-                    
-                    // Remove any existing add-ons line
                     currentRequests = currentRequests.replace(/Add-ons:[^\n]*\n?/gi, '').trim();
                     
-                    // Build new add-ons line if any add-ons are selected
                     if (editSelectedAddons.length > 0) {
                         const addonTexts = editSelectedAddons.map(addonId => {
                             const addonConfig = window.ITTHealConfig.ADDON_CONFIG[addonId];
@@ -2871,50 +2848,73 @@
                         });
                         const addonsLine = `Add-ons: ${addonTexts.join(', ')}`;
                         
-                        // Add the new add-ons line at the beginning
                         if (currentRequests) {
                             specialRequestsField.value = `${addonsLine}\n${currentRequests}`;
                         } else {
                             specialRequestsField.value = addonsLine;
                         }
                     } else {
-                        // No add-ons selected, just use the cleaned requests
                         specialRequestsField.value = currentRequests;
                     }
-                    
-                    console.log('🔧 Updated special requests field with current add-ons');
                 }
-                
-                // Update display elements in edit form
-                const servicePriceDisplay = document.getElementById('editServicePriceDisplay');
-                const addonsTotalDisplay = document.getElementById('editAddonsTotal');
-                const totalPriceDisplay = document.getElementById('editTotalPriceDisplay');
-                const finalPriceInput = document.getElementById('editFinalPrice');
-                const finalPriceNote = document.getElementById('editFinalPriceNote');
-                
-                if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.servicePrice.toFixed(2)}`;
-                if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addonsTotal.toFixed(2)}`;
-                if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.totalPrice.toFixed(2)}`;
-                if (finalPriceInput) finalPriceInput.value = pricing.finalPrice.toFixed(2);
-                
-                // Update hidden inputs for form submission in edit form
-                const servicePriceInput = document.getElementById('editServicePrice');
-                const addonsTotalInput = document.getElementById('editAddonsTotalInput');
-                const totalPriceInput = document.getElementById('editTotalPrice');
-                const businessValueInput = document.getElementById('editBusinessValue');
-                
-                if (servicePriceInput) servicePriceInput.value = pricing.servicePrice.toFixed(2);
-                if (addonsTotalInput) addonsTotalInput.value = pricing.addonsTotal.toFixed(2);
-                if (totalPriceInput) totalPriceInput.value = pricing.totalPrice.toFixed(2);
-                if (businessValueInput) businessValueInput.value = pricing.businessValue.toFixed(2);
-                
-                // Update final price note in edit form
-                if (finalPriceNote) {
-                    if (pricing.isCompBooking) {
-                        finalPriceNote.textContent = 'Complimentary - Tip Only';
+
+                try {
+                    const response = await fetch(`${API_BASE}/api/admin/pricing/calculate`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${getToken()}`
+                        },
+                        body: JSON.stringify({
+                            service_type: serviceTypeSelect?.value,
+                            selected_addons: editSelectedAddons,
+                            tip_amount: tipAmount,
+                            is_comp_booking: isCompBooking,
+                            payment_status: paymentStatus,
+                            payment_method: paymentMethod
+                        })
+                    });
+
+                    if (response.ok) {
+                        const pricing = await response.json();
+                        
+                        const servicePriceDisplay = document.getElementById('editServicePriceDisplay');
+                        const addonsTotalDisplay = document.getElementById('editAddonsTotal');
+                        const totalPriceDisplay = document.getElementById('editTotalPriceDisplay');
+                        const finalPriceInput = document.getElementById('editFinalPrice');
+                        const finalPriceNote = document.getElementById('editFinalPriceNote');
+                        
+                        if (servicePriceDisplay) servicePriceDisplay.textContent = `$${pricing.service_price.toFixed(2)}`;
+                        if (addonsTotalDisplay) addonsTotalDisplay.textContent = `$${pricing.addons_total.toFixed(2)}`;
+                        if (totalPriceDisplay) totalPriceDisplay.textContent = `$${pricing.total_price.toFixed(2)}`;
+                        if (finalPriceInput) finalPriceInput.value = pricing.final_price.toFixed(2);
+                        
+                        const servicePriceInput = document.getElementById('editServicePrice');
+                        const addonsTotalInput = document.getElementById('editAddonsTotalInput');
+                        const totalPriceInput = document.getElementById('editTotalPrice');
+                        const businessValueInput = document.getElementById('editBusinessValue');
+                        
+                        if (servicePriceInput) servicePriceInput.value = pricing.service_price.toFixed(2);
+                        if (addonsTotalInput) addonsTotalInput.value = pricing.addons_total.toFixed(2);
+                        if (totalPriceInput) totalPriceInput.value = pricing.total_price.toFixed(2);
+                        if (businessValueInput) businessValueInput.value = pricing.business_value.toFixed(2);
+                        
+                        if (finalPriceNote) {
+                            if (pricing.is_comp_booking) {
+                                finalPriceNote.textContent = 'Complimentary - Tip Only';
+                            } else {
+                                finalPriceNote.textContent = 'Total Price + Tip Amount';
+                            }
+                        }
+                        
+                        console.log('✅ Backend pricing calculation completed:', pricing);
                     } else {
-                        finalPriceNote.textContent = 'Total Price + Tip Amount';
+                        console.error('❌ Backend pricing calculation failed:', response.status);
+                        alert('Pricing calculation failed. Please try again.');
                     }
+                } catch (error) {
+                    console.error('❌ Backend pricing calculation error:', error);
+                    alert('Error calculating pricing. Please check your connection.');
                 }
         }
         

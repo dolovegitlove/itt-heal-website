@@ -33,6 +33,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/logos/itt-heal-lotus-32.png?v=20250710">
     <link rel="apple-touch-icon" href="./assets/logos/itt-heal-lotus-256.png?v=20250710">
     
+    <!-- Preload critical logo for faster loading -->
+    <link rel="preload" as="image" href="./assets/logos/itt-heal-lotus-64.png" fetchpriority="high">
+    <!-- Preconnect to image domain for faster loading -->
+    <link rel="dns-prefetch" href="https://ittheal.com">
+    
     <!-- PWA Manifest - Removed (file doesn't exist) -->
     
     <!-- Playfair Display Font -->
@@ -342,6 +347,9 @@
     <!-- Stripe JavaScript SDK -->
     <script src="https://js.stripe.com/v3/"></script>
     
+    <!-- Logo Loading Optimization -->
+    <script src="./optimize-logo-loading.js"></script>
+    
     <!-- Force Cache Refresh -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -360,7 +368,7 @@
 <header class="itt-header" style="height: 160px !important;">
   <!-- Left Side - Logo (Leaf/Droplet) -->
   <div class="itt-header-logo">
-    <img src="./assets/logos/itt-heal-lotus.png" alt="ITT Heal Logo" class="itt-logo-leaf" style="width: 60px; height: 60px;">
+    <img src="./assets/logos/itt-heal-lotus-64.png" alt="ITT Heal Logo" class="itt-logo-leaf" style="width: 60px; height: 60px;" loading="eager">
   </div>
   
   <!-- Center - Typography -->
@@ -1151,6 +1159,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     '60min_massage': 135, 
                                     '90min_massage': 180, 
                                     '120min_massage': 240,
+                                    'fasciaflow': 225,
                                     'consultation': 85,
                                     'test': 1.00 
                                 };
@@ -1160,6 +1169,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     '60min_massage': '60-Minute Reset',
                                     '90min_massage': '90-Minute Integrative Fascia',
                                     '120min_massage': '120-Minute Premium',
+                                    'fasciaflow': 'FasciaFlow Athlete Recovery',
                                     'consultation': '30-Minute Consultation',
                                     'test': 'Payment System Test'
                                 };
@@ -1394,8 +1404,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     }
                                     
                                     // Check if date is beyond 90-day limit
-                                    const selectedDateObj = new Date(selectedDate);
+                                    const selectedDateObj = new Date(selectedDate + 'T00:00:00');
                                     const today = new Date();
+                                    today.setHours(0, 0, 0, 0); // Set to local midnight for fair comparison
                                     const maxDate = new Date();
                                     maxDate.setDate(maxDate.getDate() + 90);
                                     
@@ -1661,8 +1672,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                         }
                                         
                                         // CRITICAL: Check 90-day booking limit
-                                        const selectedDateObj = new Date(date);
+                                        const selectedDateObj = new Date(date + 'T00:00:00');
                                         const today = new Date();
+                                        today.setHours(0, 0, 0, 0); // Set to local midnight for fair comparison
                                         const maxDate = new Date();
                                         maxDate.setDate(maxDate.getDate() + 90);
                                         
@@ -2442,7 +2454,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 }
 
                                 // Initialize Stripe
-                                const stripe = Stripe('pk_test_51RRBjzFxOpfkAGId3DsG7kyXDLKUET2Ht5jvpxzxKlELzjgwkRctz4goXrNJ5TqfQqufJBhEDuBoxfoZhxlbkNdm00cqSQtKVN');
+                                const stripe = Stripe('pk_live_51RRBjzFxOpfkAGIdJjkEORbCZPPZjvMQW8scmVNxxgcuB0v96NQVgmvbvA6ilCBZzyKj4CuyZMDjh4udoMihhflX00uqEC3iQk');
                                 const elements = stripe.elements();
                                 let cardElement = null;
                                 let paymentProcessing = false;
@@ -2680,13 +2692,17 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             
                                             status.textContent = 'Creating payment intent...';
                                             
+                                            // Get the correct service type for payment (use data-service-type)
+                                            const selectedServiceOption = document.querySelector('.service-option.active');
+                                            const paymentServiceType = selectedServiceOption?.getAttribute('data-service-type') || selectedService;
+                                            
                                             // Create payment intent
                                             const paymentResponse = await fetch('https://ittheal.com/api/web-booking/create-payment-intent', {
                                                 method: 'POST',
                                                 headers: { 'Content-Type': 'application/json' },
                                                 body: JSON.stringify({
                                                     amount: finalAmount,
-                                                    service_type: selectedService,
+                                                    service_type: paymentServiceType,
                                                     client_info: clientInfo
                                                 })
                                             });
@@ -2858,6 +2874,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             '60min': 60,
                                             '90min': 90,
                                             '120min': 120,
+                                            'fasciaflow': 75,
                                             'consultation': 30,
                                             'test': 5
                                         };
@@ -2866,6 +2883,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             '60min': 'therapeutic_massage',
                                             '90min': 'therapeutic_massage',
                                             '120min': 'therapeutic_massage',
+                                            'fasciaflow': 'therapeutic_massage',
                                             'consultation': 'consultation',
                                             'test': 'system_test'
                                         };
@@ -3272,6 +3290,35 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                             <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #fee2e2, #fecaca); border-radius: 12px; border: 2px solid #fca5a5;">
                                                 <div style="font-size: 0.9rem; color: #dc2626; font-weight: 700; margin-bottom: 0.25rem;">Therapeutic Flagship</div>
                                                 <div style="font-size: 0.85rem; color: var(--sage-700); font-weight: 600;">89% choose this for 2nd visit</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- FasciaFlow Athlete Recovery Card -->
+                                    <div class="service-option" data-service-type="fasciaflow" data-service="fasciaflow" data-price="$225" 
+                                         style="border: 3px solid #f59e0b; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #fef3c7, #fde68a); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);"
+                                         onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(245, 158, 11, 0.3)'"
+                                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(245, 158, 11, 0.2)'">
+                                        <div style="position: absolute; top: -10px; right: 20px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">⚡ ELITE RECOVERY</div>
+                                        <div>
+                                            <h4 style="color: var(--sage-700); margin-bottom: 0.75rem; font-size: 1.3rem; font-weight: 800;">FasciaFlow Athlete Recovery</h4>
+                                            <div style="display: flex; align-items: baseline; margin-bottom: 1rem;">
+                                                <span style="font-size: 2.5rem; font-weight: 900; color: #f59e0b; margin-right: 0.5rem;">$225</span>
+                                                <span style="font-size: 0.9rem; color: var(--sage-600);">75 minutes</span>
+                                            </div>
+                                            <div style="margin-bottom: 1.5rem;">
+                                                <p style="color: var(--sage-700); font-size: 1.1rem; margin: 0 0 0.75rem 0; font-weight: 600; line-height: 1.4;">Elite athletic recovery protocol</p>
+                                                <ul style="color: var(--sage-600); font-size: 0.95rem; margin: 0; padding-left: 1.2rem; line-height: 1.6;">
+                                                    <li>Movement assessment & fascial mapping</li>
+                                                    <li>Deep myofascial release techniques</li>
+                                                    <li>Sport-specific recovery work</li>
+                                                    <li>Movement integration & optimization</li>
+                                                    <li>Recovery acceleration techniques</li>
+                                                </ul>
+                                            </div>
+                                            <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, #fef3c7, #fed7aa); border-radius: 12px; border: 2px solid #fbbf24;">
+                                                <div style="font-size: 0.9rem; color: #d97706; font-weight: 700; margin-bottom: 0.25rem;">Performance Recovery</div>
+                                                <div style="font-size: 0.85rem; color: var(--sage-700); font-weight: 600;">Trusted by competitive athletes</div>
                                             </div>
                                         </div>
                                     </div>

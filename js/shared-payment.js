@@ -49,7 +49,7 @@ class ITTPaymentManager {
     async init() {
         // Initialize Stripe if not admin mode
         if (!this.isAdminMode && window.Stripe) {
-            this.stripe = Stripe('pk_test_51OBxkCKQ9k1QV9wX8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8');
+            this.stripe = Stripe('pk_live_51RRBjzFxOpfkAGIdJjkEORbCZPPZjvMQW8scmVNxxgcuB0v96NQVgmvbvA6ilCBZzyKj4CuyZMDjh4udoMihhflX00uqEC3iQk');
             this.setupStripeElements();
         }
         

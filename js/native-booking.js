@@ -22,7 +22,7 @@
     };
     
     const STRIPE_CONFIG = {
-        publishableKey: 'pk_test_51OBxkCKQ9k1QV9wX8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8', // Replace with actual key
+        publishableKey: 'pk_live_51RRBjzFxOpfkAGIdJjkEORbCZPPZjvMQW8scmVNxxgcuB0v96NQVgmvbvA6ilCBZzyKj4CuyZMDjh4udoMihhflX00uqEC3iQk', // Live key
         products: {
             '30min_massage': {
                 name: '30-Minute Quick Relief Session',

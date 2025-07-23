@@ -1,3 +1,5 @@
+// Wrap entire script in try-catch to identify loading issues
+try {
 // Frontend constants aligned with backend enums
 const PAYMENT_TYPES = {
   card: 'card',
@@ -49,7 +51,7 @@ class ITTPaymentManager {
     async init() {
         // Initialize Stripe if not admin mode
         if (!this.isAdminMode && window.Stripe) {
-            this.stripe = Stripe('pk_test_51OBxkCKQ9k1QV9wX8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8u8');
+            this.stripe = Stripe('pk_live_51RRBjzFxOpfkAGIdJjkEORbCZPPZjvMQW8scmVNxxgcuB0v96NQVgmvbvA6ilCBZzyKj4CuyZMDjh4udoMihhflX00uqEC3iQk');
             this.setupStripeElements();
         }
         
@@ -72,8 +74,8 @@ class ITTPaymentManager {
         
         return `
             <!-- Payment Method Selection -->
-            <div class="payment-method-section">
-                <label class="form-label">Payment Method</label>
+            <fieldset class="payment-method-section">
+                <legend class="form-label">Payment Method</legend>
                 <div class="payment-methods-grid">
                     <label class="payment-method-option" data-method="credit_card">
                         <input type="radio" name="${prefix}payment_method" value="credit_card" ${this.currentPaymentMethod === 'credit_card' ? 'checked' : ''}>
@@ -83,31 +85,31 @@ class ITTPaymentManager {
                         </div>
                     </label>
                     
-                    <label class="payment-method-option" data-method=PAYMENT_TYPES['cash']>
-                        <input type="radio" name="${prefix}payment_method" value=PAYMENT_TYPES['cash']>
+                    <label class="payment-method-option" data-method="${PAYMENT_TYPES['cash']}">
+                        <input type="radio" name="${prefix}payment_method" value="${PAYMENT_TYPES['cash']}">
                         <div class="payment-method-content">
                             <div class="payment-method-title">💵 Cash</div>
                             <div class="payment-method-desc">Pay${this.isAdminMode ? ' at appointment' : ' in cash at your appointment'}</div>
                         </div>
                     </label>
                     
-                    <label class="payment-method-option" data-method=SERVICE_TYPES['other']_TYPES['other']>
-                        <input type="radio" name="${prefix}payment_method" value=SERVICE_TYPES['other']_TYPES['other']>
+                    <label class="payment-method-option" data-method="${PAYMENT_TYPES['other']}">
+                        <input type="radio" name="${prefix}payment_method" value="${PAYMENT_TYPES['other']}">
                         <div class="payment-method-content">
                             <div class="payment-method-title">📱 Other</div>
                             <div class="payment-method-desc">${this.isAdminMode ? 'Venmo, CashApp, etc.' : 'Venmo, CashApp - arranged with practitioner'}</div>
                         </div>
                     </label>
                     
-                    <label class="payment-method-option" data-method=PAYMENT_TYPES['comp']>
-                        <input type="radio" name="${prefix}payment_method" value=PAYMENT_TYPES['comp']>
+                    <label class="payment-method-option" data-method="${PAYMENT_TYPES['comp']}">
+                        <input type="radio" name="${prefix}payment_method" value="${PAYMENT_TYPES['comp']}">
                         <div class="payment-method-content">
                             <div class="payment-method-title">🎁 Comp</div>
                             <div class="payment-method-desc">Complimentary${this.isAdminMode ? '' : ' appointment'}</div>
                         </div>
                     </label>
                 </div>
-            </div>
+            </fieldset>
             
             <!-- Comp Type Selection -->
             <div id="${prefix}comp-type-section" class="comp-type-section" style="display: none;">
@@ -123,7 +125,7 @@ class ITTPaymentManager {
                     <option value="staff">Staff Comp</option>
                     <option value="marketing">Marketing/Promotional</option>
                     <option value="charity">Charity/Community Service</option>
-                    <option value=SERVICE_TYPES['other']_TYPES['other']>Other</option>
+                    <option value="${PAYMENT_TYPES['other']}">Other</option>
                 </select>
             </div>
             
@@ -273,7 +275,7 @@ class ITTPaymentManager {
         if (!this.stripe) return;
         
         const elements = this.stripe.elements();
-        this.cardElement = elements.create(PAYMENT_TYPES['card'], {
+        this.cardElement = elements.create('card', {
             style: {
                 base: {
                     fontSize: '16px',
@@ -387,7 +389,7 @@ class ITTPaymentManager {
                     instructionsP.textContent = this.isAdminMode
                         ? 'Cash payment to be collected at appointment.'
                         : 'Your booking will be confirmed. Please bring exact cash payment to your appointment. Receipt will be provided for Dr. reconciliation.';
-                } else if (method === SERVICE_TYPES['other']_TYPES['other']) {
+                } else if (method === PAYMENT_TYPES['other']) {
                     instructionsP.textContent = this.isAdminMode
                         ? 'Alternative payment method (Venmo, CashApp, etc.)'
                         : 'Your booking will be confirmed. Venmo/CashApp payment details will be provided via SMS/email. Receipt will be provided for Dr. reconciliation.';
@@ -471,7 +473,7 @@ class ITTPaymentManager {
     
     // Method to auto-select payment method based on payment status and tip
     updatePaymentMethodBasedOnStatus(paymentStatus, tipAmount) {
-        const isComplimentary = paymentStatus === BOOKING_TYPES['complimentary']'complimentary'];
+        const isComplimentary = paymentStatus === PAYMENT_STATUS['complimentary'];
         const hasTip = parseFloat(tipAmount) > 0;
         const currentMethod = this.getSelectedPaymentMethod();
         
@@ -578,3 +580,11 @@ class ITTPaymentManager {
 
 // Export for use in other modules
 window.ITTPaymentManager = ITTPaymentManager;
+
+// Log successful loading
+console.log('✅ shared-payment.js loaded successfully - ITTPaymentManager is available');
+
+} catch (error) {
+    console.error('❌ Error loading shared-payment.js:', error);
+    console.error('Stack trace:', error.stack);
+}

@@ -1,0 +1,24 @@
+💓 Real-time Monitor: Tue Jul 22 05:00:01 AM CDT 2025
+🌐 Site status: 200
+🔧 Admin status: 301
+🚨 Site accessibility issue detected!
+⚡ Running hourly edit functionality check...
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ittz/projects/itt/site/validate-edit-functionality.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0
+✅ Monitor check completed: Tue Jul 22 05:00:02 AM CDT 2025
