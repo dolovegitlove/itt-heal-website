@@ -3,164 +3,123 @@
  * Imports from shared frontend constants with admin-specific modifications
  */
 
-// Import shared pricing configuration (converted from TypeScript)
-const PRICING_CONFIG = {
-  sessions: {
-    '30min': {
-      duration: 30,
-      appPrice: 85,
-      webPrice: 85,
-      title: '30-Minute Quick Relief',
-      description: 'Targeted therapeutic session for specific issues',
-      features: [
-        'Focused assessment',
-        'Targeted therapy',
-        'Quick relief techniques'
-      ],
-      badge: 'Quick Relief'
-    },
-    '60min': {
-      duration: 60,
-      appPrice: 135,
-      webPrice: 135,
-      title: '60-Minute Reset',
-      description: 'Standard therapeutic session',
-      features: [
-        'Full body assessment',
-        'Targeted therapy',
-        'Take-home exercises'
-      ],
-      popular: true,
-      badge: 'Most Popular'
-    },
-    '90min': {
-      duration: 90,
-      appPrice: 180,
-      webPrice: 180,
-      title: '90-Minute Integrative Fascia',
-      description: 'Extended therapeutic session with deeper work',
-      features: [
-        'Everything in 60-min +',
-        'Extended fascial work',
-        'Comprehensive bodywork',
-        'Deep relaxation time'
-      ],
-      premium: true,
-      badge: 'Therapeutic Flagship'
-    },
-    '120min': {
-      duration: 120,
-      appPrice: 225,
-      webPrice: 225,
-      title: '120-Minute Deep Transformation',
-      description: 'Comprehensive therapeutic session',
-      features: [
-        'Everything in 90-min +',
-        'Extended assessment',
-        'Multiple therapeutic modalities',
-        'Comprehensive aftercare plan'
-      ],
-      premium: true,
-      badge: 'Ultimate Experience'
-    },
-    'fasciaflow': {
-      duration: 75,
-      appPrice: 225,
-      webPrice: 225,
-      title: 'FasciaFlow Athlete Recovery',
-      description: 'Elite athletic recovery protocol with advanced fascial techniques',
-      features: [
-        'Movement assessment & fascial mapping',
-        'Deep myofascial release techniques',
-        'Sport-specific recovery work',
-        'Movement integration & optimization',
-        'Recovery acceleration techniques'
-      ],
-      premium: true,
-      badge: 'Elite Athletic Recovery'
-    },
-    'consultation': {
-      duration: 30,
-      appPrice: 60,
-      webPrice: 70,
-      title: 'Initial Consultation',
-      description: 'Assessment and treatment planning',
-      features: [
-        'Health history review',
-        'Physical assessment',
-        'Treatment plan development',
-        'Goal setting'
-      ]
+// CLAUDE.md Compliance: Pricing loaded from centralized backend API
+// No hardcoded pricing configurations - use API endpoints
+let PRICING_CONFIG = null;
+let ADDON_CONFIG = null;
+
+// Load pricing from centralized API
+async function loadPricingConfig() {
+  try {
+    const [sessionsResponse, addonsResponse] = await Promise.all([
+      fetch('/api/pricing/sessions'),
+      fetch('/api/pricing/addons')
+    ]);
+    
+    if (sessionsResponse.ok && addonsResponse.ok) {
+      const sessionsData = await sessionsResponse.json();
+      const addonsData = await addonsResponse.json();
+      
+      if (sessionsData.success && addonsData.success) {
+        // Transform API data to match expected format
+        PRICING_CONFIG = {
+          sessions: Object.fromEntries(
+            Object.entries(sessionsData.data).map(([key, session]) => [
+              key,
+              {
+                duration: session.duration,
+                appPrice: session.price,
+                webPrice: session.price,
+                title: session.name,
+                description: session.description,
+                features: session.features || [],
+                category: session.category,
+                badge: session.badge || '',
+                popular: session.popular || false,
+                premium: session.premium || false
+              }
+            ])
+          )
+        };
+        
+        ADDON_CONFIG = Object.fromEntries(
+          addonsData.data.map(addon => [
+            addon.id,
+            {
+              id: addon.id,
+              name: addon.name,
+              price: addon.price,
+              duration_adjustment: addon.duration_adjustment || 0,
+              description: addon.description,
+              category: addon.category,
+              available_for: addon.available_for || []
+            }
+          ])
+        );
+        
+        console.log('✅ Pricing config loaded from centralized API');
+        return true;
+      }
     }
+  } catch (error) {
+    console.error('Failed to load pricing config from API:', error);
   }
-};
+  return false;
+}
 
-// Shared addon configuration
-const ADDON_CONFIG = {
-  aromatherapy: {
-    id: 'aromatherapy', 
-    name: 'Aromatherapy',
-    price: 20.00,
-    duration_adjustment: 0,
-    description: 'Custom essential oil blend for your session',
-    category: 'enhancement',
-    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
-  },
-  hot_stones: {
-    id: 'hot_stones',
-    name: 'Hot Stone Therapy',
-    price: 25.00,
-    duration_adjustment: 15,
-    description: 'Heated basalt stones for deep muscle relaxation',
-    category: 'therapy',
-    available_for: ['60min', '90min', '120min', 'fasciaflow']
-  },
-  coldstone_facial: {
-    id: 'coldstone_facial',
-    name: 'Cold Stone Facial Massage',
-    price: 30.00,
-    duration_adjustment: 10,
-    description: 'Cooling stones for facial tension and rejuvenation',
-    category: 'luxury',
-    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
-  },
-  peppermint_scalp: {
-    id: 'peppermint_scalp',
-    name: 'Peppermint Scalp Massage',
-    price: 18.00,
-    duration_adjustment: 5,
-    description: 'Invigorating scalp treatment with peppermint oil',
-    category: 'enhancement',
-    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
-  },
-  heated_mask: {
-    id: 'heated_mask',
-    name: 'Heated Hydrated Hand/Foot Mask',
-    price: 22.00,
-    duration_adjustment: 10,
-    description: 'Moisturizing heated mask treatment',
-    category: 'therapy',
-    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
-  },
-  reflexology: {
-    id: 'reflexology',
-    name: 'Reflexology',
-    price: 28.00,
-    duration_adjustment: 15,
-    description: 'Therapeutic foot pressure point massage',
-    category: 'therapy',
-    available_for: ['30min', '60min', '90min', '120min', 'fasciaflow']
+// Initialize all configuration on load
+document.addEventListener('DOMContentLoaded', async () => {
+  await Promise.all([
+    loadPricingConfig(),
+    loadServiceTypes()
+  ]);
+  
+  // Ensure ITTHealConfig is available globally after loading
+  if (typeof window.ITTHealConfig === 'undefined') {
+    window.ITTHealConfig = {
+      PRICING_CONFIG,
+      ADDON_CONFIG,
+      SERVICE_TYPES,
+      PAYMENT_STATUS,
+      SESSION_STATUS,
+      getSessionPrice,
+      getAvailableAddons,
+      calculateAddonTotal,
+      calculateDurationAdjustment,
+      isAddonAvailable,
+      getSessionOptions,
+      calculateBookingPricing
+    };
   }
-};
+  
+  // Dispatch event to notify other components that config is loaded
+  window.dispatchEvent(new CustomEvent('ittConfigLoaded', {
+    detail: { pricing: PRICING_CONFIG, addons: ADDON_CONFIG, services: SERVICE_TYPES }
+  }));
+});
 
-// Service type enums - synchronized with backend
-const SERVICE_TYPES = {
-  '60min': '60min',
-  '90min': '90min',
-  '120min': '120min',
-  consultation: 'consultation',
-  follow_up: 'follow_up'
-};
+// Service type enums - loaded from backend API to maintain single source of truth
+let SERVICE_TYPES = null;
+
+// Load service types from API
+async function loadServiceTypes() {
+  try {
+    const response = await fetch('/api/web-booking/services');
+    if (response.ok) {
+      const result = await response.json();
+      if (result.success) {
+        SERVICE_TYPES = Object.fromEntries(
+          result.data.map(service => [service.type, service.type])
+        );
+        console.log('✅ Service types loaded from API');
+        return true;
+      }
+    }
+  } catch (error) {
+    console.error('Failed to load service types:', error);
+  }
+  return false;
+}
 
 // Payment status enums - synchronized with backend
 const PAYMENT_STATUS = {
@@ -188,6 +147,10 @@ const SESSION_STATUS = {
  * @returns {number} Session price
  */
 function getSessionPrice(sessionKey) {
+  if (!PRICING_CONFIG?.sessions) {
+    console.warn('Pricing config not loaded yet, returning 0');
+    return 0;
+  }
   const session = PRICING_CONFIG.sessions[sessionKey];
   return session ? session.webPrice : 0;
 }
@@ -198,8 +161,12 @@ function getSessionPrice(sessionKey) {
  * @returns {Array} Array of available addons
  */
 function getAvailableAddons(sessionType) {
+  if (!ADDON_CONFIG) {
+    console.warn('Addon config not loaded yet, returning empty array');
+    return [];
+  }
   return Object.values(ADDON_CONFIG).filter(addon => 
-    addon.available_for.includes(sessionType)
+    addon.available_for && addon.available_for.includes(sessionType)
   );
 }
 
@@ -209,6 +176,10 @@ function getAvailableAddons(sessionType) {
  * @returns {number} Total price for selected addons
  */
 function calculateAddonTotal(selectedAddons) {
+  if (!ADDON_CONFIG) {
+    console.warn('Addon config not loaded yet, returning 0');
+    return 0;
+  }
   return selectedAddons.reduce((total, addonId) => {
     const addon = ADDON_CONFIG[addonId];
     return total + (addon?.price || 0);
@@ -221,6 +192,10 @@ function calculateAddonTotal(selectedAddons) {
  * @returns {number} Total additional minutes
  */
 function calculateDurationAdjustment(selectedAddons) {
+  if (!ADDON_CONFIG) {
+    console.warn('Addon config not loaded yet, returning 0');
+    return 0;
+  }
   return selectedAddons.reduce((total, addonId) => {
     const addon = ADDON_CONFIG[addonId];
     return total + (addon?.duration_adjustment || 0);
@@ -243,12 +218,55 @@ function isAddonAvailable(addonId, sessionType) {
  * @returns {Array} Array of session options with pricing
  */
 function getSessionOptions() {
+  // Check if PRICING_CONFIG and sessions are loaded
+  if (!PRICING_CONFIG || !PRICING_CONFIG.sessions) {
+    console.warn('PRICING_CONFIG not loaded yet, returning fallback options');
+    return [
+      { value: '60min_massage', label: 'Loading options...', price: 0, duration: 60 },
+      { value: '90min_massage', label: 'Loading options...', price: 0, duration: 90 }
+    ];
+  }
+  
   return Object.entries(PRICING_CONFIG.sessions).map(([key, session]) => ({
     value: key,
     label: `${session.title} - $${session.webPrice}`,
     price: session.webPrice,
     duration: session.duration
   }));
+}
+
+/**
+ * Check if pricing configuration is loaded
+ * @returns {boolean} Whether pricing config is ready
+ */
+function isPricingConfigReady() {
+  return !!(PRICING_CONFIG && PRICING_CONFIG.sessions && ADDON_CONFIG);
+}
+
+/**
+ * Wait for pricing configuration to load
+ * @param {number} maxWaitMs - Maximum time to wait in milliseconds
+ * @returns {Promise<boolean>} Whether config loaded successfully
+ */
+function waitForPricingConfig(maxWaitMs = 5000) {
+  return new Promise((resolve) => {
+    if (isPricingConfigReady()) {
+      resolve(true);
+      return;
+    }
+    
+    const startTime = Date.now();
+    const checkInterval = setInterval(() => {
+      if (isPricingConfigReady()) {
+        clearInterval(checkInterval);
+        resolve(true);
+      } else if (Date.now() - startTime > maxWaitMs) {
+        clearInterval(checkInterval);
+        console.warn('Timeout waiting for pricing config to load');
+        resolve(false);
+      }
+    }, 100);
+  });
 }
 
 /**
@@ -312,5 +330,7 @@ window.ITTHealConfig = {
   calculateDurationAdjustment,
   isAddonAvailable,
   getSessionOptions,
-  calculateBookingPricing
+  calculateBookingPricing,
+  isPricingConfigReady,
+  waitForPricingConfig
 };
