@@ -1660,7 +1660,8 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 async function validateTimeSelection(selectedDate, selectedTime) {
                                     try {
                                         const practitionerId = window.practitionerId || '060863f2-0623-4785-b01a-f1760cfb8d14'; // Loaded from API
-                                        const serviceType = document.querySelector('.service-option.active')?.getAttribute('data-service-type') || '60min_massage';
+                                        const selectedOption = document.querySelector('.service-option.selected') || document.querySelector('.service-option.active');
+                                        const serviceType = selectedOption?.getAttribute('data-service-type') || window.selectedService || '60min_massage';
                                         
                                         // Check real-time availability for selected time slot
                                         const response = await fetch(`https://ittheal.com/api/bookings/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`);
