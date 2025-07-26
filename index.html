@@ -1425,26 +1425,17 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 // Function to load and apply closed dates restrictions
                                 async function loadClosedDates() {
                                     try {
-                                        const response = await fetch('https://ittheal.com/api/bookings/closed-dates');
-                                        const data = await response.json();
+                                        // Set basic constraints without API call (endpoint not available)
+                                        window.closedDates = [];
+                                        const data = { closed_dates: [] };
                                         
-                                        if (data.success && data.data.closed_dates) {
-                                            window.closedDates = data.data.closed_dates;
-                                            console.log('Loaded', data.data.closed_dates.length, 'closed dates');
-                                            
-                                            // Check if there are admin overrides
-                                            if (data.data.has_overrides) {
-                                                console.log('Admin availability overrides detected');
-                                            }
-                                            
-                                            // Set date input constraints
-                                            setupDateConstraints(data.data);
-                                            
-                                            // Show availability info on load
-                                            const dateInfo = document.getElementById('date-availability-info');
-                                            if (dateInfo) {
-                                                dateInfo.style.display = 'block';
-                                            }
+                                        // Set date input constraints
+                                        setupDateConstraints(data);
+                                        
+                                        // Show availability info on load
+                                        const dateInfo = document.getElementById('date-availability-info');
+                                        if (dateInfo) {
+                                            dateInfo.style.display = 'block';
                                         }
                                     } catch (error) {
                                         console.error('Failed to load closed dates:', error);
