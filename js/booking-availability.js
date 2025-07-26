@@ -13,32 +13,61 @@
         retryDelay: 1000,
         inputTimeout: null,
         lastApiCall: null, // Cache to prevent duplicate API calls
+        userSelectionState: {}, // Store user selections across date changes
+        isLoading: false, // Prevent overlapping API calls
 
         init() {
+            console.log('🔧 BookingAvailability.init() called');
+            
+            // Check if required elements exist
+            const dateInput = document.getElementById('booking-date');
+            const timeSelect = document.getElementById('booking-time');
+            
+            console.log('📍 Elements found:', {
+                dateInput: !!dateInput,
+                timeSelect: !!timeSelect,
+                dateInputId: dateInput?.id,
+                timeSelectId: timeSelect?.id
+            });
+            
+            if (!dateInput || !timeSelect) {
+                console.error('❌ Required booking elements not found, retrying in 1 second...');
+                setTimeout(() => this.init(), 1000);
+                return;
+            }
+            
             this.attachEventListeners();
-            console.log('✅ Booking Availability module initialized');
+            
+            
+            console.log('✅ Booking Availability module initialized successfully');
         },
 
         attachEventListeners() {
             // Single consolidated date change listener with proper debouncing
             const dateInput = document.getElementById('booking-date');
             if (dateInput) {
-                // Only listen for 'change' event (most reliable for date inputs)
+                // Only listen for 'change' event to avoid duplicate calls
+                // The change event fires when the user selects a date
                 dateInput.addEventListener('change', () => {
-                    // Clear any pending debounced calls
-                    clearTimeout(this.inputTimeout);
-                    // Debounce to prevent multiple rapid calls
-                    this.inputTimeout = setTimeout(() => {
-                        this.refresh();
-                    }, 300);
+                    this.handleDateChange();
                 });
             }
 
             // Listen for service selection changes
-            document.addEventListener('serviceSelected', () => {
+            document.addEventListener('serviceSelected', (event) => {
+                console.log('📍 Service selected event received:', event.detail);
+                
+                // Store the selected service globally for future reference
+                if (event.detail && event.detail.service) {
+                    window.selectedService = event.detail.service;
+                }
+                
                 const selectedDate = document.getElementById('booking-date')?.value;
                 if (selectedDate) {
+                    console.log('📍 Date already selected, refreshing time slots...');
                     this.refresh();
+                } else {
+                    console.log('📍 No date selected yet, waiting for date selection...');
                 }
             });
             
@@ -48,15 +77,89 @@
                 console.log('✅ Calendar date/time selected');
             });
             
-            // Listen for time selection changes to store for persistence
+            // Enhanced time selection persistence
             const timeSelect = document.getElementById('booking-time');
             if (timeSelect) {
                 timeSelect.addEventListener('change', () => {
-                    if (timeSelect.value) {
-                        timeSelect.dataset.previousSelection = timeSelect.value;
-                    }
+                    this.saveTimeSelection();
                 });
             }
+        },
+
+        handleDateChange() {
+            // Clear any pending debounced calls
+            clearTimeout(this.inputTimeout);
+            
+            // Save current time selection before changing dates
+            this.saveTimeSelection();
+            
+            const dateInput = document.getElementById('booking-date');
+            if (dateInput && dateInput.value) {
+                console.log(`📅 Date changed to: ${dateInput.value}`);
+            }
+            
+            // Debounce to prevent multiple rapid calls
+            this.inputTimeout = setTimeout(() => {
+                if (!this.isLoading) {
+                    console.log('⏰ Debounced date change, refreshing time slots...');
+                    this.refresh();
+                } else {
+                    console.log('⏳ Loading in progress, skipping refresh...');
+                }
+            }, 800); // Increased debounce to prevent rate limiting
+        },
+
+        saveTimeSelection() {
+            const dateInput = document.getElementById('booking-date');
+            const timeSelect = document.getElementById('booking-time');
+            
+            if (dateInput && timeSelect && dateInput.value && timeSelect.value) {
+                const selectedDate = dateInput.value;
+                const selectedTime = timeSelect.value;
+                
+                // Store in persistent state object
+                this.userSelectionState[selectedDate] = {
+                    time: selectedTime,
+                    timestamp: Date.now()
+                };
+                
+                // Also store in dataset for backward compatibility
+                timeSelect.dataset.previousSelection = selectedTime;
+                timeSelect.dataset.lastDate = selectedDate;
+                
+                console.log(`💾 Saved time selection: ${selectedTime} for date ${selectedDate}`);
+            }
+        },
+
+        restoreTimeSelection(selectedDate) {
+            const timeSelect = document.getElementById('booking-time');
+            if (!timeSelect || !selectedDate) return false;
+
+            // Check persistent state first
+            const savedState = this.userSelectionState[selectedDate];
+            if (savedState && savedState.time) {
+                const option = timeSelect.querySelector(`option[value="${savedState.time}"]`);
+                if (option) {
+                    timeSelect.value = savedState.time;
+                    console.log(`✅ Restored time selection from state: ${savedState.time} for date ${selectedDate}`);
+                    return true;
+                }
+            }
+
+            // Fallback to dataset method
+            const previousSelection = timeSelect.dataset.previousSelection;
+            const lastDate = timeSelect.dataset.lastDate;
+            
+            if (previousSelection && selectedDate === lastDate) {
+                const option = timeSelect.querySelector(`option[value="${previousSelection}"]`);
+                if (option) {
+                    timeSelect.value = previousSelection;
+                    console.log(`✅ Restored time selection from dataset: ${previousSelection} for date ${selectedDate}`);
+                    return true;
+                }
+            }
+
+            return false;
         },
 
         refresh() {
@@ -69,6 +172,12 @@
         // This ensures consistency and single source of truth
 
         loadTimeSlots() {
+            // Prevent overlapping API calls
+            if (this.isLoading) {
+                console.log('🔄 API call already in progress, skipping...');
+                return;
+            }
+
             const dateInput = document.getElementById('booking-date');
             const timeSelect = document.getElementById('booking-time');
             const loadingDiv = document.getElementById('time-loading');
@@ -78,11 +187,14 @@
                 return;
             }
             
-            if (!dateInput.value) {
+            const selectedDate = dateInput.value;
+            if (!selectedDate) {
                 timeSelect.innerHTML = '<option value="">Select date first...</option>';
                 timeSelect.disabled = true;
+                this.isLoading = false;
                 return;
             }
+            
 
             // Frontend validation REMOVED - backend API handles all booking rules
             // This ensures single source of truth for business rules
@@ -95,21 +207,37 @@
                     '<div>Loading available times...</div>';
             }
             
+            console.log('📋 Loading times for:', {
+                date: selectedDate,
+                element: dateInput,
+                dateValue: dateInput.value,
+                timeSelect: timeSelect,
+                loadingDiv: loadingDiv
+            });
+            
             timeSelect.disabled = true;
             timeSelect.innerHTML = '<option value="">Loading times...</option>';
             
-            const selectedDate = dateInput.value;
             // Get selected service with better detection
             const activeServiceElement = document.querySelector('.service-option.active');
-            let selectedService = 'fascial-release-90'; // default
+            let selectedService = '90min_massage'; // default to most popular option
             
             if (activeServiceElement) {
                 // Try different ways to get the service type
-                selectedService = activeServiceElement.dataset?.service || 
-                                 activeServiceElement.getAttribute('data-service') || 
+                selectedService = activeServiceElement.getAttribute('data-service-type') ||
                                  activeServiceElement.dataset?.serviceType ||
-                                 activeServiceElement.getAttribute('data-service-type') ||
-                                 'fascial-release-90';
+                                 activeServiceElement.getAttribute('data-service') || 
+                                 activeServiceElement.dataset?.service ||
+                                 '90min_massage';
+            } else {
+                // If no active service, check for any selected service in embedded form
+                console.log('⚠️ No active service found, checking for embedded form state...');
+                
+                // Check if there's a global selectedService variable
+                if (typeof window.selectedService !== 'undefined' && window.selectedService) {
+                    selectedService = window.selectedService;
+                    console.log(`📍 Using global selectedService: ${selectedService}`);
+                }
             }
             
             console.log(`🔍 Debug: Selected service: ${selectedService}`);
@@ -120,17 +248,7 @@
             // Make API call to get available times with service type
             // ✅ CLAUDE.md compliance: Only using backend-verified service types
             // Service types aligned with backend enums
-            const SERVICE_TYPES = {
-                '30min': '30min',
-                '60min': '60min',
-                '90min': '90min',
-                '120min': '120min',
-                consultation: 'consultation',
-                follow_up: 'follow_up',
-                subscription: 'subscription',
-                package: 'package',
-                other: 'other'
-            };
+            // CLAUDE.md Compliance: Service types loaded from API via shared-config.js
             
             const serviceTypeMap = {
                 '30min': '30min_massage',
@@ -145,15 +263,16 @@
                 '30min_massage': '30min_massage',
                 '60min_massage': '60min_massage',
                 '90min_massage': '90min_massage',
-                'fasciaflow_athlete_recovery': 'fasciaflow', // Backend now supports fasciaflow
-                'fasciaflow': 'fasciaflow', // Backend now supports fasciaflow
-                'consultation': SERVICE_TYPES.consultation
+                '120min_massage': '120min_massage',
+                'consultation': 'consultation'
                 // Using backend-verified service types
             };
-            const serviceType = serviceTypeMap[selectedService] || '90min_massage';
+            
+            // Ensure we have a valid service type
+            const serviceType = serviceTypeMap[selectedService] || selectedService || '90min_massage';
             
             console.log(`🔍 Debug: Service mapping: ${selectedService} -> ${serviceType}`);
-            console.log(`🔍 Debug: API URL: /api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`);
+            console.log(`🔍 Debug: API URL: /api/bookings/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`);
             
             // Check cache to prevent duplicate API calls
             const apiKey = `${practitionerId}-${selectedDate}-${serviceType}`;
@@ -161,56 +280,111 @@
                 console.log('🔄 Skipping duplicate API call - using cache');
                 if (loadingDiv) loadingDiv.style.display = 'none';
                 timeSelect.disabled = false;
+                this.isLoading = false;
                 
-                // Still preserve time selection even when using cache
-                const currentSelection = timeSelect.value;
-                const lastDate = timeSelect.dataset.lastDate;
-                if (!currentSelection && selectedDate === lastDate) {
-                    // Try to restore previous selection if available
-                    const previousSelection = timeSelect.dataset.previousSelection;
-                    if (previousSelection && timeSelect.querySelector(`option[value="${previousSelection}"]`)) {
-                        timeSelect.value = previousSelection;
-                        console.log(`✅ Time selection restored from cache: ${previousSelection} for date ${selectedDate}`);
-                    }
+                // Enhanced time selection restoration from cache
+                if (!timeSelect.value || timeSelect.value === '') {
+                    this.restoreTimeSelection(selectedDate);
                 }
                 return;
             }
+            
+            // Set loading state
+            this.isLoading = true;
             this.lastApiCall = apiKey;
             
-            fetch(`https://ittheal.com/api/web-booking/availability/${practitionerId}/${selectedDate}?service_type=${serviceType}`)
+            // Create AbortController for timeout
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+            
+            // Build proper URL - use the working availability endpoint format
+            const apiUrl = `https://ittheal.com/api/bookings/availability?date=${selectedDate}&service_type=${serviceType}`;
+            
+            console.log('🔍 Making API call to:', apiUrl);
+            
+            fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Cache-Control': 'no-cache',
+                },
+                credentials: 'same-origin',
+                signal: controller.signal
+            })
                 .then(response => {
+                    clearTimeout(timeoutId);
+                    console.log('🔍 API Response Status:', response.status, response.statusText);
                     if (!response.ok) {
-                        // For 400 errors, parse the JSON to get error details
-                        if (response.status === 400) {
-                            return response.json().then(errorData => {
-                                const error = new Error(errorData.error || 'Validation error');
-                                error.status = response.status;
-                                error.code = errorData.code;
-                                error.data = errorData;
-                                throw error;
-                            });
-                        } else {
-                            // For other errors, create generic error
-                            const error = new Error(`HTTP error! status: ${response.status}`);
-                            error.status = response.status;
-                            throw error;
-                        }
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
                     return response.json();
                 })
                 .then(data => {
-                    if (data.success && data.data && data.data.available_slots && data.data.available_slots.length > 0) {
-                        this.populateTimeSlots(data.data.available_slots, timeSelect);
+                    this.isLoading = false;
+                    console.log('🔍 API Data:', data);
+                    
+                    // Handle error responses (like INSUFFICIENT_ADVANCE)
+                    if (data.error) {
+                        console.log('❌ API returned error:', data.error);
+                        let errorMessage = data.error;
+                        
+                        // For INSUFFICIENT_ADVANCE, also check if there are any available_times
+                        if (data.code === 'INSUFFICIENT_ADVANCE' && data.available_times && data.available_times.length > 0) {
+                            // There are times available later today
+                            console.log('✅ Found available times after advance notice:', data.available_times);
+                            this.populateTimeSlots(data.available_times, timeSelect, selectedDate);
+                        } else {
+                            // No times available or other error
+                            timeSelect.innerHTML = `<option value="">${errorMessage}</option>`;
+                            timeSelect.disabled = true;
+                        }
+                        if (loadingDiv) {
+                            loadingDiv.style.display = 'none';
+                        }
+                        return;
+                    }
+                    
+                    // Handle success response
+                    if (data.success && data.availableSlots && data.availableSlots.length > 0) {
+                        // Success - populate time slots from availableSlots array
+                        console.log('✅ Populating time slots:', data.availableSlots.length);
+                        this.populateTimeSlots(data.availableSlots, timeSelect, selectedDate);
                         if (loadingDiv) {
                             loadingDiv.style.display = 'none';
                         }
                     } else {
-                        this.handleNoAvailability(timeSelect, loadingDiv);
+                        // No available slots
+                        console.log('❌ No available slots in response');
+                        let message = 'No available time slots for this date';
+                        if (data.message) {
+                            message = data.message;
+                        }
+                        timeSelect.innerHTML = `<option value="">${message}</option>`;
+                        timeSelect.disabled = true;
+                        if (loadingDiv) {
+                            loadingDiv.style.display = 'none';
+                        }
                     }
                 })
                 .catch(error => {
-                    console.error('Error loading time slots:', error);
-                    this.handleFetchError(error, timeSelect, loadingDiv);
+                    clearTimeout(timeoutId);
+                    this.isLoading = false;
+                    console.error('❌ API Error:', error);
+                    
+                    let errorMessage = 'Error loading times - please try again';
+                    if (error.name === 'AbortError') {
+                        errorMessage = 'Request timeout - please try again';
+                    } else if (error.message.includes('CORS')) {
+                        errorMessage = 'Network error - please refresh page';
+                    }
+                    
+                    // API error - show specific message
+                    timeSelect.innerHTML = `<option value="">${errorMessage}</option>`;
+                    timeSelect.disabled = true;
+                    if (loadingDiv) {
+                        loadingDiv.style.display = 'none';
+                    }
                 });
         },
 
@@ -229,48 +403,70 @@
             return serviceToPractitioner[service] || practitionerUUID;
         },
 
-        populateTimeSlots(availability, timeSelect) {
-            // Store current selection and date to check if we should preserve it
-            const currentSelection = timeSelect.value;
-            const currentDate = document.getElementById('booking-date')?.value;
-            const lastDate = timeSelect.dataset.lastDate;
-            
+        populateTimeSlots(availability, timeSelect, selectedDate) {
+            // Clear dropdown and populate with new options
             timeSelect.innerHTML = '<option value="">Select a time...</option>';
             
             availability.forEach(slot => {
                 const option = document.createElement('option');
                 
-                // Extract time from ISO string for the value
-                const timeDate = new Date(slot.time);
-                const hours = String(timeDate.getUTCHours()).padStart(2, '0');
-                const minutes = String(timeDate.getUTCMinutes()).padStart(2, '0');
-                const timeValue = `${hours}:${minutes}`;
+                // Handle API response format: {time: "11:00", available: true}
+                let timeValue, displayTime;
+                
+                if (typeof slot === 'string') {
+                    // Simple string format like "13:00"
+                    timeValue = slot;
+                } else if (slot && slot.time) {
+                    // API object format: {time: "11:00", available: true}
+                    timeValue = slot.time;
+                } else {
+                    console.warn('Invalid time slot format:', slot);
+                    return; // Skip invalid slots
+                }
+                
+                // Convert 24-hour to 12-hour format for display
+                if (timeValue && timeValue.includes(':')) {
+                    const [hours, minutes] = timeValue.split(':');
+                    const hour24 = parseInt(hours, 10);
+                    const hour12 = hour24 === 0 ? 12 : hour24 > 12 ? hour24 - 12 : hour24;
+                    const ampm = hour24 >= 12 ? 'PM' : 'AM';
+                    displayTime = `${hour12}:${minutes || '00'} ${ampm}`;
+                } else {
+                    console.warn('Invalid time format:', timeValue);
+                    return; // Skip invalid time formats
+                }
                 
                 option.value = timeValue;
-                
-                // Use the pre-formatted display time from API
-                const durationStr = slot.duration ? ` (${slot.duration} min)` : '';
-                option.textContent = slot.display_time + durationStr;
+                option.textContent = displayTime;
                 
                 // Store additional data
-                option.dataset.slotTime = slot.time;
-                option.dataset.duration = slot.duration;
+                if (typeof slot === 'object') {
+                    option.dataset.slotTime = slot.time;
+                    option.dataset.duration = slot.duration;
+                }
                 
                 timeSelect.appendChild(option);
             });
             
-            // Only restore selection if we're on the same date and selection exists in new slots
-            if (currentSelection && currentDate === lastDate && timeSelect.querySelector(`option[value="${currentSelection}"]`)) {
-                timeSelect.value = currentSelection;
-                console.log(`✅ Time selection preserved: ${currentSelection} for date ${currentDate}`);
+            // FORCE ENABLE THE TIME SELECT - this is critical
+            timeSelect.disabled = false;
+            timeSelect.removeAttribute('disabled');
+            
+            // Enhanced time selection restoration
+            const wasRestored = this.restoreTimeSelection(selectedDate);
+            if (!wasRestored) {
+                console.log(`ℹ️ No previous time selection to restore for date ${selectedDate}`);
             }
             
-            // Store current date and selection for next comparison/cache restoration
-            timeSelect.dataset.lastDate = currentDate;
+            // Update dataset for backward compatibility
+            timeSelect.dataset.lastDate = selectedDate;
+            
+            // Save any restored selection to persistent state
             if (timeSelect.value) {
-                timeSelect.dataset.previousSelection = timeSelect.value;
+                this.saveTimeSelection();
             }
-            timeSelect.disabled = false;
+            
+            console.log(`✅ TIME SELECT ENABLED with ${availability.length} slots`);
         },
 
         formatTime(timeStr) {
@@ -284,6 +480,7 @@
         },
 
         handleNoAvailability(timeSelect, loadingDiv) {
+            this.isLoading = false;
             timeSelect.innerHTML = '<option value="">No times available for this date</option>';
             timeSelect.disabled = false;
             
@@ -299,12 +496,33 @@
         },
 
         handleFetchError(error, timeSelect, loadingDiv) {
+            // Handle rate limiting
+            if (error.status === 429 || error.isRateLimit) {
+                this.handleRateLimitError(timeSelect, loadingDiv);
+                return;
+            }
+            
             // Handle 400 errors with specific error details
             if (error.status === 400) {
                 if (error.code === 'CLOSED_DATE') {
                     this.handleClosedDateError(timeSelect, loadingDiv);
+                } else if (error.code === 'INSUFFICIENT_ADVANCE') {
+                    // Handle insufficient advance booking time
+                    this.isLoading = false;
+                    timeSelect.innerHTML = '<option value="">Please select a future date</option>';
+                    timeSelect.disabled = true;
+                    
+                    if (loadingDiv) {
+                        loadingDiv.innerHTML = `
+                            <div style="color: #f59e0b; margin-top: 10px;">
+                                <strong>⏰ Booking requires 1 hour advance notice</strong><br>
+                                <span style="font-size: 14px;">Please select a future date for your appointment.</span>
+                            </div>
+                        `;
+                        loadingDiv.style.display = 'block';
+                    }
                 } else {
-                    this.handleGeneralValidationError(timeSelect, loadingDiv, error.message);
+                    this.handleGeneralValidationError(timeSelect, loadingDiv, error.data?.error || error.message);
                 }
                 return;
             }
@@ -316,6 +534,7 @@
                     this.loadTimeSlots();
                 }, this.retryDelay);
             } else {
+                this.isLoading = false;
                 timeSelect.innerHTML = '<option value="">Error loading times - Please refresh page</option>';
                 timeSelect.disabled = false;
                 
@@ -334,7 +553,47 @@
             }
         },
 
+        handleGeneralValidationError(timeSelect, loadingDiv, errorMessage) {
+            this.isLoading = false;
+            timeSelect.innerHTML = '<option value="">No times available</option>';
+            timeSelect.disabled = true;
+            
+            if (loadingDiv) {
+                loadingDiv.innerHTML = `
+                    <div style="color: #dc2626; margin-top: 10px;">
+                        <strong>⚠️ ${errorMessage || 'Unable to load times'}</strong>
+                    </div>
+                `;
+                loadingDiv.style.display = 'block';
+            }
+        },
+
+        handleRateLimitError(timeSelect, loadingDiv) {
+            this.isLoading = false;
+            console.log('⏳ Rate limit hit, waiting before retry...');
+            
+            timeSelect.innerHTML = '<option value="">Please wait...</option>';
+            timeSelect.disabled = true;
+            
+            if (loadingDiv) {
+                loadingDiv.innerHTML = `
+                    <div style="color: #f59e0b; margin-top: 10px;">
+                        <strong>⏳ Loading times, please wait...</strong>
+                        <br><span style="font-size: 0.875rem;">High demand - refreshing in a moment</span>
+                    </div>
+                `;
+                loadingDiv.style.display = 'block';
+            }
+            
+            // Retry after a longer delay for rate limits
+            setTimeout(() => {
+                this.retryCount = 0; // Reset retry count
+                this.refresh();
+            }, 3000);
+        },
+
         handleClosedDateError(timeSelect, loadingDiv) {
+            this.isLoading = false;
             timeSelect.innerHTML = '<option value="">Please select an open business day</option>';
             timeSelect.disabled = true;
             
@@ -410,12 +669,21 @@
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 BookingAvailability: Initializing on DOMContentLoaded');
             BookingAvailability.init();
         });
     } else {
-        BookingAvailability.init();
+        // Add a small delay to ensure all elements are ready
+        setTimeout(() => {
+            console.log('🚀 BookingAvailability: Initializing immediately');
+            BookingAvailability.init();
+        }, 100);
     }
 
     // Expose to global scope
     window.BookingAvailability = BookingAvailability;
+    
+    // Also expose individual methods for debugging
+    window.loadTimeSlots = () => BookingAvailability.loadTimeSlots();
+    window.refreshTimeSlots = () => BookingAvailability.refresh();
 })();
