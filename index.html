@@ -3860,6 +3860,12 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                             hideElement.style.transition = '';
                             hideElement.style.opacity = '';
                             showElement.style.transition = '';
+                            
+                            // Fire step transition event for calendar
+                            document.dispatchEvent(new CustomEvent('stepTransition', {
+                                detail: { from: hideElementId, to: showElementId }
+                            }));
+                            
                             resolve();
                         }, 150);
                     });

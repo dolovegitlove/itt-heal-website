@@ -27,11 +27,11 @@
                 endDate.setDate(endDate.getDate() + 90);
                 
                 // Fetch ALL business rules from API - no hardcoded logic
-                const response = await fetch(`https://ittheal.com/api/web-booking/closed-dates?start_date=${startDate.toISOString().split('T')[0]}&end_date=${endDate.toISOString().split('T')[0]}`);
+                const response = await fetch(`https://ittheal.com/api/bookings/business-schedule?startDate=${startDate.toISOString().split('T')[0]}&endDate=${endDate.toISOString().split('T')[0]}`);
                 if (response.ok) {
                     const data = await response.json();
-                    if (data.success && data.data && data.data.closed_dates) {
-                        this.closedDates = data.data.closed_dates;
+                    if (data.success && data.closedDates) {
+                        this.closedDates = data.closedDates;
                         console.log('✅ Business rules loaded from API:', this.closedDates.length, 'closed dates');
                     }
                 }
@@ -963,4 +963,39 @@
 
     // Expose to global scope
     window.CustomCalendar = CustomCalendar;
+    
+    // Also initialize when step 2 becomes active
+    document.addEventListener('DOMContentLoaded', function() {
+        // Listen for step transitions to step 2
+        document.addEventListener('stepTransition', function(event) {
+            if (event.detail && event.detail.to === 'datetime-selection') {
+                console.log('📅 Step 2 activated - initializing custom calendar');
+                setTimeout(() => CustomCalendar.init(), 100);
+            }
+        });
+        
+        // Also try to initialize if datetime section is already visible
+        setTimeout(() => {
+            const dateTimeSection = document.getElementById('datetime-selection');
+            if (dateTimeSection && dateTimeSection.style.display !== 'none') {
+                console.log('📅 DateTime section visible - initializing custom calendar');
+                CustomCalendar.init();
+            }
+        }, 1000);
+        
+        // More aggressive initialization - check periodically for datetime section
+        const checkInterval = setInterval(() => {
+            const dateTimeSection = document.getElementById('datetime-selection');
+            const dateInput = document.getElementById('booking-date');
+            
+            if (dateTimeSection && dateTimeSection.style.display !== 'none' && dateInput) {
+                console.log('📅 Periodic check - DateTime section found and visible, initializing calendar');
+                CustomCalendar.init();
+                clearInterval(checkInterval);
+            }
+        }, 500);
+        
+        // Clear interval after 10 seconds to prevent infinite checking
+        setTimeout(() => clearInterval(checkInterval), 10000);
+    });
 })();
