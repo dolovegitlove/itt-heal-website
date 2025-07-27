@@ -1079,12 +1079,32 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                 .service-options {
                                     grid-template-columns: 1fr !important;
                                     gap: 1rem !important;
+                                    padding: 0 !important;
+                                    margin: 0 auto 2rem auto !important;
+                                    max-width: 100% !important;
+                                }
+                                .service-option {
+                                    padding: 1.5rem !important;
+                                    margin: 0 !important;
+                                    max-width: 100% !important;
+                                    box-sizing: border-box !important;
+                                    width: 100% !important;
                                 }
                             }
                             @media (max-width: 480px) {
                                 .embedded-booking-container {
                                     padding: 1.5rem 1rem !important;
                                     border-radius: 12px !important;
+                                }
+                                .service-options {
+                                    grid-template-columns: 1fr !important;
+                                    gap: 0.75rem !important;
+                                    padding: 0 !important;
+                                    margin: 0 auto 1.5rem auto !important;
+                                }
+                                .service-option {
+                                    padding: 1.25rem !important;
+                                    font-size: 0.9rem !important;
                                 }
                             }
                         </style>
@@ -3182,10 +3202,10 @@ My husband, a large man who's endured over 15 surgeries including six back proce
 
                                 <h3 class="subsection-heading text-center mb-lg" style="color: var(--sage-700);">Step 1: Choose Your Session</h3>
                                 
-                                <div class="service-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                                <div class="service-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem; max-width: 100%; padding: 0; box-sizing: border-box; justify-content: center; align-items: start;">
                                     <!-- 30-Minute Session Card -->
                                     <div class="service-option" data-service-type="30min_massage" data-service="30min" data-price-api-loaded="true" 
-                                         style="border: 3px solid #8b5cf6; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #ffffff, #faf7ff); box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15); overflow: hidden;"
+                                         style="border: 3px solid #8b5cf6; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #ffffff, #faf7ff); box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15); overflow: hidden; box-sizing: border-box; width: 100%;"
                                          onclick="window.selectService('30min_massage', '$85')"
                                          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(139, 92, 246, 0.25)'"
                                          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(139, 92, 246, 0.15)'">
@@ -3214,7 +3234,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     
                                     <!-- 60-Minute Session Card -->
                                     <div class="service-option" data-service-type="60min_massage" data-service="60min" data-price-api-loaded="true" 
-                                         style="border: 3px solid #10b981; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #ffffff, #f0fdf9); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15); overflow: hidden;"
+                                         style="border: 3px solid #10b981; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #ffffff, #f0fdf9); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15); overflow: hidden; box-sizing: border-box; width: 100%;"
                                          onclick="window.selectService('60min_massage', '$135')"
                                          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(16, 185, 129, 0.25)'"
                                          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(16, 185, 129, 0.15)'">
@@ -3243,7 +3263,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     
                                     <!-- 90-Minute Session Card (Featured) -->
                                     <div class="service-option featured" data-service-type="90min_massage" data-service="90min" data-price-api-loaded="true" 
-                                         style="border: 4px solid #dc2626; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #fef2f2, #fee2e2); box-shadow: 0 12px 35px rgba(220, 38, 38, 0.25); overflow: hidden; transform: scale(1.02);"
+                                         style="border: 4px solid #dc2626; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #fef2f2, #fee2e2); box-shadow: 0 12px 35px rgba(220, 38, 38, 0.25); overflow: hidden; transform: scale(1.02); box-sizing: border-box; width: 100%;"
                                          onclick="window.selectService('90min_massage', '$180')"
                                          onmouseover="this.style.transform='scale(1.05) translateY(-8px)'; this.style.boxShadow='0 25px 50px rgba(220, 38, 38, 0.35)'"
                                          onmouseout="this.style.transform='scale(1.02) translateY(0)'; this.style.boxShadow='0 12px 35px rgba(220, 38, 38, 0.25)'">
@@ -3273,7 +3293,7 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     
                                     <!-- FasciaFlow Athlete Recovery Card -->
                                     <div class="service-option" data-service-type="fasciaflow" data-service="fasciaflow" data-price-api-loaded="true" 
-                                         style="border: 3px solid #f59e0b; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #fef3c7, #fde68a); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);"
+                                         style="border: 3px solid #f59e0b; border-radius: 16px; padding: 2rem; cursor: pointer; transition: all 0.4s ease; position: relative; background: linear-gradient(145deg, #fef3c7, #fde68a); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2); box-sizing: border-box; width: 100%;"
                                          onclick="window.selectService('fasciaflow', '$225')"
                                          onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(245, 158, 11, 0.3)'"
                                          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(245, 158, 11, 0.2)'">
