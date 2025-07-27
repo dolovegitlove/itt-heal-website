@@ -1375,6 +1375,11 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                     // Update price display immediately after service selection
                                     updateTotalPrice();
                                     
+                                    // Trigger haptic feedback for service selection
+                                    if (window.HapticFeedback) {
+                                        window.HapticFeedback.bookingEvents.serviceSelected();
+                                    }
+                                    
                                     // Step 1 auto-advances to Step 2 - no manual Next button needed
                                     
                                     // Dispatch custom event for service selection
@@ -1796,6 +1801,11 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                         await transitionStep('service-selection', 'datetime-selection');
                                         document.getElementById('prev-btn').style.display = 'inline-block';
                                         
+                                        // Haptic feedback for step progression
+                                        if (window.HapticFeedback) {
+                                            window.HapticFeedback.bookingEvents.stepCompleted();
+                                        }
+                                        
                                         // Allow same-day booking
                                         const today = new Date();
                                         const todayStr = today.toISOString().split('T')[0];
@@ -1886,6 +1896,11 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                         await transitionStep('datetime-selection', 'contact-info');
                                         document.getElementById('next-btn').style.display = 'inline-block';
                                         currentStep = 3;
+                                        
+                                        // Haptic feedback for step progression
+                                        if (window.HapticFeedback) {
+                                            window.HapticFeedback.bookingEvents.stepCompleted();
+                                        }
                                         window.currentStep = currentStep;
                                         window.currentStep = currentStep;
                                         console.log('📋 currentStep set to 3:', currentStep);
@@ -3309,6 +3324,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                                                aria-label="Preferred appointment date"
                                                min=""
                                                max="">
+                                        <div style="margin-top: 0.5rem; font-size: 0.875rem; color: #059669;">
+                                            <strong>Open:</strong> Mon, Wed, Fri, Sat | <strong style="color: #dc2626;">Closed:</strong> Tue, Thu, Sun
+                                        </div>
                                         <div id="date-availability-info" 
                                              style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--sage-600); display: none;"
                                              role="status"
@@ -4034,6 +4052,11 @@ My husband, a large man who's endured over 15 surgeries including six back proce
                     const selectedTime = this.value;
                     const selectedDate = document.getElementById('booking-date')?.value;
                     
+                    // Haptic feedback for time selection
+                    if (window.HapticFeedback && selectedTime) {
+                        window.HapticFeedback.bookingEvents.timeSelected();
+                    }
+                    
                     if (selectedTime && selectedDate) {
                         // Trigger real-time availability check
                         validateTimeSelection(selectedDate, selectedTime);
@@ -4217,6 +4240,9 @@ My husband, a large man who's endured over 15 surgeries including six back proce
     })();
     </script>
 
+    <!-- Haptic Feedback System -->
+    <script src="./js/haptic-feedback.js?v=20250727-mobile-ux"></script>
+    
     <!-- Booking Availability Handler -->
     <script src="./js/booking-availability.js?v=20250721-no-hardcode-004"></script>
     

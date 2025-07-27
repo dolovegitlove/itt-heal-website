@@ -96,6 +96,11 @@
             const dateInput = document.getElementById('booking-date');
             if (dateInput && dateInput.value) {
                 console.log(`📅 Date changed to: ${dateInput.value}`);
+                
+                // Trigger haptic feedback for date selection
+                if (window.HapticFeedback) {
+                    window.HapticFeedback.bookingEvents.dateSelected();
+                }
             }
             
             // Debounce to prevent multiple rapid calls
@@ -315,12 +320,34 @@
                 .then(response => {
                     clearTimeout(timeoutId);
                     console.log('🔍 API Response Status:', response.status, response.statusText);
+                    
+                    // Handle closed dates (400 status) differently from other errors
                     if (!response.ok) {
+                        if (response.status === 400) {
+                            // Try to get error details for closed dates
+                            return response.json().then(data => {
+                                if (data.code === 'CLOSED_DATE') {
+                                    this.isLoading = false;
+                                    this.showClosedDateWarning(selectedDate);
+                                    dateInput.value = '';
+                                    timeSelect.innerHTML = `<option value="">${data.error}</option>`;
+                                    timeSelect.disabled = true;
+                                    if (loadingDiv) loadingDiv.style.display = 'none';
+                                    return null; // Signal that this was handled
+                                }
+                                throw new Error(`HTTP ${response.status}: ${data.error || response.statusText}`);
+                            });
+                        }
                         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
                     return response.json();
                 })
                 .then(data => {
+                    // Check if this was already handled in previous step
+                    if (data === null) {
+                        return; // Already handled as closed date
+                    }
+                    
                     this.isLoading = false;
                     console.log('🔍 API Data:', data);
                     
@@ -328,6 +355,13 @@
                     if (data.error) {
                         console.log('❌ API returned error:', data.error);
                         let errorMessage = data.error;
+                        
+                        // Show visual warning for closed dates
+                        if (data.code === 'CLOSED_DATE') {
+                            this.showClosedDateWarning(selectedDate);
+                            // Clear the date input to force user to select a valid date
+                            dateInput.value = '';
+                        }
                         
                         // For INSUFFICIENT_ADVANCE, also check if there are any available_times
                         if (data.code === 'INSUFFICIENT_ADVANCE' && data.available_times && data.available_times.length > 0) {
@@ -352,6 +386,11 @@
                         this.populateTimeSlots(data.availableSlots, timeSelect, selectedDate);
                         if (loadingDiv) {
                             loadingDiv.style.display = 'none';
+                        }
+                        
+                        // Haptic feedback for successful time loading
+                        if (window.HapticFeedback) {
+                            window.HapticFeedback.trigger('success');
                         }
                     } else {
                         // No available slots
@@ -386,6 +425,47 @@
                         loadingDiv.style.display = 'none';
                     }
                 });
+        },
+
+        showClosedDateWarning(date) {
+            // Trigger haptic feedback for warning
+            if (window.HapticFeedback) {
+                window.HapticFeedback.bookingEvents.warningShown();
+            }
+            
+            // Show warning message
+            const warningDiv = document.getElementById('closed-date-warning');
+            const availabilityInfo = document.getElementById('date-availability-info');
+            
+            if (warningDiv) {
+                warningDiv.innerHTML = '⚠️ This date is not available. We are closed on Tuesdays, Thursdays, and Sundays.';
+                warningDiv.style.display = 'block';
+                warningDiv.style.color = '#dc2626';
+                warningDiv.style.fontWeight = '600';
+            }
+            
+            if (availabilityInfo) {
+                availabilityInfo.style.display = 'block';
+                availabilityInfo.style.backgroundColor = '#fef2f2';
+                availabilityInfo.style.border = '2px solid #dc2626';
+                availabilityInfo.style.padding = '0.5rem';
+                availabilityInfo.style.borderRadius = '4px';
+            }
+            
+            // Add red border to date input
+            const dateInput = document.getElementById('booking-date');
+            if (dateInput) {
+                dateInput.style.borderColor = '#dc2626';
+                dateInput.style.backgroundColor = '#fef2f2';
+                
+                // Clear the styling after 3 seconds
+                setTimeout(() => {
+                    dateInput.style.borderColor = '#e2e8f0';
+                    dateInput.style.backgroundColor = '';
+                    if (warningDiv) warningDiv.style.display = 'none';
+                    if (availabilityInfo) availabilityInfo.style.display = 'none';
+                }, 3000);
+            }
         },
 
         getPractitionerIdForService(service) {
