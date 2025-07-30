@@ -1,0 +1,33 @@
+# Environment files with secrets
+.env
+.env.*
+shared/.env*
+shared/backend/.env*
+
+# Node modules
+node_modules/
+*/node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+
+# Backup files
+*.backup
+*.bak
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+Thumbs.db
