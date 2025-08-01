@@ -246,7 +246,7 @@ class TestSuite {
       try {
         await this.page.waitForSelector('#location-type', { timeout: 5000 });
         await this.page.select('#location-type', 'mobile');
-        this.addResult('Location Selection', true, 'Selected mobile service (+$50)');
+        this.addResult('Location Selection', true, 'Selected mobile service');
       } catch (error) {
         this.addResult('Location Dropdown', false, `Location dropdown error: ${error.message}`);
       }

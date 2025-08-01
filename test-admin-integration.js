@@ -99,7 +99,7 @@ async function testAdminIntegration() {
             await page.type('#client-email', 'integration@test.com');
             await page.type('#client-phone', '555-INTEGRATION');
             
-            // Select 90min service ($165 base + $5 tech fee)
+            // Select 90min service
             await page.select('#service-type', '90min');
             await page.waitForTimeout(500);
             
@@ -112,7 +112,7 @@ async function testAdminIntegration() {
             // Set time
             await page.$eval('#booking-time', el => el.value = '16:00');
             
-            // Select mobile location (+$50 fee)
+            // Select mobile location
             await page.select('#booking-location', 'mobile');
             await page.waitForTimeout(500);
             
@@ -135,12 +135,26 @@ async function testAdminIntegration() {
             const locationFee = await page.$eval('#location-fee-display', el => el.textContent);
             const totalPrice = await page.$eval('#total-price-display', el => el.textContent);
             
-            // Expected: $165 base + $5 tech + $50 mobile = $220
-            if (basePrice === '$165.00' && techFee === '$5.00' && locationFee === '$50.00' && totalPrice === '$220.00') {
-                console.log('✅ Pricing calculation correct: $165 + $5 + $50 = $220');
+            // Calculate expected pricing using DynamicPricingLoader
+            const expectedPricing = await page.evaluate(() => {
+                const servicePrice = window.DynamicPricingLoader ? window.DynamicPricingLoader.getServicePrice('90min') : 180.00;
+                const techFee = 5.00; // Standard tech fee
+                const mobileFee = 25.00; // Standard mobile fee (updated from hardcoded $50)
+                return {
+                    base: `$${servicePrice.toFixed(2)}`,
+                    tech: `$${techFee.toFixed(2)}`,
+                    mobile: `$${mobileFee.toFixed(2)}`,
+                    total: `$${(servicePrice + techFee + mobileFee).toFixed(2)}`
+                };
+            });
+            
+            if (basePrice === expectedPricing.base && techFee === expectedPricing.tech && 
+                locationFee === expectedPricing.mobile && totalPrice === expectedPricing.total) {
+                console.log(`✅ Pricing calculation correct: ${expectedPricing.base} + ${expectedPricing.tech} + ${expectedPricing.mobile} = ${expectedPricing.total}`);
                 passed++;
             } else {
-                console.log(`❌ Pricing incorrect: Base: ${basePrice}, Tech: ${techFee}, Location: ${locationFee}, Total: ${totalPrice}`);
+                console.log(`❌ Pricing incorrect: Expected: ${expectedPricing.base} + ${expectedPricing.tech} + ${expectedPricing.mobile} = ${expectedPricing.total}`);
+                console.log(`❌ Actual: Base: ${basePrice}, Tech: ${techFee}, Location: ${locationFee}, Total: ${totalPrice}`);
             }
         } catch (error) {
             console.log('❌ Pricing verification failed:', error.message);

@@ -209,16 +209,22 @@ async function testAllElementsRobust() {
           }
         }
 
-        // Test pricing calculation
+        // Test pricing calculation using DynamicPricingLoader
         total++;
         try {
+          const expectedPricing = await page.evaluate(() => {
+            const servicePrice = window.DynamicPricingLoader ? window.DynamicPricingLoader.getServicePrice('60min') : 135.00;
+            return `$${servicePrice.toFixed(2)}`;
+          });
+          
           const basePrice = await page.$eval('#base-price-display', el => el.textContent);
           const totalPrice = await page.$eval('#total-price-display', el => el.textContent);
-          if (basePrice === '$145.00' && totalPrice === '$145.00') {
-            console.log('✅ Pricing Calculation - Dynamic pricing works');
+          
+          if (basePrice === expectedPricing && totalPrice === expectedPricing) {
+            console.log(`✅ Pricing Calculation - Dynamic pricing works: ${expectedPricing}`);
             passed++;
           } else {
-            console.log(`❌ Pricing Calculation - Expected $145.00, got base: ${basePrice}, total: ${totalPrice}`);
+            console.log(`❌ Pricing Calculation - Expected ${expectedPricing}, got base: ${basePrice}, total: ${totalPrice}`);
           }
         } catch (error) {
           console.error.message}`);

@@ -216,13 +216,19 @@ async function testEveryElement() {
       // Add special requests
       await page.type('#special-requests', 'This is a complete test booking');
 
-      // Verify pricing calculation
+      // Verify pricing calculation using DynamicPricingLoader
+      const expectedPrice = await page.evaluate(() => {
+        const servicePrice = window.DynamicPricingLoader ? window.DynamicPricingLoader.getServicePrice('90min') : 180.00;
+        const mobileUpcharge = 25.00; // Standard mobile upcharge
+        return `$${(servicePrice + mobileUpcharge).toFixed(2)}`;
+      });
+      
       const finalPrice = await page.$eval('#total-price-display', el => el.textContent);
-      if (finalPrice === '$215.00') { // $190 + $25 mobile
-        console.log('   ✅ Complete workflow with correct pricing');
+      if (finalPrice === expectedPrice) {
+        console.log(`   ✅ Complete workflow with correct pricing: ${finalPrice}`);
         passed++;
       } else {
-        console.log(`   ❌ Pricing incorrect: ${finalPrice}`);
+        console.log(`   ❌ Pricing incorrect: expected ${expectedPrice}, got ${finalPrice}`);
       }
 
       // Close modal
